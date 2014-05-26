@@ -1,0 +1,175 @@
+{
+  "description": "New design",
+  "name": "New design",
+  "preview_medium": "",
+  "preview_small": "",
+  "author": "",
+  "layouts": [
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/blog_article.tpl",
+      "layout_name": "page_default",
+      "title": "Blog article"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/blog_news.tpl",
+      "layout_name": "page_default",
+      "title": "Blog & News"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/common_page.tpl",
+      "layout_name": "page_default",
+      "title": "Common page"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/front_page.tpl",
+      "layout_name": "page_default",
+      "title": "Front page"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/bgpicker.tpl",
+      "layout_name": "",
+      "title": "bgpicker"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/comment-form.tpl",
+      "layout_name": "",
+      "title": "Comment-form"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/footer.tpl",
+      "layout_name": "",
+      "title": "footer"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/html-head.tpl",
+      "layout_name": "",
+      "title": "html-head"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/javascripts.tpl",
+      "layout_name": "javascripts",
+      "title": "javascripts"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/langmenu.tpl",
+      "layout_name": "langmenu",
+      "title": "langmenu"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/mainmenu.tpl",
+      "layout_name": "",
+      "title": "mainmenu"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/mobilemenu.tpl",
+      "layout_name": "",
+      "title": "Mobilemenu"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/sidebar.tpl",
+      "layout_name": "",
+      "title": "sidebar"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/submenu.tpl",
+      "layout_name": "",
+      "title": "submenu"
+    }
+  ],
+  "assets": [
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-flags.svg",
+      "kind": "assets",
+      "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "image/DS_Store",
+      "file": "images/.DS_Store",
+      "kind": "images",
+      "filename": ".DS_Store"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/check.png",
+      "kind": "images",
+      "filename": "check.png"
+    },
+    {
+      "content_type": "image/jpg",
+      "file": "images/front.jpg",
+      "kind": "images",
+      "filename": "front.jpg"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/ico-flags-small.png",
+      "kind": "images",
+      "filename": "ico-flags-small.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/ico-flags.png",
+      "kind": "images",
+      "filename": "ico-flags.png"
+    },
+    {
+      "content_type": "text/javascript",
+      "file": "javascripts/jquery-1.11.0.min.js",
+      "kind": "javascripts",
+      "filename": "jquery-1.11.0.min.js"
+    },
+    {
+      "content_type": "text/javascript",
+      "file": "javascripts/main.js",
+      "kind": "javascripts",
+      "filename": "main.js"
+    },
+    {
+      "content_type": "text/javascript",
+      "file": "javascripts/modernizr.min.js",
+      "kind": "javascripts",
+      "filename": "modernizr.min.js"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/scss",
+      "kind": "stylesheets",
+      "filename": "scss"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/style.css",
+      "kind": "stylesheets",
+      "filename": "style.css"
+    }
+  ]
+}
