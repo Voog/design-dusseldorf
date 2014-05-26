@@ -112,16 +112,16 @@
       "filename": "ico-flags.svg"
     },
     {
-      "content_type": "image/DS_Store",
-      "file": "images/.DS_Store",
-      "kind": "images",
-      "filename": ".DS_Store"
-    },
-    {
       "content_type": "image/png",
       "file": "images/check.png",
       "kind": "images",
       "filename": "check.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/check_small.png",
+      "kind": "images",
+      "filename": "check_small.png"
     },
     {
       "content_type": "image/jpg",

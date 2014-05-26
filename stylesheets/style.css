@@ -274,7 +274,9 @@ label > input[type=checkbox] + .form_control_indicator:before {
   background: white;
 }
 label > input[type=checkbox]:checked + .form_control_indicator:before {
-  background: #222222;
+  height: 100%;
+  width: 100%;
+  background: url("../images/check_small.png") no-repeat left bottom;
 }
 .backgroundsize label > input[type=checkbox]:checked + .form_control_indicator:before {
   height: 100%;
