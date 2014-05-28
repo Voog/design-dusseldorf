@@ -243,19 +243,19 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
   
 /* submenu */
   .sub-menu {
-    text-align: right; padding: 30px 30px 15px 30px; min-height: 35px;
+    text-align: right; padding: 30px 30px 15px 30px; min-height: 35px; word-wrap: break-word;
     li {
       display: inline-block; padding-left: 20px;
       &.edy-btn { vertical-align: middle;}
     }
     a {
-      font: 14px/1.1 $font-secondary; padding: 0 0 13px;
+      font: 14px/1.1 $font-secondary; padding: 0 0 10px;
       color: $third-color; display: inline-block; white-space: nowrap;
       &:hover {
         color: $main-color;
       }
       &.active {
-        color: $main-color; border-bottom: 3px solid $main-color; padding-bottom: 10px;
+        color: $main-color; border-bottom: 3px solid $main-color; padding-bottom: 7px;
       }
       &.edy-cbtn { padding: 0; }
     }
@@ -329,7 +329,7 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
 
 /* content */
   .content { 
-    padding: 0 30px 30px; 
+    padding: 0 30px 30px; word-wrap: break-word;
     .front-page & { padding: 30px; }
   }
   .content-formatted {
@@ -342,8 +342,8 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
   .blog-content h1 { margin: 0; padding: 0; }
   .blog-list { 
     .post { border-top: 2px solid white; padding: 20px 30px; }
-    h2 {
-      margin: 0; padding: 0; 
+    .post-title {
+      margin: 0; padding: 0; font-size: 24px; word-wrap: break-word;
       a { color: $secondary-color; }
       a:hover {
         @include color($secondary-color, 0.75)
@@ -353,13 +353,13 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
   
   .post-header { padding: 0 30px 0; }
   .post-date { color: $third-color; display: inline; }
-  .post-content { padding: 0 30px 60px;}
+  .post-content { padding: 0 30px 60px; word-wrap: break-word; }
   .post-body { padding: 20px 0 0; }
 
 /* comments */
   .comments { 
     position: relative; padding: 0px 30px 30px;
-    &:before { display: block; content: ""; width: 250px; height: 2px; background: white; }
+    &:before { display: block; content: ""; width: 250px; height: 2px; background: white; position: absolute; top: 0; left: 0; }
     h3 { margin :0; padding: 45px 0 20px;}
   }
   
@@ -382,8 +382,11 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
     }
   }
   .comment { 
-    padding-top: 20px; 
-    .comment-info { color: $third-color; font-size: 14px; }
+    padding-top: 20px; word-wrap: break-word;
+    .comment-info { 
+      color: $third-color; font-size: 14px; 
+      .edy-site-btn-removecomment { vertical-align: -1px; } 
+    }
   }
 
 /* table */
@@ -408,10 +411,23 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
   }
   
 /* other */
+  .edy-gallery-area, .edys-gallery-area { padding: 20px 0;}
   .edys-gallery-image { @include border-radius(96px); }
   .js-bgpicker-cover-color { position: absolute; top: 0; left:0; right: 0; bottom: 0; z-index: 0; display: none; }
   .rgba .js-bgpicker-cover-color { display: block; }
   
+  pre {
+    margin-top: 10px; margin-bottom: 0; overflow: auto; white-space: nowrap;
+    &, code {
+      padding: 10px; font-size: 14px;
+      @include bg(white, 0.9);
+    }
+
+    code {
+      display: block; margin-top: 0; padding: 0;
+    }
+  }
+  code { @include bg(white, 0.9); padding: 3px; vertical-align: middle; }
   
   
 @media screen and (max-width: $break-small) {
@@ -421,7 +437,7 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
   .wrap-holder, .wrap { display: block !important; height: auto !important; }
   
   .sidebar { 
-    min-width: 0; width: auto; padding: 0; 
+    min-width: 0; width: auto; padding: 0; word-wrap: break-word;
     .site-title {
       font-size: 18px; padding: 12px 50px 12px 20px;
     }
@@ -438,6 +454,7 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
   .sub-menu { 
     min-height: 0; text-align: left; padding: 20px 20px 15px;
     li { padding-left: 0; padding-right: 20px; }
+    a { white-space: normal;}
   }
   
   .form_field_textfield, .form_field_textarea, .form_field_select, .form_field .jq-select { width: 100% !important; }

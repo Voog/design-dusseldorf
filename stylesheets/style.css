@@ -422,6 +422,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   text-align: right;
   padding: 30px 30px 15px 30px;
   min-height: 35px;
+  word-wrap: break-word;
 }
 .sub-menu li {
   display: inline-block;
@@ -432,7 +433,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
 }
 .sub-menu a {
   font: 14px/1.1 "Montserrat", "sans-serif";
-  padding: 0 0 13px;
+  padding: 0 0 10px;
   color: #848484;
   display: inline-block;
   white-space: nowrap;
@@ -443,7 +444,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
 .sub-menu a.active {
   color: #222222;
   border-bottom: 3px solid #222222;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
 }
 .sub-menu a.edy-cbtn {
   padding: 0;
@@ -710,6 +711,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
 /* content */
 .content {
   padding: 0 30px 30px;
+  word-wrap: break-word;
 }
 .front-page .content {
   padding: 30px;
@@ -737,14 +739,16 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   border-top: 2px solid white;
   padding: 20px 30px;
 }
-.blog-list h2 {
+.blog-list .post-title {
   margin: 0;
   padding: 0;
+  font-size: 24px;
+  word-wrap: break-word;
 }
-.blog-list h2 a {
+.blog-list .post-title a {
   color: black;
 }
-.blog-list h2 a:hover {
+.blog-list .post-title a:hover {
   color: black;
   color: rgba(0, 0, 0, 0.75);
 }
@@ -760,6 +764,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
 
 .post-content {
   padding: 0 30px 60px;
+  word-wrap: break-word;
 }
 
 .post-body {
@@ -777,6 +782,9 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   width: 250px;
   height: 2px;
   background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .comments h3 {
   margin: 0;
@@ -813,10 +821,14 @@ label > input[type=radio]:checked + .form_control_indicator:before {
 
 .comment {
   padding-top: 20px;
+  word-wrap: break-word;
 }
 .comment .comment-info {
   color: #848484;
   font-size: 14px;
+}
+.comment .comment-info .edy-site-btn-removecomment {
+  vertical-align: -1px;
 }
 
 /* table */
@@ -857,6 +869,10 @@ table th {
 }
 
 /* other */
+.edy-gallery-area, .edys-gallery-area {
+  padding: 20px 0;
+}
+
 .edys-gallery-image {
   -webkit-border-radius: 96px;
   -moz-border-radius: 96px;
@@ -875,6 +891,31 @@ table th {
 
 .rgba .js-bgpicker-cover-color {
   display: block;
+}
+
+pre {
+  margin-top: 10px;
+  margin-bottom: 0;
+  overflow: auto;
+  white-space: nowrap;
+}
+pre, pre code {
+  padding: 10px;
+  font-size: 14px;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+pre code {
+  display: block;
+  margin-top: 0;
+  padding: 0;
+}
+
+code {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 3px;
+  vertical-align: middle;
 }
 
 @media screen and (max-width: 600px) {
@@ -898,6 +939,7 @@ table th {
     min-width: 0;
     width: auto;
     padding: 0;
+    word-wrap: break-word;
   }
   .sidebar .site-title {
     font-size: 18px;
@@ -932,6 +974,9 @@ table th {
   .sub-menu li {
     padding-left: 0;
     padding-right: 20px;
+  }
+  .sub-menu a {
+    white-space: normal;
   }
 
   .form_field_textfield, .form_field_textarea, .form_field_select, .form_field .jq-select {

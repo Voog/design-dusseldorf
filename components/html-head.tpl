@@ -3,7 +3,6 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="keywords" content="{{ page.keywords }}">
 <meta name="description" content="{{ page.description }}">
-<meta name="author" content="{{ site.author }}">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 
 <meta property="og:type" content="website">

@@ -24,14 +24,20 @@
             </section>
             
             <section class="comments content-formatted">
-              {% case article.comments_count %}{% when 0 %}{% else %}<h3 class="comment-title">{{"comments_for_count" | lc}}: <span class="edy-site-blog-comments-count">{{article.comments_count}}</span></h3>{% endcase %}
+              <h3 class="comment-title">
+                {% case article.comments_count %}
+                  {% when 0 %}{{ "write_first_comment" | lc }}
+                  {% else %}{{"comments_for_count" | lc}}: <span class="edy-site-blog-comments-count">{{article.comments_count}}</span>
+                {% endcase %}
+              </h3>
               
               {% include "comment-form" %}
             
               {% for comment in article.comments reversed %}
-                <div class="comment">
-                  <div class="comment-body">{{ comment.body }}</div>
-                  <div class="comment-info">({{ comment.author }}, {{ comment.created_at | date : "%b %d, %Y" }})</div>
+                <div class="comment edy-site-blog-comment">
+                  
+                  <div class="comment-body">{{ comment.body_html }}</div>
+                  <div class="comment-info">({{ comment.author }}, {{ comment.created_at | date : "%b %d, %Y" }}) {% removebutton %}</div>
                 </div>
               {% endfor %}
             </section>
