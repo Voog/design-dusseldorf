@@ -71,7 +71,6 @@ pre {
   &, code { padding: 10px; font-size: 14px; @include bg(white, 0.9); }
   code { display: block; margin-top: 0; padding: 0; }
 }
-code { @include bg(white, 0.9); padding: 3px; vertical-align: middle; }
 
 /* select */
   .jq-select {
@@ -152,7 +151,7 @@ code { @include bg(white, 0.9); padding: 3px; vertical-align: middle; }
     > input[type=radio], > input[type=checkbox] { display: none; display: inline-block\9;}
     
     .form_control_indicator { 
-      display: inline-block; display: none\9; width: 18px; height: 18px; vertical-align: -1px; 
+      display: inline-block; display: none\9; width: 18px; height: 18px; vertical-align: 0px; 
       margin-right: 7px; position: relative; 
     }
     .form_control_indicator:before {
@@ -358,6 +357,7 @@ code { @include bg(white, 0.9); padding: 3px; vertical-align: middle; }
   .post-date { color: $third-color; display: inline; }
   .post-content { padding: 0 30px 60px; word-wrap: break-word; }
   .post-body { padding: 20px 0 0; }
+  .post-tags { padding: 20px 0 0; }
 
 /* comments */
   .comments { 

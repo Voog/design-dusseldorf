@@ -13,13 +13,30 @@
       <main class="main">
         <div class="inner">
           <div class="container">
-            {% include "submenu" %}
+            
+            <nav class="sub-menu tag-list">
+              {% if article.tags.size > 0 %}
+              <ul>
+                {% for tag in article.tags %}
+                <li><a href="/{{ page.path }}/tagged/{{ tag.path }}">{{ tag.name }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </nav>
+            
+            
             <header class="post-header">
               <h1>{% editable article.title %} <time class="post-date" datetime="{{ article.created_at | date : "%Y-%m-%d" }}">{{ article.created_at | date : "%d.%m" }}</time></h1>
             </header>
             <section class="post-content">
               <div class="post-excerpt cfx formatted">{% editable article.excerpt %}</div>
               <div class="post-body cfx formatted">{% editable article.body %}</div>
+              
+              {% if editmode %}
+              <div class="post-tags">
+              {% editable article.tags %}
+              </div>
+              {% endif %}
             </section>
             <section class="comments formatted">
               <h3 class="comment-title">
@@ -32,7 +49,7 @@
               {% for comment in article.comments reversed %}
                 <div class="comment edy-site-blog-comment">
                   <div class="comment-body">{{ comment.body_html }}</div>
-                  <div class="comment-info">({{ comment.author }}, {{ comment.created_at | date : "%b %d, %Y" }}) {% removebutton %}</div>
+                  <div class="comment-info">({{ comment.author }}, {{ comment.created_at | format_date: "long" }}) {% removebutton %}</div>
                 </div>
               {% endfor %}
             </section>

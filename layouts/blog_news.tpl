@@ -11,7 +11,24 @@
       </aside>
       <main class="main">
         <div class="container">
-          <div class="inner">{% include "submenu" %}</div>
+          <div class="inner">
+            
+            <nav class="sub-menu tag-list">
+              {% if site.has_language_tags? %}
+              <ul>
+                {% for tag in site.language_tags %}
+                  {% assign activestr = " " %}
+                  {% for tmptag in tags %}
+                    {% if tmptag.name == tag.name %}
+                      {% assign activestr = " class='active'" %}
+                    {% endif %}
+                  {% endfor %}
+                <li><a href="/{{ page.path }}/tagged/{{ tag.path }}"{{activestr}}>{{ tag.name }}</a></li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </nav>
+          </div>
           <section class="content blog-content inner cfx">
             {% content %}
             {% if editmode %}<div style="padding-top: 20px">{% addbutton %}</div>{% endif %}
