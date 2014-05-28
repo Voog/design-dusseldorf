@@ -14,6 +14,7 @@ $font-main: 'Lato', 'sans-serif';
 $font-secondary: 'Montserrat', 'sans-serif';
 
 $side-width: 280px;
+$content-width: 720px;
 
 $break-small: 600px;
 $break-middle: 800px;
@@ -37,7 +38,9 @@ body {
   text-align: left;
   background: $bg-color;
   min-width: 1000px;
-  -webkit-text-size-adjust: none
+  -webkit-text-size-adjust: none;
+  @include box-sizing(border-box); 
+  &.editmode { padding-bottom: 40px; }
 }
 a { 
   text-decoration: none; color: $link-color; 
@@ -63,6 +66,13 @@ ul li, ol li { @extend %nulling; }
 
 input[type=submit], input[type=text], textarea { -webkit-appearance: none; border-radius: 0; }
 
+pre {
+  margin-top: 10px; margin-bottom: 0; overflow: auto; white-space: nowrap;
+  &, code { padding: 10px; font-size: 14px; @include bg(white, 0.9); }
+  code { display: block; margin-top: 0; padding: 0; }
+}
+code { @include bg(white, 0.9); padding: 3px; vertical-align: middle; }
+
 /* select */
   .jq-select {
     position: relative; cursor: pointer; background: white;
@@ -75,20 +85,21 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
       font: #{$font-size}/1.4 $font-main; color: $main-color; -webkit-appearance: none;
     }
   }
-    .jq-select-arrow {
-      position: absolute; top: 0; right: 0; background: white;
-      height: 100%; width: 30px; border-left: 3px solid $bg-color;
-      &:before {
-        border: solid transparent; content: " "; height: 0; width: 0; 
-        position: absolute; pointer-events: none; 
-        border-top-color: $main-color; border-width: 6px; 
-        top: 50%; left: 50%; margin-left: -6px; margin-top: -2px;
-      }
+  .jq-select-arrow {
+    position: absolute; top: 0; right: 0; background: white;
+    height: 100%; width: 30px; border-left: 3px solid $bg-color;
+    &:before {
+      border: solid transparent; content: " "; height: 0; width: 0; 
+      position: absolute; pointer-events: none; 
+      border-top-color: $main-color; border-width: 6px; 
+      top: 50%; left: 50%; margin-left: -6px; margin-top: -2px;
     }
-    .jq-select-content {
-      position: relative; z-index: 5; padding-right: 48px; padding: 4px 38px 4px 5px;
-    }
-      .jq-select-inner {overflow: hidden; white-space: nowrap; }
+  }
+  .jq-select-content {
+    position: relative; z-index: 5; padding-right: 48px; padding: 4px 38px 4px 5px;
+  }
+  .jq-select-inner {overflow: hidden; white-space: nowrap; }
+
 
 /* form */
   .edy-fe-field, .form_field { padding-bottom: 20px; }
@@ -172,13 +183,15 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
   }
   
 /* layout */
-  .wrap-holder {
-    min-height: 100%;
-    height: 100%; hasLayout: true; zoom: 1;
+  
+  .wrap { 
+    min-height: 100%; height: 100%; width: 100%;
+    display: table; hasLayout: true; zoom: 1; position: relative; 
   }
-  .wrap { min-height: 100%; height: 100%; display: table; hasLayout: true; zoom: 1; position: relative; }
+  .wrap-inner { display: table-row; }
+    
   .sidebar { 
-    width: $side-width; min-width: $side-width; background: white; 
+    width: $side-width; min-width: $side-width; max-width: $side-width; background: white; 
     padding: 30px 30px 180px 30px; display: table-cell; vertical-align: top;
     @include box-sizing(border-box);
     
@@ -194,29 +207,11 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
     }
   }
   .main { 
-    width: 720px; position: relative; display: table-cell; vertical-align: top;
-    
-    @media screen and (min-width: $break-large) {
-      width: 60%;
-    }
+    position: relative; display: table-cell; vertical-align: top; height: 100%;
   }
-  .main-inner { padding: 30px; }
-  
-  .flexbox:not(.msie) {
-    .wrap-holder, .wrap {
-      @include flexbox;
-      height: auto;
-    }
-    .wrap-holder { height: auto; }
-    .wrap { height: auto;}
-    .sidebar, .main { display: block; }
-  }
-  
-  .front-page {
-    .main {
-      background-repeat: no-repeat; background-position: center top;
-      background-size: cover;
-      background-image: url('../images/front.jpg');
+  .main-inner { 
+    min-height: 100%; position: relative; z-index: 10; 
+    .front-page & {
       @include color(white, 0.8);
       h1,h2,h3 {
         @include color(white, 0.8);
@@ -224,7 +219,14 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
     }
   }
   
-  .container-wrap { position: relative; z-index: 1; zoom: 1; /*min-height: 100%;*/ }
+  .inner {
+    width: $content-width;
+    @media screen and (min-width: $break-large) {
+      width: 60%;
+    }
+  }
+  
+  .container-wrap { position: relative; z-index: 4; zoom: 1; }
   .container {
     min-height: 100%; 
     @include box-sizing(border-box);
@@ -330,9 +332,9 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
 /* content */
   .content { 
     padding: 0 30px 30px; word-wrap: break-word;
-    .front-page & { padding: 30px; }
+    .front-page & { padding: 70px 30px; }
   }
-  .content-formatted {
+  .formatted {
     ul,ol { list-style-type: disc; padding-left: 35px; margin: 15px 0; }
     ol { list-style-type: decimal;}
     li { padding-left: 3px; }
@@ -341,9 +343,10 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
 /* articles */
   .blog-content h1 { margin: 0; padding: 0; }
   .blog-list { 
-    .post { border-top: 2px solid white; padding: 20px 30px; }
+    .post-wrap { border-top: 2px solid white; }
+    .post { padding: 30px 30px; }
     .post-title {
-      margin: 0; padding: 0; font-size: 24px; word-wrap: break-word;
+      margin: 0; padding: 0; font-size: 24px; line-height: 1.1; word-wrap: break-word;
       a { color: $secondary-color; }
       a:hover {
         @include color($secondary-color, 0.75)
@@ -413,31 +416,26 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
 /* other */
   .edy-gallery-area, .edys-gallery-area { padding: 20px 0;}
   .edys-gallery-image { @include border-radius(96px); }
-  .js-bgpicker-cover-color { position: absolute; top: 0; left:0; right: 0; bottom: 0; z-index: 0; display: none; }
-  .rgba .js-bgpicker-cover-color { display: block; }
   
-  pre {
-    margin-top: 10px; margin-bottom: 0; overflow: auto; white-space: nowrap;
-    &, code {
-      padding: 10px; font-size: 14px;
-      @include bg(white, 0.9);
-    }
-
-    code {
-      display: block; margin-top: 0; padding: 0;
-    }
+  .js-bgpicker-cover-image {
+    background-repeat: no-repeat; background-position: center top;
+    background-size: cover;
+    background-image: url('../images/front.jpg');
   }
-  code { @include bg(white, 0.9); padding: 3px; vertical-align: middle; }
+  
+  .js-bgpicker-cover-color { position: absolute; top: 0; left:0; right: 0; bottom: 0; z-index: 0; display: none; 
+  }
+  .rgba .js-bgpicker-cover-color { display: block; }
   
   
 @media screen and (max-width: $break-small) {
   body, html { height: auto !important; font-size: 16px; line-height: 1.75; }
   
   body { min-width: 320px; background: white; ; }
-  .wrap-holder, .wrap { display: block !important; height: auto !important; }
+  .wrap, .wrap-inner, .main { display: block !important; height: auto !important; }
   
   .sidebar { 
-    min-width: 0; width: auto; padding: 0; word-wrap: break-word;
+    min-width: 0; width: auto; max-width: auto; padding: 0; word-wrap: break-word; display: block;
     .site-title {
       font-size: 18px; padding: 12px 50px 12px 20px;
     }
@@ -446,10 +444,18 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
   .lang-menu, .main-menu { display: none; }
   
   .main { width: auto; }
+  .inner { width: auto;}
   
-  .container { background: $bg-color; }
-  .content { padding: 0 20px 20px;}
-  .front-page .container { background: none; }
+  .container { 
+    background: $bg-color; 
+    .front-page & { background: none; }
+  }
+  .content { 
+    padding: 0 20px 20px;
+    .front-page & {
+      padding: 40px 20px;
+    }
+  }
   
   .sub-menu { 
     min-height: 0; text-align: left; padding: 20px 20px 15px;
@@ -459,6 +465,7 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
   
   .form_field_textfield, .form_field_textarea, .form_field_select, .form_field .jq-select { width: 100% !important; }
   
+  .blog-list .post { padding-top: 20px; padding-bottom: 20px; }
   
   .post-header { padding: 0 20px; }
   .post-content { padding: 0 20px 30px; }
@@ -482,7 +489,7 @@ input[type=submit], input[type=text], textarea { -webkit-appearance: none; borde
   
     .mobilemenu-open { 
       position: fixed; overflow: hidden;
-      .wrap-holder { position: fixed; left: 0; top: 0; }
+      .wrap { position: fixed; left: 0; top: 0; }
     }
   
     .mobile-menu-toggler { 

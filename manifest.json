@@ -36,6 +36,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/bg-picker-variables.tpl",
+      "layout_name": "",
+      "title": "bg-picker-variables"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/bgpicker.tpl",
       "layout_name": "",
       "title": "bgpicker"
