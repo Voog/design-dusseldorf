@@ -19,6 +19,7 @@ body {
   background: #e5e5e5;
   min-width: 1000px;
   -webkit-text-size-adjust: none;
+  position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -269,7 +270,7 @@ label {
   /* checkbox-image-preload */
 }
 label:before {
-  content: url("../images/check.png");
+  content: url("../images/check.png?1");
   display: none;
 }
 label > input[type=radio], label > input[type=checkbox] {
@@ -300,12 +301,12 @@ label > input[type=checkbox] + .form_control_indicator:before {
 label > input[type=checkbox]:checked + .form_control_indicator:before {
   height: 100%;
   width: 100%;
-  background: url("../images/check_small.png") no-repeat left bottom;
+  background: url("../images/check_small.png?1") no-repeat left bottom;
 }
 .backgroundsize label > input[type=checkbox]:checked + .form_control_indicator:before {
   height: 100%;
   width: 100%;
-  background: url("../images/check.png") no-repeat left bottom;
+  background: url("../images/check.png?1") no-repeat left bottom;
   background-size: 17px 18px;
 }
 label > input[type=radio] + .form_control_indicator:before {
@@ -466,16 +467,18 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   left: 0;
   background-size: 200px;
   background-repeat: no-repeat;
-  background-image: url("../images/ico-flags-small.png");
+  background-image: url("../images/ico-flags-small.png?1");
+  /*
+  .backgroundsize.svg & {
+    background-image: url('../assets/ico-flags.svg?1');
+  }
+  */
 }
 .no-boxshadow .lang-flag:before {
   border: 1px solid #eee;
 }
 .backgroundsize .lang-flag:before {
-  background-image: url("../images/ico-flags.png");
-}
-.backgroundsize.svg .lang-flag:before {
-  background-image: url("../assets/ico-flags.svg");
+  background-image: url("../images/ico-flags.png?1");
 }
 
 .lang-flag-sq:before {
@@ -805,6 +808,18 @@ label > input[type=radio]:checked + .form_control_indicator:before {
 
 .comment-form {
   padding-bottom: 10px;
+  min-height: 30px;
+  position: relative;
+}
+.comment-form .comment-form-focus-input {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.comment-form .form_area {
+  display: none;
 }
 .comment-form .form_field {
   padding-bottom: 10px;
@@ -829,6 +844,12 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   border-bottom: 1px solid rgba(199, 9, 9, 0.3);
   color: #c70909;
   color: rgba(199, 9, 9, 0.8);
+}
+.comment-form.form_with_errors .comment-form-focus-input {
+  display: none;
+}
+.comment-form.form_with_errors .form_area {
+  display: block;
 }
 
 .comment {
@@ -895,7 +916,7 @@ table th {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-  background-image: url("../images/front.jpg");
+  background-image: url("../images/front.jpg?1");
 }
 
 .js-bgpicker-cover-color {
@@ -932,10 +953,11 @@ table th {
   .sidebar {
     min-width: 0;
     width: auto;
-    max-width: auto;
+    max-width: none;
     padding: 0;
     word-wrap: break-word;
     display: block;
+    min-height: 43px;
   }
   .sidebar .site-title {
     font-size: 18px;
@@ -979,6 +1001,10 @@ table th {
   }
   .sub-menu a {
     white-space: normal;
+  }
+
+  .js-bgpicker-cover-image, .js-bgpicker-cover-color {
+    min-height: 0 !important;
   }
 
   .form_field_textfield, .form_field_textarea, .form_field_select, .form_field .jq-select {

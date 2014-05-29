@@ -1,4 +1,5 @@
 <div class="comment-form{% unless comment.valid? %} form_with_errors{% endunless %}">
+  <input class="form_field_textfield form_field_size_large comment-form-focus-input"  type="text" placeholder="{{ "comment" | lc }}" />
   {% commentform %}
     {% assign comment_name_error = false %}
     {% assign comment_email_error = false %}

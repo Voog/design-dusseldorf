@@ -19,7 +19,7 @@
 
 {% if editmode %}{% stylesheet_link "assets/admin/editmode.css" static_host="true" %}{% endif %}
 
-{% stylesheet_link "style.css" %}
+{% stylesheet_link "style.css?2" %}
 
 <title>{% if article %}{{ article.title }} &mdash; {{ page.site_title }}{% else %}{% if site.root_item.selected? %}{{ page.site_title }}{% else %}{{ page.title }} &mdash; {{ page.site_title }}{% endif %}{% endif %}</title>
 

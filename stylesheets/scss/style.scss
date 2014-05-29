@@ -39,6 +39,7 @@ body {
   background: $bg-color;
   min-width: 1000px;
   -webkit-text-size-adjust: none;
+  position: relative;
   @include box-sizing(border-box); 
   &.editmode { padding-bottom: 40px; }
 }
@@ -146,7 +147,7 @@ pre {
   label {
     cursor: pointer;
     /* checkbox-image-preload */
-    &:before { content: url('../images/check.png'); display: none; }
+    &:before { content: url('../images/check.png?1'); display: none; }
     
     > input[type=radio], > input[type=checkbox] { display: none; display: inline-block\9;}
     
@@ -164,9 +165,9 @@ pre {
         background: white;
       }
       &:checked + .form_control_indicator:before {
-        height: 100%; width: 100%; background: url('../images/check_small.png') no-repeat left bottom;
+        height: 100%; width: 100%; background: url('../images/check_small.png?1') no-repeat left bottom;
         .backgroundsize & {
-          height: 100%; width: 100%; background: url('../images/check.png') no-repeat left bottom;
+          height: 100%; width: 100%; background: url('../images/check.png?1') no-repeat left bottom;
           background-size: 17px 18px;
         }
       }
@@ -267,17 +268,19 @@ pre {
     content: ""; display: block; height: 13px; width: 20px; 
     position: absolute; top: 0; left: 0;
     background-size: 200px; background-repeat: no-repeat;
-    background-image: url("../images/ico-flags-small.png");
+    background-image: url("../images/ico-flags-small.png?1");
     
     .no-boxshadow & {
       border: 1px solid #eee;
     }
     .backgroundsize & {
-      background-image: url('../images/ico-flags.png');
+      background-image: url('../images/ico-flags.png?1');
     }
+    /*
     .backgroundsize.svg & {
-      background-image: url('../assets/ico-flags.svg');
+      background-image: url('../assets/ico-flags.svg?1');
     }
+    */
     
   }
   
@@ -367,7 +370,9 @@ pre {
   }
   
   .comment-form { 
-    padding-bottom: 10px; 
+    padding-bottom: 10px; min-height: 30px; position: relative;
+    .comment-form-focus-input { position: absolute; top: 0px; left: 0; width: 100%; z-index: 10; }
+    .form_area { display: none; }
     .form_field { padding-bottom: 10px; }
     .comment-name-field, .comment-email-field { 
       width: 250px; float: left; 
@@ -382,6 +387,10 @@ pre {
       border-bottom: 1px solid $error-color;
       border-bottom: 1px solid rgba($error-color, 0.3);
       @include color($error-color, 0.8)
+    }
+    &.form_with_errors {
+      .comment-form-focus-input { display: none; }
+      .form_area { display: block; }
     }
   }
   .comment { 
@@ -420,7 +429,7 @@ pre {
   .js-bgpicker-cover-image {
     background-repeat: no-repeat; background-position: center top;
     background-size: cover;
-    background-image: url('../images/front.jpg');
+    background-image: url('../images/front.jpg?1');
   }
   
   .js-bgpicker-cover-color { position: absolute; top: 0; left:0; right: 0; bottom: 0; z-index: 0; display: none; 
@@ -435,7 +444,8 @@ pre {
   .wrap, .wrap-inner, .main { display: block !important; height: auto !important; }
   
   .sidebar { 
-    min-width: 0; width: auto; max-width: auto; padding: 0; word-wrap: break-word; display: block;
+    min-width: 0; width: auto; max-width: none; padding: 0; word-wrap: break-word; display: block;
+    min-height: 43px;
     .site-title {
       font-size: 18px; padding: 12px 50px 12px 20px;
     }
@@ -462,6 +472,8 @@ pre {
     li { padding-left: 0; padding-right: 20px; }
     a { white-space: normal;}
   }
+  
+  .js-bgpicker-cover-image, .js-bgpicker-cover-color { min-height: 0 !important; }
   
   .form_field_textfield, .form_field_textarea, .form_field_select, .form_field .jq-select { width: 100% !important; }
   
