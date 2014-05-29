@@ -901,6 +901,17 @@ table th {
   line-height: 1.6;
 }
 
+.voog-reference {
+  display: none;
+  padding-top: 10px;
+}
+.voog-reference a {
+  color: #acacac;
+}
+.front-page .voog-reference {
+  display: block;
+}
+
 /* other */
 .edy-gallery-area, .edys-gallery-area {
   padding: 20px 0;

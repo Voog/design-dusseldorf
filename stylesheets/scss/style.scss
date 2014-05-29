@@ -422,6 +422,12 @@ pre {
     padding: 30px; font-size: 11px; line-height: 1.6;
   }
   
+  .voog-reference { 
+    display: none; padding-top: 10px;
+    a { color: #acacac; }
+    .front-page & { display: block; }
+  }
+  
 /* other */
   .edy-gallery-area, .edys-gallery-area { padding: 20px 0;}
   .edys-gallery-image { @include border-radius(96px); }
