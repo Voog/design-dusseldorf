@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="{% if editmode %}editmode{% endif %}" lang="{{ page.language_code }}">
+<html lang="{{ page.language_code }}">
 <head>
   <link rel="stylesheet" href="/assets/admin/tools/0.1.1/edicy-tools.css">
   {% include "html-head" %}

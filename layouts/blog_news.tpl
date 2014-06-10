@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="{% if editmode %}editmode{% endif %}" lang="{{ page.language_code }}">
+<html lang="{{ page.language_code }}">
 <head>
   {% include "html-head" %}
 </head>
