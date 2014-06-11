@@ -13,28 +13,53 @@
       preview: function(data) {
         var img = (data.image && data.image !== '') ? 'url("' + data.image + '")' : 'none',
             col = (data.color && data.color !== '') ? data.color : '';
+            colObj = getRGBA(col);
 
         $('.js-bgpicker-cover-image').css({'background-image' : img});
-        $('.js-bgpicker-cover-color').css({'background-color' : col});
-
-        if (data.image === null || data.image === '') {
-          $('.js-bgpicker-cover-color').css({'opacity' : 1});
-        } else {
-          $('.js-bgpicker-cover-color').css({'opacity' : 0.5});
+        
+        if (colObj) {
+          if (data.image === null || data.image === '') {
+            $('.js-bgpicker-cover-color').css({'background-color' : 'rgb('+ colObj.r +','+ colObj.g +','+ colObj.b+')' });
+          }
+          else {
+            $('.js-bgpicker-cover-color').css({'background-color' : 'rgba('+ colObj.r +','+ colObj.g +','+ colObj.b+', 0.5)' });
+          }
         }
-
-        if (data.color === false) {
+        else {
           $('.js-bgpicker-cover-color').css({'background-color' : 'transparent'});
         }
+        
+        
       },
 
       commit: function(data) {
+        
+        var colObj = colObj = getRGBA(data.color) || '';
+        
+        console.log(colObj);
         pageData.set({
           'cover_image': data.image || '',
-          'cover_color': data.color || ''
+          'cover_color': data.color || '',
+          'cover_color_obj' : colObj
         });
       }
     });
+    
+    var getRGBA = function(colorStr) {
+        if (!colorStr || typeof colorStr !== 'string') {
+           return;
+        }
+
+        var arr = colorStr.match(/(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,?\s*([\d\.]+)?\s*)/);
+        if (arr) {
+            return {
+                r: +arr[2],
+                g: +arr[3],
+                b: +arr[4],
+                a: (arr[5]) ? +arr[5] : 1
+            };
+        }
+    };
 
   </script>
 {% endeditorjsblock %}

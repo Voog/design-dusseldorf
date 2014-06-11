@@ -52,20 +52,7 @@
             var $el = $(this).hide();
             $(this).closest('.comment-form').find('.form_area').show().find('textarea').focus();
         });
-        
-        if ($('body').hasClass('front-page')) {
-            handleResize();
-            $(window).on('resize', handleResize);
-        }
     });
-    
-    var handleResize = function() {
-        var $el = $('.js-bgpicker-cover-image, .js-bgpicker-cover-color').css('min-height', '0px');
-            wh = $(window).height(),
-            wrap_h = $('.wrap').height(),
-            h = wrap_h > wh ? wrap_h : wh;
-        $el.css('min-height', h + 'px');
-    };
    
 })(jQuery);
 

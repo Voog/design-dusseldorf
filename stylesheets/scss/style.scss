@@ -28,20 +28,18 @@ html, body {
   height: 100% !important;
   
 }
+
 @media screen and (min-width: $break-large) {
-  html,body {
-    font-size: $font-size-big;
-  }
+  html,body { font-size: $font-size-big; }
 }
 body {
   color: $main-color;
   text-align: left;
-  background: $bg-color;
+  background: white;
   min-width: 1000px;
   -webkit-text-size-adjust: none;
   position: relative;
-  @include box-sizing(border-box); 
-  &.editmode { padding-bottom: 40px; }
+  @include box-sizing(border-box);
 }
 a { 
   text-decoration: none; color: $link-color; 
@@ -185,19 +183,19 @@ pre {
 /* layout */
   
   .wrap { 
-    min-height: 100%; height: 100%; width: 100%;
-    display: table; hasLayout: true; zoom: 1; position: relative; 
+    min-height: 100%; height: 100%;
   }
-  .wrap-inner { display: table-row; }
-    
+  
   .sidebar { 
-    width: $side-width; min-width: $side-width; max-width: $side-width; background: white; 
-    padding: 30px 30px 180px 30px; display: table-cell; vertical-align: top;
-    @include box-sizing(border-box);
+    width: $side-width; float: left; min-height: 100%;
+    
     
     @media screen and (min-width: $break-large) {
       width: 20%;
     }
+    
+    .sidebar-inner { padding: 30px 30px 180px 30px; }
+    
     .site-title {
       text-transform: uppercase; font-size: 36px; line-height: 1.05; vertical-align: top;
       font-family: $font-secondary; color: $main-color; padding-top: 25px;
@@ -207,10 +205,14 @@ pre {
     }
   }
   .main { 
-    position: relative; display: table-cell; vertical-align: top; height: 100%;
+    background: $bg-color; margin-left: $side-width; position: relative;
+    
+    
+    @media screen and (min-width: $break-large) {
+      margin-left: 20%;
+    }
   }
-  .main-inner { 
-    min-height: 100%; position: relative; z-index: 10; 
+  .main-inner {
     .front-page & {
       @include color(white, 0.8);
       h1,h2,h3 {
@@ -221,15 +223,15 @@ pre {
   
   .inner {
     width: $content-width;
+    
     @media screen and (min-width: $break-large) {
-      width: 60%;
+      width: 75%;
     }
   }
   
-  .container-wrap { position: relative; z-index: 4; zoom: 1; }
+  .container-wrap { position: relative; z-index: 4;  }
   .container {
-    min-height: 100%; 
-    @include box-sizing(border-box);
+    float: left; width: 100%;
   }
 
 /* mainmenu */
@@ -418,8 +420,15 @@ pre {
 /* footer */
   .footer {
     @include box-sizing(border-box);
-    width: $side-width; position: absolute; bottom: 0; left: 0; 
-    padding: 30px; font-size: 11px; line-height: 1.6;
+    width: $side-width; position: absolute; bottom: 0; right: 100%;
+    font-size: 11px; line-height: 1.6;
+    
+    .footer-inner { padding: 20px 30px; }
+    
+    @media screen and (min-width: $break-large) {
+      width: 25%;
+    }
+    
   }
   
   .voog-reference { 
@@ -438,9 +447,10 @@ pre {
     background-image: url('../images/front.jpg?1');
   }
   
-  .js-bgpicker-cover-color { position: absolute; top: 0; left:0; right: 0; bottom: 0; z-index: 0; display: none; 
-  }
+  .js-bgpicker-cover-color { position: relative; }
   .rgba .js-bgpicker-cover-color { display: block; }
+  
+  .js-bgpicker-cover-settings { left: 0;}
   
   
 @media screen and (max-width: $break-small) {
@@ -450,8 +460,9 @@ pre {
   .wrap, .wrap-inner, .main { display: block !important; height: auto !important; }
   
   .sidebar { 
-    min-width: 0; width: auto; max-width: none; padding: 0; word-wrap: break-word; display: block;
-    min-height: 43px;
+    width: auto; max-width: none; padding: 0; word-wrap: break-word; display: block;
+    min-height: 43px; float: none; 
+    .sidebar-inner { padding: 0; }
     .site-title {
       font-size: 18px; padding: 12px 50px 12px 20px;
     }
@@ -459,7 +470,7 @@ pre {
   
   .lang-menu, .main-menu { display: none; }
   
-  .main { width: auto; }
+  .main { width: auto; margin: 0; }
   .inner { width: auto;}
   
   .container { 
@@ -501,7 +512,11 @@ pre {
     .comment-name-field { margin-right: 0px; }
   }
   
-  .footer { display: block; position: static; bottom: auto; left: auto; padding: 20px; width: auto; }
+  .footer { 
+    display: block; position: static; bottom: auto; 
+    left: auto; padding: 20px; width: auto; background: white;
+    .footer-inner { padding: 20px; }
+  }
   
   /* mobile-menu */
   

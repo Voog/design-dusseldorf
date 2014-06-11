@@ -4,15 +4,14 @@
   {% include "html-head" %}
 </head>
 <body{% if editmode %} class="editmode"{% endif %}>
-  <div class="wrap">
-    <div class="wrap-inner">
-      <aside class="sidebar">
-        {% include "sidebar" %}
-      </aside>
-      <main class="main">
+  <div class="wrap cfx">
+    <aside class="sidebar">
+      {% include "sidebar" %}
+    </aside>
+    <div class="main">
+      <div class="container-wrap cfx">
         <div class="container">
           <div class="inner">
-            
             <nav class="sub-menu tag-list">
               {% if site.has_language_tags? %}
               <ul>
@@ -45,9 +44,9 @@
             {% endfor %}
           </section>
         </div>
-      </main>
+      </div>
+      {% include "footer" %}
     </div>
-    {% include "footer" %}
   </div> 
   {% include "mobilemenu" %}
   {% include "javascripts" %}

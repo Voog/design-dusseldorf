@@ -4,13 +4,13 @@
   {% include "html-head" %}
 </head>
 <body{% if editmode %} class="editmode"{% endif %}>
-  <div class="wrap">
-    <div class="wrap-inner">
-      <aside class="sidebar">
-        {% include "sidebar" %}
-      </aside>
-      <main class="main">
-        <div class="inner">
+  <div class="wrap cfx">
+    <aside class="sidebar">
+      {% include "sidebar" %}
+    </aside>
+    <div class="main">
+      <div class="inner">
+        <div class="container-wrap cfx">
           <div class="container">
             {% include "submenu" %}
             <section class="content cfx formatted">
@@ -18,9 +18,9 @@
             </section>
           </div>
         </div>
-      </main>
+      </div>
+      {% include "footer" %}
     </div>
-    {% include "footer" %}
   </div> 
   {% include "mobilemenu" %}
   {% include "javascripts" %}

@@ -5,13 +5,13 @@
 </head>
 <body{% if editmode %} class="editmode"{% endif %}>
 
-  <div class="wrap">
-    <div class="wrap-inner">
-      <aside class="sidebar">
-        {% include "sidebar" %}
-      </aside>
-      <main class="main">
-        <div class="inner">
+  <div class="wrap cfx">
+    <aside class="sidebar">
+      {% include "sidebar" %}
+    </aside>
+    <div class="main">
+      <div class="inner">
+        <div class="container-wrap cfx">
           <div class="container">
             
             <nav class="sub-menu tag-list">
@@ -55,7 +55,7 @@
             </section>
           </div>
         </div>
-      </main>
+      </div>
     </div>
     {% include "footer" %}
   </div> 

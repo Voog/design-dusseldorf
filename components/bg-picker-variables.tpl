@@ -6,11 +6,6 @@
     {% assign bg_image = page.data.cover_image %}
   {% endif %}
 
-  {% if page.data.cover_color == nil %}
-    {% assign bg_color = '' %}
-  {% else %}
-    {% assign bg_color = page.data.cover_color %}
-  {% endif %}
 
   <!-- Builds style tag for background image -->
   {% assign bg_image_style = '' %}
@@ -26,16 +21,21 @@
 
   <!-- Builds style tag for background color -->
   {% assign bg_color_style = "" %}
-  {% unless page.data.cover_color == nil %}
+  {% unless page.data.cover_color_obj == nil %}
+    {% assign bg_color_obj = page.data.cover_color_obj %}
+    
     {% assign bg_color_style = ' style="background-color: ' %}
     {% if page.data.cover_color == '' %}
       {% assign bg_color_style = bg_color_style | append: 'none' %}
     {% else %}
-      {% assign bg_color_style = bg_color_style | append: page.data.cover_color %}
+      
       {% if page.data.cover_image == '' %}
-        {% assign bg_color_style = bg_color_style | append: '; opacity: 1' %}
+        {% assign bg_color_style = bg_color_style | append: "rgb(" | append: bg_color_obj.r | append: "," | append: bg_color_obj.g | append: "," | append: bg_color_obj.b | append: ")" %}
       {% else %}
-        {% assign bg_color_style = bg_color_style | append: '; opacity: 0.5' %}
+        
+        
+        {% assign bg_color_style = bg_color_style | append: "rgba(" | append: bg_color_obj.r | append: "," | append: bg_color_obj.g | append: "," | append: bg_color_obj.b | append: ",0.5)" %}
+        
       {% endif %}
     {% endif %}
     {% assign bg_color_style = bg_color_style | append: ';"' %}
