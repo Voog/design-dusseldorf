@@ -243,7 +243,7 @@ pre {
     }
     
     .topbar & {
-      padding: 27px 0 0 30px; max-width: 510px;
+      padding: 27px 0 0 30px; max-width: 510px; overflow: hidden; white-space: nowrap;
     }
   }
 
