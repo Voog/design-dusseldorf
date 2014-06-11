@@ -961,6 +961,9 @@ table th {
   .topbar {
     display: block;
   }
+  .topbar .site-title {
+    padding-left: 20px;
+  }
 
   .main {
     padding-top: 90px;
@@ -972,6 +975,8 @@ table th {
   }
   .sidebar .sidebar-inner {
     padding-top: 90px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .sidebar .site-title {
     display: none;
@@ -997,6 +1002,9 @@ table th {
 
   .footer {
     width: 200px;
+  }
+  .footer .footer-inner {
+    padding: 20px;
   }
 }
 @media screen and (max-width: 600px) {

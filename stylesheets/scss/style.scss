@@ -472,13 +472,17 @@ blockquote { margin: 20px 40px; }
 @media screen and (min-width: $break-small + 1px) and (max-width: $break-middle) {
   
   body { min-width: 0; }
-  .topbar { display: block; }
+  .topbar { 
+    display: block; 
+    .site-title { padding-left: 20px; }
+  }
   .main { padding-top: 90px; margin-left: $side-width-small; }
+  
   
   .sidebar {
     width: $side-width-small;
     .sidebar-inner {
-      padding-top: 90px;
+      padding-top: 90px; padding-left: 20px; padding-right: 20px; 
     }
     
     .site-title { display: none; }
@@ -490,7 +494,10 @@ blockquote { margin: 20px 40px; }
   .lang-menu { left: auto; right: 25px; }
   .lang-menu-popover { left: auto; right: -12px; }
   
-  .footer { width: $side-width-small; }
+  .footer { 
+    width: $side-width-small; 
+    .footer-inner { padding: 20px; }
+  }
 }
 
 @media screen and (max-width: $break-small) {
