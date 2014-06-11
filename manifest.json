@@ -109,6 +109,13 @@
       "file": "components/submenu.tpl",
       "layout_name": "",
       "title": "submenu"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/topbar.tpl",
+      "layout_name": "",
+      "title": "topbar"
     }
   ],
   "assets": [

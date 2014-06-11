@@ -7,6 +7,8 @@
 </head>
 <body class="front-page{% if editmode %} editmode{% endif %}">
   <div class="wrap cfx">
+    {% include "langmenu" %}
+    {% include "topbar" %}
     <aside class="sidebar">
       {% include "sidebar" %}
     </aside>

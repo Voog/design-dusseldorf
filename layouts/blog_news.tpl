@@ -5,6 +5,8 @@
 </head>
 <body{% if editmode %} class="editmode"{% endif %}>
   <div class="wrap cfx">
+    {% include "langmenu" %}
+    {% include "topbar" %}
     <aside class="sidebar">
       {% include "sidebar" %}
     </aside>

@@ -7,6 +7,8 @@
 
   <div class="wrap cfx">
     <aside class="sidebar">
+      {% include "langmenu" %}
+      {% include "topbar" %}
       {% include "sidebar" %}
     </aside>
     <div class="main">
