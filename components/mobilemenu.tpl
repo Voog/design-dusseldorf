@@ -12,6 +12,7 @@
     {% for language in site.languages %}
     <li><a class="{% if language.selected? %} active{% endif %}" href="{{ language.url }}">{{ language.title }}</a></li>
     {% endfor %}
+    {% if editmode %}<li>{% languageadd %}</li>{% endif %}
     </ul>
   </div>
   {% endif %}
@@ -25,6 +26,9 @@
       {% for item in site.visible_menuitems %}
         <li><a href="{{ item.url }}" {% if item.selected? %} class="active"{% endif %}{% unless item.translated? %} class="fci-editor-menuadd untranslated"{% endunless %}>{{ item.title }}</a></li>
       {% endfor %}
+      {% if editmode %}
+        <li>{% menuadd %}</li>
+      {% endif %}
     </ul>
   </div>
 </div>

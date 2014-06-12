@@ -42,7 +42,6 @@
             else {
                 $('body').removeClass('mobilemenu-open');
             }
-            
         });
         
         $('.language-menu-btn').on('click', function(event) {
@@ -54,7 +53,20 @@
             var $el = $(this).hide();
             $(this).closest('.comment-form').find('.form_area').show().find('textarea').focus();
         });
+        
+        if ($('body').hasClass('editmode')) {
+            setTitlebox();
+            $(window).resize(setTitlebox);
+        }
     });
+    
+    
+    var setTitlebox = function() {
+        var $c = $('.site-title:visible');
+        if ($c.is(':empty')) {
+            $('.site-title-editable').appendTo($c);
+        }
+    };
    
 })(jQuery);
 

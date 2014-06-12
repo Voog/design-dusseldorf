@@ -5,7 +5,7 @@
   {% include "html-head" %}
   {% include "bg-picker-variables" %}
 </head>
-<body class="front-page{% if editmode %} editmode{% endif %}">
+<body class="front-page{% if editmode %} editmode{% endif %}{% if site.search.enabled %} search-enabled{% endif %}">
   <div class="wrap cfx">
     {% include "langmenu" %}
     {% include "topbar" %}

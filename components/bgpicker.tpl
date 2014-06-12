@@ -36,7 +36,6 @@
         
         var colObj = colObj = getRGBA(data.color) || '';
         
-        console.log(colObj);
         pageData.set({
           'cover_image': data.image || '',
           'cover_color': data.color || '',

@@ -3,19 +3,17 @@
 <head>
   {% include "html-head" %}
 </head>
-<body{% if editmode %} class="editmode"{% endif %}>
-
+<body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
   <div class="wrap cfx">
+    {% include "langmenu" %}
+    {% include "topbar" %}
     <aside class="sidebar">
-      {% include "langmenu" %}
-      {% include "topbar" %}
       {% include "sidebar" %}
     </aside>
     <div class="main">
       <div class="inner">
         <div class="container-wrap cfx">
           <div class="container">
-            
             <nav class="sub-menu tag-list">
               {% if article.tags.size > 0 %}
               <ul>
@@ -25,8 +23,6 @@
               </ul>
               {% endif %}
             </nav>
-            
-            
             <header class="post-header">
               <h1>{% editable article.title %} <time class="post-date" datetime="{{ article.created_at | date : "%Y-%m-%d" }}">{{ article.created_at | date : "%d.%m" }}</time></h1>
             </header>

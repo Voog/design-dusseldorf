@@ -3,7 +3,7 @@
 <head>
   {% include "html-head" %}
 </head>
-<body{% if editmode %} class="editmode"{% endif %}>
+<body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
   <div class="wrap cfx">
     {% include "langmenu" %}
     {% include "topbar" %}

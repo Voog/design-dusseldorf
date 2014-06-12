@@ -17,7 +17,7 @@
       "component": false,
       "file": "layouts/blog_news.tpl",
       "layout_name": "page_default",
-      "title": "Blog & News"
+      "title": "Blog news"
     },
     {
       "content_type": "page",
@@ -37,35 +37,35 @@
       "content_type": "component",
       "component": true,
       "file": "components/bg-picker-variables.tpl",
-      "layout_name": "",
+      "layout_name": "bg-picker-variables",
       "title": "bg-picker-variables"
     },
     {
       "content_type": "component",
       "component": true,
       "file": "components/bgpicker.tpl",
-      "layout_name": "",
+      "layout_name": "bgpicker",
       "title": "bgpicker"
     },
     {
       "content_type": "component",
       "component": true,
       "file": "components/comment-form.tpl",
-      "layout_name": "",
-      "title": "Comment-form"
+      "layout_name": "comment-form",
+      "title": "comment-form"
     },
     {
       "content_type": "component",
       "component": true,
       "file": "components/footer.tpl",
-      "layout_name": "",
+      "layout_name": "footer",
       "title": "footer"
     },
     {
       "content_type": "component",
       "component": true,
       "file": "components/html-head.tpl",
-      "layout_name": "",
+      "layout_name": "html-head",
       "title": "html-head"
     },
     {
@@ -86,35 +86,42 @@
       "content_type": "component",
       "component": true,
       "file": "components/mainmenu.tpl",
-      "layout_name": "",
+      "layout_name": "mainmenu",
       "title": "mainmenu"
     },
     {
       "content_type": "component",
       "component": true,
       "file": "components/mobilemenu.tpl",
-      "layout_name": "",
-      "title": "Mobilemenu"
+      "layout_name": "mobilemenu",
+      "title": "mobilemenu"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/search.tpl",
+      "layout_name": "search",
+      "title": "search"
     },
     {
       "content_type": "component",
       "component": true,
       "file": "components/sidebar.tpl",
-      "layout_name": "",
+      "layout_name": "sidebar",
       "title": "sidebar"
     },
     {
       "content_type": "component",
       "component": true,
       "file": "components/submenu.tpl",
-      "layout_name": "",
+      "layout_name": "submenu",
       "title": "submenu"
     },
     {
       "content_type": "component",
       "component": true,
       "file": "components/topbar.tpl",
-      "layout_name": "",
+      "layout_name": "topbar",
       "title": "topbar"
     }
   ],
@@ -124,6 +131,18 @@
       "file": "assets/ico-flags.svg",
       "kind": "assets",
       "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "application/json",
+      "file": "assets/page1.json",
+      "kind": "assets",
+      "filename": "page1.json"
+    },
+    {
+      "content_type": "application/json",
+      "file": "assets/page2.json",
+      "kind": "assets",
+      "filename": "page2.json"
     },
     {
       "content_type": "image/png",
@@ -138,7 +157,7 @@
       "filename": "check_small.png"
     },
     {
-      "content_type": "image/jpg",
+      "content_type": "image/jpeg",
       "file": "images/front.jpg",
       "kind": "images",
       "filename": "front.jpg"
@@ -156,28 +175,46 @@
       "filename": "ico-flags.png"
     },
     {
-      "content_type": "text/javascript",
+      "content_type": "application/javascript",
+      "file": "javascripts/edicy-search.js",
+      "kind": "javascripts",
+      "filename": "edicy-search.js"
+    },
+    {
+      "content_type": "application/javascript",
       "file": "javascripts/jquery-1.11.0.min.js",
       "kind": "javascripts",
       "filename": "jquery-1.11.0.min.js"
     },
     {
-      "content_type": "text/javascript",
+      "content_type": "application/javascript",
       "file": "javascripts/main.js",
       "kind": "javascripts",
       "filename": "main.js"
     },
     {
-      "content_type": "text/javascript",
+      "content_type": "application/javascript",
       "file": "javascripts/modernizr.min.js",
       "kind": "javascripts",
       "filename": "modernizr.min.js"
     },
     {
-      "content_type": "text/css",
+      "content_type": "application/javascript",
+      "file": "javascripts/search.js",
+      "kind": "javascripts",
+      "filename": "search.js"
+    },
+    {
+      "content_type": "text/unknown",
       "file": "stylesheets/scss",
       "kind": "stylesheets",
       "filename": "scss"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/search.css",
+      "kind": "stylesheets",
+      "filename": "search.css"
     },
     {
       "content_type": "text/css",
