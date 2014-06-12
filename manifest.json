@@ -133,6 +133,12 @@
       "filename": "ico-flags.svg"
     },
     {
+      "content_type": "image/svg+xml",
+      "file": "assets/loader.svg",
+      "kind": "assets",
+      "filename": "loader.svg"
+    },
+    {
       "content_type": "application/json",
       "file": "assets/page1.json",
       "kind": "assets",
@@ -143,6 +149,12 @@
       "file": "assets/page2.json",
       "kind": "assets",
       "filename": "page2.json"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/search_close.svg",
+      "kind": "assets",
+      "filename": "search_close.svg"
     },
     {
       "content_type": "image/png",
@@ -173,6 +185,12 @@
       "file": "images/ico-flags.png",
       "kind": "images",
       "filename": "ico-flags.png"
+    },
+    {
+      "content_type": "image/png",
+      "file": "images/search-close.png",
+      "kind": "images",
+      "filename": "search-close.png"
     },
     {
       "content_type": "application/javascript",
@@ -209,12 +227,6 @@
       "file": "stylesheets/scss",
       "kind": "stylesheets",
       "filename": "scss"
-    },
-    {
-      "content_type": "text/css",
-      "file": "stylesheets/search.css",
-      "kind": "stylesheets",
-      "filename": "search.css"
     },
     {
       "content_type": "text/css",

@@ -679,7 +679,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   top: 5px;
   left: 12px;
 }
-.lang-menu a.lang-flag.active:hover {
+.lang-menu a.lang-flag.active, .lang-menu a.lang-flag:hover {
   background-color: #cccccc;
 }
 .lang-menu a.lang-flag:hover {
@@ -962,11 +962,16 @@ table th {
 /* search */
 .search {
   padding-bottom: 20px;
+  position: relative;
 }
 .search .search-box {
   background: #e5e5e5;
   position: relative;
-  padding: 0 30px 0 10px;
+  padding: 0 40px 0 10px;
+  overflow: hidden;
+}
+.search .search-box.search-box-focus {
+  background-color: #f9ec5a;
 }
 .search .search-input {
   outline: 0;
@@ -979,15 +984,142 @@ table th {
   background: none;
 }
 .search .search-close {
+  height: 30px;
+  width: 30px;
   display: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  right: 0;
+  background: url("../images/search-close.png") no-repeat center center;
+}
+.voog-search-visible .search .search-close {
+  display: block;
+}
+.search:after {
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(229, 229, 229, 0);
+  border-right-color: #e5e5e5;
+  border-width: 18px;
+  display: none;
+  right: -30px;
+  top: -2px;
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .search:after {
+    right: -20px;
+  }
+}
+.voog-search-visible .search:after {
+  display: block;
 }
 
-@media screen and (max-width: 1000px) {
+/* search-container */
+.voog-search-container {
+  background: #e5e5e5;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  width: 0px;
+  opacity: 0;
+  display: block;
+  margin-left: 280px;
+  transition: opacity 0.1s ease-in, width 0.3s ease-in;
+  /*display: block; width: $search-width;*/
+}
+@media screen and (min-width: 1500px) {
+  .voog-search-container {
+    margin-left: 20%;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .voog-search-container {
+    margin-left: 200px;
+    top: 90px;
+  }
+}
+.voog-search-visible .voog-search-container {
+  display: block;
+  z-index: 1000;
+  width: 300px;
+  opacity: 1;
+}
+
+.voog-search-inner {
+  width: 300px;
+  height: 100%;
+  overflow: auto;
+}
+
+.voog-search-loader {
+  display: block;
+  height: 100%;
+}
+.svg .voog-search-loader {
+  background: url("../assets/loader.svg") no-repeat center center;
+}
+
+.voog-search-results {
+  display: none;
+  padding: 20px 0;
+}
+
+.voog-search-noresults {
+  height: 100%;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+.voog-search-noresults div {
+  display: table-cell;
+  vertical-align: middle;
+  color: #848484;
+  text-align: center;
+  padding: 40px;
+}
+.voog-search-noresults.voog-search-noresults-visible {
+  display: table;
+}
+
+.voog-search-result {
+  padding: 12px 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.voog-search-result .voog-search-result-title {
+  font-size: 16px;
+  margin: 0;
+  padding: 0 0 12px;
+}
+.voog-search-result .voog-search-result-link {
+  color: #222222;
+}
+.voog-search-result .voog-search-result-link:hover {
+  color: #222222;
+  color: rgba(34, 34, 34, 0.8);
+}
+.voog-search-result .voog-search-result-content {
+  margin: 0;
+  padding: 0;
+}
+.voog-search-result em {
+  background: #f9ec5a;
+  font-style: normal;
+}
+
+@media screen and (max-width: 1024px) {
   .site-title br {
     display: none;
   }
 }
-@media screen and (min-width: 601px) and (max-width: 1000px) {
+@media screen and (min-width: 601px) and (max-width: 1024px) {
   body {
     min-width: 0;
   }
@@ -1060,6 +1192,10 @@ table th {
   .wrap, .wrap-inner, .main {
     display: block !important;
     height: auto !important;
+  }
+
+  .search, .voog-search-container {
+    display: none !important;
   }
 
   .sidebar {

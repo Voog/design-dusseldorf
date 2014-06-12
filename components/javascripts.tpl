@@ -7,10 +7,11 @@
 <script>
 
   $(function() {
-    var search = new VoogSearch($('.js-search-form').get(0), {
+    var search = new VoogSearch($('.js-search-form'), {
       per_page: 3,
       lang: '{{ page.language_code }}',
-      noResults: 'No results found!'
+      noResults: '{{ "search_noresults"|lc }}',
+      minChars: 2
     });
   });
 </script>

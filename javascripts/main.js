@@ -1,8 +1,6 @@
 ;(function($) {    
     
     $(function() {
-        
-        //alert($(window).width());
         $('.js-popup-menu').jsPopupMenu();
         
         if ($('html').hasClass('no-placeholder')) {

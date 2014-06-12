@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" id="viewport-meta" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="viewport" id="viewport-meta" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 <meta name="keywords" content="{{ page.keywords }}">
 <meta name="description" content="{{ page.description }}">
@@ -20,7 +20,6 @@
 {% if editmode %}{% stylesheet_link "assets/admin/editmode.css" static_host="true" %}{% endif %}
 
 {% stylesheet_link "style.css?2" %}
-{% if site.search.enabled %}{% stylesheet_link "search.css" %}{% endif %}
 
 <title>{% if article %}{{ article.title }} &mdash; {{ page.site_title }}{% else %}{% if site.root_item.selected? %}{{ page.site_title }}{% else %}{{ page.title }} &mdash; {{ page.site_title }}{% endif %}{% endif %}</title>
 

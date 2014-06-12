@@ -1,14 +1,17 @@
 ;(function($) {
     var searcherUIdefaults = {
         lang: 'en',
-        resultTpl: '<div class="voog-search-modal-result"><h3 class="voog-search-title"><a class="voog-search-link" href="[[url]]">[[title]]</a></h3><p class="voog-search-content">[[content]]</p></div>',
-        modalTpl: '<div class="voog-search-modal"><div class="voog-search-modal-results"></div><div class="voog-search-loader"></div></div>',
-        noResults: 'No results found!'
+        resultTpl: '<div class="voog-search-result"><h3 class="voog-search-result-title"><a class="voog-search-result-link" href="[[url]]">[[title]]</a></h3><p class="voog-search-result-content">[[content]]</p></div>',
+        modalTpl: '<div class="voog-search-container"><div class="voog-search-inner"><div class="voog-search-results"></div><div class="voog-search-noresults"></div><div class="voog-search-loader"></div></div></div>',
+        noResults: 'No results found!',
+        minChars : 3,
+        $parent: $('body'),
+        closeOnSideClick: true
     };
 
-    var SearcherUI = function (el, options) {
-        //this.el = el;
-        //this.options = $.extend({}, searcherUIdefaults, options);
+    var SearcherUI = function ($el, options) {
+        this.$el = $el;
+        this.options = $.extend({}, searcherUIdefaults, options);
         this.init();
     };
 
@@ -16,180 +19,178 @@
 
         init: function() {
             
-            //this.input = this.el.querySelector('input[type="search"], input[type="text"]');
+            this.$input = this.$el.find('input[type="search"], input[type="text"]');
+            this.$modal = this.createModal();
+            this.$content = this.$modal.find('.voog-search-inner');
+            this.$loader = this.$modal.find('.voog-search-loader');
+            this.$results = this.$modal.find('.voog-search-results');
+            this.$noresults = this.$modal.find('.voog-search-noresults');
+            this.$clearbtn = this.$el.find('.js-search-close');
+            this.searcher = new VoogSearchSDK(this.filterParams(this.options), $.proxy(this.handleSearchResult, this));
+            
+            this.$el.on('submit', $.proxy(this.handleSubmit, this));
+            this.$input.on('keyup', $.proxy(this.handleInputKeyup, this));
+            this.$input.on('focus', $.proxy(this.handleInputFocus, this));
+            this.$input.on('blur', $.proxy(this.handleInputBlur, this));
+            this.$clearbtn.on('click', $.proxy(this.handleClearButtonClick, this));
+            this.$content.on('scroll', $.proxy(this.handleModalScroll, this));
+        },
+        createModal: function() {
+            var $modal = $(this.options.modalTpl);
+            $modal.appendTo(this.options.$parent);
 
-            //this.modal = this.createModal();
-            //this.searcher = new VoogSearchSDK(this.filterParams(this.options), proxy(this.handleSearchResult, this));
-            //observe(this.el, "submit", proxy(this.handleSubmit, this));
-            //observe(this.input, "keyup", proxy(this.handleInputKeyUp, this));
-            //observe(this.el, "reset", proxy(this.handleInputKeyUp, this));
+            return $modal;
+        },
+        
+        filterParams: function(p) {
+            var allowed = ['per_page', 'page', 'lang', 'q', 'types', 'tags', 'path', 'tag_facets'],
+                o = {};
+            for (var i = allowed.length; i--;) {
+                if (typeof p[allowed[i]] !== "undefined") {
+                    o[allowed[i]] = p[allowed[i]];
+                }
+            }
+            return o;
+        },
+        
+        handleSubmit: function(event) {
+            event.preventDefault();
+            
+            var oldVal = this.$input.data('oldValue') || '',
+                newVal = this.$input.val();
+                
+            if (newVal != oldVal && newVal.length >= this.options.minChars) {
+                this.$input.data('oldValue', newVal);
+                this.doSearch();
+            } 
+            
+            return false;
+        },
+        
+        handleInputKeyup: function(event) {
+            var oldVal = this.$input.data('oldValue') || '',
+                newVal = this.$input.val();
+                
+            if (newVal != oldVal && newVal.length >= this.options.minChars) {
+                this.$input.data('oldValue', newVal);
+                this.doSearch();
+            } 
+        },
+        
+        handleInputFocus: function() {
+            this.$el.find('.search-box').addClass('search-box-focus');
+        },
+        
+        handleInputBlur: function() {
+            if (!$('body').hasClass('voog-search-visible')) {
+                this.$el.find('.search-box').removeClass('search-box-focus');
+            }
+        },
+        
+        handleSideClick: function(event) {
+            if (!$.contains(this.$modal.get(0), event.target) && event.target !== this.$modal.get(0) && event.target !== this.$input.get(0)) {
+                this.reset();
+            }
+            
+        },
+        
+        handleClearButtonClick: function(event) {
+            event.preventDefault();
+            this.reset();
+        },
+        
+        handleModalScroll: function(event) {
+            var y = this.$content.scrollTop();
+                maxy = this.$content.get(0).scrollHeight - this.$content.get(0).offsetHeight,
+                treshold = 10;
+                
+             
+            
+            if (y >= maxy - 10 && !this.loading_active && this.pageLinks && this.pageLinks.page < this.pageLinks.total) {
+                this.fetchNextPage();
+            }
+        },
+        
+        doSearch: function() {
+            clearTimeout(this.timeout);
+            this.timeout = setTimeout($.proxy(function() {
+                
+                var showLoader = true,
+                    val = this.$input.val();
+                if (!$('body').hasClass('voog-search-visible')) {
+                    $('body').addClass('voog-search-visible');
+                    if (this.options.closeOnSideClick) {
+                        $(document).on('click.voog-search-sideclick', $.proxy(this.handleSideClick, this));
+                    }
+                    
+                    showLoader = true;
+                }
+                
+                this.setLoader(showLoader);
+                
+                //this.searcher.abort();
+                this.loading_active = true;
+                this.searcher.query({
+                    q: val
+                });
+                
+            }, this), 200);
+        },
+        
+        setLoader: function(showLoader) {
+            this.$results.empty().hide();
+            this.$noresults.removeClass('voog-search-noresults-visible');
+            if (showLoader) { this.$loader.show(); }
+        },
+        
+        unsetLoader: function() {
+            this.$loader.hide();
+        },
+        
+        hideSearch: function() {
+            $('body').removeClass('voog-search-visible');
+            this.$el.find('.search-box').removeClass('search-box-focus');
+            $(document).off('click.voog-search-sideclick');
+        },
+        
+        reset: function() {
+            this.$input.data('oldValue', '').val('');
+            this.hideSearch();
+        },
+        
+        handleSearchResult: function(data) {
+            this.loading_active = false;
+            this.pageLinks = data.pages;
+            this.renderContent(data.result);
+            this.unsetLoader();
+            this.testScroll();
+        },
+        
+        renderContent: function(results) {
+            if(results.length) {
+                this.$results.show();
+                for (var i = 0, max = results.length; i< max; i++) {
+                    
+                    var resultHtml = this.options.resultTpl.replace(/\[\[url\]\]/g, results[i].path).replace(/\[\[title\]\]/g, results[i].title).replace(/\[\[content\]\]/g, results[i].description);
+                    this.$results.append($(resultHtml));
+                }
+            } else {
+                this.$noresults.addClass('voog-search-noresults-visible').append('<div>' + this.options.noResults + '</div>').show();
+            }   
+        },
+        
+        fetchNextPage: function() {
+            this.loading_active = true;
+            this.pageLinks.next();
+        },
+        
+        testScroll: function() {            
+            if (this.$content.get(0).offsetHeight === this.$content.get(0).scrollHeight) {
+                if (!this.loading_active && this.pageLinks && this.pageLinks.page < this.pageLinks.total) {
+                    this.fetchNextPage();
+                }
+            }
         }
-        //,
-        //
-        //handleSubmit: function(event) {
-        //    event.preventDefault();
-        //    this.setLoading();
-        //
-        //    var val = this.input.value,
-        //        resultEl = this.modal.querySelector('.voog-search-modal-results');
-        //
-        //    resultEl.innerHTML = '';
-        //
-        //    if (val) {
-        //        this.searcher.query({
-        //            q: val
-        //        });
-        //    } else {
-        //        this.hideModal();
-        //    }
-        //    return false;
-        //},
-        //
-        //setLoading: function() {
-        //    this.loading_active = true;
-        //    this.modal.className = this.modal.className.replace('loading', '').trim();
-        //    this.modal.className = this.modal.className + ' loading';
-        //},
-        //
-        //unsetLoading: function() {
-        //    this.modal.className = this.modal.className.replace('loading', '').trim();
-        //    this.loading_active = false;
-        //},
-        //
-        //// Not all options are to be sent to search as params sdk
-        //filterParams: function(p) {
-        //    var allowed = ['per_page', 'page', 'lang', 'q', 'types', 'tags', 'path', 'tag_facets'],
-        //        o = {};
-        //    for (var i = allowed.length; i--;) {
-        //        if (typeof p[allowed[i]] !== "undefined") {
-        //            o[allowed[i]] = p[allowed[i]];
-        //        }
-        //    }
-        //    return o;
-        //},
-        //
-        //handleSearchResult: function(data) {
-        //    this.pageLinks = data.pages;
-        //    this.renderContent(data.result);
-        //    this.showModal();
-        //    this.unsetLoading();
-        //},
-        //
-        //createModal: function() {
-        //    var modal = createElements(this.options.modalTpl)[0];
-        //    observe(modal, 'scroll', proxy(this.handleModalScroll, this));
-        //    observe(modal, ['mousewheel', 'DOMMouseScroll'], proxy(this.handleMouseWheel, this));
-        //    return modal;
-        //},
-        //
-        //showModal: function() {
-        //    var pos = offset(this.input),
-        //        wSize= windowSize();
-        //
-        //    this.modal.style.visibility = "hidden";
-        //    document.body.appendChild(this.modal);
-        //
-        //    var w = this.modal.offsetWidth,
-        //        h = this.modal.offsetHeight;
-        //
-        //    this.modal.style.left = Math.min(Math.max(pos.left + ((pos.width - w)/2) , wSize.scrollLeft + 10), wSize.scrollLeft + wSize.width - w - 10) + 'px';
-        //
-        //    if (wSize.height + wSize.scrollTop < pos.top + pos.height + h) {
-        //        this.modal.style.top = Math.max(pos.top - h, 0) + 'px';
-        //    } else {
-        //        this.modal.style.top = Math.max(pos.top + pos.height, 0) + 'px';
-        //    }
-        //
-        //    this.modal.style.visibility = "visible";
-        //
-        //    if(!this.sideClickHandler) {
-        //        this.sideClickHandler = observe(document, 'click', proxy(this.handleSideClick, this));
-        //    }
-        //    if(!this.resizeHandler) {
-        //        this.resizeHandler = observe(window, 'resize', proxy(this.handleResize, this));
-        //    }
-        //},
-        //
-        //hideModal: function() {
-        //    var parent = this.modal.parentNode;
-        //    if (!parent) { return; }
-        //    parent.removeChild(this.modal);
-        //
-        //    if(this.sideClickHandler) {
-        //        this.sideClickHandler.stop();
-        //        this.sideClickHandler = null;
-        //    }
-        //
-        //    if(this.resizeHandler) {
-        //        this.resizeHandler.stop();
-        //        this.resizeHandler = null;
-        //    }
-        //},
-        //
-        //handleModalScroll: function(event) {
-        //    var y = this.modal.scrollTop,
-        //        maxy = this.modal.scrollHeight - this.modal.offsetHeight,
-        //        treshold = 10;
-        //
-        //    if (y >= maxy - 10 && !this.loading_active && this.pageLinks && this.pageLinks.page < this.pageLinks.total) {
-        //        this.fetchNextPage();
-        //    }
-        //},
-        //
-        //// stops page behind from scrolling if search rsults scroll is at bottom
-        //handleMouseWheel: function(event) {
-        //    var delta = event.wheelDeltaY/2 || event.detail * -10,
-        //        y = this.modal.scrollTop,
-        //        maxy = this.modal.scrollHeight - this.modal.offsetHeight;
-        //
-        //    if ((y >= maxy && delta < 0) || (y <= 0 && delta > 0)) {
-        //        event.stopPropagation();
-        //        event.preventDefault();
-        //    }
-        //},
-        //
-        //fetchNextPage: function() {
-        //    this.setLoading();
-        //    this.pageLinks.next();
-        //},
-        //
-        //handleSideClick: function(event) {
-        //    if (event.target !== this.input && event.target !== this.modal && !contains(this.modal, event.target)) {
-        //        this.hideModal();
-        //    }
-        //},
-        //
-        //handleResize: function(event) {
-        //    if (this.modal.parentNode) {
-        //        this.showModal();
-        //    }
-        //},
-        //
-        //renderContent: function(results) {
-        //    var resultEl = this.modal.querySelector('.voog-search-modal-results');
-        //    this.modal.className = this.modal.className.replace('no-content', '').trim();
-        //
-        //    if(results.length) {
-        //        for (var i = 0, max = results.length; i< max; i++) {
-        //            resultEl.appendChild(createElements(this.options.resultTpl.replace(/\[\[url\]\]/g, results[i].path)
-        //                                                  .replace(/\[\[title\]\]/g, results[i].title)
-        //                                                  .replace(/\[\[content\]\]/g, results[i].description))[0]);
-        //        }
-        //    } else {
-        //        resultEl.appendChild(document.createTextNode(this.options.noResults));
-        //        this.modal.className += ' no-content';
-        //    }
-        //},
-        //
-        //handleInputKeyUp: function(event) {
-        //    var that = this;
-        //    setTimeout(proxy(function() {
-        //        this.el.className = this.el.className.replace('not-empty', '').trim();
-        //        if (this.input.value && this.input.value !== "") {
-        //            this.el.className += ' not-empty';
-        //        }
-        //    }, this), 0);
-        //}
     };
     window.VoogSearch = SearcherUI;
 })(jQuery);

@@ -18,8 +18,10 @@ $side-width: 280px;
 $side-width-small: 200px;
 $content-width: $site-width - $side-width;
 
+$search-width: 300px;
+
 $break-small: 600px;
-$break-middle: 1000px;
+$break-middle: 1024px;
 $break-large: 1500px;
 
 
@@ -323,8 +325,8 @@ blockquote { margin: 20px 40px; }
       &.lang-flag {
         position: relative; display: block; padding: 5px 13px 5px 40px; @include color(#1b2124, 0.7);
         &:before { top: 5px; left: 12px; }
-        &.active {
-          &:hover { background-color: #cccccc; }
+        &.active, &:hover {
+           background-color: #cccccc;
         }
         &:hover {
           @include bg(#ccc, 0.5)
@@ -473,16 +475,105 @@ blockquote { margin: 20px 40px; }
 
 /* search */
   .search { 
-    padding-bottom: 20px; 
+    padding-bottom: 20px; position: relative;
     .search-box {
-      background: $bg-color; position: relative; padding: 0 30px 0 10px;
+      background: $bg-color; position: relative; padding: 0 40px 0 10px; overflow: hidden;
+      &.search-box-focus {
+        background-color: #f9ec5a;
+      }
     }
     .search-input { 
       outline: 0; padding: 5px 0; width: 100%; margin: 0; font: #{$font-size}/1.4 $font-main; 
       color: $main-color; border: none; background: none; 
     }
-    .search-close { display: none; }
+    .search-close { 
+      height: 30px; width: 30px; display: none;
+      position: absolute; top: 50%; margin-top: -15px; right: 0; 
+      background: url('../images/search-close.png') no-repeat center center;
+      
+      .voog-search-visible & {
+        display: block;
+      }
+    }
+    
+    &:after {
+       border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; 
+       border-color: rgba(229, 229, 229, 0); border-right-color: $bg-color; 
+       border-width: 18px; display: none;
+       right: -30px; top: -2px;
+       
+      @media screen and (min-width: $break-small + 1px) and (max-width: $break-middle) {
+        right: -20px;
+      }
+      .voog-search-visible & { display: block; }
+    }
   }
+  
+/* search-container */
+  .voog-search-container { 
+    background: $bg-color; position: fixed; top: 0; height: 100%; z-index: -1;
+    overflow: hidden; width: 0px; opacity: 0;display: block; margin-left: $side-width;
+   
+    transition: opacity 0.1s ease-in, width 0.3s ease-in;
+    
+    
+    @media screen and (min-width: $break-large) {
+      margin-left: 20%;
+    }
+    
+    @media screen and (min-width: $break-small + 1px) and (max-width: $break-middle) {
+      margin-left: $side-width-small; top: 90px;
+    }
+    
+    /*display: block; width: $search-width;*/
+    
+    .voog-search-visible & { 
+      display: block; z-index: 1000;
+      width: $search-width; opacity: 1;
+    }
+  }
+  .voog-search-inner { width: $search-width; height: 100%; overflow: auto; }
+  
+  .voog-search-loader { 
+    display: block; height: 100%;  
+    .svg & {
+      background: url('../assets/loader.svg') no-repeat center center;
+    }
+  }
+  
+  .voog-search-results {
+    display: none; padding: 20px 0;
+  }
+  
+  .voog-search-noresults {
+    height: 100%; height: 100%; width: 100%; display: none;
+    div {
+      display: table-cell; vertical-align: middle;
+      color: $third-color; text-align: center; padding: 40px;
+    }
+    
+    &.voog-search-noresults-visible { display: table; }
+  }
+  
+  .voog-search-result {
+    padding: 12px 18px; font-size: 14px; line-height: 1.5;
+    .voog-search-result-title { font-size: 16px; margin: 0; padding: 0 0 12px; }
+    .voog-search-result-link { 
+      color: $main-color;
+      &:hover {
+        @include color($main-color, 0.8);
+      }
+    }
+    .voog-search-result-content {
+      margin: 0; padding: 0;
+    }
+    
+    em { background: #f9ec5a; font-style: normal;}
+  }
+  
+  
+  
+  
 
 @media screen and (max-width: $break-middle) {
   .site-title {
@@ -530,6 +621,9 @@ blockquote { margin: 20px 40px; }
   
   body { min-width: 320px; background: white;}
   .wrap, .wrap-inner, .main { display: block !important; height: auto !important; }
+  
+  
+  .search, .voog-search-container { display: none !important;  }
   
   .sidebar { 
     width: auto; max-width: none; padding: 0; word-wrap: break-word; display: block;
