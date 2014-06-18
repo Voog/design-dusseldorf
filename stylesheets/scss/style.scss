@@ -482,7 +482,12 @@ blockquote { margin: 20px 40px; }
   
   .js-bgpicker-cover-settings { left: 0;}
   
-
+  .untranslated {
+    opacity: 0.5;
+    filter:alpha(Opacity=50);
+    zoom: 1;
+  }
+  
 /* search */
   .search { 
     padding-bottom: 20px; position: relative;
@@ -572,7 +577,7 @@ blockquote { margin: 20px 40px; }
     .voog-search-visible & { 
       display: block; z-index: 1000;
       width: $search-width; opacity: 1;
-      @include box-shadow(20px, 0px, 20px, rgba(0,0,0,0.1))
+      @include box-shadow(10px, 0px, 10px, rgba(0,0,0,0.05))
     }
   }
   .voog-search-inner { 
