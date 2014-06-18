@@ -17,7 +17,7 @@
       "component": false,
       "file": "layouts/blog_news.tpl",
       "layout_name": "page_default",
-      "title": "Blog news"
+      "title": "Blog & news"
     },
     {
       "content_type": "page",

@@ -146,6 +146,12 @@ blockquote { margin: 20px 40px; }
     }
   }
   
+  .form_field_required {
+    .form_field_label:after {
+      content: '*';
+    }
+  }
+  
 /* custom checkboxes and radio buttons */
   
   label {
@@ -513,7 +519,7 @@ blockquote { margin: 20px 40px; }
   .voog-search-container { 
     background: $bg-color; position: fixed; top: 0; height: 100%; z-index: -1;
     overflow: hidden; width: 0px; opacity: 0;display: block; margin-left: $side-width;
-   
+    -webkit-transition: opacity 0.1s ease-in, width 0.3s ease-in;
     transition: opacity 0.1s ease-in, width 0.3s ease-in;
     
     
