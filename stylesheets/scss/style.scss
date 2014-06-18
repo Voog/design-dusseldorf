@@ -572,6 +572,7 @@ blockquote { margin: 20px 40px; }
     .voog-search-visible & { 
       display: block; z-index: 1000;
       width: $search-width; opacity: 1;
+      @include box-shadow(20px, 0px, 20px, rgba(0,0,0,0.1))
     }
   }
   .voog-search-inner { 
