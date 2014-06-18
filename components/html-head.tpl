@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" id="viewport-meta" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" id="viewport-meta" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 <meta name="keywords" content="{{ page.keywords }}">
 <meta name="description" content="{{ page.description }}">

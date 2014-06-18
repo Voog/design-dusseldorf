@@ -45,7 +45,6 @@
         
         $('.mobile-search-toggler').click(function(event) {
             event.preventDefault();
-            
             var $body = $('body');
             if ($body.hasClass('mobilesearch-open')) {
                 $body.removeClass('mobilesearch-open');
