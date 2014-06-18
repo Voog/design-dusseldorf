@@ -819,6 +819,7 @@ blockquote { margin: 20px 40px; }
     .mobile-search-toggler {
       display: block; position: absolute; top: 0; right: 43px; height: 43px; width: 33px; outline: 0;
       background: url('../images/search.png') no-repeat center center; background-size: 16px 16px;
+      display: none;
       
       .svg & {
         background-image: url('../assets/search.svg');
