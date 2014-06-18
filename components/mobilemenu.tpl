@@ -32,3 +32,8 @@
     </ul>
   </div>
 </div>
+
+{% if site.search.enabled %}
+<div id="mobile-search">
+</div> 
+{% endif %}

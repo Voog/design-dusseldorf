@@ -1,7 +1,7 @@
 {% capture dont_render %}
   <!-- Sets the "front page" cover image and color values -->
   {% if page.data.cover_image == nil %}
-    {% assign bg_image = '/images/front.jpg' %}
+    {% assign bg_image = images_path | append: '/images/front.jpg' %}
   {% else %}
     {% assign bg_image = page.data.cover_image %}
   {% endif %}

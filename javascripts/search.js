@@ -134,7 +134,7 @@
                     q: val
                 });
                 
-            }, this), 200);
+            }, this), 400);
         },
         
         setLoader: function(showLoader) {
@@ -175,7 +175,7 @@
                     this.$results.append($(resultHtml));
                 }
             } else {
-                this.$noresults.addClass('voog-search-noresults-visible').append('<div>' + this.options.noResults + '</div>').show();
+                this.$noresults.addClass('voog-search-noresults-visible').empty().append('<div>' + this.options.noResults + '</div>').show();
             }   
         },
         

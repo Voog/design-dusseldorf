@@ -1,6 +1,6 @@
 {
-  "description": "New design",
-  "name": "New design",
+  "description": "Berlin",
+  "name": "Berlin",
   "preview_medium": "",
   "preview_small": "",
   "author": "",
@@ -152,6 +152,12 @@
     },
     {
       "content_type": "image/svg+xml",
+      "file": "assets/search.svg",
+      "kind": "assets",
+      "filename": "search.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
       "file": "assets/search_close.svg",
       "kind": "assets",
       "filename": "search_close.svg"
@@ -193,10 +199,10 @@
       "filename": "search-close.png"
     },
     {
-      "content_type": "application/javascript",
-      "file": "javascripts/edicy-search.js",
-      "kind": "javascripts",
-      "filename": "edicy-search.js"
+      "content_type": "image/png",
+      "file": "images/search.png",
+      "kind": "images",
+      "filename": "search.png"
     },
     {
       "content_type": "application/javascript",

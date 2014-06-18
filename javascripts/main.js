@@ -42,6 +42,11 @@
             }
         });
         
+        $('.mobile-search-toggler').click(function(event) {
+            event.preventDefault();
+            $('body').toggleClass('mobilesearch-open');
+        });
+        
         $('.language-menu-btn').on('click', function(event) {
             event.preventDefault();
             $('body').addClass('language-menu-open');

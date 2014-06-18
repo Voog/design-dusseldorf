@@ -223,8 +223,9 @@ blockquote { margin: 20px 40px; }
     }
   }
   .main-inner {
+    position: relative;
     .front-page & {
-      color: white; font-size: 36px; line-height: 1.05;
+      color: white; font-size: 36px; line-height: 1.05; font-family: $font-secondary; background: black; text-align: center;
       h1,h2,h3 {
         color: white;
       }
@@ -233,10 +234,10 @@ blockquote { margin: 20px 40px; }
   
   .inner {
     width: $content-width;
-    &.main-inner { width: auto; }
+    &.main-inner { width: auto !important; }
     
     @media screen and (min-width: $break-large) {
-      width: 75% !important;
+      width: 75%;
     }
   }
   
@@ -362,7 +363,7 @@ blockquote { margin: 20px 40px; }
 
 /* content */
   .content { 
-    padding: 0 30px 30px; word-wrap: break-word;
+    padding: 0 30px 30px; word-wrap: break-word; position: relative;
     .front-page & { padding: 70px 30px; }
   }
   .formatted {
@@ -440,7 +441,7 @@ blockquote { margin: 20px 40px; }
   }
 
 /* mobile-menu */
-  .mobile-menu-toggler, #mobile-menu {
+  .mobile-menu-toggler, #mobile-menu, .mobile-menu-toggler, #mobile-search {
     display: none;
   }
  
@@ -472,9 +473,11 @@ blockquote { margin: 20px 40px; }
     background-repeat: no-repeat; background-position: center top;
     background-size: cover;
     background-image: url('../images/front.jpg?1');
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;
+    -moz-opacity: 0.8; -khtml-opacity: 0.8; opacity: 0.8;
   }
   
-  .js-bgpicker-cover-color { position: relative; }
+  .js-bgpicker-cover-color { position: relative; z-index: 1; }
   .rgba .js-bgpicker-cover-color { display: block; }
   
   .js-bgpicker-cover-settings { left: 0;}
@@ -492,6 +495,18 @@ blockquote { margin: 20px 40px; }
     .search-input { 
       outline: 0; padding: 5px 0; width: 100%; margin: 0; font: #{$font-size}/1.4 $font-main; 
       color: $main-color; border: none; background: none; 
+      &::-webkit-input-placeholder{
+        opacity: 1; color: rgba(0,0,0,0.3);
+      }
+      &:-moz-placeholder{
+        opacity: 1; color: rgba(0,0,0,0.3);
+      }
+      &::-moz-placeholder{
+        opacity: 1; color: rgba(0,0,0,0.3);
+      }
+      &:-ms-input-placeholder {
+        opacity: 1; color: rgba(0,0,0,0.3);
+      }
     }
     .search-close { 
       height: 30px; width: 30px; display: none;
@@ -624,12 +639,16 @@ blockquote { margin: 20px 40px; }
 }
 
 @media screen and (max-width: $break-small) {
-  body, html { height: auto !important; font-size: 16px; line-height: 1.75; }
+  body, html { /*height: auto !important;*/ font-size: 16px; line-height: 1.75; }
   
   body { min-width: 320px; background: white;}
   .wrap, .wrap-inner, .main { display: block !important; height: auto !important; }
   
   
+  
+  .front-page {
+    &, .wrap, .main { height: 100% !important; }
+  }
   .search, .voog-search-container { display: none !important;  }
   
   .sidebar { 
@@ -641,6 +660,13 @@ blockquote { margin: 20px 40px; }
   .lang-menu, .main-menu { display: none; }
   
   .main { width: auto; margin: 0; }
+  .main-inner {
+    .front-page & {
+      min-height: 100%;
+      color: white; font-size: 25px; line-height: 1.05;
+    }
+  }
+  
   .inner { width: auto;}
   
   .container { 
@@ -650,6 +676,7 @@ blockquote { margin: 20px 40px; }
   
   .site-title {
     font-size: 18px; padding: 13px 50px 12px 20px;
+    .search-enabled & { padding-right: 90px; }
   }
   
   .content { 
@@ -711,6 +738,12 @@ blockquote { margin: 20px 40px; }
       span:before { top: 6px; left: 0; }
       span:after { top: 12px; left: 0; }
     }
+    
+    .mobile-search-toggler {
+      display: block; position: absolute; top: 0; right: 43px; height: 43px; width: 43px; outline: 0;
+      background: url('../images/search.png') no-repeat center center; background-size: 15px 15px;
+      display: none;
+    }
   
     #mobile-menu {
       position: fixed; top: 0; bottom: 0; left: 0; right: 0; overflow: auto; display:none;
@@ -763,5 +796,12 @@ blockquote { margin: 20px 40px; }
         display: none; 
         .language-menu-open & { display: table; }
       }
+    }
+    
+    #mobile-search {
+      position: fixed; top: 0; bottom: 0; left: 0; right: 0; overflow: auto; display:none;
+      z-index: 1000; @include bg(#2b2b2b, 0.9); -webkit-overflow-scrolling: touch;
+      
+      .mobilesearch-open & { display: block; }
     }
 }
