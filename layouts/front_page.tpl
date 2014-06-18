@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.language_code }}">
 <head>
-  <link rel="stylesheet" href="/assets/admin/tools/0.1.1/edicy-tools.css">
+  <link rel="stylesheet" href="/assets/admin/tools/0.1.2/edicy-tools.css">
   {% include "html-head" %}
   {% include "bg-picker-variables" %}
 </head>

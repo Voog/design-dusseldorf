@@ -224,18 +224,19 @@ blockquote { margin: 20px 40px; }
   }
   .main-inner {
     .front-page & {
-      @include color(white, 0.8);
+      color: white; font-size: 36px; line-height: 1.05;
       h1,h2,h3 {
-        @include color(white, 0.8);
+        color: white;
       }
     }
   }
   
   .inner {
     width: $content-width;
+    &.main-inner { width: auto; }
     
     @media screen and (min-width: $break-large) {
-      width: 75%;
+      width: 75% !important;
     }
   }
   
