@@ -11,7 +11,17 @@
       per_page: 3,
       lang: '{{ page.language_code }}',
       noResults: '{{ "search_noresults"|lc }}',
-      minChars: 2
+      minChars: 2,
+      searchOnType: true
+    });
+    
+    var mobilezsearch = new VoogSearch($('.js-mobile-search-form'), {
+      per_page: 3,
+      lang: '{{ page.language_code }}',
+      noResults: '{{ "search_noresults"|lc }}',
+      $parent: $('#mobile-search-results'),
+      visibleClass: 'voog-mobile-search-visible',
+      closeOnSideClick: false
     });
   });
 </script>

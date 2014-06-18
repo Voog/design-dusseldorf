@@ -68,13 +68,15 @@
         },
         
         handleInputKeyup: function(event) {
-            var oldVal = this.$input.data('oldValue') || '',
-                newVal = this.$input.val();
+            if (this.options.searchOnType) {
+                var oldVal = this.$input.data('oldValue') || '',
+                    newVal = this.$input.val();
                 
-            if (newVal != oldVal && newVal.length >= this.options.minChars) {
-                this.$input.data('oldValue', newVal);
-                this.doSearch();
-            } 
+                if (newVal != oldVal && newVal.length >= this.options.minChars) {
+                    this.$input.data('oldValue', newVal);
+                    this.doSearch();
+                }
+            }
         },
         
         handleInputFocus: function() {
@@ -82,7 +84,8 @@
         },
         
         handleInputBlur: function() {
-            if (!$('body').hasClass('voog-search-visible')) {
+            var visibleClass = this.options.visibleClass ? this.options.visibleClass : 'voog-search-visible';
+            if (!$('body').hasClass(visibleClass)) {
                 this.$el.find('.search-box').removeClass('search-box-focus');
             }
         },
@@ -116,9 +119,10 @@
             this.timeout = setTimeout($.proxy(function() {
                 
                 var showLoader = true,
-                    val = this.$input.val();
-                if (!$('body').hasClass('voog-search-visible')) {
-                    $('body').addClass('voog-search-visible');
+                    val = this.$input.val(),
+                    visibleClass = this.options.visibleClass ? this.options.visibleClass : 'voog-search-visible';
+                if (!$('body').hasClass(visibleClass)) {
+                    $('body').addClass(visibleClass);
                     if (this.options.closeOnSideClick) {
                         $(document).on('click.voog-search-sideclick', $.proxy(this.handleSideClick, this));
                     }
@@ -148,7 +152,8 @@
         },
         
         hideSearch: function() {
-            $('body').removeClass('voog-search-visible');
+            var visibleClass = this.options.visibleClass ? this.options.visibleClass : 'voog-search-visible';
+            $('body').removeClass(visibleClass);
             this.$el.find('.search-box').removeClass('search-box-focus');
             $(document).off('click.voog-search-sideclick');
         },

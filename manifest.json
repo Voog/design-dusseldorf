@@ -229,12 +229,6 @@
       "filename": "search.js"
     },
     {
-      "content_type": "text/unknown",
-      "file": "stylesheets/scss",
-      "kind": "stylesheets",
-      "filename": "scss"
-    },
-    {
       "content_type": "text/css",
       "file": "stylesheets/style.css",
       "kind": "stylesheets",

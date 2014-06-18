@@ -35,5 +35,12 @@
 
 {% if site.search.enabled %}
 <div id="mobile-search">
+  <form class="search js-mobile-search-form">
+    <div class="search-box">
+      <input type="text" class="search-input" placeholder="{{ "search"|lc }}" />
+      <input type="submit" value="" class="search-submit js-search-submit" />
+    </div>
+  </form>
+  <div id="mobile-search-results"></div>
 </div> 
 {% endif %}
