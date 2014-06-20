@@ -391,6 +391,13 @@ blockquote { margin: 20px 40px; }
   .post-content { padding: 0 30px 60px; word-wrap: break-word; }
   .post-body { padding: 20px 0 0; }
   .post-tags { padding: 20px 0 0; }
+  
+  
+  .tbl { 
+    display: table; width: 100%; border-collapse: collapse; visibility: hidden;
+    .tbl-row { display: table-row; }
+    .tbl-cell { display: table-cell; padding: 0; vertical-align: middle; text-align: center; }
+  }
 
 /* comments */
   .comments { 

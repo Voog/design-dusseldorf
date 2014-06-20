@@ -56,6 +56,8 @@
         handleSubmit: function(event) {
             event.preventDefault();
             
+            alert('tree');
+            
             var oldVal = this.$input.data('oldValue') || '',
                 newVal = this.$input.val();
                 
@@ -69,6 +71,7 @@
         
         handleInputKeyup: function(event) {
             if (this.options.searchOnType) {
+                alert('as');
                 var oldVal = this.$input.data('oldValue') || '',
                     newVal = this.$input.val();
                 

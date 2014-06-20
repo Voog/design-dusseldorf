@@ -21,7 +21,13 @@
           <div class="container-wrap cfx">
             <div class="container">
               <section class="content formatted">
-                {% content %}
+                <div class="tbl">
+                  <div class="tbl-row">
+                    <div class="tbl-cell">
+                      {% content %}
+                    </div>
+                  </div>
+                </div>
               </section>
             </div>
           </div>
