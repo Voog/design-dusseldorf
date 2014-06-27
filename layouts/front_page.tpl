@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.language_code }}">
 <head>
-  <link rel="stylesheet" href="/assets/admin/tools/0.1.2/edicy-tools.css">
+  <link rel="stylesheet" href="/assets/admin/tools/0.1.3/edicy-tools.css">
   {% include "html-head" %}
   {% include "bg-picker-variables" %}
 </head>
@@ -14,21 +14,22 @@
     </aside>
     <div class="main">
       <div class="main-inner inner">
-        <div class="js-bgpicker-cover-image"{{ bg_image_style }}></div>
-        <div class="js-bgpicker-cover-color"{{ bg_color_style }}>
-          {% if editmode %}<button class="bgpicker-btn js-bgpicker-cover-settings" data-bg-image="{{ bg_image }}" data-bg-color="{{ bg_color }}"></button>{% endif %}
+        <div class="js-bgpicker-cover-image"{{ cover_image_style }}>
+          <div class="js-bgpicker-cover-color"{{ cover_color_style }}>
+            {% if editmode %}<button class="bgpicker-btn js-bgpicker-cover-settings" data-bg-image="{{ cover_image }}" data-bg-color="{{ cover_color }}"></button>{% endif %}
           
-          <div class="container-wrap cfx">
-            <div class="container">
-              <section class="content formatted">
-                <div class="tbl">
-                  <div class="tbl-row">
-                    <div class="tbl-cell">
-                      {% content %}
+            <div class="container-wrap cfx">
+              <div class="container">
+                <section class="content formatted">
+                  <div class="tbl">
+                    <div class="tbl-row">
+                      <div class="tbl-cell">
+                        {% content %}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </section>
+                </section>
+              </div>
             </div>
           </div>
         </div>

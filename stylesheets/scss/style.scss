@@ -225,7 +225,7 @@ blockquote { margin: 20px 40px; }
   .main-inner {
     position: relative;
     .front-page & {
-      color: white; font-size: 36px; line-height: 1.05; font-family: $font-secondary; background: black; text-align: center;
+      color: white; font-size: 36px; line-height: 1.05; font-family: $font-secondary;  text-align: center;
       h1,h2,h3 {
         color: white;
       }
@@ -480,11 +480,9 @@ blockquote { margin: 20px 40px; }
     background-repeat: no-repeat; background-position: center top;
     background-size: cover;
     background-image: url('../images/front.jpg?1');
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 0;
-    -moz-opacity: 0.8; -khtml-opacity: 0.8; opacity: 0.8;
   }
   
-  .js-bgpicker-cover-color { position: relative; z-index: 1; }
+  .js-bgpicker-cover-color { position: relative; z-index: 1; background: rgba(0,0,0,0.2); }
   .rgba .js-bgpicker-cover-color { display: block; }
   
   .js-bgpicker-cover-settings { left: 0;}

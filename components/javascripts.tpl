@@ -2,7 +2,7 @@
 <script src="{{ javascripts_path }}/main.js?10"></script>
 
 {% if site.search.enabled %}
-<script src="http://static.voog.com/libs/edicy-search/1.0.0/edicy-search.js"></script>
+<script src="{{ site.static_asset_host }}/libs/edicy-search/1.0.0/edicy-search.js"></script>
 <script src="{{ javascripts_path }}/search.js"></script>
 <script>
 
