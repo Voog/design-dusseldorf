@@ -15,7 +15,7 @@
     <div class="main">
       <div class="main-inner inner">
         <div class="js-bgpicker-cover-image"{{ cover_image_style }}>
-          <div class="js-bgpicker-cover-color"{{ cover_color_style }}>
+          <div class="js-bgpicker-cover-color {{ cover_color_class }}"{{ cover_color_style }}>
             {% if editmode %}<button class="bgpicker-btn js-bgpicker-cover-settings" data-bg-image="{{ cover_image }}" data-bg-color="{{ cover_color }}"></button>{% endif %}
           
             <div class="container-wrap cfx">

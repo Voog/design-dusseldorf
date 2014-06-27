@@ -12,9 +12,13 @@
       color: true,
       showAlpha: true,
       preview: function(data) {
+        
         var image = (data.image && data.image !== '') ? 'url("' + data.image + '")' : 'none',
             color = (data.color && data.color !== '') ? data.color : '',
-            colorData = (data.colorData && data.colorData !== '') ? data.colorData : '';
+            colorData = (data.colorData && data.colorData !== '') ? data.colorData : '',
+            lightness = colorData && colorData !== '' && colorData.lightness ? colorData.lightness : 0;
+          
+        $('.js-bgpicker-cover-color').removeClass('light-background dark-background').addClass(lightness <= 0.5 ? 'dark-background' : 'light-background');
 
         $('.js-bgpicker-cover-image').css({'background-image' : image });
         
@@ -30,7 +34,8 @@
         pageData.set({
           'cover_image': data.image || '',
           'cover_color': data.color || '',
-          'cover_colorData' : data.colorData || ''
+          'cover_colorData' : data.colorData || '',
+          'cover_lightness' : data.colorData && data.colorData != '' && data.colorData.lightness ? data.colorData.lightness : 0
         });
       }
     });

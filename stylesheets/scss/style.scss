@@ -225,7 +225,7 @@ blockquote { margin: 20px 40px; }
   .main-inner {
     position: relative;
     .front-page & {
-      color: white; font-size: 36px; line-height: 1.05; font-family: $font-secondary;  text-align: center;
+      font-size: 36px; line-height: 1.05; font-family: $font-secondary;  text-align: center;
       h1,h2,h3 {
         color: white;
       }
@@ -482,7 +482,53 @@ blockquote { margin: 20px 40px; }
     background-image: url('../images/front.jpg?1');
   }
   
-  .js-bgpicker-cover-color { position: relative; z-index: 1; background: rgba(0,0,0,0.2); }
+  .js-bgpicker-cover-color { 
+    position: relative; z-index: 1; background: rgba(0,0,0,0.2); 
+    color: white; color: rgba(255,255,255,0.5);
+    
+    
+    .edy-empty-bordered {
+      border-color: white; border-color: rgba(255,255,255,0.35);
+    }
+    .edy-content-element-hover {
+      border-color: white; border-color: rgba(255,255,255,0.1);
+    }
+    .edy-empty-bordered {
+      .edy-empty-header {
+        color: white; color: rgba(255,255,255,0.5);
+      }
+    }
+    .edy-texteditor-active {
+      outline: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .edy-texteditor-active:hover {
+      outline: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    
+    
+    &.light-background {
+      color: black; color: rgba(0,0,0,0.5);
+      
+      .edy-empty-bordered {
+        border-color: white; border-color: rgba(0,0,0,0.35);
+      }
+      .edy-content-element-hover {
+        border-color: white; border-color: rgba(0,0,0,0.1);
+      }
+      .edy-empty-bordered {
+        .edy-empty-header {
+          color: white; color: rgba(0,0,0,0.5);
+        }
+      }
+      .edy-texteditor-active {
+        outline: 1px solid rgba(0, 0, 0, 0.2);
+      }
+      .edy-texteditor-active:hover {
+        outline: 1px solid rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
   .rgba .js-bgpicker-cover-color { display: block; }
   
   .js-bgpicker-cover-settings { left: 0;}

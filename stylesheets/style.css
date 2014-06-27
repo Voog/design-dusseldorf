@@ -372,7 +372,6 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   position: relative;
 }
 .front-page .main-inner {
-  color: white;
   font-size: 36px;
   line-height: 1.05;
   font-family: "Montserrat", "sans-serif";
@@ -980,6 +979,48 @@ table th {
   position: relative;
   z-index: 1;
   background: rgba(0, 0, 0, 0.2);
+  color: white;
+  color: rgba(255, 255, 255, 0.5);
+}
+.js-bgpicker-cover-color .edy-empty-bordered {
+  border-color: white;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.js-bgpicker-cover-color .edy-content-element-hover {
+  border-color: white;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.js-bgpicker-cover-color .edy-empty-bordered .edy-empty-header {
+  color: white;
+  color: rgba(255, 255, 255, 0.5);
+}
+.js-bgpicker-cover-color .edy-texteditor-active {
+  outline: 1px solid rgba(255, 255, 255, 0.2);
+}
+.js-bgpicker-cover-color .edy-texteditor-active:hover {
+  outline: 1px solid rgba(255, 255, 255, 0.3);
+}
+.js-bgpicker-cover-color.light-background {
+  color: black;
+  color: rgba(0, 0, 0, 0.5);
+}
+.js-bgpicker-cover-color.light-background .edy-empty-bordered {
+  border-color: white;
+  border-color: rgba(0, 0, 0, 0.35);
+}
+.js-bgpicker-cover-color.light-background .edy-content-element-hover {
+  border-color: white;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.js-bgpicker-cover-color.light-background .edy-empty-bordered .edy-empty-header {
+  color: white;
+  color: rgba(0, 0, 0, 0.5);
+}
+.js-bgpicker-cover-color.light-background .edy-texteditor-active {
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+}
+.js-bgpicker-cover-color.light-background .edy-texteditor-active:hover {
+  outline: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .rgba .js-bgpicker-cover-color {
