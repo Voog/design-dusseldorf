@@ -1060,6 +1060,14 @@ table th {
   zoom: 1;
 }
 
+.edy-positionable-container-left {
+  margin: 0 2em 1em 0;
+}
+
+.edy-positionable-container-right {
+  margin: 0 0 1em 2em;
+}
+
 /* search */
 .search {
   padding-bottom: 20px;
