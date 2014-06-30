@@ -40,5 +40,12 @@
   {% include "mobilemenu" %}
   {% include "javascripts" %}
   {% include "bgpicker" %}
+  
+  {% if editmode %}
+  <script type="text/javascript">
+    window.edy = window.edy || [];
+    edy.push(['texteditorStyles', {name: 'Small', classname: 'font-size-small'}]);
+  </script>
+  {% endif %}
 </body>
 </html>

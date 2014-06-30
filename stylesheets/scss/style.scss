@@ -57,7 +57,7 @@ a {
 img { border: none; max-width: 100%; height: auto !important;}
 form { @extend %nulling; }
 h1, h2, h3 {
-  @extend %nulling; color: #333333;
+  @extend %nulling; color: $main-color;
   font: normal 36px/1.1 $font-secondary;
 }
 h1 { margin-bottom: 20px; }
@@ -70,12 +70,29 @@ ul li, ol li { @extend %nulling; }
 input[type=submit], input[type=text], textarea { -webkit-appearance: none; border-radius: 0; }
 
 pre {
-  margin-top: 10px; margin-bottom: 0; overflow: auto; white-space: nowrap;
-  &, code { padding: 10px; font-size: 14px; @include bg(white, 0.9); }
+  margin-top: 10px; margin-bottom: 0; overflow: auto; white-space: normal;
+  &, code { 
+    padding: 10px; font-size: 14px; 
+    @include bg(white, 0.3); 
+    .light-background & { @include bg($secondary-color, 0.2); }
+  }
   code { display: block; margin-top: 0; padding: 0; }
 }
 
-blockquote { margin: 20px 40px; }
+blockquote { 
+  margin: 20px 40px; 
+  .front-page & { text-align: left; }
+}
+
+
+.font-size-small {
+  font: #{$font-size}/1.4 $font-main !important; 
+  @media screen and (min-width: $break-large) {
+    font-size: $font-size-big !important;
+  }
+}
+
+
 
 /* select */
   .jq-select {
@@ -226,8 +243,16 @@ blockquote { margin: 20px 40px; }
     position: relative;
     .front-page & {
       font-size: 36px; line-height: 1.05; font-family: $font-secondary;  text-align: center;
-      h1,h2,h3 {
-        color: white;
+      
+      h1 { font-size: 36px * 1.5; }
+      h2 { font-size: 36px * 1.25; }
+      h3 { font-size: 36px * 1.1; }
+      
+      
+      .dark-background {
+        h1,h2,h3 {
+          color: white; 
+        }
       }
     }
   }
@@ -722,6 +747,8 @@ blockquote { margin: 20px 40px; }
 @media screen and (max-width: $break-small) {
   body, html { /*height: auto !important;*/ font-size: 16px; line-height: 1.75; }
   
+  .font-size-small { font-size: 16px !important; line-height: 1.75 !important; }
+  
   body { min-width: 320px; background: white;}
   .wrap, .wrap-inner, .main { display: block !important; height: auto !important; }
   
@@ -743,8 +770,12 @@ blockquote { margin: 20px 40px; }
   .main { width: auto; margin: 0; }
   .main-inner {
     .front-page & {
-      min-height: 100%;
+      /*min-height: 100%;*/
       color: white; font-size: 22px; line-height: 1.05;
+      
+      h1 { font-size: 22px * 1.5; }
+      h2 { font-size: 22px * 1.25; }
+      h3 { font-size: 22px * 1.1; }
     }
   }
   
