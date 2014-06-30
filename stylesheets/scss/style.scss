@@ -484,7 +484,7 @@ blockquote { margin: 20px 40px; }
   
   .js-bgpicker-cover-color { 
     position: relative; z-index: 1; background: rgba(0,0,0,0.2); 
-    color: white; color: rgba(255,255,255,0.5);
+    color: white;
     
     
     .edy-empty-bordered {
@@ -508,7 +508,7 @@ blockquote { margin: 20px 40px; }
     
     
     &.light-background {
-      color: black; color: rgba(0,0,0,0.5);
+      color: $main-color;
       
       .edy-empty-bordered {
         border-color: white; border-color: rgba(0,0,0,0.35);

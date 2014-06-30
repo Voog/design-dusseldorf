@@ -980,7 +980,6 @@ table th {
   z-index: 1;
   background: rgba(0, 0, 0, 0.2);
   color: white;
-  color: rgba(255, 255, 255, 0.5);
 }
 .js-bgpicker-cover-color .edy-empty-bordered {
   border-color: white;
@@ -1001,8 +1000,7 @@ table th {
   outline: 1px solid rgba(255, 255, 255, 0.3);
 }
 .js-bgpicker-cover-color.light-background {
-  color: black;
-  color: rgba(0, 0, 0, 0.5);
+  color: #222222;
 }
 .js-bgpicker-cover-color.light-background .edy-empty-bordered {
   border-color: white;
