@@ -1,6 +1,9 @@
 {% capture page_title %}{% if article %}{{ article.title }} — {{ page.site_title }}{% else %}{% if site.root_item.selected? %}{{ page.site_title }}{% else %}{{ page.title }} — {{ page.site_title }}{% endif %}{% endif %}{% endcapture %}
 
 
+{% capture page_url %}{{site.url}}{% if article %}{{ article.url }}{% else %}{{ page.url }}{% endif %}{% endcapture %}
+
+
 <title>{{ page_title }}</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -11,7 +14,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="{{ site.url }}">
+<meta property="og:url" content="{{ page_url }}">
 <meta property="og:description" content="{{ page.description }}">
 <meta property="og:title" content="{{ page_title | escape }}">
 
