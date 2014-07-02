@@ -9,7 +9,7 @@
 <meta name="description" content="{{ page.description }}">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="{% if article %}article{% else %}website{% endif %}">
 <meta property="og:url" content="{{site.url}}{% if article %}{{ article.url }}{% else %}{{ page.url }}{% endif %}">
 <meta property="og:description" content="{{ page.description }}">
 <meta property="og:title" content="{{ page_title | escape }}">
