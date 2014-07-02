@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.language_code }}">
+<html lang="{{ page.language_code }}"  prefix="og: http://ogp.me/ns#">
 <head>
   <link rel="stylesheet" href="/assets/admin/tools/0.1.3/edicy-tools.css">
   {% include "html-head" %}

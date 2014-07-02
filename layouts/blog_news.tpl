@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.language_code }}">
+<html lang="{{ page.language_code }}"  prefix="og: http://ogp.me/ns#">
 <head>
   {% include "html-head" %}
 </head>
