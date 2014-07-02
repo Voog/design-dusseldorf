@@ -218,6 +218,12 @@
     },
     {
       "content_type": "application/javascript",
+      "file": "javascripts/main.min.js",
+      "kind": "javascripts",
+      "filename": "main.min.js"
+    },
+    {
+      "content_type": "application/javascript",
       "file": "javascripts/modernizr.min.js",
       "kind": "javascripts",
       "filename": "modernizr.min.js"
@@ -227,6 +233,12 @@
       "file": "javascripts/search.js",
       "kind": "javascripts",
       "filename": "search.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/search.min.js",
+      "kind": "javascripts",
+      "filename": "search.min.js"
     },
     {
       "content_type": "text/css",
