@@ -54,7 +54,7 @@ a {
 .cfx:after { content: "."; display: block;height: 0;clear: both;font-size: 0px;line-height: 0px; visibility: hidden;}
 .cfx { zoom:1; min-height: 1px; }
 
-img { border: none; max-width: 100%; height: auto !important;}
+img { border: none; }
 form { @extend %nulling; }
 h1, h2, h3 {
   @extend %nulling; color: $main-color;
