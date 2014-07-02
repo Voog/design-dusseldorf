@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ page.language_code }}"  prefix="og: http://ogp.me/ns#">
-<head>
+<html lang="{{ page.language_code }}">
+<head prefix="og: http://ogp.me/ns#">
   {% include "html-head" %}
 </head>
 <body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">

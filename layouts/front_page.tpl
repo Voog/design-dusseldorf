@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ page.language_code }}"  prefix="og: http://ogp.me/ns#">
-<head>
+<html lang="{{ page.language_code }}">
+<head prefix="og: http://ogp.me/ns#">
   <link rel="stylesheet" href="/assets/admin/tools/0.1.3/edicy-tools.css">
   {% include "html-head" %}
   {% include "bg-picker-variables" %}
