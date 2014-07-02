@@ -24,8 +24,6 @@
 
 {% stylesheet_link "style.css?2" %}
 
-
-
 <script src="{{ javascripts_path }}/modernizr.min.js"></script>
 
 {% if blog %}{{ blog.rss_link }}{% endif %}
