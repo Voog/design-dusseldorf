@@ -245,6 +245,12 @@
       "file": "stylesheets/style.css",
       "kind": "stylesheets",
       "filename": "style.css"
+    },
+    {
+      "content_type": "text/css",
+      "file": "stylesheets/style.min.css",
+      "kind": "stylesheets",
+      "filename": "style.min.css"
     }
   ]
 }
