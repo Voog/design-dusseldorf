@@ -4,7 +4,7 @@ html, body, form, h1, h2, h3, ul, ol, ul li, ol li, .lang-menu-btn {
 }
 
 html, body {
-  font: 18px/1.4 "Lato", "sans-serif";
+  font: 18px/1.67 "Lato", "sans-serif";
   height: 100% !important;
 }
 
@@ -118,7 +118,7 @@ blockquote {
 }
 
 .font-size-small {
-  font: 18px/1.4 "Lato", "sans-serif" !important;
+  font: 18px/1.67 "Lato", "sans-serif" !important;
 }
 @media screen and (min-width: 1500px) {
   .font-size-small {
@@ -131,7 +131,7 @@ blockquote {
   position: relative;
   cursor: pointer;
   background: white;
-  font: 18px/1.4 "Lato", "sans-serif";
+  font: 18px/1.67 "Lato", "sans-serif";
   color: #222222;
 }
 .jq-select select {
@@ -149,7 +149,7 @@ blockquote {
   -moz-opacity: .0;
   opacity: 0;
   filter: alpha(opacity=0);
-  font: 18px/1.4 "Lato", "sans-serif";
+  font: 18px/1.67 "Lato", "sans-serif";
   color: #222222;
   -webkit-appearance: none;
 }
@@ -209,7 +209,7 @@ blockquote {
   outline: none;
   border: none;
   padding: 4px 5px;
-  font: 18px/1.4 "Lato", "sans-serif";
+  font: 18px/1.67 "Lato", "sans-serif";
   color: #222222;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -268,7 +268,7 @@ blockquote {
   color: rgba(255, 255, 255, 0.5);
   background: #2b2b2b;
   cursor: pointer;
-  font: 18px/1.4 "Lato", "sans-serif";
+  font: 18px/1.67 "Lato", "sans-serif";
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -286,7 +286,6 @@ blockquote {
 /* custom checkboxes and radio buttons */
 label {
   cursor: pointer;
-  /* checkbox-image-preload */
 }
 label:before {
   content: url("../images/check.png?1");
@@ -402,6 +401,9 @@ label > input[type=radio]:checked + .form_control_indicator:before {
 }
 .front-page .main-inner .dark-background h1, .front-page .main-inner .dark-background h2, .front-page .main-inner .dark-background h3 {
   color: white;
+}
+.front-page .main-inner .dark-background .placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .inner {
@@ -1089,7 +1091,7 @@ table th {
   padding: 5px 0;
   width: 100%;
   margin: 0;
-  font: 18px/1.4 "Lato", "sans-serif";
+  font: 18px/1.67 "Lato", "sans-serif";
   color: #222222;
   border: none;
   background: none;
@@ -1185,7 +1187,6 @@ table th {
   margin-left: 280px;
   -webkit-transition: opacity 0.1s ease-in, width 0.3s ease-in;
   transition: opacity 0.1s ease-in, width 0.3s ease-in;
-  /*display: block; width: $search-width;*/
 }
 @media screen and (min-width: 1500px) {
   .voog-search-container {
@@ -1352,7 +1353,6 @@ table th {
 }
 @media screen and (max-width: 600px) {
   body, html {
-    /*height: auto !important;*/
     font-size: 16px;
     line-height: 1.75;
   }
@@ -1403,7 +1403,6 @@ table th {
   }
 
   .front-page .main-inner {
-    /*min-height: 100%;*/
     color: white;
     font-size: 22px;
     line-height: 1.05;
