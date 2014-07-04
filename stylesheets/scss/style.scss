@@ -497,7 +497,7 @@ blockquote {
   
 /* other */
   .edy-gallery-area, .edys-gallery-area { padding: 20px 0;}
-  .edys-gallery-image { @include border-radius(96px); }
+  .edys-gallery-item { @include border-radius(96px); }
   
   .js-bgpicker-cover-image {
     background-repeat: no-repeat; background-position: center top;
