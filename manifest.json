@@ -194,21 +194,21 @@
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/jquery-1.11.0.min.js",
+      "file": "javascripts/application.js",
       "kind": "javascripts",
-      "filename": "jquery-1.11.0.min.js"
+      "filename": "application.js"
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/main.js",
+      "file": "javascripts/application.min.js",
       "kind": "javascripts",
-      "filename": "main.js"
+      "filename": "application.min.js"
     },
     {
       "content_type": "application/javascript",
-      "file": "javascripts/main.min.js",
+      "file": "javascripts/modernizr.js",
       "kind": "javascripts",
-      "filename": "main.min.js"
+      "filename": "modernizr.js"
     },
     {
       "content_type": "application/javascript",
