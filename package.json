@@ -1,6 +1,6 @@
 {
   "name": "voog-design-berlin",
-  "description": "The Berlin template for Voog",
+  "description": "The Berlin design template for Voog",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-bowercopy": "^1.1.0",
