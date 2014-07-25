@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
-  <link rel="stylesheet" href="/assets/admin/tools/0.1.3/edicy-tools.css">
   {% include "html-head" %}
+  <link rel="stylesheet" href="/assets/admin/tools/0.1.3/edicy-tools.css">
   {% include "bg-picker-variables" %}
 </head>
 <body class="front-page{% if editmode %} editmode{% endif %}{% if site.search.enabled %} search-enabled{% endif %}">
@@ -17,7 +17,7 @@
         <div class="js-bgpicker-cover-image"{{ cover_image_style }}>
           <div class="js-bgpicker-cover-color {{ cover_color_class }}"{{ cover_color_style }}>
             {% if editmode %}<button class="bgpicker-btn js-bgpicker-cover-settings" data-bg-image="{{ cover_image }}" data-bg-color="{{ cover_color }}"></button>{% endif %}
-          
+
             <div class="container-wrap cfx">
               <div class="container">
                 <section class="content formatted">
@@ -40,7 +40,7 @@
   {% include "mobilemenu" %}
   {% include "javascripts" %}
   {% include "bgpicker" %}
-  
+
   {% if editmode %}
   <script type="text/javascript">
     window.edy = window.edy || [];
