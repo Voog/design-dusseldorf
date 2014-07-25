@@ -29,7 +29,7 @@
             <section class="post-content">
               <div class="post-excerpt cfx formatted">{% editable article.excerpt %}</div>
               <div class="post-body cfx formatted">{% editable article.body %}</div>
-              
+
               {% if editmode %}
               <div class="post-tags">
               {% editable article.tags %}
@@ -40,7 +40,7 @@
               <h3 class="comment-title">
                 {% case article.comments_count %}
                   {% when 0 %}{{ "write_first_comment" | lc }}
-                  {% else %}{{"comments_for_count" | lc}}: <span class="edy-site-blog-comments-count">{{article.comments_count}}</span>
+                  {% else %}{{ 'replies' | lcc : article.comments_count }}</span>
                 {% endcase %}
               </h3>
               {% include "comment-form" %}
@@ -56,7 +56,7 @@
       </div>
     </div>
     {% include "footer" %}
-  </div> 
+  </div>
   {% include "mobilemenu" %}
   {% include "javascripts" %}
 </body>

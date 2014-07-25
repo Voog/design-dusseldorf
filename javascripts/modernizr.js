@@ -1,5 +1,5 @@
 /* Modernizr (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-flexbox-svg-shiv-load-cssclasses
+ * Build: http://modernizr.com/download/#-backgroundsize-flexbox-svg-shiv-load-cssclasses
  */
 ;
 
@@ -155,6 +155,9 @@ window.Modernizr = (function( window, document, undefined ) {
         }
     }    tests['flexbox'] = function() {
       return testPropsAll('flexWrap');
+    };
+    tests['backgroundsize'] = function() {
+        return testPropsAll('backgroundSize');
     };
     tests['svg'] = function() {
         return !!document.createElementNS && !!document.createElementNS(ns.svg, 'svg').createSVGRect;

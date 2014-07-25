@@ -501,7 +501,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
 }
 
 /* flags */
-.lang-flag:before {
+.lang-flag:before, .lang-flag:after {
   content: "";
   display: block;
   height: 13px;
@@ -509,182 +509,190 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.lang-flag:before {
+  background-color: black;
+}
+
+.lang-flag:after {
+  opacity: 0.95;
   background-size: 200px;
   background-repeat: no-repeat;
   background-image: url("../images/ico-flags-small.png?1");
 }
-.no-boxshadow .lang-flag:before {
+.no-boxshadow .lang-flag:after {
   border: 1px solid #eee;
 }
-.backgroundsize.svg .lang-flag:before {
+.backgroundsize.svg .lang-flag:after {
   background-image: url("../assets/ico-flags.svg?1");
 }
 
-.lang-flag-sq:before {
+.lang-flag-sq:after {
   background-position: 0 0;
 }
 
-.lang-flag-hy:before {
+.lang-flag-hy:after {
   background-position: -20px 0;
 }
 
-.lang-flag-bn:before {
+.lang-flag-bn:after {
   background-position: -40px 0;
 }
 
-.lang-flag-pt:before {
+.lang-flag-pt:after {
   background-position: -60px 0;
 }
 
-.lang-flag-bg:before {
+.lang-flag-bg:after {
   background-position: -80px 0;
 }
 
-.lang-flag-zh:before {
+.lang-flag-zh:after {
   background-position: -100px 0;
 }
 
-.lang-flag-hr:before {
+.lang-flag-hr:after {
   background-position: -120px 0;
 }
 
-.lang-flag-da:before {
+.lang-flag-da:after {
   background-position: -140px 0;
 }
 
-.lang-flag-cs:before {
+.lang-flag-cs:after {
   background-position: -160px 0;
 }
 
-.lang-flag-et:before {
+.lang-flag-et:after {
   background-position: -180px 0;
 }
 
-.lang-flag-fi:before {
+.lang-flag-fi:after {
   background-position: 0px -14px;
 }
 
-.lang-flag-fr:before {
+.lang-flag-fr:after {
   background-position: -20px -14px;
 }
 
-.lang-flag-ka:before {
+.lang-flag-ka:after {
   background-position: -40px -14px;
 }
 
-.lang-flag-de:before {
+.lang-flag-de:after {
   background-position: -60px -14px;
 }
 
-.lang-flag-el:before {
+.lang-flag-el:after {
   background-position: -80px -14px;
 }
 
-.lang-flag-hu:before {
+.lang-flag-hu:after {
   background-position: -100px -14px;
 }
 
-.lang-flag-is:before {
+.lang-flag-is:after {
   background-position: -120px -14px;
 }
 
-.lang-flag-hi:before {
+.lang-flag-hi:after {
   background-position: -140px -14px;
 }
 
-.lang-flag-id:before {
+.lang-flag-id:after {
   background-position: -160px -14px;
 }
 
-.lang-flag-fa:before {
+.lang-flag-fa:after {
   background-position: -180px -14px;
 }
 
-.lang-flag-he:before {
+.lang-flag-he:after {
   background-position: 0px -28px;
 }
 
-.lang-flag-it:before {
+.lang-flag-it:after {
   background-position: -20px -28px;
 }
 
-.lang-flag-ja:before {
+.lang-flag-ja:after {
   background-position: -40px -28px;
 }
 
-.lang-flag-ko:before {
+.lang-flag-ko:after {
   background-position: -60px -28px;
 }
 
-.lang-flag-lv:before {
+.lang-flag-lv:after {
   background-position: -80px -28px;
 }
 
-.lang-flag-lt:before {
+.lang-flag-lt:after {
   background-position: -100px -28px;
 }
 
-.lang-flag-ms:before {
+.lang-flag-ms:after {
   background-position: -120px -28px;
 }
 
-.lang-flag-nl:before {
+.lang-flag-nl:after {
   background-position: -140px -28px;
 }
 
-.lang-flag-no:before {
+.lang-flag-no:after {
   background-position: -160px -28px;
 }
 
-.lang-flag-ur:before {
+.lang-flag-ur:after {
   background-position: -180px -28px;
 }
 
-.lang-flag-fil:before {
+.lang-flag-fil:after {
   background-position: 0px -42px;
 }
 
-.lang-flag-pl:before {
+.lang-flag-pl:after {
   background-position: -20px -42px;
 }
 
-.lang-flag-ro:before {
+.lang-flag-ro:after {
   background-position: -40px -42px;
 }
 
-.lang-flag-ru:before {
+.lang-flag-ru:after {
   background-position: -60px -42px;
 }
 
-.lang-flag-ar:before {
+.lang-flag-ar:after {
   background-position: -80px -42px;
 }
 
-.lang-flag-lt:before {
+.lang-flag-lt:after {
   background-position: -100px -42px;
 }
 
-.lang-flag-sk:before {
+.lang-flag-sk:after {
   background-position: -120px -42px;
 }
 
-.lang-flag-es:before {
+.lang-flag-es:after {
   background-position: -140px -42px;
 }
 
-.lang-flag-sv:before {
+.lang-flag-sv:after {
   background-position: -160px -42px;
 }
 
-.lang-flag-tr:before {
+.lang-flag-tr:after {
   background-position: -180px -42px;
 }
 
-.lang-flag-uk:before {
+.lang-flag-uk:after {
   background-position: 0px -56px;
 }
 
-.lang-flag-en:before {
+.lang-flag-en:after {
   background-position: -20px -56px;
 }
 
@@ -711,7 +719,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   color: #1b2124;
   color: rgba(27, 33, 36, 0.7);
 }
-.lang-menu a.lang-flag:before {
+.lang-menu a.lang-flag:before, .lang-menu a.lang-flag:after {
   top: 5px;
   left: 12px;
 }
@@ -738,7 +746,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   background: none;
   cursor: pointer;
 }
-.lang-menu-btn .lang-flag:before {
+.lang-menu-btn .lang-flag:before, .lang-menu-btn .lang-flag:after {
   top: 0;
   left: 0;
 }

@@ -38,6 +38,7 @@ module.exports = function(grunt) {
         'outputFile' : 'javascripts/modernizr.js',
 
         'tests': [
+          'backgroundsize',
           'flexbox',
           'svg'
         ],
@@ -99,10 +100,7 @@ module.exports = function(grunt) {
           '!*.min.css'
         ],
         dest: 'stylesheets/',
-        ext: '.min.css',
-        options: {
-          spawn: false
-        }
+        ext: '.min.css'
       }
     },
 
