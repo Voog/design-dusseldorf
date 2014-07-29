@@ -1,5 +1,5 @@
 {% capture dont_render %}
-  
+
   <!-- Sets cover color lightness class -->
   {% if page.data.cover_lightness == nil or page.data.cover_lightness <= 0.5 %}
     {% assign cover_color_class = 'dark-background' %}
@@ -13,9 +13,9 @@
   {% else %}
     {% assign cover_image = page.data.cover_image %}
   {% endif %}
-  
+
   {% if page.data.cover_color == nil %}
-    {% assign cover_color = 'rgba(0, 0, 0, 0.2)' %}
+    {% assign cover_color = 'rgba(0,0,0,0.2)' %}
   {% else %}
     {% assign cover_color = page.data.cover_color %}
   {% endif %}
@@ -36,7 +36,7 @@
   <!-- Builds style tag for background color -->
   {% assign cover_color_style = "" %}
   {% unless page.data.cover_color == nil %}
-    
+
     {% assign cover_color_style = ' style="background-color: ' %}
     {% if page.data.cover_color == '' %}
       {% assign cover_color_style = cover_color_style | append: 'none' %}
