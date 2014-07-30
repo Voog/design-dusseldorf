@@ -12,16 +12,18 @@
       color: true,
       showAlpha: true,
       preview: function(data) {
-        
+
         var image = (data.image && data.image !== '') ? 'url("' + data.image + '")' : 'none',
             color = (data.color && data.color !== '') ? data.color : '',
             colorData = (data.colorData && data.colorData !== '') ? data.colorData : '',
             lightness = colorData && colorData !== '' && colorData.lightness ? colorData.lightness : 0;
-          
+
+        console.log(data.colorData);
+
         $('.js-bgpicker-cover-color').removeClass('light-background dark-background').addClass(lightness <= 0.5 ? 'dark-background' : 'light-background');
 
         $('.js-bgpicker-cover-image').css({'background-image' : image });
-        
+
         if (color && color !== '') {
           $('.js-bgpicker-cover-color').css({'background-color' : color });
         }
