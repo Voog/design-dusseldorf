@@ -3,6 +3,21 @@ html, body, form, h1, h2, h3, ul, ol, ul li, ol li, .lang-menu-btn {
   padding: 0;
 }
 
+.bgpicker-btn {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.bgpicker-btn:focus {
+  outline: none;
+}
+.bgpicker-btn::-moz-focus-inner {
+  padding: 0;
+  border: none;
+}
+
 html, body {
   font: 18px/1.67 "Lato", "sans-serif";
   height: 100% !important;

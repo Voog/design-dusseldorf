@@ -28,6 +28,23 @@ $break-large: 1500px;
 
 %nulling { margin: 0; padding: 0; }
 
+%button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: none;
+  }
+}
+
 html, body {
   @extend %nulling; font: #{$font-size}/1.67 $font-main;
   height: 100% !important;
@@ -92,7 +109,9 @@ blockquote {
   }
 }
 
-
+.bgpicker-btn {
+  @extend %button;
+}
 
 /* select */
   .jq-select {
