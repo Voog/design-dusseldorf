@@ -19,7 +19,7 @@
 <script src="{{ javascripts_path }}/modernizr.min.js"></script>
 
 {% comment %}<!-- STYLESHEETS -->{% endcomment %}
-{% stylesheet_link "style.min.css" %}
+{% stylesheet_link "main.min.css" %}
 
 {% comment %}<!-- SITE TITLE -->{% endcomment %}
 {% capture page_title %}{% if article %}{{ article.title }} — {{ page.site_title }}{% else %}{% if site.root_item.selected? %}{{ page.site_title }}{% else %}{{ page.title }} — {{ page.site_title }}{% endif %}{% endif %}{% endcapture %}
@@ -35,6 +35,7 @@
 <meta property="og:site_name" content="{{ page.site_title | escape }}">
 
 {% if article %}
+  {% comment %}Facebook OG image on for article pages.{% endcomment %}
   {% if article.data.fb_image %}
     <meta property="og:image" content="{{ article.data.fb_image }}">
   {% elsif page.data.fb_image %}
@@ -42,17 +43,42 @@
   {% elsif site.data.fb_image %}
     <meta property="og:image" content="{{ site.data.fb_image }}">
   {% endif %}
+
   <meta property="og:description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...' }}">
   <meta name="description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...' }}">
 {% else %}
+  {% comment %}Facebook OG image for content pages.{% endcomment %}
   {% if page.data.fb_image %}
     <meta property="og:image" content="{{ page.data.fb_image }}">
   {% elsif site.data.fb_image %}
     <meta property="og:image" content="{{ site.data.fb_image }}">
+  {% else %}
+    {% if front_page == true %}
+      <meta property="og:image" content="{{ cover_image }}">
+    {% endif %}
   {% endif %}
+
+  {% comment %}Description tags.{% endcomment %}
   {% unless page.description == nil or page.description == "" %}
     <meta property="og:description" content="{{ page.description }}">
     <meta name="description" content="{{ page.description }}">
+  {% else %}
+    {% comment %}Blog page description tags.{% endcomment %}
+    {% if blog %}
+      {% for article in articles %}
+        {% if forloop.first %}
+          <meta property="og:description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...' }}">
+          <meta name="description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...'  }}">
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% comment %}Content page description tags.{% endcomment %}
+      {% unless editmode %}
+        {% capture content %}{% content %}{% endcapture %}
+        <meta property="og:description" content="{{ content | strip_html | truncatewords: 200, '...' }}">
+        <meta name="description" content="{{ content | strip_html | truncatewords: 200, '...'  }}">
+      {% endunless %}
+    {% endif %}
   {% endunless %}
 {% endif %}
 

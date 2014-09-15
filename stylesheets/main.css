@@ -14,7 +14,7 @@ html, body {
   }
 }
 body {
-  color: #222222;
+  color: #222;
   text-align: left;
   background: white;
   min-width: 1024px;
@@ -54,7 +54,7 @@ img {
 }
 
 h1, h2, h3 {
-  color: #222222;
+  color: #222;
   font: normal 36px/1.1 "Montserrat", "sans-serif";
 }
 
@@ -101,7 +101,7 @@ pre, pre code {
   background-color: rgba(255, 255, 255, 0.3);
 }
 .light-background pre, .light-background pre code {
-  background-color: black;
+  background-color: #000;
   background-color: rgba(0, 0, 0, 0.2);
 }
 pre code {
@@ -132,7 +132,7 @@ blockquote {
   cursor: pointer;
   background: white;
   font: 18px/1.67 "Lato", "sans-serif";
-  color: #222222;
+  color: #222;
 }
 .jq-select select {
   position: absolute;
@@ -150,7 +150,7 @@ blockquote {
   opacity: 0;
   filter: alpha(opacity=0);
   font: 18px/1.67 "Lato", "sans-serif";
-  color: #222222;
+  color: #222;
   -webkit-appearance: none;
 }
 
@@ -170,7 +170,7 @@ blockquote {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-top-color: #222222;
+  border-top-color: #222;
   border-width: 6px;
   top: 50%;
   left: 50%;
@@ -210,7 +210,7 @@ blockquote {
   border: none;
   padding: 4px 5px;
   font: 18px/1.67 "Lato", "sans-serif";
-  color: #222222;
+  color: #222;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -333,7 +333,7 @@ label > input[type=radio] + .form_control_indicator:before {
   border: 3px solid white;
 }
 label > input[type=radio]:checked + .form_control_indicator:before {
-  background-color: #222222;
+  background-color: #222;
 }
 
 /* layout */
@@ -434,12 +434,12 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   line-height: 1.05;
   vertical-align: top;
   font-family: "Montserrat", "sans-serif";
-  color: #222222;
+  color: #222;
   padding-top: 25px;
   overflow: hidden;
 }
 .site-title a {
-  color: #222222;
+  color: #222;
 }
 .topbar .site-title {
   padding: 27px 0 0 30px;
@@ -462,7 +462,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   color: #848484;
 }
 .main-menu a:hover, .main-menu a.active {
-  color: black;
+  color: #000;
 }
 
 /* submenu */
@@ -488,11 +488,11 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   white-space: nowrap;
 }
 .sub-menu a:hover {
-  color: #222222;
+  color: #222;
 }
 .sub-menu a.active {
-  color: #222222;
-  border-bottom: 3px solid #222222;
+  color: #222;
+  border-bottom: 3px solid #222;
   padding-bottom: 4px;
   margin-bottom: 4px;
 }
@@ -727,7 +727,7 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   background-color: #cccccc;
 }
 .lang-menu a.lang-flag:hover {
-  background-color: #cccccc;
+  background-color: #ccc;
   background-color: rgba(204, 204, 204, 0.5);
 }
 .lang-menu a.edy-menu-langadd {
@@ -812,10 +812,10 @@ label > input[type=radio]:checked + .form_control_indicator:before {
   word-wrap: break-word;
 }
 .blog-list .post-title a {
-  color: black;
+  color: #000;
 }
 .blog-list .post-title a:hover {
-  color: black;
+  color: #000;
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -1033,7 +1033,7 @@ table th {
   outline: 1px solid rgba(255, 255, 255, 0.3);
 }
 .js-bgpicker-cover-color.light-background {
-  color: #222222;
+  color: #222;
 }
 .js-bgpicker-cover-color.light-background .edy-empty-bordered {
   border-color: white;
@@ -1100,7 +1100,7 @@ table th {
   width: 100%;
   margin: 0;
   font: 18px/1.67 "Lato", "sans-serif";
-  color: #222222;
+  color: #222;
   border: none;
   background: none;
 }
@@ -1281,10 +1281,10 @@ table th {
   padding: 0 0 12px;
 }
 .voog-search-result .voog-search-result-link {
-  color: #222222;
+  color: #222;
 }
 .voog-search-result .voog-search-result-link:hover {
-  color: #222222;
+  color: #222;
   color: rgba(34, 34, 34, 0.8);
 }
 .voog-search-result .voog-search-result-content {
@@ -1541,7 +1541,7 @@ table th {
     display: block;
     height: 3px;
     width: 20px;
-    background: #222222;
+    background: #222;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -1683,7 +1683,7 @@ table th {
     content: "";
     height: 3px;
     width: 20px;
-    background: #222222;
+    background: #222;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -1727,3 +1727,5 @@ table th {
     bottom: 0;
   }
 }
+
+/*# sourceMappingURL=main.css.map */

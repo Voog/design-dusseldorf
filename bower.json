@@ -1,7 +1,9 @@
 {
   "name": "voog-design-berlin",
   "devDependencies": {
-    "modernizr": "~2.8.3",
+    "modernizr": "~2.8.3"
+  },
+  "dependencies": {
     "jquery": "~1.x",
     "overthrow": "~0.7.0"
   }
