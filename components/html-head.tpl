@@ -54,7 +54,13 @@
     <meta property="og:image" content="{{ site.data.fb_image }}">
   {% else %}
     {% if front_page == true %}
-      <meta property="og:image" content="{{ site.url }}{{ cover_image | remove_first: '/' }}">
+      {% unless page.data.cover_image == '' %}
+        {% if page.data.cover_image == nil %}
+          <meta property="og:image" content="{{ site.url }}{{ cover_image | remove_first: '/' }}">
+        {% else %}
+          <meta property="og:image" content="{{ cover_image }}">
+        {% endif %}
+      {% endunless %}
     {% endif %}
   {% endif %}
 
