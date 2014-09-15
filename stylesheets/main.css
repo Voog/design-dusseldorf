@@ -1005,7 +1005,6 @@ table th {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-  background-image: url("../images/front.jpg?1");
 }
 
 .js-bgpicker-cover-color {

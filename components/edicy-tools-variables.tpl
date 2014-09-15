@@ -19,29 +19,21 @@
     {% assign cover_color = page.data.cover_color %}
   {% endif %}
 
+  {% comment %}Builds style tag for the header background image.{% endcomment %}
+  {% assign cover_image_style = ' style="background-image: ' %}
+  {% if cover_image == '' %}
+    {% assign cover_image_style = cover_image_style | append: 'none' %}
+  {% else %}
+    {% assign cover_image_style = cover_image_style | append: "url('" | append: cover_image | append: "')" %}
+  {% endif %}
+  {% assign cover_image_style = cover_image_style | append: ';"' %}
 
-  <!-- Builds style tag for background image -->
-  {% assign cover_image_style = '' %}
-  {% unless page.data.cover_image == nil %}
-    {% assign cover_image_style = ' style="background-image: ' %}
-    {% if page.data.cover_image == '' %}
-      {% assign cover_image_style = cover_image_style | append: 'none' %}
-    {% else %}
-      {% assign cover_image_style = cover_image_style | append: "url('" | append: page.data.cover_image | append: "')" %}
-    {% endif %}
-    {% assign cover_image_style = cover_image_style | append: ';"' %}
-  {% endunless %}
-
-  <!-- Builds style tag for background color -->
-  {% assign cover_color_style = "" %}
-  {% unless page.data.cover_color == nil %}
-
-    {% assign cover_color_style = ' style="background-color: ' %}
-    {% if page.data.cover_color == '' %}
-      {% assign cover_color_style = cover_color_style | append: 'none' %}
-    {% else %}
-        {% assign cover_color_style = cover_color_style | append: cover_color %}
-    {% endif %}
-    {% assign cover_color_style = cover_color_style | append: ';"' %}
-  {% endunless %}
+  {% comment %}Builds style tag for the header background color.{% endcomment %}
+  {% assign cover_color_style = ' style="background-color: ' %}
+  {% if cover_color == '' %}
+    {% assign cover_color_style = cover_color_style | append: 'transparent' %}
+  {% else %}
+    {% assign cover_color_style = cover_color_style | append: cover_color %}
+  {% endif %}
+  {% assign cover_color_style = cover_color_style | append: ';"' %}
 {% endcapture %}

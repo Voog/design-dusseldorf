@@ -363,7 +363,7 @@ blockquote {
     (cs, -160px     0),
     // Estonian (Estonia)
     (et, -180px     0),
-  
+
     // Finnish (Finland)
     (fi,    0px -14px),
     // French (France)
@@ -384,7 +384,7 @@ blockquote {
     (id, -160px -14px),
     // Iranian (Iran)
     (fa, -180px -14px),
-  
+
     // Hebrew (Israel)
     (he,    0px -28px),
     // Italian (Italy)
@@ -405,7 +405,7 @@ blockquote {
     (no, -160px -28px),
     // Urdu (Pakistan)
     (ur, -180px -28px),
-  
+
     // Filipino (Philippines)
     (fil,   0px -42px),
     // Polish (Poland)
@@ -426,7 +426,7 @@ blockquote {
     (sv, -160px -42px),
     // Turkish (Turkey)
     (tr, -180px -42px),
-  
+
     // Ukrainian (Ukraine)
     (uk,    0px -56px),
     // American English (United States of Ameria)
@@ -601,7 +601,7 @@ blockquote {
   .js-bgpicker-cover-image {
     background-repeat: no-repeat; background-position: center top;
     background-size: cover;
-    background-image: url('../images/front.jpg?1');
+    // background-image: url('../images/front.jpg?1');
   }
 
   .js-bgpicker-cover-color {
