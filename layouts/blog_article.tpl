@@ -18,7 +18,7 @@
               {% if article.tags.size > 0 %}
               <ul>
                 {% for tag in article.tags %}
-                <li><a href="/{{ page.path }}/tagged/{{ tag.path }}">{{ tag.name }}</a></li>
+                <li><a href="{{ page.url }}/tagged/{{ tag.path }}">{{ tag.name }}</a></li>
                 {% endfor %}
               </ul>
               {% endif %}

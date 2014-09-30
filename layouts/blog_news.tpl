@@ -24,7 +24,7 @@
                       {% assign activestr = " class='active'" %}
                     {% endif %}
                   {% endfor %}
-                <li><a href="/{{ page.path }}/tagged/{{ tag.path }}"{{activestr}}>{{ tag.name }}</a></li>
+                <li><a href="{{ page.url }}/tagged/{{ tag.path }}"{{activestr}}>{{ tag.name }}</a></li>
                 {% endfor %}
               </ul>
               {% endif %}
