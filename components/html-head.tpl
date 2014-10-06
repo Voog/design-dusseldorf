@@ -5,8 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
-{% unless page.keywords == nil or page.keywords == "" %}<meta name="keywords" content="{{ page.keywords }}">{% endunless %}
-{% unless page.description == nil or page.keywords == "" %}<meta name="description" content="{{ page.description }}">{% endunless %}
 
 {% comment %}<!-- FAV ICON -->{% endcomment %}
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -34,62 +32,7 @@
 <meta property="og:title" content="{{ page_title | escape }}">
 <meta property="og:site_name" content="{{ page.site_title | escape }}">
 
-{% if article %}
-  {% comment %}Facebook OG image on for article pages.{% endcomment %}
-  {% if article.data.fb_image %}
-    <meta property="og:image" content="{{ article.data.fb_image }}">
-  {% elsif page.data.fb_image %}
-    <meta property="og:image" content="{{ page.data.fb_image }}">
-  {% elsif site.data.fb_image %}
-    <meta property="og:image" content="{{ site.data.fb_image }}">
-  {% endif %}
-
-  <meta property="og:description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...' }}">
-  <meta name="description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...' }}">
-{% else %}
-  {% comment %}Facebook OG image for content pages.{% endcomment %}
-  {% if page.data.fb_image %}
-    <meta property="og:image" content="{{ page.data.fb_image }}">
-  {% elsif site.data.fb_image %}
-    <meta property="og:image" content="{{ site.data.fb_image }}">
-  {% else %}
-    {% if front_page == true %}
-      {% unless page.data.cover_image == '' %}
-        {% if page.data.cover_image == nil %}
-          <meta property="og:image" content="{{ site.url }}{{ cover_image | remove_first: '/' }}">
-        {% else %}
-          <meta property="og:image" content="{{ cover_image }}">
-        {% endif %}
-      {% endunless %}
-    {% endif %}
-  {% endif %}
-
-  {% comment %}Description tags.{% endcomment %}
-  {% unless page.description == nil or page.description == "" %}
-    <meta property="og:description" content="{{ page.description }}">
-    <meta name="description" content="{{ page.description }}">
-  {% else %}
-    {% comment %}Blog page description tags.{% endcomment %}
-    {% if blog %}
-      {% for article in articles %}
-        {% if forloop.first %}
-          <meta property="og:description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...' }}">
-          <meta name="description" content="{{ article.excerpt | strip_html | truncatewords: 200, '...'  }}">
-        {% endif %}
-      {% endfor %}
-    {% else %}
-      {% comment %}Content page description tags.{% endcomment %}
-      {% unless editmode %}
-        {% capture content %}{% content %}{% endcapture %}
-        {% assign content_length = content | strip_html | size %}
-        {% if content_length > 0 %}
-          <meta property="og:description" content="{{ content | strip_html | escape | strip_newlines | truncatewords: 200, '...' }}">
-          <meta name="description" content="{{ content | strip_html | escape | truncatewords: 200, '...' }}">
-        {% endif %}
-      {% endunless %}
-    {% endif %}
-  {% endunless %}
-{% endif %}
+{% include "open-graph" %}
 
 {% if blog %}{{ blog.rss_link }}{% endif %}
 {{ site.stats_header }}
