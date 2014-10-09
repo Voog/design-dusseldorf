@@ -103,26 +103,49 @@ input[type=submit], input[type=text], textarea {
   border-radius: 0;
 }
 
-pre {
-  margin-top: 10px;
-  margin-bottom: 0;
-  overflow: auto;
-  white-space: normal;
+pre,
+code,
+iframe,
+table,
+form {
+  word-break: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
-pre, pre code {
-  padding: 10px;
+
+pre,
+code {
   font-size: 14px;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.3);
 }
-.light-background pre, .light-background pre code {
+.light-background pre, .light-background
+code {
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+pre {
+  overflow: auto;
+  padding: 10px;
+}
 pre code {
-  display: block;
-  margin-top: 0;
+  display: inline;
   padding: 0;
+  white-space: pre;
+  line-height: inherit;
+  background-color: transparent;
+  word-wrap: normal;
+}
+
+code {
+  display: inline-block;
+  padding: 5px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 blockquote {
@@ -787,8 +810,12 @@ label > input[type=radio]:checked + .form_control_indicator:before {
 
 /* content */
 .content {
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
   padding: 0 30px 30px;
-  word-wrap: break-word;
   position: relative;
 }
 .front-page .content {

@@ -19,6 +19,15 @@ module.exports = function(grunt) {
           'concat/overthrow.js': 'overthrow/src/overthrow-polyfill.js',
           'modernizr.js': 'modernizr/modernizr.js'
         }
+      },
+
+      stylesheets: {
+        options: {
+          destPrefix: 'stylesheets/scss/'
+        },
+        files: {
+          'bourbon': 'bourbon/dist'
+        }
       }
     },
 

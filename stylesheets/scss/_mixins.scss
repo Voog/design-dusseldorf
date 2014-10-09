@@ -1,3 +1,19 @@
+@mixin hyphenate($boolean) {
+  @if $boolean == true {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  } @else {
+    word-break: normal;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+}
+
 @mixin box-sizing($box-model) {
   -webkit-box-sizing: $box-model;
      -moz-box-sizing: $box-model;
@@ -35,7 +51,7 @@
 }
 
 @mixin rotate($value) {
-  -webkit-transform: rotate($value); 
+  -webkit-transform: rotate($value);
      -moz-transform: rotate($value);
           transform: rotate($value);
 }
