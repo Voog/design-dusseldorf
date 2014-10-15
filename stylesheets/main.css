@@ -435,6 +435,12 @@ label .form_control_indicator:before {
   margin-left: 280px;
   background: #e5e5e5;
 }
+.editmode .main {
+  margin-bottom: 40px;
+}
+.editmode.edy-bar-open .main {
+  margin-bottom: 150px;
+}
 @media screen and (min-width: 1500px) {
   .main {
     margin-left: 20%;

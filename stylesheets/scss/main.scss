@@ -483,6 +483,14 @@ label {
   margin-left: $side-width;
   background: $bg-color;
 
+  .editmode & {
+    margin-bottom: 40px;
+  }
+
+  .editmode.edy-bar-open & {
+    margin-bottom: 150px;
+  }
+
   @media screen and (min-width: $break-large) {
     margin-left: 20%;
   }
