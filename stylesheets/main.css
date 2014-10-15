@@ -329,7 +329,10 @@ label:before {
   content: url("../images/check.png?1");
   display: none;
 }
-label > input[type=radio], label > input[type=checkbox] {
+label .edy-fe-fieldinputs input[type=radio],
+label .edy-fe-fieldinputs input[type=checkbox],
+label .form_field_checkbox,
+label .form_field_radio {
   display: none;
   display: inline-block\9;
 }

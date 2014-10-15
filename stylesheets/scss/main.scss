@@ -223,7 +223,13 @@ label {
   cursor: pointer;
   &:before { content: url('../images/check.png?1'); display: none; }
 
-  > input[type=radio], > input[type=checkbox] { display: none; display: inline-block\9;}
+  .edy-fe-fieldinputs input[type=radio],
+  .edy-fe-fieldinputs input[type=checkbox],
+  .form_field_checkbox,
+  .form_field_radio {
+    display: none;
+    display: inline-block\9;
+  }
 
   .form_control_indicator {
     display: inline-block; display: none\9; width: 18px; height: 18px; vertical-align: 0px;
