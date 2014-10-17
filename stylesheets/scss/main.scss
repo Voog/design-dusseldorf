@@ -1240,7 +1240,10 @@ table {
     border: none;
     outline: 0;
     background: none;
-
+    
+    &::-ms-clear {
+        display: none;
+    }
     &::-webkit-input-placeholder {
       opacity: 1;
       color: rgba(0,0,0,.3);

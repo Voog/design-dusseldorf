@@ -1183,6 +1183,9 @@ table th {
   outline: 0;
   background: none;
 }
+.search .search-input::-ms-clear {
+  display: none;
+}
 .search .search-input::-webkit-input-placeholder {
   opacity: 1;
   color: rgba(0, 0, 0, 0.3);
