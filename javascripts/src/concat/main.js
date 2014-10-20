@@ -64,6 +64,11 @@
             $('.tbl').css('visibility', 'visible');
             $(window).resize(setFrontContent);
         }
+        
+        var $form_error = $('.form_area .form_error');
+        if ($form_error.length) {
+            $(window).scrollTop($form_error.offset().top);
+        }
     });
     
     var setFrontContent = function() {
