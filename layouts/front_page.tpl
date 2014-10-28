@@ -14,7 +14,6 @@
       {% include "sidebar" %}
     </aside>
     <div class="main">
-    {{ flags_state }}
       <div class="main-inner inner">
         <div class="js-bgpicker-cover-image"{{ cover_image_style }}>
           <div class="js-bgpicker-cover-color {{ cover_color_class }}"{{ cover_color_style }}>
