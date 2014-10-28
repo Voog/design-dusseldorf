@@ -648,6 +648,10 @@ label {
     width: 21px;
     height: 15px;
     content: '';
+
+    .flags-disabled & {
+      display: none;
+    }
   }
 }
 
@@ -789,7 +793,6 @@ $flags:
 
   .menu {
     .menu-item {
-      margin-top: 8px;
       padding: 7px 12px;
       font-size: 13px;
     }
@@ -878,25 +881,48 @@ $flags:
       padding: 5px;
     }
   }
+
+  &.flags-disabled {
+    a.lang-flag {
+      padding: 5px 13px;
+    }
+  }
 }
 
 .lang-menu-btn {
   @extend %nulling;
+  @extend %button;
   position: relative;
   display: block;
-  width: 21px;
   height: 15px;
-  font-size: 0;
+  font-family: inherit;
+  font-size: 12px;
   cursor: pointer;
   vertical-align: middle;
   border: none;
   background: none;
+
+  .flags-enabled & {
+    width: 21px;
+  }
 
   .lang-flag {
     &:before,
     &:after {
       top: 0;
       left: 0;
+    }
+  }
+
+  .ico-popover-toggle {
+    font-size: 10px;
+  }
+
+  &.open {
+    .ico-popover-toggle {
+      left: 1px;
+      display: inline-block;
+      @include transform(rotate(180deg));
     }
   }
 }
@@ -907,7 +933,7 @@ $flags:
   top: 20px;
   left: -12px;
   display: none;
-  min-width: 121px;
+  min-width: 122px;
   padding: 5px 0;
   line-height: 1;
   text-align: left;
@@ -916,6 +942,10 @@ $flags:
 
   .no-boxshadow & {
     border: 1px solid #eeeeee;
+  }
+
+  .editmode & {
+    padding-bottom: 0;
   }
 }
 
@@ -1306,7 +1336,7 @@ table {
     background: none;
 
     &::-ms-clear {
-        display: none;
+      display: none;
     }
     &::-webkit-input-placeholder {
       opacity: 1;

@@ -8,17 +8,17 @@ ol li, .lang-menu-btn {
   padding: 0;
 }
 
-.bgpicker-btn {
+.bgpicker-btn, .lang-menu-btn {
   margin: 0;
   padding: 0;
   cursor: pointer;
   border: none;
   background: none;
 }
-.bgpicker-btn:focus {
+.bgpicker-btn:focus, .lang-menu-btn:focus {
   outline: none;
 }
-.bgpicker-btn::-moz-focus-inner {
+.bgpicker-btn::-moz-focus-inner, .lang-menu-btn::-moz-focus-inner {
   padding: 0;
   border: none;
 }
@@ -578,6 +578,9 @@ label .form_control_indicator:before {
   height: 15px;
   content: '';
 }
+.flags-disabled .lang-flag:before, .flags-disabled .lang-flag:after {
+  display: none;
+}
 
 .lang-flag:before {
   background-color: black;
@@ -798,7 +801,6 @@ label .form_control_indicator:before {
   background-color: rgba(0, 0, 0, 0.09);
 }
 .lang-options .menu .menu-item {
-  margin-top: 8px;
   padding: 7px 12px;
   font-size: 13px;
 }
@@ -869,21 +871,39 @@ label .form_control_indicator:before {
   display: inline-block;
   padding: 5px;
 }
+.lang-menu.flags-disabled a.lang-flag {
+  padding: 5px 13px;
+}
 
 .lang-menu-btn {
   position: relative;
   display: block;
-  width: 21px;
   height: 15px;
-  font-size: 0;
+  font-family: inherit;
+  font-size: 12px;
   cursor: pointer;
   vertical-align: middle;
   border: none;
   background: none;
 }
+.flags-enabled .lang-menu-btn {
+  width: 21px;
+}
 .lang-menu-btn .lang-flag:before, .lang-menu-btn .lang-flag:after {
   top: 0;
   left: 0;
+}
+.lang-menu-btn .ico-popover-toggle {
+  font-size: 10px;
+}
+.lang-menu-btn.open .ico-popover-toggle {
+  left: 1px;
+  display: inline-block;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .lang-menu-popover {
@@ -892,7 +912,7 @@ label .form_control_indicator:before {
   top: 20px;
   left: -12px;
   display: none;
-  min-width: 121px;
+  min-width: 122px;
   padding: 5px 0;
   line-height: 1;
   text-align: left;
@@ -903,6 +923,9 @@ label .form_control_indicator:before {
 }
 .no-boxshadow .lang-menu-popover {
   border: 1px solid #eeeeee;
+}
+.editmode .lang-menu-popover {
+  padding-bottom: 0;
 }
 
 /* content */
