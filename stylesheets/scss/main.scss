@@ -10,6 +10,7 @@ $bg-color: #e5e5e5;
 $error-color: #c70909;
 $success-color: #409e13;
 $black: #000000;
+$blue: #0066BB;
 
 $font-size: 18px;
 $font-size-big: 22px;
@@ -644,8 +645,8 @@ label {
     top: 0;
     left: 0;
     display: block;
-    width: 20px;
-    height: 13px;
+    width: 21px;
+    height: 15px;
     content: '';
   }
 }
@@ -656,115 +657,178 @@ label {
 
 .lang-flag:after {
   opacity: .95;
-  background-image: url('../images/ico-flags-small.png?1');
   background-repeat: no-repeat;
-  background-size: 200px;
 
   .no-boxshadow & {
     border: 1px solid #eeeeee;
   }
 
   .backgroundsize.svg & {
-    background-image: url('../assets/ico-flags.svg?1');
+    background-image: url('../assets/ico-flags.svg');
+  }
+
+  .no-svg {
+    background-image: url('../images/ico-flags.png');
   }
 }
 
 // Language flag icons positioning in the spritemap.
-  $flags:
-  // Albanian (Albania)
-  (sq,   0        0),
-  // Armenian (Armenia)
-  (hy,  -20px     0),
-  // Bengali (Bangladesh)
-  (bn,  -40px     0),
-  // Brazilian Portuguese (Brazil)
-  (pt,  -60px     0),
-  // Bulgarian (Bulgaria)
-  (bg,  -80px     0),
-  // Chinese (China)
-  (zh, -100px     0),
-  // Croatian (Croatia)
-  (hr, -120px     0),
-  // Danish (Denmark)
-  (da, -140px     0),
-  // Czech (Czech Republic)
-  (cs, -160px     0),
-  // Estonian (Estonia)
-  (et, -180px     0),
+$flags:
+// Albanian (Albania)
+(sq, 0 0),
+// Armenian (Armenia)
+(hy, -21px 0),
+// Bengali (Bangladesh)
+(bn, -42px 0),
+// Brazilian Portuguese (Brazil)
+(xx, -63px 0),
+// Bulgarian (Bulgaria)
+(bg, -84px 0),
+// Chinese (China)
+(zh, -105px 0),
+// Croatian (Croatia)
+(hr, -126px 0),
+// Danish (Denmark)
+(da, -147px 0),
+// Czech (Czech Republic)
+(cs, -168px 0),
+// Estonian (Estonia)
+(et, -189px 0),
 
-  // Finnish (Finland)
-  (fi,    0px -14px),
-  // French (France)
-  (fr,  -20px -14px),
-  // Georgian (Georgia)
-  (ka,  -40px -14px),
-  // German (Germany)
-  (de,  -60px -14px),
-  // Greek (Greece)
-  (el,  -80px -14px),
-  // Hungarian (Hungary)
-  (hu, -100px -14px),
-  // Icelandic (Iceland)
-  (is, -120px -14px),
-  // Hindi (India)
-  (hi, -140px -14px),
-  // Indonesian (Indonesia)
-  (id, -160px -14px),
-  // Iranian (Iran)
-  (fa, -180px -14px),
+// Finnish (Finland)
+(fi, 0 -15px),
+// French (France)
+(fr, -21px -15px),
+// Georgian (Georgia)
+(ka, -42px -15px),
+// German (Germany)
+(de, -63px -15px),
+// Greek (Greece)
+(el, -84px -15px),
+// Hungarian (Hungary)
+(hu, -105px -15px),
+// Icelandic (Iceland)
+(is, -126px -15px),
+// Hindi (India)
+(hi, -147px -15px),
+// Indonesian (Indonesia)
+(id, -168px -15px),
+// Iranian (Iran)
+(fa, -189px -15px),
 
-  // Hebrew (Israel)
-  (he,    0px -28px),
-  // Italian (Italy)
-  (it,  -20px -28px),
-  // Japanese (Japan)
-  (ja,  -40px -28px),
-  // Korean (Korea, South)
-  (ko,  -60px -28px),
-  // Latvian (Latvia)
-  (lv,  -80px -28px),
-  // Lithuanian (Lithuania)
-  (lt, -100px -28px),
-  // Malaysian (Malaysia)
-  (ms, -120px -28px),
-  // Dutch (Netherlands)
-  (nl, -140px -28px),
-  // Norwegian (Norway)
-  (no, -160px -28px),
-  // Urdu (Pakistan)
-  (ur, -180px -28px),
+// Hebrew (Israel)
+(he, 0 -30px),
+// Italian (Italy)
+(it, -21px -30px),
+// Japanese (Japan)
+(ja, -42px -30px),
+// Korean (Korea, South)
+(ko, -63px -30px),
+// Latvian (Latvia)
+(lv, -84px -30px),
+// Lithuanian (Lithuania)
+(lt, -105px -30px),
+// Malaysian (Malaysia)
+(ms, -126px -30px),
+// Dutch (Netherlands)
+(nl, -147px -30px),
+// Norwegian (Norway)
+(no, -168px -30px),
+// Urdu (Pakistan)
+(ur, -189px -30px),
 
-  // Filipino (Philippines)
-  (fil,   0px -42px),
-  // Polish (Poland)
-  (pl,  -20px -42px),
-  // Romanian (Romania)
-  (ro,  -40px -42px),
-  // Russian (Russia)
-  (ru,  -60px -42px),
-  // Arabic (Saudi Arabia)
-  (ar,  -80px -42px),
-  // Slovakian (Slovakia)
-  (sk, -100px -42px),
-  // Slovenian (Slovenia)
-  (sl, -120px -42px),
-  // Spanish (Spain)
-  (es, -140px -42px),
-  // Swedish (Sweden)
-  (sv, -160px -42px),
-  // Turkish (Turkey)
-  (tr, -180px -42px),
+// Filipino (Philippines)
+(fil, 0 -45px),
+// Polish (Poland)
+(pl, -21px -45px),
+// Romanian (Romania)
+(ro, -42px -45px),
+// Russian (Russia)
+(ru, -63px -45px),
+// Arabic (Saudi Arabia)
+(ar, -84px -45px),
+// Slovakian (Slovakia)
+(sk, -105px -45px),
+// Slovenian (Slovenia)
+(sl, -126px -45px),
+// Spanish (Spain)
+(es, -147px -45px),
+// Swedish (Sweden)
+(sv, -168px -45px),
+// Turkish (Turkey)
+(tr, -189px -45px),
 
-  // Ukrainian (Ukraine)
-  (uk,    0px -56px),
-  // American English (United States of Ameria)
-  (en,  -20px -56px)
-  ;
-
+// Ukrainian (Ukraine)
+(uk, 0 -60px),
+// American English (United States of America)
+(en, -21px -60px),
+// French (Ivory Coast)
+(xx, -42px -60px),
+// British English (Great Britian)
+(xx, -63px -60px),
+// Portuguese (Portuguese Republic)
+(pt, -84px -60px),
+// Canadian English (Canada)
+(xx, -105px, -60px),
+// Serbian (Republic of Serbia)
+(sr, -126px, -60px),
+// Dutch, French, German (Kingdom of Belgium)
+(xx, -147px, -60px),
+// Australian English (Commonwealth of Australia)
+(xx, -168px, -60px),
+;
 
 @each $flag, $pos in $flags {
   .lang-flag-#{$flag}:after {
     background-position: $pos;
+  }
+}
+
+.lang-options {
+  @include bg($black, 0.09);
+
+  .menu {
+    .menu-item {
+      margin-top: 8px;
+      padding: 7px 12px;
+      font-size: 13px;
+    }
+  }
+}
+
+.option-btn {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  @include color($blue);
+
+  &:hover {
+    @include color($blue, 0.8);
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  .flags-disabled & {
+    .disable-text {
+      display: none;
+    }
+  }
+
+  .flags-enabled & {
+    .enable-text {
+      display: none;
+    }
   }
 }
 
@@ -820,8 +884,8 @@ label {
   @extend %nulling;
   position: relative;
   display: block;
-  width: 20px;
-  height: 13px;
+  width: 21px;
+  height: 15px;
   font-size: 0;
   cursor: pointer;
   vertical-align: middle;
@@ -1240,7 +1304,7 @@ table {
     border: none;
     outline: 0;
     background: none;
-    
+
     &::-ms-clear {
         display: none;
     }
