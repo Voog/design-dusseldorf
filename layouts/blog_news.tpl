@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
+  {% include "edicy-tools-variables" %}
   {% include "html-head" %}
 </head>
 <body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
@@ -49,8 +50,9 @@
       </div>
       {% include "footer" %}
     </div>
-  </div> 
+  </div>
   {% include "mobilemenu" %}
   {% include "javascripts" %}
+  {% include "edicy-tools" %}
 </body>
 </html>
