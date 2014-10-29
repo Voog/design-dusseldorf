@@ -1,4 +1,4 @@
-@import 'bourbon/bourbon';
+@import '../../bower_components/bourbon/dist/bourbon';
 @import '_mixins';
 
 $main-color: #222222;
@@ -10,6 +10,7 @@ $bg-color: #e5e5e5;
 $error-color: #c70909;
 $success-color: #409e13;
 $black: #000000;
+$white: #ffffff;
 $blue: #0066BB;
 
 $font-size: 18px;
@@ -795,6 +796,25 @@ $flags:
     .menu-item {
       padding: 7px 12px;
       font-size: 13px;
+
+      @media screen and (max-width: $break-middle) {
+        text-align: right;
+      }
+    }
+  }
+
+  @media screen and (max-width: $break-small) {
+    background-color: transparent;
+
+    .menu {
+      #mobile-menu & {
+        display: block;
+        padding: 0;
+      }
+
+      .menu-item {
+        @include color($white, .5);
+      }
     }
   }
 }
@@ -810,7 +830,7 @@ $flags:
   @include color($blue);
 
   &:hover {
-    @include color($blue, 0.8);
+    @include color($blue, .8);
   }
 
   &::-moz-focus-inner {
@@ -833,6 +853,15 @@ $flags:
       display: none;
     }
   }
+
+  @media screen and (max-width: $break-small) {
+    @include color($white);
+
+
+    &:hover {
+      @include color($white, .8);
+    }
+  }
 }
 
 /* langmenu */
@@ -849,7 +878,12 @@ $flags:
     text-align: left;
 
     &.add-lang-btn {
-      padding: 5px 0 5px 10px;
+      padding: 5px 0 4px 10px;
+
+      @media screen and (max-width: $break-middle) {
+        padding: 5px 10px 4px 0;
+        text-align: right;
+      }
     }
   }
 
@@ -857,12 +891,12 @@ $flags:
     &.lang-flag {
       position: relative;
       display: block;
-      padding: 5px 13px 5px 40px;
+      padding: 6px 13px 5px 40px;
       @include color(#1b2124, .7);
 
       &:before,
       &:after {
-        top: 5px;
+        top: 4px;
         left: 12px;
       }
 
@@ -874,6 +908,17 @@ $flags:
       &:hover {
         @include bg(#cccccc, .5);
       }
+
+      @media screen and (max-width: $break-middle) {
+        padding: 6px 40px 5px 13px;
+        text-align: right;
+
+        &:before,
+        &:after {
+          left: auto;
+          right: 12px;
+        }
+      }
     }
 
     &.edy-menu-langadd {
@@ -884,7 +929,7 @@ $flags:
 
   &.flags-disabled {
     a.lang-flag {
-      padding: 5px 13px;
+      padding: 6px 13px 5px;
     }
   }
 }
@@ -915,13 +960,15 @@ $flags:
   }
 
   .ico-popover-toggle {
-    font-size: 10px;
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    font-size: 7.2px;
   }
 
   &.open {
     .ico-popover-toggle {
-      left: 1px;
-      display: inline-block;
+      top: -2px;
       @include transform(rotate(180deg));
     }
   }
@@ -1845,6 +1892,34 @@ table {
         content: '';
         background: $main-color;
         @include border-radius(5px);
+
+        &.flags-enabled {
+          .language-menu-btn {
+            .lang-title {
+              display: none;
+            }
+          }
+        }
+
+        &.flags-disabled {
+          .language-menu-btn {
+            position: static;
+            width: auto;
+            height: auto;
+            background-color: red;
+
+            &:before,
+            &:after {
+              display: none;
+            }
+
+            .lang-title {
+              display: inline-block;
+              position: static;
+              color: $white;
+            }
+          }
+        }
       }
 
       &:before {
@@ -1906,20 +1981,62 @@ table {
 
     .language-menu-btn {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 14px;
+      left: 15px;
       display: block;
       width: 42px;
       height: 42px;
       outline: 0;
 
-      span {
+      .lang-menu-btn {
         position: absolute;
         top: 14px;
         left: 11px;
-      }
 
-      .language-menu-open & {
+        @media screen and (max-width: $break-small) {
+          position: static;
+        }
+      }
+    }
+
+    &.flags-enabled {
+      .language-menu-btn {
+        .lang-title {
+          display: none;
+        }
+      }
+    }
+
+    &.flags-disabled {
+      .language-menu-btn {
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        display: inline-block;
+        vertical-align: top;
+        padding: 11px 9px 17px;
+        @include color($white);
+
+        &:before,
+        &:after {
+          display: none;
+        }
+
+        .lang-menu-btn {
+          position: static;
+        }
+
+        .lang-title {
+          display: inline-block;
+          position: static;
+          color: $white;
+        }
+      }
+    }
+
+    .language-menu-open & {
+      .language-menu-btn {
         display: none;
       }
     }
