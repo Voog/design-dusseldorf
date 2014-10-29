@@ -964,6 +964,10 @@ $flags:
     top: -1px;
     display: inline-block;
     font-size: 7.2px;
+
+    .flags-enabled & {
+      display: none;
+    }
   }
 
   &.open {

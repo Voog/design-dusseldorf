@@ -942,6 +942,9 @@ label .form_control_indicator:before {
   display: inline-block;
   font-size: 7.2px;
 }
+.flags-enabled .lang-menu-btn .ico-popover-toggle {
+  display: none;
+}
 .lang-menu-btn.open .ico-popover-toggle {
   top: -2px;
   -webkit-transform: rotate(180deg);
