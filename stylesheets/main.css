@@ -581,6 +581,9 @@ label .form_control_indicator:before {
 .flags-disabled .lang-flag:before, .flags-disabled .lang-flag:after {
   display: none;
 }
+.lang-flag:after {
+  background-position: -189px -60px;
+}
 
 .lang-flag:before {
   background-color: black;

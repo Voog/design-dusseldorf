@@ -654,6 +654,10 @@ label {
       display: none;
     }
   }
+
+  &:after {
+    background-position: -189px -60px;
+  }
 }
 
 .lang-flag:before {
