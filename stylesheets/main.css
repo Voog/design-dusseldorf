@@ -935,6 +935,9 @@ label .form_control_indicator:before {
 .flags-enabled .lang-menu-btn {
   width: 21px;
 }
+.flags-enabled .lang-menu-btn .lang-title {
+  display: none;
+}
 .lang-menu-btn .lang-flag:before, .lang-menu-btn .lang-flag:after {
   top: 0;
   left: 0;
@@ -1786,9 +1789,6 @@ table th {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-  }
-  .mobile-menu-toggler span.flags-enabled .language-menu-btn .lang-title, .mobile-menu-toggler span:before.flags-enabled .language-menu-btn .lang-title, .mobile-menu-toggler span:after.flags-enabled .language-menu-btn .lang-title {
-    display: none;
   }
   .mobile-menu-toggler span.flags-disabled .language-menu-btn, .mobile-menu-toggler span:before.flags-disabled .language-menu-btn, .mobile-menu-toggler span:after.flags-disabled .language-menu-btn {
     position: static;

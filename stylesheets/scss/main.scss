@@ -953,6 +953,10 @@ $flags:
 
   .flags-enabled & {
     width: 21px;
+
+    .lang-title {
+      display: none;
+    }
   }
 
   .lang-flag {
@@ -1900,14 +1904,6 @@ table {
         content: '';
         background: $main-color;
         @include border-radius(5px);
-
-        &.flags-enabled {
-          .language-menu-btn {
-            .lang-title {
-              display: none;
-            }
-          }
-        }
 
         &.flags-disabled {
           .language-menu-btn {
