@@ -4,10 +4,12 @@
     <!-- a href="#" class="">keel</a -->
     <a href="#" role="button" class="language-menu-btn">
       <span class="lang-menu-btn lang-flag {% for language in site.languages %}{% if language.selected? %}lang-flag-{{ language.code }}{% endif %}{% endfor %}">
-        <span class="lang-title">
-          {% for language in site.languages %}{% if language.selected? %}{{ language.title }}{% endif %}{% endfor %}
-          <span class="ico-popover-toggle">▼</span>
-        </span>
+        {% if editmode or flags_state == false %}
+          <span class="lang-title">
+            {% for language in site.languages %}{% if language.selected? %}{{ language.title }}{% endif %}{% endfor %}
+            <span class="ico-popover-toggle">▼</span>
+          </span>
+        {% endif %}
       </span>
     </a>
   {% endif %}
