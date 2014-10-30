@@ -12,6 +12,7 @@ module.exports = function(grunt) {
 
         'tests': [
           'backgroundsize',
+          'box-shadow',
           'flexbox',
           'svg'
         ],

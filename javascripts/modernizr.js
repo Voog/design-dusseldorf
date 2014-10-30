@@ -1,5 +1,5 @@
 /* Modernizr (Custom Build) | MIT & BSD
- * Build: http://modernizr.com/download/#-backgroundsize-flexbox-svg-shiv-load-cssclasses
+ * Build: http://modernizr.com/download/#-backgroundsize-box-shadow-flexbox-svg-shiv-load-cssclasses
  */
 ;
 
