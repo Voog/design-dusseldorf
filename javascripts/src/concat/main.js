@@ -65,9 +65,10 @@
             $(window).resize(setFrontContent);
         }
 
-        var $form_error = $('.form_area .form_error');
-        if ($form_error.length) {
-            $(window).scrollTop($form_error.offset().top);
+        if ($('.comment-form').hasClass('form_with_errors')) {
+          $('html, body').scrollTop($('.comment-form').offset().top);
+        } else if ($('form').find('.form_error, .form_notice').length > 0) {
+          $('html, body').scrollTop($('.form_error, .form_notice').closest('form').offset().top);
         }
     });
 
