@@ -1035,6 +1035,11 @@ $flags:
   li {
     padding-left: 3px;
   }
+
+  form,
+  .form_fields {
+    text-align: left;
+  }
 }
 
 /* articles */
@@ -1269,6 +1274,21 @@ table {
   padding: 20px 0;
 }
 
+.edys-gallery-area,
+.edy-gallery-area {
+  .front-page & {
+    font-size: 0;
+  }
+
+  .edys-gallery-item {
+    .front-page & {
+      float: none;
+      display: inline-block;
+    }
+  }
+}
+
+.edy-gallery-image,
 .edys-gallery-item {
   @include border-radius(96px);
 }
