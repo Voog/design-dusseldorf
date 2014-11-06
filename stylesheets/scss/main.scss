@@ -858,6 +858,13 @@ $flags:
     }
   }
 
+  .disable-text,
+  .enable-text {
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+
   @media screen and (max-width: $break-small) {
     @include color($white);
 
