@@ -988,6 +988,12 @@ label .form_control_indicator:before {
 .formatted .form_fields {
   text-align: left;
 }
+.formatted .edy-image-container-with-title:after {
+  display: block;
+  padding: 4px;
+  font-size: 12px;
+  content: attr(data-title);
+}
 
 /* articles */
 .blog-content h1 {
