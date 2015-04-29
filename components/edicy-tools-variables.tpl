@@ -6,41 +6,86 @@
     {% assign flags_state = site.data.flags_state %}
   {% endif %}
 
-  <!-- Sets cover color lightness class -->
-  {% if page.data.cover_lightness == nil or page.data.cover_lightness <= 0.5 %}
-    {% assign cover_color_class = 'dark-background' %}
+  {% comment %}Assign variables based on page type.{% endcomment %}
+  {% assign content_left_bg = page.data.content_left_bg %}
+  {% assign content_left_bg_image = page.data.content_left_bg.image %}
+  {% assign content_left_bg_image_sizes = page.data.content_left_bg.imageSizes %}
+  {% assign content_left_bg_color = page.data.content_left_bg.color %}
+  {% assign content_left_bg_color_data = page.data.content_left_bg.colorData %}
+
+  {% comment %}Sets the body background type.{% endcomment %}
+  {% if content_left_bg %}
+    {% if content_left_bg_color_data.a >= 0.2 %}
+      {% if content_left_bg_color_data.lightness >= 0.5 %}
+        {% assign content_left_bg_type = 'light-background' %}
+      {% else %}
+        {% assign content_left_bg_type = 'dark-background' %}
+      {% endif %}
+    {% else %}
+      {% assign content_left_bg_type = 'light-background' %}
+    {% endif %}
   {% else %}
-    {% assign cover_color_class = 'light-background' %}
+    {% assign content_left_bg_type = 'dark-background' %}
   {% endif %}
 
-  <!-- Sets the "front page" cover image and color values -->
-  {% if page.data.cover_image == nil %}
-    {% assign cover_image = images_path | append: '/front.jpg' %}
-  {% else %}
-    {% assign cover_image = page.data.cover_image %}
+  {% if content_left_bg_image == nil %}
+    {% assign content_left_bg_image_original = images_path | append: '/front-page-left-bg.jpg' %}
+    {% assign content_left_bg_image = images_path | append: '/front-page-left-bg_block.jpg' %}
   {% endif %}
 
-  {% if page.data.cover_color == nil %}
-    {% assign cover_color = 'rgba(0,0,0,0.2)' %}
+  {% if content_left_bg_image_sizes == nil %}
+    {% assign content_left_bg_image_sizes_str = '[{"url":"' | append: images_path | append: '/front-page-left-bg.jpg", "width":1055, "height":1006}, {"url":"' | append: images_path | append: '/front-page-left-bg_block.jpg", "width":600, "height":572}]' %}
   {% else %}
-    {% assign cover_color = page.data.cover_color %}
+    {% assign content_left_bg_image_sizes_str = content_left_bg_image_sizes | json %}
   {% endif %}
 
-  {% comment %}Builds style tag for the header background image.{% endcomment %}
-  {% assign cover_image_style = ' style="background-image: ' %}
-  {% if cover_image == '' %}
-    {% assign cover_image_style = cover_image_style | append: 'none' %}
-  {% else %}
-    {% assign cover_image_style = cover_image_style | append: "url('" | append: cover_image | append: "')" %}
+  {% if content_left_bg_color == nil %}
+    {% assign content_left_bg_color = 'rgba(249,205,0,0.1)' %}
   {% endif %}
-  {% assign cover_image_style = cover_image_style | append: ';"' %}
 
-  {% comment %}Builds style tag for the header background color.{% endcomment %}
-  {% assign cover_color_style = ' style="background-color: ' %}
-  {% if cover_color == '' %}
-    {% assign cover_color_style = cover_color_style | append: 'transparent' %}
+  {% if content_left_bg_color_data == nil %}
+    {% assign content_left_bg_color_data_str = '{"r": 249, "g": 205, "b": 0, "a": 0.1, "lightness": 0.78}' %}
   {% else %}
-    {% assign cover_color_style = cover_color_style | append: cover_color %}
+    {% assign content_left_bg_color_data_str = content_left_bg_color_data | json %}
   {% endif %}
-  {% assign cover_color_style = cover_color_style | append: ';"' %}
+
+  {% comment %}Assign variables based on page type.{% endcomment %}
+  {% assign content_right_bg = page.data.content_right_bg %}
+  {% assign content_right_bg_image = page.data.content_right_bg.image %}
+  {% assign content_right_bg_image_sizes = page.data.content_right_bg.imageSizes %}
+  {% assign content_right_bg_color = page.data.content_right_bg.color %}
+  {% assign content_right_bg_color_data = page.data.content_right_bg.colorData %}
+
+  {% comment %}Sets the body background type.{% endcomment %}
+  {% if content_right_bg %}
+    {% if content_right_bg_color_data.a >= 0.2 %}
+      {% if content_right_bg_color_data.lightness >= 0.5 %}
+        {% assign content_right_bg_type = 'light-background' %}
+      {% else %}
+        {% assign content_right_bg_type = 'dark-background' %}
+      {% endif %}
+    {% else %}
+      {% assign content_right_bg_type = 'light-background' %}
+    {% endif %}
+  {% else %}
+    {% assign content_right_bg_type = 'dark-background' %}
+  {% endif %}
+
+  {% if content_right_bg_image_sizes == nil %}
+    {% assign content_right_bg_image_sizes_str = '' %}
+  {% else %}
+    {% assign content_right_bg_image_sizes_str = content_right_bg_image_sizes | json %}
+  {% endif %}
+
+  {% comment %}
+    {% if content_right_bg_color == nil %}
+      {% assign content_right_bg_color = 'rgba(255,78,0,1)' %}
+    {% endif %}
+  {% endcomment %}
+
+  {% if content_right_bg_color_data == nil %}
+    {% assign content_right_bg_color_data_str = '{"r": 249, "g": 205, "b": 0, "a": 0.1, "lightness": 0.78}' %}
+  {% else %}
+    {% assign content_right_bg_color_data_str = content_right_bg_color_data | json %}
+  {% endif %}
 {% endcapture %}

@@ -74,10 +74,10 @@
 
     var setFrontContent = function() {
         var wh = $(window).height(),
-            $tbl = $('.tbl').css('height', 'auto');
+            $tbl = $('.main').css('height', 'auto');
 
 
-            $tbl.height(wh-140);
+            $tbl.height(wh);
     };
 
     var setTitlebox = function() {
@@ -182,4 +182,3 @@
     });
 
 })(jQuery);
-

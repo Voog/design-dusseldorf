@@ -4,6 +4,8 @@
   {% assign front_page = true %}
   {% include "edicy-tools-variables" %}
   {% include "html-head" %}
+  {% include "edicy-tools-styles" %}
+
   {% if editmode %}<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">{% endif %}
 </head>
 <body class="front-page{% if editmode %} editmode{% endif %}{% if site.search.enabled %} search-enabled{% endif %}">
@@ -14,34 +16,58 @@
       {% include "sidebar" %}
     </aside>
     <div class="main">
-      <div class="main-inner inner">
-        <div class="js-bgpicker-cover-image"{{ cover_image_style }}>
-          <div class="js-bgpicker-cover-color {{ cover_color_class }}"{{ cover_color_style }}>
-            {% if editmode %}<button class="bgpicker-btn js-bgpicker-cover-settings" data-bg-image="{{ cover_image }}" data-bg-color="{{ cover_color }}"></button>{% endif %}
 
-            <div class="container-wrap cfx">
-              <div class="container">
-                <section class="content formatted">
-                  <div class="tbl">
-                    <div class="tbl-row">
-                      <div class="tbl-cell">
-                        {% content %}
-                      </div>
-                    </div>
-                  </div>
-                </section>
+      <div class="main-inner-row header-row">
+        <div class="content-full">
+          <div class="inner-padding">
+            <div class="align-middle">
+              <div class="content-inner formatted cfx">{% content name="top" %}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-inner-row center-row">
+
+        <div class="content-half content-left js-content-left">
+          <div class="background-color"></div>
+          {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_left_bg_image }}" data-bg-image-sizes="{{ content_left_bg_image_sizes_str | escape }}" data-bg-color="{{ content_left_bg_color }}" data-bg-color-data="{{ content_left_bg_color_data_str | escape }}"></button>{% endif %}
+          <div class="inner-padding">
+            <div class="align-middle js-background-type {{ content_left_bg_type }}">
+              <div class="content-inner formatted cfx">{% content name="left" %}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-half content-right js-content-right">
+          <div class="background-color"></div>
+          {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_right_bg_image }}" data-bg-image-sizes="{{ content_right_bg_image_sizes_str | escape }}" data-bg-color="{{ content_right_bg_color }}" data-bg-color-data="{{ content_right_bg_color_data_str | escape }}"></button>{% endif %}
+          <div class="inner-padding">
+            <div class="align-middle js-background-type {{ content_right_bg_type }}">
+              <div class="content-inner formatted cfx">{% content name="right" %}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="main-inner-row footer-row">
+        <div class="content-full">
+          <div class="inner-padding">
+            <div class="align-middle">
+              <div class="content-inner formatted cfx">
+                {% xcontent name="footer" %}
               </div>
             </div>
           </div>
         </div>
       </div>
-      {% include "footer" %}
+      {% include "footer-front" %}
     </div>
   </div>
   {% include "mobilemenu" %}
-  {% include "javascripts" %}
+  {% include "javascripts"  with "front_page"  %}
   {% include "edicy-tools" %}
-
   {% if editmode %}
   <script type="text/javascript">
     window.edy = window.edy || [];

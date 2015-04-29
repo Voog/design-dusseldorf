@@ -7,36 +7,82 @@
       id: '{{ page.id }}'
     });
 
-    var bgPickerCover = new Edicy.BgPicker($('.js-bgpicker-cover-settings'), {
-      picture: true,
-      color: true,
-      showAlpha: true,
+    // contentHalf background image and color preview logic function.
+    var contentHalfBgPreview = function(data, contentHalf) {
+      // Returns the suitable version of the image depending on the viewport width.
+      var getImageByWidth = function(sizes, targetWidth) {
+        var prevImage;
+
+        for (var i = 0, max = sizes.length; i < max; i++) {
+          if (sizes[i].width < targetWidth) {
+            return prevImage || sizes[i];
+          }
+          prevImage = sizes[i];
+        }
+        // Makes sure that smallest is returned if all images bigger than targetWidth.
+        return sizes[sizes.length - 1];
+      };
+
+      // Defines the suitable image based on the viewport width.
+      var suitableImage = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : 'none';
+
+      var contentHalfBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
+          contentHalfBgColor = (data.color && data.color !== '') ? data.color : 'transparent',
+          contentHalfBgColorOpacity = (data.colorData && data.colorData !== '') ? data.colorData.a : 'none',
+          contentHalfBgColorLightness = (data.colorData && data.colorData !== '' && data.colorData.lightness) ? data.colorData.lightness : 'none';
+
+      // Removes the current lightness class.
+      $(contentHalf).find('.js-background-type').removeClass('light-background dark-background');
+      // Checks the opacity of the contentHalf background color and sets the lightness class depending on it's value.
+      if (contentHalfBgColorOpacity >= 0.2) {
+        $(contentHalf).find('.js-background-type').addClass(contentHalfBgColorLightness >= 0.5 ? 'light-background' : 'dark-background');
+      } else {
+        $(contentHalf).find('.js-background-type').addClass('light-background');
+      };
+
+      // Updates the contentHalf background image and background color.
+      $(contentHalf).css({'background-image' : contentHalfBgImage});
+      $(contentHalf).find('.background-color').css({'background-color' : contentHalfBgColor});
+    };
+
+    // contentHalf background image and color save logic function.
+    var contentHalfBgCommit = function(data, dataName) {
+      var commitData = $.extend(true, {}, data);
+      commitData.image = data.image || '';
+      commitData.imageSizes = data.imageSizes || '';
+      commitData.color = data.color || 'transparent';
+      pageData.set(dataName, commitData);
+    }
+
+    // Front page left content area background picker.
+    var contentHalfLeftBg = new Edicy.BgPicker($('.content-left .js-background-settings'), {
+        picture: true,
+        target_width: 600,
+        color: true,
+        showAlpha: true,
+
       preview: function(data) {
-
-        var image = (data.image && data.image !== '') ? 'url("' + data.image + '")' : 'none',
-            color = (data.color && data.color !== '') ? data.color : '',
-            colorData = (data.colorData && data.colorData !== '') ? data.colorData : '',
-            lightness = colorData && colorData !== '' && colorData.lightness ? colorData.lightness : 0;
-
-        $('.js-bgpicker-cover-color').removeClass('light-background dark-background').addClass(lightness <= 0.5 ? 'dark-background' : 'light-background');
-
-        $('.js-bgpicker-cover-image').css({'background-image' : image });
-
-        if (color && color !== '') {
-          $('.js-bgpicker-cover-color').css({'background-color' : color });
-        }
-        else {
-          $('.js-bgpicker-cover-color').css({'background-color' : 'transparent'});
-        }
+        contentHalfBgPreview(data, '.js-content-left');
       },
 
       commit: function(data) {
-        pageData.set({
-          'cover_image': data.image || '',
-          'cover_color': data.color || '',
-          'cover_colorData' : data.colorData || '',
-          'cover_lightness' : data.colorData && data.colorData != '' && data.colorData.lightness ? data.colorData.lightness : 0
-        });
+        contentHalfBgCommit(data, 'content_left_bg');
+      }
+    });
+
+    // Front page right content area background picker.
+    var contentHalfRightBg = new Edicy.BgPicker($('.content-right .js-background-settings'), {
+        picture: true,
+        target_width: 600,
+        color: true,
+        showAlpha: true,
+
+      preview: function(data) {
+        contentHalfBgPreview(data, '.js-content-right');
+      },
+
+      commit: function(data) {
+        contentHalfBgCommit(data, 'content_right_bg');
       }
     });
 

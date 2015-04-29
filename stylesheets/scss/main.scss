@@ -2195,3 +2195,90 @@ table {
     left: 0;
   }
 }
+
+
+.front-page .main {
+  height: 100vh!important;
+}
+
+@media screen and (max-width: $break-middle) {
+  .front-page .main {
+    height: calc(100vh - 90px)!important;
+  }
+}
+
+@media screen and (max-width: $break-small) {
+  .front-page .main {
+    height: calc(100vh - 125px)!important;
+  }
+}
+
+.main-inner-row {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inner-padding {
+  overflow-y: scroll;
+  height: 100%;
+  position: relative;
+}
+
+.header-row {
+  height: 35%;
+}
+
+.center-row {
+  height: 55%;
+}
+
+.footer-row {
+  height: 10%;
+  background-color: #2b2b2b;
+  color: #fff;
+}
+
+.footer-row .content-full {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.main-inner-row > div {
+  display: table-cell;
+  height: 100%;
+  overflow-y: scroll;
+  display: inline-block;
+}
+
+.content-full, .content-half {
+  box-sizing: border-box;
+  position: relative;
+}
+.content-half {
+  width: 50%;
+  background-size: cover;
+}
+
+.main .content-half .background-color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.content-right {
+  float: right;
+}
+.content-left {
+  float: left;
+}
+.front-page .main .content-inner {
+  padding: 40px;
+}
+.front-page .main .footer-row .content-inner {
+  padding-top: 0;
+  padding-bottom: 0;
+}
