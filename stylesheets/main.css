@@ -2014,16 +2014,17 @@ table th {
     left: 0;
   }
 }
-.front-page .main {
-  height: 100vh !important;
+@media screen and (min-height: 400px) {
+  .front-page .main {
+    height: 100vh !important;
+  }
 }
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (min-height: 400px) {
   .front-page .main {
     height: calc(100vh - 90px) !important;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) and (min-height: 400px) {
   .front-page .main {
     height: calc(100vh - 125px) !important;
   }
@@ -2069,14 +2070,18 @@ table th {
 .content-full, .content-half {
   box-sizing: border-box;
   position: relative;
+  background-size: cover;
+}
+
+.content-full {
+  width: 100%;
 }
 
 .content-half {
   width: 50%;
-  background-size: cover;
 }
 
-.main .content-half .background-color {
+.main .background-color {
   position: absolute;
   top: 0;
   right: 0;

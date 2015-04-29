@@ -2196,18 +2196,19 @@ table {
   }
 }
 
-
-.front-page .main {
-  height: 100vh!important;
+@media screen and (min-height: 400px ) {
+  .front-page .main {
+    height: 100vh!important;
+  }
 }
 
-@media screen and (max-width: $break-middle) {
+@media screen and (max-width: $break-middle) and (min-height: 400px ) {
   .front-page .main {
     height: calc(100vh - 90px)!important;
   }
 }
 
-@media screen and (max-width: $break-small) {
+@media screen and (max-width: $break-small) and (min-height: 400px ) {
   .front-page .main {
     height: calc(100vh - 125px)!important;
   }
@@ -2255,13 +2256,18 @@ table {
 .content-full, .content-half {
   box-sizing: border-box;
   position: relative;
-}
-.content-half {
-  width: 50%;
   background-size: cover;
 }
 
-.main .content-half .background-color {
+.content-full {
+  width: 100%;
+}
+
+.content-half {
+  width: 50%;
+}
+
+.main .background-color {
   position: absolute;
   top: 0;
   right: 0;
