@@ -10628,7 +10628,7 @@ return jQuery;
 
     var setFrontContent = function() {
         var wh = $(window).height(),
-            $tbl = $('.main').css('height', 'auto');
+            $tbl = $('.tdl').css('height', 'auto');
 
 
             $tbl.height(wh);

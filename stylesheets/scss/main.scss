@@ -15,6 +15,7 @@ $blue: #0066BB;
 
 $font-size: 18px;
 $font-size-big: 22px;
+$font-size-small: 14px;
 $font-main: 'Lato', Helvetica, Arial, sans-serif;
 $font-secondary: 'Montserrat', Helvetica, Arial, sans-serif;
 
@@ -1747,7 +1748,7 @@ table {
     &,
     .wrap,
     .main {
-      height: 100% !important;
+      height: 100%;
     }
   }
 
@@ -2196,22 +2197,56 @@ table {
   }
 }
 
-@media screen and (min-height: 400px ) {
-  .front-page .main {
-    height: 100vh!important;
-  }
+
+.main {
+  /*min-height: 600px;*/
+  /*height: 100%;*/
+  /*min-height: 100%;*/
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
-@media screen and (max-width: $break-middle) and (min-height: 400px ) {
-  .front-page .main {
+@media screen and (max-width: $break-middle) and (min-height: 600px ) {
+  .main {
     height: calc(100vh - 90px)!important;
   }
 }
 
-@media screen and (max-width: $break-small) and (min-height: 400px ) {
-  .front-page .main {
+@media screen and (max-width: $break-small) and (min-height: 600px ) {
+  .main {
     height: calc(100vh - 125px)!important;
   }
+}
+
+@media screen and (min-height: 600px ) {
+  .main {
+    height: 100vh!important;
+    min-height: auto;
+    top: 0;
+    bottom: 0;
+  }
+  .footer-row {
+    position: fixed;
+    bottom: 0;
+  }
+  .sidebar {
+    overflow-y: hidden;
+  }
+
+}
+
+.wrap {
+  height: auto;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.sidebar {
+  max-height: 100%;
+}
+.search-enabled .sidebar .sidebar-inner {
+  padding-bottom: 0;
 }
 
 .main-inner-row {
@@ -2235,9 +2270,10 @@ table {
 }
 
 .footer-row {
-  height: 10%;
+  height: 11%;
   background-color: #2b2b2b;
   color: #fff;
+  min-height: 80px;
 }
 
 .footer-row .content-full {
@@ -2247,24 +2283,20 @@ table {
 
 
 .main-inner-row > div {
-  display: table-cell;
+  /*display: table-cell;*/
   height: 100%;
   overflow-y: scroll;
-  display: inline-block;
 }
 
 .content-full, .content-half {
   box-sizing: border-box;
   position: relative;
   background-size: cover;
+  background-position: 50% 50%;
 }
 
 .content-full {
   width: 100%;
-}
-
-.content-half {
-  width: 50%;
 }
 
 .main .background-color {
@@ -2275,16 +2307,24 @@ table {
   bottom: 0;
 }
 
-.content-right {
-  float: right;
+@media screen and (min-width: $break-small) {
+  .content-right {
+    float: right;
+  }
+  .content-left {
+    float: left;
+  }
+  .content-half {
+    width: 50%;
+  }
 }
-.content-left {
-  float: left;
-}
+
 .front-page .main .content-inner {
   padding: 40px;
 }
 .front-page .main .footer-row .content-inner {
   padding-top: 0;
   padding-bottom: 0;
+  font-size: $font-size-small;
+  font-family: $font-secondary;
 }
