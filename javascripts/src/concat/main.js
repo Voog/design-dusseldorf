@@ -73,8 +73,8 @@
     });
 
     var setFrontContent = function() {
-        var wh = $(window).height(),
-            $tbl = $('.tdl').css('height', 'auto');
+        var wh = $('.center-row').height(),
+            $tbl = $('.content-half').css('height', 'auto');
 
 
             $tbl.height(wh);

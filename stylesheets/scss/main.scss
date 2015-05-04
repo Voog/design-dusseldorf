@@ -2207,6 +2207,12 @@ table {
   right: 0;
 }
 
+@media screen and (max-height: 600px) {
+  .main {
+    min-height: 100%;
+  }
+}
+
 @media screen and (max-width: $break-middle) and (min-height: 600px ) {
   .main {
     height: calc(100vh - 90px)!important;
@@ -2221,7 +2227,7 @@ table {
 
 @media screen and (min-height: 600px ) {
   .main {
-    height: 100vh!important;
+    /*height: 100vh!important;*/
     min-height: auto;
     top: 0;
     bottom: 0;
@@ -2259,6 +2265,9 @@ table {
   overflow-y: scroll;
   height: 100%;
   position: relative;
+}
+.header-row .content-inner, .center-row .content-inner {
+  min-height: 100px;
 }
 
 .header-row {
