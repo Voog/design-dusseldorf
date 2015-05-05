@@ -56,15 +56,17 @@
       </div>
 
       <div class="main-inner-row footer-row">
-        <div class="content-full">
+
+        <div class="content-full content-bottom  js-content-bottom">
+          <div class="background-color"></div>
+          {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_bottom_bg_image }}" data-bg-image-sizes="{{ content_bottom_bg_image_sizes_str | escape }}" data-bg-color="{{ content_bottom_bg_color }}" data-bg-color-data="{{ content_bottom_bg_color_data_str | escape }}"></button>{% endif %}
           <div class="inner-padding">
-            <div class="align-middle">
-              <div class="content-inner formatted cfx">
-                {% xcontent name="footer" %}
-              </div>
+            <div class="align-middle js-background-type {{ content_bottom_bg_type }}">
+              <div class="content-inner formatted cfx">{% xcontent name="footer" %}</div>
             </div>
           </div>
         </div>
+
       </div>
       {% include "footer-front" %}
     </div>

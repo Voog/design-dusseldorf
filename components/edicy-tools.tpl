@@ -102,6 +102,22 @@
       }
     });
 
+    // Front page bottom content area background picker.
+    var contentHalfBottomBg = new Edicy.BgPicker($('.content-bottom .js-background-settings'), {
+        picture: true,
+        target_width: 600,
+        color: true,
+        showAlpha: true,
+
+      preview: function(data) {
+        contentHalfBgPreview(data, '.js-content-bottom');
+      },
+
+      commit: function(data) {
+        contentHalfBgCommit(data, 'content_bottom_bg');
+      }
+    });
+
     var siteData = new Edicy.CustomData({
       type: 'site'
     });
