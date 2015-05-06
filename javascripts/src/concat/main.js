@@ -72,9 +72,10 @@
         }
     });
 
+
     var setFrontContent = function() {
-        var wh = $('.center-row').height(),
-            $tbl = $('.content-half').css('height', 'auto');
+        var wh = $('.center-row2').height(),
+            $tbl = $('.content-half2').css('height', 'auto');
 
 
             $tbl.height(wh);

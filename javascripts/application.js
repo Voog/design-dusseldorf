@@ -10626,9 +10626,10 @@ return jQuery;
         }
     });
 
+
     var setFrontContent = function() {
         var wh = $('.center-row').height(),
-            $tbl = $('.content-half').css('height', 'auto');
+            $tbl = $('.content-half2').css('height', 'auto');
 
 
             $tbl.height(wh);

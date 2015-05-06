@@ -16,7 +16,7 @@
       {% include "sidebar" %}
     </aside>
     <div class="main">
-
+      <div class="container-wrap cfx">
       <div class="main-inner-row header-row">
 
         <div class="content-full content-top  js-content-top">
@@ -70,6 +70,7 @@
       </div>
       {% include "footer-front" %}
     </div>
+    </div>
   </div>
   {% include "mobilemenu" %}
   {% include "javascripts"  with "front_page"  %}
@@ -80,5 +81,16 @@
     edy.push(['texteditorStyles', {name: 'Small', classname: 'font-size-small'}]);
   </script>
   {% endif %}
+
+  {% if editmode %}
+   <script type="text/javascript">
+     window.edy = window.edy || [];
+     edy.push(['texteditorStyles',
+       {name: 'Nupp', tagname:"a", classname: 'custom-btn', toggle: true}
+     ]);
+   </script>
+ {% endif %}
+
+
 </body>
 </html>

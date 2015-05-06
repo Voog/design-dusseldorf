@@ -2014,65 +2014,10 @@ table th {
     left: 0;
   }
 }
-.main {
-  /*min-height: 600px;*/
-  /*height: 100%;*/
-  /*min-height: 100%;*/
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-@media screen and (max-height: 600px) {
-  .main {
-    min-height: 100%;
-  }
-}
-@media screen and (max-width: 1024px) and (min-height: 600px) {
-  .main {
-    height: calc(100vh - 90px) !important;
-  }
-}
-@media screen and (max-width: 600px) and (min-height: 600px) {
-  .main {
-    height: calc(100vh - 125px) !important;
-  }
-}
-@media screen and (min-height: 600px) {
-  .main {
-    /*height: 100vh!important;*/
-    min-height: auto;
-    top: 0;
-    bottom: 0;
-  }
-
-  .footer-row {
-    position: fixed;
-    bottom: 0;
-  }
-
-  .sidebar {
-    overflow-y: hidden;
-  }
-}
-.wrap {
-  height: auto;
-  min-height: 100%;
-  overflow: hidden;
-}
-
-.sidebar {
-  max-height: 100%;
-}
-
-.search-enabled .sidebar .sidebar-inner {
-  padding-bottom: 0;
-}
-
 .main-inner-row {
   float: left;
   width: 100%;
-  box-sizing: border-box;
+  display: table;
 }
 
 .inner-padding {
@@ -2086,18 +2031,15 @@ table th {
 }
 
 .header-row {
-  height: 35%;
+  min-height: 300px;
 }
 
 .center-row {
-  height: 55%;
+  height: 400px;
 }
 
 .footer-row {
-  height: 11%;
-  background-color: #2b2b2b;
-  color: #fff;
-  min-height: 80px;
+  height: 100px;
 }
 
 .footer-row .content-full {
@@ -2106,7 +2048,6 @@ table th {
 }
 
 .main-inner-row > div {
-  /*display: table-cell;*/
   height: 100%;
   overflow-y: scroll;
 }
@@ -2120,6 +2061,10 @@ table th {
 
 .content-full {
   width: 100%;
+}
+
+.content-half {
+  overflow-y: scroll;
 }
 
 .main .background-color {
