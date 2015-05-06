@@ -169,7 +169,7 @@
   {% endif %}
 
   {% if content_bottom_bg_color == nil %}
-    {% assign content_bottom_bg_color = '#a8f4ff' %}
+    {% assign content_bottom_bg_color = '#2b2b2b' %}
   {% endif %}
 
   {% if content_bottom_bg_color_data == nil %}

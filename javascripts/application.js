@@ -10628,7 +10628,7 @@ return jQuery;
 
 
     var setFrontContent = function() {
-        var wh = $('.center-row').height(),
+        var wh = $('.center-row2').height(),
             $tbl = $('.content-half2').css('height', 'auto');
 
 

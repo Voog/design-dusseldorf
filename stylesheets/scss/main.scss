@@ -2197,10 +2197,60 @@ table {
   }
 }
 
-.main-inner-row {
-  float: left;
-  width: 100%;
-  display: table;
+.main {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+@media screen and (min-width: $break-small) {
+  .main-inner-row {
+    float: left;
+    width: 100%;
+    display: table;
+  }
+
+
+  .center-row .content-half {
+    height: 400px;
+  }
+
+  .footer-row {
+    height: 100px;
+  }
+  .main-inner-row > div {
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  .content-right {
+    float: right;
+  }
+  .content-left {
+    float: left;
+  }
+  .content-half {
+    width: 50%;
+  }
+
+}
+
+@media screen and (min-width: $break-small) and (min-height: 700px) {
+
+  .front-page .main .header-row .content-inner{
+    min-height:calc(100vh - 670px);
+  }
+
+}
+
+@media screen and (min-width: $break-middle) and (min-height: 700px) {
+
+  .front-page .main .header-row .content-inner{
+    min-height:calc(100vh - 580px);
+  }
+
+}
+
+.header-row .content-inner, .center-row .content-inner {
+  min-height: 150px;
 }
 
 .inner-padding {
@@ -2208,33 +2258,12 @@ table {
   height: 100%;
   position: relative;
 }
-.header-row .content-inner, .center-row .content-inner {
-  min-height: 100px;
-}
-
-.header-row {
-  min-height:300px;
-}
-
-.center-row {
-  height: 400px;
-}
-
-.footer-row {
-  height: 100px;
-}
 
 .footer-row .content-full {
   padding-top: 10px;
   padding-bottom: 10px;
+  display: table-cell;
 }
-
-
-.main-inner-row > div {
-  height: 100%;
-  overflow-y: scroll;
-}
-
 .content-full, .content-half {
   box-sizing: border-box;
   position: relative;
@@ -2258,17 +2287,7 @@ table {
   bottom: 0;
 }
 
-@media screen and (min-width: $break-small) {
-  .content-right {
-    float: right;
-  }
-  .content-left {
-    float: left;
-  }
-  .content-half {
-    width: 50%;
-  }
-}
+
 
 .front-page .main .content-inner {
   padding: 40px;
@@ -2278,4 +2297,28 @@ table {
   padding-bottom: 0;
   font-size: $font-size-small;
   font-family: $font-secondary;
+}
+
+.dark-background {
+  color: $white;
+}
+
+.light-background {
+  color: $black;
+}
+
+.no-svg {
+  display: none;
+}
+
+.footer-row .formatted {
+  font-size: $font-size;
+}
+.footer-row .inner-padding {
+  display: table;
+}
+
+.footer-row .align-middle {
+  vertical-align: middle;
+  display: table-cell;
 }
