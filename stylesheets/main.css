@@ -31,7 +31,7 @@ body {
 @media screen and (min-width: 1500px) {
   html,
   body {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
@@ -77,7 +77,7 @@ img {
 h1,
 h2,
 h3 {
-  font: normal 36px/1.1 "Montserrat", Helvetica, Arial, sans-serif;
+  font: normal 30px/1.1 "Montserrat", Helvetica, Arial, sans-serif;
   color: #222222;
 }
 
@@ -171,7 +171,7 @@ blockquote {
 }
 @media screen and (min-width: 1500px) {
   .font-size-small {
-    font-size: 22px !important;
+    font-size: 20px !important;
   }
 }
 
@@ -452,18 +452,18 @@ label .form_control_indicator:before {
 }
 .front-page .main-inner {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 1.05;
   text-align: center;
 }
 .front-page .main-inner h1 {
-  font-size: 54px;
-}
-.front-page .main-inner h2 {
   font-size: 45px;
 }
+.front-page .main-inner h2 {
+  font-size: 37.5px;
+}
 .front-page .main-inner h3 {
-  font-size: 39.6px;
+  font-size: 33px;
 }
 .front-page .main-inner .dark-background h1,
 .front-page .main-inner .dark-background h2,
@@ -500,7 +500,7 @@ label .form_control_indicator:before {
   overflow: hidden;
   padding-top: 25px;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 1.05;
   vertical-align: top;
   text-transform: uppercase;
@@ -2018,21 +2018,38 @@ table th {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
+.header-row {
+  -ms-overflow-style: none;
+}
+
 .front-page footer {
   display: none;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1024px) {
   .main-inner-row {
     float: left;
     width: 100%;
     display: table;
   }
 
-  .center-row .content-half {
+  .center-row .content-half .align-middle {
     height: 400px;
+    box-sizing: border-box;
+    /*
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;*/
   }
 
+  /*
+    .center-row .content-half .align-middle .content-inner {
+      -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+      align-self: flex-end;
+      width: 100%;
+    }*/
   .footer-row {
     height: 100px;
   }
@@ -2053,25 +2070,40 @@ table th {
   .content-half {
     width: 50%;
   }
-
-  .footer-row .voog-reference {
-    display: none;
-  }
-
-  .front-page footer {
-    display: block;
-  }
 }
+.front-page .main .header-row .inner-padding {
+  min-height: 165px;
+}
+
 @media screen and (min-width: 600px) and (min-height: 700px) {
-  .front-page .main .header-row .content-inner {
-    min-height: calc(100vh - 750px);
+  .front-page .main .header-row .inner-padding {
+    min-height: calc(100vh - 590px);
   }
 }
 @media screen and (min-width: 1024px) and (min-height: 700px) {
-  .front-page .main .header-row .content-inner {
-    min-height: calc(100vh - 660px);
+  .front-page .main .header-row .inner-padding {
+    min-height: calc(100vh - 500px);
   }
 }
+@media screen and (min-width: 1920px) and (min-height: 1200px) {
+  .front-page .main .header-row .inner-padding {
+    min-height: calc(100vh - 900px);
+  }
+
+  .center-row .content-half .align-middle {
+    height: 800px;
+  }
+}
+.front-page .main .header-row .align-middle {
+  display: table;
+  height: 100%;
+}
+
+.front-page .main .header-row .align-middle .content-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .header-row .content-inner, .center-row .content-inner {
   min-height: 165px;
 }
@@ -2115,19 +2147,39 @@ table th {
 }
 
 .front-page .main .header-row .content-inner {
-  font-size: 36px;
+  font-size: 30px;
   line-height: 1.05;
+}
+
+.front-page .main .center-row .content-inner {
+  text-align: center;
+}
+
+.front-page .main .footer-row .content-inner {
+  padding-top: 35px;
 }
 
 @media screen and (min-width: 600px) {
   .front-page .main .content-inner {
     padding: 80px;
   }
+
+  .footer-row .voog-reference {
+    display: none;
+  }
+
+  .front-page footer {
+    display: block;
+  }
+
+  .front-page .main .footer-row .content-inner {
+    padding-top: 15px;
+  }
 }
 .front-page .main .footer-row .content-inner {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-size: 22px;
+  padding-bottom: 15px;
+  padding-right: 0;
+  font-size: 20px;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   line-height: 1.05;
 }
@@ -2166,11 +2218,17 @@ table th {
 
 .footer-row .inner-padding {
   display: table;
+  width: 100%;
 }
 
 .footer-row .align-middle {
   vertical-align: middle;
   display: table-cell;
+}
+
+.voog-reference svg {
+  height: 15px;
+  width: 54px;
 }
 
 .footer-row .voog-reference {
@@ -2183,7 +2241,10 @@ table th {
   text-transform: uppercase;
   font-size: 175%;
   word-break: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
   text-align: center;
+  margin: 5px 10px;
 }
 
 .dark-background .custom-btn {
@@ -2193,5 +2254,25 @@ table th {
 
 .light-background .custom-btn {
   border: 3px solid #000000;
+  color: #000000;
+}
+
+.footer-row .custom-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-transform: none;
+  font-size: 16px;
+  word-break: break-word;
+  text-align: center;
+  margin: 5px 10px;
+}
+
+.footer-row .dark-background .custom-btn {
+  border: 1px solid #414141;
+  color: #ffffff;
+}
+
+.footer-row .light-background .custom-btn {
+  border: 1px solid #333;
   color: #000000;
 }

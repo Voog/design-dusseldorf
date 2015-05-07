@@ -14,7 +14,7 @@ $white: #ffffff;
 $blue: #0066BB;
 
 $font-size: 18px;
-$font-size-big: 22px;
+$font-size-big: 20px;
 $font-size-small: 14px;
 $font-main: 'Lato', Helvetica, Arial, sans-serif;
 $font-secondary: 'Montserrat', Helvetica, Arial, sans-serif;
@@ -111,7 +111,7 @@ h1,
 h2,
 h3 {
   @extend %nulling;
-  font: normal 36px/1.1 $font-secondary;
+  font: normal 30px/1.1 $font-secondary;
   color: $main-color;
 }
 
@@ -503,20 +503,20 @@ label {
 
   .front-page & {
     font-family: $font-secondary;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 1.05;
     text-align: center;
 
     h1 {
-      font-size: 36px * 1.5;
+      font-size: 30px * 1.5;
     }
 
     h2 {
-      font-size: 36px * 1.25;
+      font-size: 30px * 1.25;
     }
 
     h3 {
-      font-size: 36px * 1.1;
+      font-size: 30px * 1.1;
     }
 
     .dark-background {
@@ -559,7 +559,7 @@ label {
   overflow: hidden;
   padding-top: 25px;
   font-family: $font-secondary;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 1.05;
   vertical-align: top;
   text-transform: uppercase;
@@ -2201,11 +2201,15 @@ table {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
+.header-row {
+  -ms-overflow-style: none;
+}
+
 .front-page footer {
   display: none;
 }
 
-@media screen and (min-width: $break-small) {
+@media screen and (min-width: $break-middle) {
   .main-inner-row {
     float: left;
     width: 100%;
@@ -2213,9 +2217,22 @@ table {
   }
 
 
-  .center-row .content-half {
+  .center-row .content-half .align-middle {
     height: 400px;
+    box-sizing: border-box;
+/*
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;*/
   }
+/*
+  .center-row .content-half .align-middle .content-inner {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    width: 100%;
+  }*/
 
   .footer-row {
     height: 100px;
@@ -2235,30 +2252,44 @@ table {
     width: 50%;
   }
 
-  .footer-row .voog-reference {
-    display: none;
-  }
-
-  .front-page footer {
-    display: block;
-  }
-
 }
 
+.front-page .main .header-row .inner-padding {
+  min-height: 165px;
+}
 @media screen and (min-width: $break-small) and (min-height: 700px) {
 
-  .front-page .main .header-row .content-inner{
-    min-height:calc(100vh - 750px);
+  .front-page .main .header-row .inner-padding {
+    min-height:calc(100vh - 590px);
   }
 
 }
 
 @media screen and (min-width: $break-middle) and (min-height: 700px) {
 
-  .front-page .main .header-row .content-inner{
-    min-height:calc(100vh - 660px);
+  .front-page .main .header-row .inner-padding {
+    min-height:calc(100vh - 500px);
   }
 
+}
+
+@media screen and (min-width: 1920px) and (min-height: 1200px) {
+
+  .front-page .main .header-row .inner-padding {
+    min-height:calc(100vh - 900px);
+  }
+  .center-row .content-half .align-middle {
+    height: 800px;
+  }
+}
+
+.front-page .main .header-row .align-middle {
+  display: table;
+  height: 100%;
+}
+.front-page .main .header-row .align-middle .content-inner {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .header-row .content-inner, .center-row .content-inner {
@@ -2305,20 +2336,40 @@ table {
 }
 
 .front-page .main .header-row .content-inner {
-  font-size: 36px;
+  font-size: 30px;
   line-height: 1.05;
+}
+
+.front-page .main .center-row .content-inner {
+  text-align: center;
+}
+
+.front-page .main .footer-row .content-inner {
+  padding-top: 35px;
 }
 
 @media screen and (min-width: $break-small) {
   .front-page .main .content-inner {
     padding: 80px;
   }
+
+  .footer-row .voog-reference {
+    display: none;
+  }
+
+  .front-page footer {
+    display: block;
+  }
+
+  .front-page .main .footer-row .content-inner {
+    padding-top: 15px;
+  }
 }
 
 
 .front-page .main .footer-row .content-inner {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
+  padding-right: 0;
   font-size: $font-size-big;
   font-family: $font-secondary;
   line-height: 1.05;
@@ -2357,6 +2408,7 @@ table {
 }
 .footer-row .inner-padding {
   display: table;
+  width: 100%;
 }
 
 .footer-row .align-middle {
@@ -2364,6 +2416,10 @@ table {
   display: table-cell;
 }
 
+.voog-reference svg {
+  height: 15px;
+  width: 54px;
+}
 .footer-row .voog-reference {
   padding: 0 40px 20px;
 }
@@ -2375,7 +2431,10 @@ table {
   text-transform: uppercase;
   font-size: 175%;
   word-break: break-word;
+  word-wrap:break-word;
+  -ms-word-break: break-all;
   text-align: center;
+  margin: 5px 10px;
 }
 
 .dark-background .custom-btn {
@@ -2384,5 +2443,24 @@ table {
 }
 .light-background .custom-btn {
   border: 3px solid $black;
+  color: $black;
+}
+
+.footer-row .custom-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-transform: none;
+  font-size: 16px;
+  word-break: break-word;
+  text-align: center;
+  margin: 5px 10px;
+}
+
+.footer-row .dark-background .custom-btn {
+  border: 1px solid #414141;
+  color: $white;
+}
+.footer-row .light-background .custom-btn {
+  border: 1px solid #333;
   color: $black;
 }
