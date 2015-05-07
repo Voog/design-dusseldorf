@@ -2201,6 +2201,10 @@ table {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
+.front-page footer {
+  display: none;
+}
+
 @media screen and (min-width: $break-small) {
   .main-inner-row {
     float: left;
@@ -2231,12 +2235,20 @@ table {
     width: 50%;
   }
 
+  .footer-row .voog-reference {
+    display: none;
+  }
+
+  .front-page footer {
+    display: block;
+  }
+
 }
 
 @media screen and (min-width: $break-small) and (min-height: 700px) {
 
   .front-page .main .header-row .content-inner{
-    min-height:calc(100vh - 670px);
+    min-height:calc(100vh - 750px);
   }
 
 }
@@ -2244,13 +2256,13 @@ table {
 @media screen and (min-width: $break-middle) and (min-height: 700px) {
 
   .front-page .main .header-row .content-inner{
-    min-height:calc(100vh - 580px);
+    min-height:calc(100vh - 660px);
   }
 
 }
 
 .header-row .content-inner, .center-row .content-inner {
-  min-height: 150px;
+  min-height: 165px;
 }
 
 .inner-padding {
@@ -2260,8 +2272,6 @@ table {
 }
 
 .footer-row .content-full {
-  padding-top: 10px;
-  padding-bottom: 10px;
   display: table-cell;
 }
 .content-full, .content-half {
@@ -2291,20 +2301,51 @@ table {
 
 .front-page .main .content-inner {
   padding: 40px;
-}
-.front-page .main .footer-row .content-inner {
-  padding-top: 0;
-  padding-bottom: 0;
-  font-size: $font-size-small;
   font-family: $font-secondary;
 }
 
-.dark-background {
+.front-page .main .header-row .content-inner {
+  font-size: 36px;
+  line-height: 1.05;
+}
+
+@media screen and (min-width: $break-small) {
+  .front-page .main .content-inner {
+    padding: 80px;
+  }
+}
+
+
+.front-page .main .footer-row .content-inner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: $font-size-big;
+  font-family: $font-secondary;
+  line-height: 1.05;
+}
+
+.front-page .main .footer-row .dark-background .content-inner {
+  color: #b4b4b4;
+}
+
+.front-page .main .footer-row .light-background .content-inner {
+  color: #5a5a5a;
+}
+
+.dark-background, .front-page .main .footer-row .dark-background .content-inner b, .front-page .main .footer-row .dark-background .content-inner a {
   color: $white;
 }
 
-.light-background {
+.dark-background svg path {
+    fill: $white;
+}
+
+.light-background, .front-page .main .footer-row .light-background .content-inner b, .front-page .main .footer-row .light-background .content-inner a {
   color: $black;
+}
+
+.light--background svg path {
+  fill: $black;
 }
 
 .no-svg {
@@ -2321,4 +2362,27 @@ table {
 .footer-row .align-middle {
   vertical-align: middle;
   display: table-cell;
+}
+
+.footer-row .voog-reference {
+  padding: 0 40px 20px;
+}
+
+
+.custom-btn {
+  display: inline-block;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  font-size: 175%;
+  word-break: break-word;
+  text-align: center;
+}
+
+.dark-background .custom-btn {
+  border: 3px solid $white;
+  color: $white;
+}
+.light-background .custom-btn {
+  border: 3px solid $black;
+  color: $black;
 }
