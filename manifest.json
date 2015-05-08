@@ -205,9 +205,21 @@
     },
     {
       "content_type": "image/jpeg",
+      "file": "images/front-page-left-bg_block.jpg",
+      "kind": "images",
+      "filename": "front-page-left-bg_block.jpg"
+    },
+    {
+      "content_type": "image/jpeg",
       "file": "images/front-page-right-bg.jpg",
       "kind": "images",
       "filename": "front-page-right-bg.jpg"
+    },
+    {
+      "content_type": "image/jpeg",
+      "file": "images/front-page-right-bg_block.jpg",
+      "kind": "images",
+      "filename": "front-page-right-bg_block.jpg"
     },
     {
       "content_type": "image/jpeg",

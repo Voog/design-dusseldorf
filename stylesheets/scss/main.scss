@@ -2271,6 +2271,10 @@ table {
     min-height:calc(100vh - 500px);
   }
 
+  .front-page .main .center-row .content-inner {
+    padding-bottom: 0;
+  }
+
 }
 
 @media screen and (min-width: 1920px) and (min-height: 1200px) {
@@ -2334,10 +2338,6 @@ table {
 .front-page .main .content-inner {
   padding: 40px;
   font-family: $font-secondary;
-}
-
-.front-page .main .center-row .content-inner {
-  padding-bottom: 0;
 }
 
 .front-page .main .header-row .content-inner {

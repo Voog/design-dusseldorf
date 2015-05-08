@@ -2084,6 +2084,10 @@ table th {
   .front-page .main .header-row .inner-padding {
     min-height: calc(100vh - 500px);
   }
+
+  .front-page .main .center-row .content-inner {
+    padding-bottom: 0;
+  }
 }
 @media screen and (min-width: 1920px) and (min-height: 1200px) {
   .front-page .main .header-row .inner-padding {
@@ -2145,10 +2149,6 @@ table th {
 .front-page .main .content-inner {
   padding: 40px;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-}
-
-.front-page .main .center-row .content-inner {
-  padding-bottom: 0;
 }
 
 .front-page .main .header-row .content-inner {
