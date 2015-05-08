@@ -2072,7 +2072,7 @@ table th {
   }
 }
 .front-page .main .header-row .inner-padding {
-  min-height: 165px;
+  min-height: 230px;
 }
 
 @media screen and (min-width: 600px) and (min-height: 700px) {
@@ -2097,6 +2097,7 @@ table th {
 .front-page .main .header-row .align-middle {
   display: table;
   height: 100%;
+  width: 100%;
 }
 
 .front-page .main .header-row .align-middle .content-inner {
@@ -2144,6 +2145,10 @@ table th {
 .front-page .main .content-inner {
   padding: 40px;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+.front-page .main .center-row .content-inner {
+  padding-bottom: 0;
 }
 
 .front-page .main .header-row .content-inner {
@@ -2201,11 +2206,11 @@ table th {
 }
 
 .light-background, .front-page .main .footer-row .light-background .content-inner b, .front-page .main .footer-row .light-background .content-inner a {
-  color: #000000;
+  color: rgba(0, 0, 0, 0.7);
 }
 
-.light--background svg path {
-  fill: #000000;
+.light-background svg path, footer svg path {
+  fill: #848484;
 }
 
 .no-svg {
@@ -2235,6 +2240,10 @@ table th {
   padding: 0 40px 20px;
 }
 
+.custom-btn-bottom {
+  margin-top: 50%;
+}
+
 .custom-btn {
   display: inline-block;
   padding: 10px 40px;
@@ -2245,6 +2254,7 @@ table th {
   -ms-word-break: break-all;
   text-align: center;
   margin: 5px 10px;
+  cursor: pointer;
 }
 
 .dark-background .custom-btn {
@@ -2257,7 +2267,11 @@ table th {
   color: #000000;
 }
 
-.footer-row .custom-btn {
+footer .custom-btn {
+  display: none;
+}
+
+.front-page .footer-row .custom-btn {
   display: inline-block;
   padding: 10px 20px;
   text-transform: none;
@@ -2265,6 +2279,7 @@ table th {
   word-break: break-word;
   text-align: center;
   margin: 5px 10px;
+  cursor: pointer;
 }
 
 .footer-row .dark-background .custom-btn {

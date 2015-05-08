@@ -2255,7 +2255,7 @@ table {
 }
 
 .front-page .main .header-row .inner-padding {
-  min-height: 165px;
+  min-height: 230px;
 }
 @media screen and (min-width: $break-small) and (min-height: 700px) {
 
@@ -2286,6 +2286,7 @@ table {
 .front-page .main .header-row .align-middle {
   display: table;
   height: 100%;
+  width: 100%;
 }
 .front-page .main .header-row .align-middle .content-inner {
   display: table-cell;
@@ -2333,6 +2334,10 @@ table {
 .front-page .main .content-inner {
   padding: 40px;
   font-family: $font-secondary;
+}
+
+.front-page .main .center-row .content-inner {
+  padding-bottom: 0;
 }
 
 .front-page .main .header-row .content-inner {
@@ -2392,11 +2397,11 @@ table {
 }
 
 .light-background, .front-page .main .footer-row .light-background .content-inner b, .front-page .main .footer-row .light-background .content-inner a {
-  color: $black;
+  color: rgba(0, 0, 0, 0.70);
 }
 
-.light--background svg path {
-  fill: $black;
+.light-background svg path, footer svg path {
+  fill: $third-color;
 }
 
 .no-svg {
@@ -2424,6 +2429,9 @@ table {
   padding: 0 40px 20px;
 }
 
+.custom-btn-bottom {
+  margin-top: 50%;
+}
 
 .custom-btn {
   display: inline-block;
@@ -2435,6 +2443,7 @@ table {
   -ms-word-break: break-all;
   text-align: center;
   margin: 5px 10px;
+  cursor: pointer;
 }
 
 .dark-background .custom-btn {
@@ -2446,7 +2455,11 @@ table {
   color: $black;
 }
 
-.footer-row .custom-btn {
+footer .custom-btn {
+  display: none;
+}
+
+.front-page .footer-row .custom-btn {
   display: inline-block;
   padding: 10px 20px;
   text-transform: none;
@@ -2454,6 +2467,7 @@ table {
   word-break: break-word;
   text-align: center;
   margin: 5px 10px;
+  cursor: pointer;
 }
 
 .footer-row .dark-background .custom-btn {
