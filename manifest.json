@@ -8,13 +8,6 @@
     {
       "content_type": "page",
       "component": false,
-      "file": "layouts/front_page_default.tpl",
-      "layout_name": "page_default",
-      "title": "Front page default"
-    },
-    {
-      "content_type": "page",
-      "component": false,
       "file": "layouts/front_page.tpl",
       "layout_name": "page_front",
       "title": "Front page"

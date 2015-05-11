@@ -114,19 +114,6 @@
         {% endif %}
       {% endfor %}
     {% endif %}
-
-  {% else %}
-    {% assign bg_image_prefix = images_path | append: "/front-page-top-bg" %}
-
-    .content-top {
-      background-image: url("{{ bg_image_prefix }}.jpg");
-    }
-
-    @media screen and (max-width: 600px) and (max-height: 572px) {
-      .content-top {
-        background-image: url("{{ bg_image_prefix }}_block.jpg");
-      }
-    }
   {% endif %}
 
   {% comment %}/* Body Background color */{% endcomment %}
@@ -161,19 +148,6 @@
         {% endif %}
       {% endfor %}
     {% endif %}
-
-  {% else %}
-    {% assign bg_image_prefix = images_path | append: "/front-page-bottom-bg" %}
-
-    .content-bottom {
-      background-image: url("{{ bg_image_prefix }}.jpg");
-    }
-
-    @media screen and (max-width: 600px) and (max-height: 572px) {
-      .content-bottom {
-        background-image: url("{{ bg_image_prefix }}_block.jpg");
-      }
-    }
   {% endif %}
 
   {% comment %}/* Body Background color */{% endcomment %}

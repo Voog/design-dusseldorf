@@ -10615,7 +10615,6 @@ return jQuery;
 
         if ($('body').hasClass('front-page')) {
             setFrontContent();
-            $('.tbl').css('visibility', 'visible');
             $(window).resize(setFrontContent);
         }
 
@@ -10628,11 +10627,16 @@ return jQuery;
 
 
     var setFrontContent = function() {
-        var wh = $('.center-row2').height(),
-            $tbl = $('.content-half2').css('height', 'auto');
+      $('.front-page .main .header-row .inner-padding').removeAttr('style');
+      if ($(window).width() > 1024) {
 
-
-            $tbl.height(wh);
+        var whCenter = $('.center-row').height(),
+            whFooter = $('.footer-row').height(),
+            whHeaderReset =  $('.front-page .main .header-row .inner-padding').css('min-height', '0'),
+            whBody = $('html').height(),
+            whHeader = whBody - whCenter - whFooter,
+            whHeaderTarget = $('.front-page .main .header-row .inner-padding').css('min-height', whHeader);
+      }
     };
 
     var setTitlebox = function() {

@@ -114,14 +114,7 @@
     {% assign content_top_bg_type = 'dark-background' %}
   {% endif %}
 
-  {% if content_top_bg_image == nil %}
-    {% assign content_top_bg_image_original = images_path | append: '/front-page-top-bg.jpg' %}
-    {% assign content_top_bg_image = images_path | append: '/front-page-top-bg_block.jpg' %}
-  {% endif %}
-
-  {% if content_top_bg_image_sizes == nil %}
-    {% assign content_top_bg_image_sizes_str = '[{"url":"' | append: images_path | append: '/front-page-top-bg.jpg", "width":1055, "height":1006}, {"url":"' | append: images_path | append: '/front-page-top-bg_block.jpg", "width":600, "height":572}]' %}
-  {% else %}
+  {% if content_top_bg_image_sizes != nil %}
     {% assign content_top_bg_image_sizes_str = content_top_bg_image_sizes | json %}
   {% endif %}
 
@@ -157,14 +150,8 @@
     {% assign content_bottom_bg_type = 'dark-background' %}
   {% endif %}
 
-  {% if content_bottom_bg_image == nil %}
-    {% assign content_bottom_bg_image_original = images_path | append: '/front-page-bottom-bg.jpg' %}
-    {% assign content_bottom_bg_image = images_path | append: '/front-page-bottom-bg_block.jpg' %}
-  {% endif %}
 
-  {% if content_bottom_bg_image_sizes == nil %}
-    {% assign content_bottom_bg_image_sizes_str = '[{"url":"' | append: images_path | append: '/front-page-bottom-bg.jpg", "width":1055, "height":1006}, {"url":"' | append: images_path | append: '/front-page-bottom-bg_block.jpg", "width":600, "height":572}]' %}
-  {% else %}
+  {% if content_bottom_bg_image_sizes != nil %}
     {% assign content_bottom_bg_image_sizes_str = content_bottom_bg_image_sizes | json %}
   {% endif %}
 

@@ -25,7 +25,8 @@ ol li, .lang-menu-btn {
 
 html,
 body {
-  height: 100% !important;
+  /*height: 100% !important;*/
+  min-height: 100%;
   font: 18px/1.67 "Lato", Helvetica, Arial, sans-serif;
 }
 @media screen and (min-width: 1500px) {
@@ -434,9 +435,10 @@ label .form_control_indicator:before {
   position: relative;
   margin-left: 280px;
   background: #e5e5e5;
+  min-height: 100vh;
 }
 .editmode .main {
-  margin-bottom: 40px;
+  /*padding-bottom: 40px;*/
 }
 .editmode.edy-bar-open .main {
   margin-bottom: 150px;
@@ -2036,27 +2038,15 @@ table th {
   .center-row .content-half .align-middle {
     height: 400px;
     box-sizing: border-box;
-    /*
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;*/
   }
 
-  /*
-    .center-row .content-half .align-middle .content-inner {
-      -webkit-align-self: flex-end;
-      -ms-flex-item-align: end;
-      align-self: flex-end;
-      width: 100%;
-    }*/
   .footer-row {
     height: 100px;
   }
 
   .main-inner-row > div {
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   .content-right {
@@ -2069,6 +2059,10 @@ table th {
 
   .content-half {
     width: 50%;
+  }
+
+  .front-page .main .center-row .content-inner {
+    padding-bottom: 0;
   }
 }
 .front-page .main .header-row .inner-padding {
@@ -2083,10 +2077,6 @@ table th {
 @media screen and (min-width: 1024px) and (min-height: 700px) {
   .front-page .main .header-row .inner-padding {
     min-height: calc(100vh - 500px);
-  }
-
-  .front-page .main .center-row .content-inner {
-    padding-bottom: 0;
   }
 }
 @media screen and (min-width: 1920px) and (min-height: 1200px) {
@@ -2114,7 +2104,8 @@ table th {
 }
 
 .inner-padding {
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   height: 100%;
   position: relative;
 }
@@ -2124,18 +2115,13 @@ table th {
 }
 
 .content-full, .content-half {
-  box-sizing: border-box;
   position: relative;
   background-size: cover;
   background-position: 50% 50%;
 }
 
-.content-full {
-  width: 100%;
-}
-
 .content-half {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .main .background-color {
@@ -2190,11 +2176,11 @@ table th {
 }
 
 .front-page .main .footer-row .dark-background .content-inner {
-  color: #b4b4b4;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .front-page .main .footer-row .light-background .content-inner {
-  color: #5a5a5a;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .dark-background, .front-page .main .footer-row .dark-background .content-inner b, .front-page .main .footer-row .dark-background .content-inner a {
@@ -2211,10 +2197,6 @@ table th {
 
 .light-background svg path, footer svg path {
   fill: #848484;
-}
-
-.no-svg {
-  display: none;
 }
 
 .footer-row .formatted {

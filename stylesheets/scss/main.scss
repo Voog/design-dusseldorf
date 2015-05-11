@@ -56,7 +56,8 @@ $break-large: 1500px;
 html,
 body {
   @extend %nulling;
-  height: 100% !important;
+  /*height: 100% !important;*/
+  min-height: 100%;
   font: #{$font-size}/1.67 $font-main;
 
   @media screen and (min-width: $break-large) {
@@ -485,9 +486,10 @@ label {
   position: relative;
   margin-left: $side-width;
   background: $bg-color;
+  min-height: 100vh;
 
   .editmode & {
-    margin-bottom: 40px;
+    /*padding-bottom: 40px;*/
   }
 
   .editmode.edy-bar-open & {
@@ -2220,26 +2222,15 @@ table {
   .center-row .content-half .align-middle {
     height: 400px;
     box-sizing: border-box;
-/*
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;*/
   }
-/*
-  .center-row .content-half .align-middle .content-inner {
-    -webkit-align-self: flex-end;
-    -ms-flex-item-align: end;
-    align-self: flex-end;
-    width: 100%;
-  }*/
+
 
   .footer-row {
     height: 100px;
   }
   .main-inner-row > div {
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   .content-right {
@@ -2250,6 +2241,10 @@ table {
   }
   .content-half {
     width: 50%;
+  }
+
+  .front-page .main .center-row .content-inner {
+    padding-bottom: 0;
   }
 
 }
@@ -2269,10 +2264,6 @@ table {
 
   .front-page .main .header-row .inner-padding {
     min-height:calc(100vh - 500px);
-  }
-
-  .front-page .main .center-row .content-inner {
-    padding-bottom: 0;
   }
 
 }
@@ -2302,7 +2293,8 @@ table {
 }
 
 .inner-padding {
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   height: 100%;
   position: relative;
 }
@@ -2311,18 +2303,13 @@ table {
   display: table-cell;
 }
 .content-full, .content-half {
-  box-sizing: border-box;
   position: relative;
   background-size: cover;
   background-position: 50% 50%;
 }
 
-.content-full {
-  width: 100%;
-}
-
 .content-half {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .main .background-color {
@@ -2332,8 +2319,6 @@ table {
   left: 0;
   bottom: 0;
 }
-
-
 
 .front-page .main .content-inner {
   padding: 40px;
@@ -2381,11 +2366,11 @@ table {
 }
 
 .front-page .main .footer-row .dark-background .content-inner {
-  color: #b4b4b4;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .front-page .main .footer-row .light-background .content-inner {
-  color: #5a5a5a;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .dark-background, .front-page .main .footer-row .dark-background .content-inner b, .front-page .main .footer-row .dark-background .content-inner a {
@@ -2402,10 +2387,6 @@ table {
 
 .light-background svg path, footer svg path {
   fill: $third-color;
-}
-
-.no-svg {
-  display: none;
 }
 
 .footer-row .formatted {

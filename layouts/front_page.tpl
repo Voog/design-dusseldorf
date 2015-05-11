@@ -90,14 +90,5 @@
   </script>
   {% endif %}
 
-  <script>
-
-    $(document).ready(function() {
-    var limit =$('.header-row').height() + $('.center-row').height() + $('.footer-row').height();
-    console.log(limit);
-     });
-
-  </script>
-
 </body>
 </html>
