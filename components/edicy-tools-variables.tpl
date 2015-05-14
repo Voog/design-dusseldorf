@@ -40,7 +40,7 @@
   {% endif %}
 
   {% if content_left_bg_color == nil %}
-    {% assign content_left_bg_color = 'rgba(249,205,0,0.1)' %}
+    {% assign content_left_bg_color = 'rgba(148, 139, 144, 0.05)' %}
   {% endif %}
 
   {% if content_left_bg_color_data == nil %}
@@ -83,7 +83,7 @@
   {% endif %}
 
   {% if content_right_bg_color == nil %}
-    {% assign content_right_bg_color = 'rgba(249,205,0,0.1)' %}
+    {% assign content_right_bg_color = 'rgba(255, 255, 255, 0)' %}
   {% endif %}
 
   {% if content_right_bg_color_data == nil %}

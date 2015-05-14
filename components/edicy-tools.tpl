@@ -104,7 +104,7 @@
 
     // Front page bottom content area background picker.
     var contentHalfBottomBg = new Edicy.BgPicker($('.content-bottom .js-background-settings'), {
-        picture: true,
+        picture: false,
         target_width: 600,
         color: true,
         showAlpha: true,
