@@ -416,7 +416,7 @@ label .form_control_indicator:before {
 
 .sidebar {
   float: left;
-  width: 235px;
+  width: 200px;
   min-height: 100%;
 }
 @media screen and (min-width: 1500px) {
@@ -425,21 +425,23 @@ label .form_control_indicator:before {
   }
 }
 .sidebar .sidebar-inner {
-  padding: 55px 30px 180px 30px;
+  /*
+  padding: 55px 30px 180px 30px;*/
+  padding: 55px 30px;
 }
 .search-enabled .sidebar .sidebar-inner {
-  padding-bottom: 230px;
+  /*padding-bottom: 230px;*/
 }
 
 .main {
   position: relative;
-  margin-left: 235px;
+  margin-left: 200px;
   background: #e5e5e5;
   /*
   min-height: 100vh;*/
 }
 .editmode .main {
-  /*padding-bottom: 40px;*/
+  padding-bottom: 40px;
 }
 .editmode.edy-bar-open .main {
   margin-bottom: 150px;
@@ -455,18 +457,18 @@ label .form_control_indicator:before {
 }
 .front-page .main-inner {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-size: 29px;
-  line-height: 1.3;
+  font-size: 24px;
+  line-height: 32px;
   text-align: center;
 }
 .front-page .main-inner h1 {
-  font-size: 43.5px;
+  font-size: 36px;
 }
 .front-page .main-inner h2 {
-  font-size: 36.25px;
+  font-size: 30px;
 }
 .front-page .main-inner h3 {
-  font-size: 31.9px;
+  font-size: 26.4px;
 }
 .front-page .main-inner .dark-background h1,
 .front-page .main-inner .dark-background h2,
@@ -478,7 +480,7 @@ label .form_control_indicator:before {
 }
 
 .inner {
-  width: 789px;
+  width: 824px;
 }
 .inner.main-inner {
   width: auto !important;
@@ -503,8 +505,8 @@ label .form_control_indicator:before {
   overflow: hidden;
   padding-top: 20px;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  font-size: 29px;
-  line-height: 1.3;
+  font-size: 24px;
+  line-height: 32px;
   vertical-align: top;
   text-transform: uppercase;
   color: #222222;
@@ -524,9 +526,9 @@ label .form_control_indicator:before {
   padding-top: 50px;
 }
 .main-menu li {
-  padding: 7px 0;
-  font-size: 16px;
-  line-height: 1.3;
+  /*padding: 7px 0;*/
+  font-size: 14px;
+  line-height: 30px;
   text-transform: uppercase;
 }
 .main-menu a {
@@ -1175,7 +1177,7 @@ table th {
   position: absolute;
   right: 100%;
   bottom: 0;
-  width: 235px;
+  width: 200px;
   font-size: 11px;
   line-height: 1.6;
   -webkit-box-sizing: border-box;
@@ -1416,7 +1418,7 @@ table th {
   overflow: hidden;
   width: 0;
   height: 100%;
-  margin-left: 235px;
+  margin-left: 200px;
   -webkit-transition: opacity .1s ease-in, width .3s ease-in;
   transition: opacity .1s ease-in, width .3s ease-in;
   opacity: 0;
@@ -1645,7 +1647,7 @@ table th {
 
   .front-page .main-inner {
     font-size: 22px;
-    line-height: 1.3;
+    line-height: 32px;
     color: white;
   }
   .front-page .main-inner h1 {
@@ -1934,7 +1936,7 @@ table th {
   #mobile-menu .navigation-menu ul a,
   #mobile-menu .language-menu ul a {
     font-size: 24px;
-    line-height: 1.3;
+    line-height: 32px;
     color: white;
     color: rgba(255, 255, 255, 0.5);
   }
@@ -2079,8 +2081,8 @@ table th {
 }
 
 .front-page .main .header-row .content-inner {
-  font-size: 29px;
-  line-height: 1.3;
+  font-size: 24px;
+  line-height: 32px;
 }
 
 @media screen and (min-width: 600px) {
@@ -2100,7 +2102,7 @@ table th {
 .front-page .main .footer-row .content-inner {
   font-size: 14px;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
-  line-height: 1.3;
+  line-height: 32px;
 }
 
 .front-page .main .footer-row .dark-background .content-inner {
@@ -2128,21 +2130,29 @@ table th {
 }
 
 .voog-reference svg {
-  height: 10px;
-  width: 50px;
+  height: 9px;
+  width: 35px;
 }
 
 .custom-btn {
   display: inline-block;
-  padding: 10px 40px;
+  box-sizing: border-box;
+  width: 180px;
+  padding: 10px 10px;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 24px;
   word-break: break-word;
   word-wrap: break-word;
   -ms-word-break: break-all;
   text-align: center;
   margin: 5px 10px;
   cursor: pointer;
+}
+
+.dark-background .custom-btn:hover {
+  color: #d0d0d0;
+  border-color: #d0d0d0;
 }
 
 .center-row .custom-btn {
@@ -2159,12 +2169,12 @@ table th {
   }
 }
 .dark-background .custom-btn {
-  border: 3px solid #ffffff;
+  border: 2px solid #ffffff;
   color: #ffffff;
 }
 
 .light-background .custom-btn {
-  border: 3px solid #000000;
+  border: 2px solid #000000;
   color: #000000;
 }
 
@@ -2172,11 +2182,14 @@ footer .custom-btn {
   display: none;
 }
 
-.front-page .footer-row .custom-btn {
+.footer-row .custom-btn {
+  width: 80px;
+  box-sizing: border-box;
   display: inline-block;
-  padding: 8px 17px;
+  padding: 0 10px;
   text-transform: none;
-  font-size: 12px;
+  font-size: 10px;
+  line-height: 32px;
   word-break: break-word;
   text-align: center;
   margin: 0px 0px;
@@ -2184,7 +2197,7 @@ footer .custom-btn {
 }
 
 .footer-row .dark-background .custom-btn {
-  border: 2px solid #3a3a3a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
 
@@ -2195,10 +2208,15 @@ footer .custom-btn {
 
 .footer-left {
   float: left;
-  max-width: 70%;
+  max-width: calc(100% - 90px);
 }
 
 .footer-right {
+  float: right;
+  width: 90px;
+}
+
+.footer-right .custom-btn {
   position: absolute;
   right: 15px;
   bottom: 50%;

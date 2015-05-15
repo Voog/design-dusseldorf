@@ -13,17 +13,22 @@ $black: #000000;
 $white: #ffffff;
 $blue: #0066BB;
 
+$font-size-xs: 10px;
 $font-size: 18px;
 $font-size-big: 20px;
-$font-size-xl: 29px;
+$font-size-xl: 24px;
 $font-size-small: 14px;
 $font-size-medium: 16px;
-$line-height: 1.3;
+
+$line-height-xs: 24px;
+$line-height-small: 30px;
+$line-height: 32px;
+
 $font-main: 'Lato', Helvetica, Arial, sans-serif;
 $font-secondary: 'Montserrat', Helvetica, Arial, sans-serif;
 
 $site-width: 1024px;
-$side-width: 235px;
+$side-width: 200px;
 $side-width-small: 200px;
 $content-width: $site-width - $side-width;
 
@@ -477,10 +482,12 @@ label {
   }
 
   .sidebar-inner {
-    padding: 55px 30px 180px 30px;
+    /*
+    padding: 55px 30px 180px 30px;*/
+    padding: 55px 30px;
 
     .search-enabled & {
-      padding-bottom: 230px;
+      /*padding-bottom: 230px;*/
     }
   }
 }
@@ -493,7 +500,7 @@ label {
   min-height: 100vh;*/
 
   .editmode & {
-    /*padding-bottom: 40px;*/
+    padding-bottom: 40px;
   }
 
   .editmode.edy-bar-open & {
@@ -588,9 +595,9 @@ label {
   padding-top: 50px;
 
   li {
-    padding: 7px 0;
-    font-size: $font-size-medium;
-    line-height: $line-height;
+    /*padding: 7px 0;*/
+    font-size: $font-size-small;
+    line-height: $line-height-small;
     text-transform: uppercase;
   }
 
@@ -2212,8 +2219,6 @@ table {
     float: left;
     width: 100%;
   }
-
-
   .content-right {
     float: right;
   }
@@ -2316,21 +2321,29 @@ table {
 }
 
 .voog-reference svg {
-  height: 10px;
-  width: 50px;
+  height: 9px;
+  width: 35px;
 }
 
 .custom-btn {
   display: inline-block;
-  padding: 10px 40px;
+  box-sizing: border-box;
+  width: 180px;
+  padding: 10px 10px;
   text-transform: uppercase;
-  font-size: $font-size-big;
+  font-size: $font-size;
+  line-height: $line-height-xs;
   word-break: break-word;
   word-wrap:break-word;
   -ms-word-break: break-all;
   text-align: center;
   margin: 5px 10px;
   cursor: pointer;
+}
+
+.dark-background .custom-btn:hover {
+  color: #d0d0d0;
+  border-color: #d0d0d0;
 }
 .center-row .custom-btn {
   position: absolute;
@@ -2347,11 +2360,11 @@ table {
 }
 
 .dark-background .custom-btn {
-  border: 3px solid $white;
+  border: 2px solid $white;
   color: $white;
 }
 .light-background .custom-btn {
-  border: 3px solid $black;
+  border: 2px solid $black;
   color: $black;
 }
 
@@ -2359,11 +2372,14 @@ footer .custom-btn {
   display: none;
 }
 
-.front-page .footer-row .custom-btn {
+.footer-row .custom-btn {
+  width: 80px;
+  box-sizing: border-box;
   display: inline-block;
-  padding: 8px 17px;
+  padding: 0 10px;
   text-transform: none;
-  font-size: 12px;
+  font-size: $font-size-xs;
+  line-height: $line-height;
   word-break: break-word;
   text-align: center;
   margin: 0px 0px;
@@ -2371,7 +2387,7 @@ footer .custom-btn {
 }
 
 .footer-row .dark-background .custom-btn {
-  border: 2px solid #3a3a3a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: $white;
 }
 .footer-row .light-background .custom-btn {
@@ -2380,15 +2396,18 @@ footer .custom-btn {
 }
 .footer-left {
   float: left;
-  max-width: 70%;
+  max-width: calc(100% - 90px);
 }
 .footer-right {
+  float: right;
+  width: 90px;
+}
+.footer-right .custom-btn {
   position: absolute;
   right: 15px;
   bottom: 50%;
   margin-bottom: -18px
 }
-
 
 .header-row .content-full {
   min-height: 31vh;

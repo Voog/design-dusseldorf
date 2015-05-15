@@ -1,9 +1,9 @@
 {
-  "name": "voog-design-berlin",
-  "description": "The Berlin design template for Voog",
+  "name": "voog-design-dusseldorf",
+  "description": "The Düsseldorf design template for Voog",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Edicy/design-berlin.git"
+    "url": "git://github.com/Voog/design-dusseldorf.git"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
