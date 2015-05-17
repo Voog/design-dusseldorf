@@ -1,7 +1,6 @@
 <div id="mobile-menu" class="js-menu-lang-wrap {% if flags_state %}flags-enabled{% else %}flags-disabled{% endif %}">
   <a href="#" class="mobile-menu-close"></a>
   {% if editmode or site.has_many_languages? %}
-    <!-- a href="#" class="">keel</a -->
     <a href="#" role="button" class="language-menu-btn">
       <span class="lang-menu-btn lang-flag {% for language in site.languages %}{% if language.selected? %}lang-flag-{{ language.code }}{% endif %}{% endfor %}">
         {% if editmode or flags_state == false %}
@@ -13,7 +12,6 @@
       </span>
     </a>
   {% endif %}
-
 
   {% if editmode or site.has_many_languages? %}
     <div class="language-menu">
@@ -40,7 +38,6 @@
       </ul>
     </div>
   {% endif %}
-
 
   <div class="navigation-menu">
     <ul>

@@ -77,13 +77,19 @@
         var whBody = $(document).height(),
             whFoot = $('.footer-row').height(),
             whHeader = $('.header-row').height(),
-            whBodyFootRem = whBody - whFoot - whHeader,
-            //whHeaderTarget = $('.header-row .content-full').css('min-height', whHeader),
-            whCenter = whBodyFootRem,
-            whCenterTarget = $('.center-row .content-half').css('min-height', whCenter);
+            whCentInnerPad = parseInt($('.center-row .inner-padding').css('padding-top')) * 2,
+            whBodyFootRem = whBody - whFoot - whHeader - whCentInnerPad,
+            whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
+            console.log(whCentInnerPad);
+            console.log(whBodyFootRem);
 
-        var whCenterInner = whCenter - 150,
-            whCenterInnerTarget = $('.center-row .content-half .content-inner').css('min-height', whCenterInner);
+        // Calc for nav element padding, to align with center row
+
+        var whSiteTitle = $('.sidebar .site-title').outerHeight(),
+            padSideIn = parseInt($('.sidebar-inner').css('padding-top')),
+            padLiItem = $('.main-menu li').outerHeight() * (1/3),
+            padNav = whHeader - padSideIn - whSiteTitle - padLiItem,
+            padNavTarget = $('.main-menu').css('padding-top', padNav);
       }
     };
 

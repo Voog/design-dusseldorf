@@ -5,7 +5,7 @@ $main-color: #222222;
 $secondary-color: #000000;
 
 $link-color: #0066bb;
-$third-color: #848484;
+$third-color: #a3a3a3;
 $bg-color: #e5e5e5;
 $error-color: #c70909;
 $success-color: #409e13;
@@ -20,6 +20,7 @@ $font-size-xl: 24px;
 $font-size-small: 14px;
 $font-size-medium: 16px;
 
+$line-height-tiny: 18px;
 $line-height-xs: 24px;
 $line-height-small: 30px;
 $line-height: 32px;
@@ -484,7 +485,7 @@ label {
   .sidebar-inner {
     /*
     padding: 55px 30px 180px 30px;*/
-    padding: 55px 30px;
+    padding: 45px 30px 180px;
 
     .search-enabled & {
       /*padding-bottom: 230px;*/
@@ -547,7 +548,7 @@ label {
 }
 
 .inner {
-  width: $content-width;
+  /*width: $content-width;*/
 
   &.main-inner {
     width: auto !important;
@@ -595,9 +596,9 @@ label {
   padding-top: 50px;
 
   li {
-    /*padding: 7px 0;*/
+    padding: 6px 0;
     font-size: $font-size-small;
-    line-height: $line-height-small;
+    line-height: $line-height-tiny;
     text-transform: uppercase;
   }
 
@@ -893,7 +894,7 @@ $flags:
 .lang-menu {
   position: absolute;
   z-index: 200;
-  top: 38px;
+  top: 30px;
   left: 30px;
   height: 13px;
 
@@ -1287,8 +1288,7 @@ table {
 }
 
 .voog-reference {
-  display: none;
-  padding-top: 10px;
+  padding-top: 20px;
 
   a {
     color: #acacac;
@@ -1303,6 +1303,7 @@ table {
 .edy-gallery-area,
 .edys-gallery-area {
   padding: 20px 0;
+  clear: both;
 }
 
 .edys-gallery-area,
@@ -1418,7 +1419,7 @@ table {
 /* search */
 .search {
   position: relative;
-  padding-bottom: 20px;
+  /*padding-bottom: 20px;*/
 
   .search-box {
     position: relative;
@@ -1440,7 +1441,7 @@ table {
     width: 100%;
     margin: 0;
     padding: 5px 0;
-    font: #{$font-size}/1.67 $font-main;
+    font: #{$font-size-small}/1.67 $font-main;
     color: $main-color;
     border: none;
     outline: 0;
@@ -1669,7 +1670,7 @@ table {
   }
 }
 
-@media screen and (min-width: $break-small + 1px) and (max-width: $break-middle) {
+@media screen and (min-width: $break-small + 1px) and (max-width: $break-middle - 1px) {
   body {
     min-width: 0;
   }
@@ -2231,23 +2232,20 @@ table {
 
 }
 
-.front-page .main .header-row .align-middle {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-.front-page .main .header-row .align-middle .content-inner {
-  display: table-cell;
-  vertical-align: middle;
+@media screen and (max-width: $break-middle - 1px) {
+  .content-inner {
+    display: inline-block;
+    width: 100%;
+  }
 }
 
 .header-row .content-inner, .center-row .content-inner {
-  min-height: 165px;
+  min-height: 100px;
 }
 
 .inner-padding {
   height: 100%;
-  padding: 75px 60px;
+  padding: 65px 50px;
   position: relative;
 }
 
@@ -2286,8 +2284,8 @@ table {
 
 }
 .front-page .main .footer-row .inner-padding {
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .front-page .main .footer-row .content-inner {
@@ -2329,7 +2327,7 @@ table {
   display: inline-block;
   box-sizing: border-box;
   width: 180px;
-  padding: 10px 10px;
+  padding: 11px 10px;
   text-transform: uppercase;
   font-size: $font-size;
   line-height: $line-height-xs;
@@ -2341,22 +2339,15 @@ table {
   cursor: pointer;
 }
 
-.dark-background .custom-btn:hover {
-  color: #d0d0d0;
-  border-color: #d0d0d0;
-}
-.center-row .custom-btn {
-  position: absolute;
-  bottom: 10%;
-  left: 15%;
-  right: 15%;
+.custom-btn:hover {
+  background: #2b2b2b;
 }
 
-@media screen and (min-width: $break-small) {
-  .center-row .custom-btn {
-    left: 25%;
-    right: 25%;
-  }
+.center-row .custom-btn {
+  position: absolute;
+  bottom: 11%;
+  left: 50%;
+  margin-left: -90px;
 }
 
 .dark-background .custom-btn {
@@ -2371,6 +2362,9 @@ table {
 footer .custom-btn {
   display: none;
 }
+footer .footer-left {
+  padding-top: 20px;
+}
 
 .footer-row .custom-btn {
   width: 80px;
@@ -2379,13 +2373,18 @@ footer .custom-btn {
   padding: 0 10px;
   text-transform: none;
   font-size: $font-size-xs;
-  line-height: $line-height;
+  line-height: $line-height-xs;
   word-break: break-word;
   text-align: center;
   margin: 0px 0px;
   cursor: pointer;
 }
-
+.footer-right .custom-btn {
+  position: absolute;
+  right: 15px;
+  bottom: 50%;
+  margin-bottom: -14px;
+}
 .footer-row .dark-background .custom-btn {
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: $white;
@@ -2394,7 +2393,14 @@ footer .custom-btn {
   border: 2px solid #333;
   color: $black;
 }
-.footer-left {
+
+.footer-row .custom-btn:hover {
+  background: #6b6b6b;
+}
+.footer-row .light-background .custom-btn:hover a {
+  color: $white;
+}
+.front-page .footer-left {
   float: left;
   max-width: calc(100% - 90px);
 }
@@ -2402,13 +2408,23 @@ footer .custom-btn {
   float: right;
   width: 90px;
 }
-.footer-right .custom-btn {
-  position: absolute;
-  right: 15px;
-  bottom: 50%;
-  margin-bottom: -18px
-}
 
 .header-row .content-full {
   min-height: 31vh;
+}
+
+
+/* Edy tools */
+
+.dark-background .edy-empty-bordered {
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px dashed rgba(255, 255, 255, 0.7);
+}
+.light-background .edy-empty-bordered {
+  color: rgba(27,33,36,0.33);
+  border: 1px dashed rgba(27,33,36,0.33);
+}
+
+.dark-background .edy-texteditor-active {
+  outline: 1px solid rgba(255, 255, 255, 0.7);
 }

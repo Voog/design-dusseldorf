@@ -2,7 +2,6 @@
   {% for item in site.menuitems %}
     {% if item.selected? %}
       {% if editmode or item.children? %}
-        
           <ul>
           {% for level2 in item.visible_children %}
             <li><a href="{{level2.url}}"{% if level2.selected? %} class="active"{% endif %}{% unless level2.translated? %} class="untranslated fci-editor-menuadd"{% endunless %}>{{level2.title}}</a></li>
@@ -16,9 +15,3 @@
     {% endif %}
   {% endfor %}
   </nav>
-  
-  
-  
-  
-           
-          
