@@ -214,35 +214,126 @@
       return sizes[sizes.length - 1];
     };
 
+    var contentHalfBgImageSizesContains = function(sizes, url) {
+      for (var i = sizes.length; i--;) {
+        if (url.indexOf(sizes[i].url.trim()) > -1) {
+          return true;
+        }
+      }
+      return false;
+    };
+
+    // Checks the lightness sum of header background image and color and sets the lightness class depending on it's value.
+    var handleContentHalfImageLightnessClass = function() {
+      if (contentHalfBgCombinedLightness >= 0.5) {
+        $(contentHalf).find('.js-background-type').addClass('light-background').removeClass('dark-background');
+      } else {
+        $(contentHalf).find('.js-background-type').addClass('dark-background').removeClass('light-background');
+      }
+    };
+
     // Defines the suitable image based on the viewport width.
     var suitableImage = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : 'none';
 
-    var contentHalfBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
-        contentHalfBgColor = (data.color && data.color !== '') ? data.color : 'transparent',
+    var contentHalfBgImagePrevious = $(contentHalf).css('background-image'),
+        //contentHalfBgImagePrevious = 'url(' + suitableImage.url + ')',
+        //contentHalfBgImagePrevious = $('.content-full').css('background-image'),
+        contentHalfBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
+        contentHalfBgImageSizes = (data.imageSizes && data.imageSizes !== '') ? data.imageSizes : null,
+        contentHalfBgColor = (data.color && data.color !== '') ? data.color : 'rgba(0,0,0,0)',
         contentHalfBgColorOpacity = (data.colorData && data.colorData !== '') ? data.colorData.a : 'none',
-        contentHalfBgColorLightness = (data.colorData && data.colorData !== '' && data.colorData.lightness) ? data.colorData.lightness : 'none';
+        //contentHalfBgColorLightness = (data.colorData && data.colorData !== '' && data.colorData.lightness) ? data.colorData.lightness : 1,
+        contentHalfBgColorLightness = (data.colorData && data.colorData !== '') ? data.colorData.lightness : 1,
+        colorExtractImage = $('<img>'),
+        colorExtractCanvas = $('<canvas>'),
+        colorExtractImageUrl = (data.image && data.image !== '') ? data.image : null;
+        //var contentHalfBgCombinedLightness = 0;
+        console.log(contentHalfBgImagePrevious);
+        console.log(suitableImage);
+        console.log(data);
 
-    // Removes the current lightness class.
-    $(contentHalf).find('.js-background-type').removeClass('light-background dark-background');
-    // Checks the opacity of the contentHalf background color and sets the lightness class depending on it's value.
-    if (contentHalfBgColorOpacity >= 0.2) {
-      $(contentHalf).find('.js-background-type').addClass(contentHalfBgColorLightness >= 0.5 ? 'light-background' : 'dark-background');
+    if (colorExtractImageUrl) {
+      if (contentHalfBgImageSizesContains(contentHalfBgImageSizes, contentHalfBgImagePrevious)) {
+        contentHalfBgCombinedLightness = getCombinedLightness(contentHalfBgImage, contentHalfBgColor);
+        handleContentHalfImageLightnessClass();
+        console.log("first");
+        console.log(contentHalf.contentHalfBgImageColor);
+      } else {
+        colorExtractImage.attr('src', colorExtractImageUrl.replace(/.*\/photos/g,'/photos'));
+        console.log(colorExtractImage);
+        colorExtractImage.load(function() {
+          ColorExtract.extract(colorExtractImage[0], colorExtractCanvas[0], function(data) {
+            //contentHalf.contentHalfBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
+            contentHalfBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
+
+            //contentHalfBgCombinedLightness = getCombinedLightness(contentHalf.contentHalfBgImageColor, contentHalfBgColor);
+            contentHalfBgCombinedLightness = getCombinedLightness(contentHalfBgImageColor, contentHalfBgColor);
+
+            handleContentHalfImageLightnessClass();
+            console.log(contentHalfBgCombinedLightness);
+            console.log("sec");
+          });
+        });
+      };
     } else {
-      $(contentHalf).find('.js-background-type').addClass('light-background');
+      contentHalfBgCombinedLightness = getCombinedLightness('rgba(255,255,255,1)', contentHalfBgColor);
+      handleContentHalfImageLightnessClass();
+      console.log(contentHalfBgCombinedLightness);
+      console.log("third");
     };
 
     // Updates the contentHalf background image and background color.
     $(contentHalf).css({'background-image' : contentHalfBgImage});
     $(contentHalf).find('.background-color').css({'background-color' : contentHalfBgColor});
+    console.log(contentHalfBgCombinedLightness);
   };
 
   // contentHalf background image and color save logic function.
   var contentHalfBgCommit = function(data, dataName) {
     var commitData = $.extend(true, {}, data);
-    commitData.image = data.image || '';
-    commitData.imageSizes = data.imageSizes || '';
-    commitData.color = data.color || 'transparent';
-    pageData.set(dataName, commitData);
+        commitData.image = data.image || '';
+        commitData.imageSizes = data.imageSizes || '';
+        commitData.color = data.color || 'rgba(255,255,255,0)';
+        //commitData.combinedLightness = contentHalfBgCombinedLightness;
+        commitData.combinedLightness = contentHalfBgCombinedLightness;
+        pageData.set(dataName, commitData);
+  };
+
+  var colorSum = function(bgColor, fgColor) {
+  if (bgColor && fgColor) {
+    if (typeof bgColor == 'string') {
+      bgColor = bgColor.replace(/rgba?\(/,'').replace(/\)/,'').split(',');
+      $.each(bgColor, function(n, x) {bgColor[n] = +x;});
+    }
+    if (typeof fgColor == 'string') {
+      fgColor = fgColor.replace(/rgba?\(/,'').replace(/\)/,'').split(',');
+      $.each(fgColor, function(n, x) {fgColor[n] = +x;});
+    }
+    if (typeof bgColor == 'object' && bgColor.hasOwnProperty('length')) {
+      if (bgColor.length == 3) { bgColor.push(1.0); }
+    }
+    if (typeof fgColor == 'object' && fgColor.hasOwnProperty('length')) {
+      if (fgColor.length == 3) { fgColor.push(1.0); }
+    }
+    var result = [0, 0, 0, 0];
+    result[3] = 1 - (1 - fgColor[3]) * (1 - bgColor[3]);
+    if (result[3] === 0) { result[3] = 1e-6; }
+    result[0] = Math.min(fgColor[0] * fgColor[3] / result[3] + bgColor[0] * bgColor[3] * (1 - fgColor[3]) / result[3], 255);
+    result[1] = Math.min(fgColor[1] * fgColor[3] / result[3] + bgColor[1] * bgColor[3] * (1 - fgColor[3]) / result[3], 255);
+    result[2] = Math.min(fgColor[2] * fgColor[3] / result[3] + bgColor[2] * bgColor[3] * (1 - fgColor[3]) / result[3], 255);
+    return $.map(result, function(e) { return Math.floor(e); });
+    }
+  };
+
+  var getCombinedColor = function(bgColor, fgColor) {
+    var sum = colorSum(bgColor || [255,255,255,1], fgColor || [255,255,255,1]);
+    return sum;
+  };
+
+  var getCombinedLightness = function(bgColor, fgColor) {
+    var combinedColor = getCombinedColor(bgColor, fgColor);
+    var color = Math.round(((+combinedColor[0]) * 0.2126 + (+combinedColor[1]) * 0.7152 + (+combinedColor[2]) * 0.0722) / 2.55) / 100;
+    return color;
   };
 
   var toggleFlags = function() {

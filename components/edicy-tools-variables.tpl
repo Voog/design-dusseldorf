@@ -12,20 +12,29 @@
   {% assign content_left_bg_image_sizes = page.data.content_left_bg.imageSizes %}
   {% assign content_left_bg_color = page.data.content_left_bg.color %}
   {% assign content_left_bg_color_data = page.data.content_left_bg.colorData %}
+  {% assign content_left_bg_combined_lightness = content_left_bg.combinedLightness %}
 
   {% comment %}Sets the body background type.{% endcomment %}
   {% if content_left_bg %}
-    {% if content_left_bg_color_data.a >= 0.2 %}
-      {% if content_left_bg_color_data.lightness >= 0.5 %}
+    {% if content_left_bg_combined_lightness %}
+      {% if content_left_bg_combined_lightness > 0.5 %}
         {% assign content_left_bg_type = 'light-background' %}
       {% else %}
         {% assign content_left_bg_type = 'dark-background' %}
       {% endif %}
     {% else %}
-      {% assign content_left_bg_type = 'light-background' %}
+      {% if content_left_bg_color_data.a >= 0.5 %}
+        {% if content_left_bg_color_data.lightness >= 0.5 %}
+          {% assign content_left_bg_type = 'light-background' %}
+        {% else %}
+          {% assign content_left_bg_type = 'dark-background' %}
+        {% endif %}
+      {% else %}
+        {% assign content_left_bg_type = 'light-background' %}
+      {% endif %}
     {% endif %}
   {% else %}
-    {% assign content_left_bg_type = 'dark-background' %}
+    {% assign content_left_bg_type = 'light-background' %}
   {% endif %}
 
   {% if content_left_bg_image == nil %}
@@ -55,20 +64,30 @@
   {% assign content_right_bg_image_sizes = page.data.content_right_bg.imageSizes %}
   {% assign content_right_bg_color = page.data.content_right_bg.color %}
   {% assign content_right_bg_color_data = page.data.content_right_bg.colorData %}
+  {% assign content_right_bg_combined_lightness = content_right_bg.combinedLightness %}
+
 
   {% comment %}Sets the body background type.{% endcomment %}
   {% if content_right_bg %}
-    {% if content_right_bg_color_data.a >= 0.2 %}
-      {% if content_right_bg_color_data.lightness >= 0.5 %}
+    {% if content_right_bg_combined_lightness %}
+      {% if content_right_bg_combined_lightness > 0.5 %}
         {% assign content_right_bg_type = 'light-background' %}
       {% else %}
         {% assign content_right_bg_type = 'dark-background' %}
       {% endif %}
     {% else %}
-      {% assign content_right_bg_type = 'light-background' %}
+      {% if content_right_bg_color_data.a >= 0.5 %}
+        {% if content_right_bg_color_data.lightness >= 0.5 %}
+          {% assign content_right_bg_type = 'light-background' %}
+        {% else %}
+          {% assign content_right_bg_type = 'dark-background' %}
+        {% endif %}
+      {% else %}
+        {% assign content_right_bg_type = 'light-background' %}
+      {% endif %}
     {% endif %}
   {% else %}
-    {% assign content_right_bg_type = 'dark-background' %}
+    {% assign content_right_bg_type = 'light-background' %}
   {% endif %}
 
   {% if content_right_bg_image == nil %}
@@ -98,20 +117,30 @@
   {% assign content_top_bg_image_sizes = page.data.content_top_bg.imageSizes %}
   {% assign content_top_bg_color = page.data.content_top_bg.color %}
   {% assign content_top_bg_color_data = page.data.content_top_bg.colorData %}
+  {% assign content_top_bg_combined_lightness = content_top_bg.combinedLightness %}
+
 
   {% comment %}Sets the body background type.{% endcomment %}
   {% if content_top_bg %}
-    {% if content_top_bg_color_data.a >= 0.2 %}
-      {% if content_top_bg_color_data.lightness >= 0.5 %}
+    {% if content_top_bg_combined_lightness %}
+      {% if content_top_bg_combined_lightness > 0.5 %}
         {% assign content_top_bg_type = 'light-background' %}
       {% else %}
         {% assign content_top_bg_type = 'dark-background' %}
       {% endif %}
     {% else %}
-      {% assign content_top_bg_type = 'light-background' %}
+      {% if content_top_bg_color_data.a >= 0.5 %}
+        {% if content_top_bg_color_data.lightness >= 0.5 %}
+          {% assign content_top_bg_type = 'light-background' %}
+        {% else %}
+          {% assign content_top_bg_type = 'dark-background' %}
+        {% endif %}
+      {% else %}
+        {% assign content_top_bg_type = 'light-background' %}
+      {% endif %}
     {% endif %}
   {% else %}
-    {% assign content_top_bg_type = 'dark-background' %}
+    {% assign content_top_bg_type = 'light-background' %}
   {% endif %}
 
   {% if content_top_bg_image_sizes != nil %}
@@ -134,20 +163,30 @@
   {% assign content_bottom_bg_image_sizes = page.data.content_bottom_bg.imageSizes %}
   {% assign content_bottom_bg_color = page.data.content_bottom_bg.color %}
   {% assign content_bottom_bg_color_data = page.data.content_bottom_bg.colorData %}
+  {% assign content_bottom_bg_combined_lightness = content_bottom_bg.combinedLightness %}
+
 
   {% comment %}Sets the body background type.{% endcomment %}
   {% if content_bottom_bg %}
-    {% if content_bottom_bg_color_data.a >= 0.2 %}
-      {% if content_bottom_bg_color_data.lightness >= 0.5 %}
+    {% if content_bottom_bg_combined_lightness %}
+      {% if content_bottom_bg_combined_lightness > 0.5 %}
         {% assign content_bottom_bg_type = 'light-background' %}
       {% else %}
         {% assign content_bottom_bg_type = 'dark-background' %}
       {% endif %}
     {% else %}
-      {% assign content_bottom_bg_type = 'light-background' %}
+      {% if content_bottom_bg_color_data.a >= 0.5 %}
+        {% if content_bottom_bg_color_data.lightness >= 0.5 %}
+          {% assign content_bottom_bg_type = 'light-background' %}
+        {% else %}
+          {% assign content_bottom_bg_type = 'dark-background' %}
+        {% endif %}
+      {% else %}
+        {% assign content_bottom_bg_type = 'light-background' %}
+      {% endif %}
     {% endif %}
   {% else %}
-    {% assign content_bottom_bg_type = 'dark-background' %}
+    {% assign content_bottom_bg_type = 'light-background' %}
   {% endif %}
 
 

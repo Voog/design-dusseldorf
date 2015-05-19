@@ -2358,6 +2358,10 @@ table {
   border: 2px solid $black;
   color: $black;
 }
+.light-background .custom-btn:hover {
+  border: 2px solid $white;
+  color: $white;
+}
 
 footer .custom-btn {
   display: none;

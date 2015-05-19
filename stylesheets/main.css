@@ -2166,6 +2166,11 @@ table th {
   color: #000000;
 }
 
+.light-background .custom-btn:hover {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
 footer .custom-btn {
   display: none;
 }

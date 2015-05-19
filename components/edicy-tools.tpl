@@ -11,7 +11,7 @@
       id: '{{ page.id }}'
     });
 
-    {% comment %} Initiates language flag toggleing functionality. {% endcomment %}
+    {% comment %} Initiates language flag toggling functionality. {% endcomment %}
     site.toggleFlags();
 
     {% comment %} Front page top content area background picker. {% endcomment %}
