@@ -11,10 +11,10 @@
       id: '{{ page.id }}'
     });
 
-    {% comment %} Initiates language flag toggling functionality. {% endcomment %}
+    {% comment %}//Initiates language flag toggling functionality.{% endcomment %}
     site.toggleFlags();
 
-    {% comment %} Front page top content area background picker. {% endcomment %}
+    {% comment %}//Front page top content area background picker.{% endcomment %}
     var contentHalfTopBg = new Edicy.BgPicker($('.content-top .js-background-settings'), {
         picture: true,
         target_width: 600,
@@ -30,7 +30,7 @@
       }
     });
 
-    {% comment %} Front page left content area background picker. {% endcomment %}
+    {% comment %}//Front page left content area background picker.{% endcomment %}
     var contentHalfLeftBg = new Edicy.BgPicker($('.content-left .js-background-settings'), {
         picture: true,
         target_width: 600,
@@ -46,7 +46,7 @@
       }
     });
 
-    {% comment %} Front page right content area background picker. {% endcomment %}
+    {% comment %}//Front page right content area background picker.{% endcomment %}
     var contentHalfRightBg = new Edicy.BgPicker($('.content-right .js-background-settings'), {
         picture: true,
         target_width: 600,
@@ -62,12 +62,12 @@
       }
     });
 
-    {% comment %}// Front page bottom content area background picker.{% endcomment %}
+    {% comment %}//Front page bottom content area background picker.{% endcomment %}
     var contentHalfBottomBg = new Edicy.BgPicker($('.content-bottom .js-background-settings'), {
         picture: false,
         target_width: 600,
         color: true,
-        showAlpha: true,
+        showAlpha: false,
 
       preview: function(data) {
         site.contentHalfBgPreview(data, '.js-content-bottom');

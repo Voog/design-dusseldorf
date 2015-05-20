@@ -61,6 +61,7 @@
 
         if ($('body').hasClass('front-page')) {
             setFrontContent();
+            //$(window).load(setFrontContent);
             $(window).resize(setFrontContent);
         }
 
@@ -74,22 +75,37 @@
     var setFrontContent = function() {
       if ($(window).width() > 1023) {
 
-        var whBody = $(document).height(),
-            whFoot = $('.footer-row').height(),
-            whHeader = $('.header-row').height(),
-            whCentInnerPad = parseInt($('.center-row .inner-padding').css('padding-top')) * 2,
-            whBodyFootRem = whBody - whFoot - whHeader - whCentInnerPad,
-            whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
-            console.log(whCentInnerPad);
-            console.log(whBodyFootRem);
-
         // Calc for nav element padding, to align with center row
 
-        var whSiteTitle = $('.sidebar .site-title').outerHeight(),
+        var whViewp = $(window).height(),
+            whHeader = $('.header-row').height(),
+            whSiteTitle = $('.sidebar .site-title').outerHeight(),
             padSideIn = parseInt($('.sidebar-inner').css('padding-top')),
             padLiItem = $('.main-menu li').outerHeight() * (1/3),
-            padNav = whHeader - padSideIn - whSiteTitle - padLiItem,
-            padNavTarget = $('.main-menu').css('padding-top', padNav);
+            padNav = whHeader - padSideIn - whSiteTitle - padLiItem;
+            if (padNav < whViewp) {var padNavTarget = $('.main-menu').css('padding-top', padNav)};
+            console.log("viewport");
+            console.log(whViewp);
+
+
+        var whBody = $(document).height(),
+            whFoot = $('.footer-row').height(),
+
+            //whHeader = Math.round(parseFloat($('.header-row .content-full').css('min-height'))),
+            whCentInnerPad = parseInt($('.center-row .inner-padding').css('padding-top')) * 2,
+            whBodyFootRem = whBody - whFoot - whHeader - whCentInnerPad + 1,
+            whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
+
+
+            console.log(whHeader);
+            console.log($('.header-row .content-full').css('min-height'));
+            console.log(Math.round(parseFloat($('.header-row .content-full').css('min-height'))));
+            console.log(parseFloat($('.header-row .content-full').css('min-height')));
+            console.log(parseInt($('.header-row .content-full').css('min-height')));
+            console.log(whBody);
+
+
+
       }
     };
 
@@ -217,7 +233,7 @@
     var contentHalfBgImageSizesContains = function(sizes, url) {
       for (var i = sizes.length; i--;) {
         if (url.indexOf(sizes[i].url.trim()) > -1) {
-          return true;
+          return false;
         }
       }
       return false;
@@ -247,7 +263,6 @@
         colorExtractImage = $('<img>'),
         colorExtractCanvas = $('<canvas>'),
         colorExtractImageUrl = (data.image && data.image !== '') ? data.image : null;
-        //var contentHalfBgCombinedLightness = 0;
         console.log(contentHalfBgImagePrevious);
         console.log(suitableImage);
         console.log(data);
@@ -294,7 +309,6 @@
         commitData.image = data.image || '';
         commitData.imageSizes = data.imageSizes || '';
         commitData.color = data.color || 'rgba(255,255,255,0)';
-        //commitData.combinedLightness = contentHalfBgCombinedLightness;
         commitData.combinedLightness = contentHalfBgCombinedLightness;
         pageData.set(dataName, commitData);
   };

@@ -477,15 +477,19 @@ label {
   float: left;
   width: $side-width;
   min-height: 100%;
+  position: relative;
 
   @media screen and (min-width: $break-large) {
     width: 20%;
   }
 
   .sidebar-inner {
-    /*
-    padding: 55px 30px 180px 30px;*/
-    padding: 45px 30px 180px;
+
+    padding: 45px 30px 190px;
+
+    .front-page & {
+      padding: 45px 30px 100px;
+    }
 
     .search-enabled & {
       /*padding-bottom: 230px;*/
@@ -1269,6 +1273,10 @@ table {
 }
 
 /* footer */
+
+footer .footer-left {
+  padding-top: 20px;
+}
 .footer {
   position: absolute;
   right: 100%;
@@ -1286,16 +1294,40 @@ table {
     width: 25%;
   }
 }
+.front-page footer {
+  display: none;
+}
+
+@media screen and (min-width: $break-small) {
+  .front-page footer {
+    display: block;
+  }
+}
+
+/* Voog reference */
 
 .voog-reference {
-  padding-top: 20px;
+  footer & {
+    padding-top: 20px;
+  }
 
   a {
     color: #acacac;
   }
 
+  svg {
+    height: 9px;
+    width: 35px;
+  }
+
   .front-page & {
     display: block;
+  }
+}
+
+@media screen and (min-width: $break-small) {
+  .footer-row .voog-reference {
+    display: none;
   }
 }
 
@@ -1329,7 +1361,6 @@ table {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-  // background-image: url('../images/front.jpg?1');
 }
 
 .js-bgpicker-cover-color {
@@ -1937,7 +1968,7 @@ table {
 
   .mobile-menu-toggler {
     position: absolute;
-    top: 0;
+    top: calc(50% - 22px);
     right: 0;
     display: block;
     width: 43px;
@@ -2147,7 +2178,7 @@ table {
 
   .mobile-search-toggler {
     position: absolute;
-    top: 0;
+    top: calc(50% - 22px);
     right: 43px;
     display: block;
     width: 33px;
@@ -2211,22 +2242,15 @@ table {
   }
 }
 
-.front-page footer {
-  display: none;
-}
+/**/
 
 @media screen and (min-width: $break-middle) {
   .main-inner-row {
     float: left;
     width: 100%;
   }
-  .content-right {
-    float: right;
-  }
-  .content-left {
-    float: left;
-  }
   .content-half {
+    float: left;
     width: 50%;
   }
 
@@ -2272,26 +2296,34 @@ table {
   line-height: $line-height;
 }
 
-@media screen and (min-width: $break-small) {
-
-  .footer-row .voog-reference {
-    display: none;
-  }
-
-  .front-page footer {
-    display: block;
-  }
-
-}
 .front-page .main .footer-row .inner-padding {
   padding-bottom: 10px;
   padding-top: 10px;
 }
 
+@media screen and (max-width: $break-small) {
+  .main .footer-row .inner-padding {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .footer-left {
+      max-width:100%;
+    }
+
+    .custom-btn {
+      bottom: 25px;
+      right: 30px;
+    }
+
+  }
+
+}
+
 .front-page .main .footer-row .content-inner {
   font-size: $font-size-small;
   font-family: $font-secondary;
-  line-height: $line-height;
+  line-height: $line-height-xs;
+  padding: 4px 0;
 }
 
 .front-page .main .footer-row .dark-background .content-inner {
@@ -2316,11 +2348,6 @@ table {
 
 .light-background svg path, footer svg path {
   fill: $third-color;
-}
-
-.voog-reference svg {
-  height: 9px;
-  width: 35px;
 }
 
 .custom-btn {
@@ -2365,9 +2392,6 @@ table {
 
 footer .custom-btn {
   display: none;
-}
-footer .footer-left {
-  padding-top: 20px;
 }
 
 .footer-row .custom-btn {
@@ -2431,4 +2455,12 @@ footer .footer-left {
 
 .dark-background .edy-texteditor-active {
   outline: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+
+@media screen and (min-width: $break-middle) {
+.footer-row {
+  position: absolute;
+  bottom: 0;
+}
 }
