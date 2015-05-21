@@ -2361,12 +2361,10 @@ table {
   text-transform: uppercase;
   font-size: $font-size;
   line-height: $line-height-xs;
-  word-break: break-word;
-  word-wrap:break-word;
-  -ms-word-break: break-all;
   text-align: center;
   margin: 5px 10px;
   cursor: pointer;
+  @include hyphenate(true);
 }
 
 .custom-btn:hover {
@@ -2405,7 +2403,6 @@ footer .custom-btn {
   text-transform: none;
   font-size: $font-size-xs;
   line-height: $line-height-xs;
-  word-break: break-word;
   text-align: center;
   margin: 0px 0px;
   cursor: pointer;
