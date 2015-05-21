@@ -6,7 +6,8 @@ $secondary-color: #000000;
 
 $link-color: #0066bb;
 $third-color: #a3a3a3;
-$bg-color: #e5e5e5;
+/*$bg-color: #e5e5e5;*/
+$bg-color: #f6f6f6;
 $error-color: #c70909;
 $success-color: #409e13;
 $black: #000000;
@@ -582,6 +583,7 @@ label {
   vertical-align: top;
   text-transform: uppercase;
   color: $main-color;
+  @include hyphenate(true);
 
   a {
     color: $main-color;
@@ -598,6 +600,7 @@ label {
 /* mainmenu */
 .main-menu {
   padding-top: 50px;
+  @include hyphenate(true);
 
   li {
     padding: 6px 0;
@@ -1274,9 +1277,6 @@ table {
 
 /* footer */
 
-footer .footer-left {
-  padding-top: 20px;
-}
 .footer {
   position: absolute;
   right: 100%;
@@ -1450,7 +1450,10 @@ footer .footer-left {
 /* search */
 .search {
   position: relative;
-  /*padding-bottom: 20px;*/
+  padding-bottom: 20px;
+  .front-page & {
+    padding-bottom: 0;
+  }
 
   .search-box {
     position: relative;
@@ -1471,8 +1474,8 @@ footer .footer-left {
   .search-input {
     width: 100%;
     margin: 0;
-    padding: 5px 0;
-    font: #{$font-size-small}/1.67 $font-main;
+    padding: 4px 0;
+    font: #{$font-size-small}/22px $font-secondary;
     color: $main-color;
     border: none;
     outline: 0;
@@ -1483,22 +1486,22 @@ footer .footer-left {
     }
     &::-webkit-input-placeholder {
       opacity: 1;
-      color: rgba(0,0,0,.3);
+      color: rgba(0,0,0,.2);
     }
 
     &:-moz-placeholder {
       opacity: 1;
-      color: rgba(0,0,0,.3);
+      color: rgba(0,0,0,.2);
     }
 
     &::-moz-placeholder {
       opacity: 1;
-      color: rgba(0,0,0,.3);
+      color: rgba(0,0,0,.2);
     }
 
     &:-ms-input-placeholder {
       opacity: 1;
-      color: rgba(0,0,0,.3);
+      color: rgba(0,0,0,.2);
     }
 
     #mobile-search & {
@@ -1535,7 +1538,7 @@ footer .footer-left {
     border-color: rgba(229, 229, 229, 0);
     border-right-color: $bg-color;
 
-    @media screen and (min-width: $break-small + 1px) and (max-width: $break-middle) {
+    @media screen and (min-width: $break-small + 1px) and (max-width: $break-middle - 1px) {
       right: -20px;
     }
 
@@ -1589,7 +1592,7 @@ footer .footer-left {
     margin-left: 20%;
   }
 
-  @media screen and (min-width: $break-small + 1px) and (max-width: $break-middle) {
+  @media screen and (min-width: $break-small + 1px) and (max-width: $break-middle - 1px) {
     top: 90px;
     margin-left: $side-width-small;
   }
@@ -1693,7 +1696,7 @@ footer .footer-left {
   }
 }
 
-@media screen and (max-width: $break-middle) {
+@media screen and (max-width: $break-middle - 1px) {
   .site-title {
     br {
       display: none;

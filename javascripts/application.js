@@ -11168,9 +11168,13 @@ MMCQ = (function() {
     });
 
     var setFrontContent = function() {
-      if ($(window).width() > 1023) {
 
-        // Calc for nav element padding, to align with center row
+      $('.main-menu').removeAttr("style");
+      $('.center-row .content-inner').removeAttr("style");
+
+      if ($(window).width() > 320) {
+
+        // Calc for left nav element padding, to align with center row
 
         var whViewp = $(window).height(),
             whHeader = $('.header-row').height(),
@@ -11178,29 +11182,17 @@ MMCQ = (function() {
             padSideIn = parseInt($('.sidebar-inner').css('padding-top')),
             padLiItem = $('.main-menu li').outerHeight() * (1/3),
             padNav = whHeader - padSideIn - whSiteTitle - padLiItem;
-            if (padNav < whViewp) {var padNavTarget = $('.main-menu').css('padding-top', padNav)};
-            console.log("viewport");
-            console.log(whViewp);
+            if (padNav < whViewp) {
+              var padNavTarget = $('.main-menu').css('padding-top', padNav);
+            };
 
+        // Calc for center row padding, to fill viewport with content areas
 
         var whBody = $(document).height(),
             whFoot = $('.footer-row').height(),
-
-            //whHeader = Math.round(parseFloat($('.header-row .content-full').css('min-height'))),
             whCentInnerPad = parseInt($('.center-row .inner-padding').css('padding-top')) * 2,
             whBodyFootRem = whBody - whFoot - whHeader - whCentInnerPad + 1,
             whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
-
-
-            console.log(whHeader);
-            console.log($('.header-row .content-full').css('min-height'));
-            console.log(Math.round(parseFloat($('.header-row .content-full').css('min-height'))));
-            console.log(parseFloat($('.header-row .content-full').css('min-height')));
-            console.log(parseInt($('.header-row .content-full').css('min-height')));
-            console.log(whBody);
-
-
-
       }
     };
 
@@ -11347,55 +11339,37 @@ MMCQ = (function() {
     var suitableImage = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : 'none';
 
     var contentHalfBgImagePrevious = $(contentHalf).css('background-image'),
-        //contentHalfBgImagePrevious = 'url(' + suitableImage.url + ')',
-        //contentHalfBgImagePrevious = $('.content-full').css('background-image'),
         contentHalfBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
         contentHalfBgImageSizes = (data.imageSizes && data.imageSizes !== '') ? data.imageSizes : null,
         contentHalfBgColor = (data.color && data.color !== '') ? data.color : 'rgba(0,0,0,0)',
         contentHalfBgColorOpacity = (data.colorData && data.colorData !== '') ? data.colorData.a : 'none',
-        //contentHalfBgColorLightness = (data.colorData && data.colorData !== '' && data.colorData.lightness) ? data.colorData.lightness : 1,
         contentHalfBgColorLightness = (data.colorData && data.colorData !== '') ? data.colorData.lightness : 1,
         colorExtractImage = $('<img>'),
         colorExtractCanvas = $('<canvas>'),
         colorExtractImageUrl = (data.image && data.image !== '') ? data.image : null;
-        console.log(contentHalfBgImagePrevious);
-        console.log(suitableImage);
-        console.log(data);
 
     if (colorExtractImageUrl) {
       if (contentHalfBgImageSizesContains(contentHalfBgImageSizes, contentHalfBgImagePrevious)) {
         contentHalfBgCombinedLightness = getCombinedLightness(contentHalfBgImage, contentHalfBgColor);
         handleContentHalfImageLightnessClass();
-        console.log("first");
-        console.log(contentHalf.contentHalfBgImageColor);
       } else {
         colorExtractImage.attr('src', colorExtractImageUrl.replace(/.*\/photos/g,'/photos'));
-        console.log(colorExtractImage);
         colorExtractImage.load(function() {
           ColorExtract.extract(colorExtractImage[0], colorExtractCanvas[0], function(data) {
-            //contentHalf.contentHalfBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
             contentHalfBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
-
-            //contentHalfBgCombinedLightness = getCombinedLightness(contentHalf.contentHalfBgImageColor, contentHalfBgColor);
             contentHalfBgCombinedLightness = getCombinedLightness(contentHalfBgImageColor, contentHalfBgColor);
-
             handleContentHalfImageLightnessClass();
-            console.log(contentHalfBgCombinedLightness);
-            console.log("sec");
           });
         });
       };
     } else {
       contentHalfBgCombinedLightness = getCombinedLightness('rgba(255,255,255,1)', contentHalfBgColor);
       handleContentHalfImageLightnessClass();
-      console.log(contentHalfBgCombinedLightness);
-      console.log("third");
     };
 
     // Updates the contentHalf background image and background color.
     $(contentHalf).css({'background-image' : contentHalfBgImage});
     $(contentHalf).find('.background-color').css({'background-color' : contentHalfBgColor});
-    console.log(contentHalfBgCombinedLightness);
   };
 
   // contentHalf background image and color save logic function.
