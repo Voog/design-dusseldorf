@@ -207,11 +207,11 @@
 (function($) {
 
   // contentHalf background image and color preview logic function.
-  var contentHalfBgPreview = function(data, contentHalf) {
+  var contentHalfBgPreview = function(data, contentHalf, contentHalfObj) {
+
     // Returns the suitable version of the image depending on the viewport width.
     var getImageByWidth = function(sizes, targetWidth) {
       var prevImage;
-
       for (var i = 0, max = sizes.length; i < max; i++) {
         if (sizes[i].width < targetWidth) {
           return prevImage || sizes[i];
@@ -225,7 +225,7 @@
     var contentHalfBgImageSizesContains = function(sizes, url) {
       for (var i = sizes.length; i--;) {
         if (url.indexOf(sizes[i].url.trim()) > -1) {
-          return false;
+          return true;
         }
       }
       return false;
@@ -243,6 +243,7 @@
     // Defines the suitable image based on the viewport width.
     var suitableImage = data.imageSizes ? getImageByWidth(data.imageSizes, $(window).width()) : 'none';
 
+    // Defines the variables used in preview logic.
     var contentHalfBgImagePrevious = $(contentHalf).css('background-image'),
         contentHalfBgImage = (data.image && data.image !== '') ? 'url(' + suitableImage.url + ')' : 'none',
         contentHalfBgImageSizes = (data.imageSizes && data.imageSizes !== '') ? data.imageSizes : null,
@@ -255,14 +256,14 @@
 
     if (colorExtractImageUrl) {
       if (contentHalfBgImageSizesContains(contentHalfBgImageSizes, contentHalfBgImagePrevious)) {
-        contentHalfBgCombinedLightness = getCombinedLightness(contentHalfBgImage, contentHalfBgColor);
+        contentHalfBgCombinedLightness = getCombinedLightness(contentHalfObj.contentHalfBgImageColor, contentHalfBgColor);
         handleContentHalfImageLightnessClass();
       } else {
         colorExtractImage.attr('src', colorExtractImageUrl.replace(/.*\/photos/g,'/photos'));
         colorExtractImage.load(function() {
           ColorExtract.extract(colorExtractImage[0], colorExtractCanvas[0], function(data) {
-            contentHalfBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
-            contentHalfBgCombinedLightness = getCombinedLightness(contentHalfBgImageColor, contentHalfBgColor);
+            contentHalfObj.contentHalfBgImageColor = data.bgColor ? data.bgColor : 'rgba(255,255,255,1)';
+            contentHalfBgCombinedLightness = getCombinedLightness(contentHalfObj.contentHalfBgImageColor, contentHalfBgColor);
             handleContentHalfImageLightnessClass();
           });
         });
