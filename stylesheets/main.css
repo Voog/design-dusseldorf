@@ -128,14 +128,12 @@ form {
   hyphens: none;
 }
 
-pre,
-code {
+pre {
   font-size: 14px;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.3);
 }
-.light-background pre, .light-background
-code {
+.light-background pre {
   background-color: #000000;
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -265,13 +263,17 @@ blockquote {
   color: #222222;
   border: none;
   outline: none;
-  background: white;
+  background: #ffffff;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+.light-background .form_field_textfield, .light-background
+.form_field_textarea {
+  background: #eee;
 }
 
 .form_field_textfield,
@@ -440,8 +442,6 @@ label .form_control_indicator:before {
   position: relative;
   margin-left: 200px;
   background: #f6f6f6;
-  /*
-  min-height: 100vh;*/
 }
 .editmode .main {
   padding-bottom: 40px;
@@ -498,6 +498,11 @@ label .form_control_indicator:before {
   position: relative;
   z-index: 4;
 }
+@media screen and (max-width: 599px) {
+  .editmode .container-wrap {
+    padding-bottom: 40px;
+  }
+}
 
 .container {
   float: left;
@@ -519,6 +524,11 @@ label .form_control_indicator:before {
   -ms-hyphens: auto;
   hyphens: auto;
 }
+@media screen and (min-width: 1024px) {
+  .site-title {
+    min-height: calc(31vh - 85px);
+  }
+}
 .site-title a {
   color: #222222;
 }
@@ -531,7 +541,7 @@ label .form_control_indicator:before {
 
 /* mainmenu */
 .main-menu {
-  padding-top: 50px;
+  padding-top: 20px;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -980,6 +990,7 @@ label .form_control_indicator:before {
 .content {
   position: relative;
   padding: 0 30px 30px;
+  overflow: hidden;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -988,6 +999,14 @@ label .form_control_indicator:before {
 }
 .front-page .content {
   padding: 70px 30px;
+}
+
+.content-inner {
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .formatted ul,
@@ -1205,9 +1224,15 @@ table th {
     width: 25%;
   }
 }
+.editmode .footer {
+  padding-bottom: 40px;
+}
 
 .front-page footer {
   display: none;
+}
+.editmode .front-page footer {
+  padding-bottom: 0;
 }
 
 @media screen and (min-width: 600px) {
@@ -1643,7 +1668,7 @@ footer .voog-reference {
   .wrap-inner,
   .main {
     display: block !important;
-    height: auto !important;
+    /*height: auto !important;*/
   }
 
   .front-page,
@@ -2072,7 +2097,10 @@ footer .voog-reference {
     width: 100%;
   }
 }
-.header-row .content-inner, .center-row .content-inner {
+.content-inner {
+  overflow: hidden;
+}
+.content-inner .header-row, .center-row .content-inner {
   min-height: 100px;
 }
 
@@ -2130,16 +2158,28 @@ footer .voog-reference {
   padding: 4px 0;
 }
 
-.front-page .main .footer-row .dark-background .content-inner {
+.footer-row .dark-background b, .footer-row .dark-background a {
+  color: #ffffff;
+}
+
+.dark-background {
+  color: #ffffff;
+}
+.dark-background h1, .dark-background h2, .dark-background h3, .dark-background h4, .dark-background p, .dark-background pre {
+  color: #ffffff;
+}
+.footer-row .dark-background {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.front-page .main .footer-row .light-background .content-inner {
-  color: rgba(0, 0, 0, 0.6);
+.light-background {
+  color: rgba(0, 0, 0, 0.5);
 }
-
-.dark-background, .front-page .main .footer-row .dark-background .content-inner b, .front-page .main .footer-row .dark-background .content-inner a {
-  color: #ffffff;
+.light-background h1, .light-background h2, .light-background h3, .light-background h4, .light-background p {
+  color: rgba(0, 0, 0, 0.5);
+}
+.footer-row .light-background {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .dark-background svg path {
@@ -2176,7 +2216,7 @@ footer .voog-reference {
   background: #2b2b2b;
 }
 
-.center-row .custom-btn {
+.custom-btn-bottom {
   position: absolute;
   bottom: 11%;
   left: 50%;
@@ -2255,6 +2295,11 @@ footer .custom-btn {
 }
 
 /* Edy tools */
+.dark-background .placeholder {
+  color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .dark-background .edy-empty-bordered {
   color: rgba(255, 255, 255, 0.7);
   border: 1px dashed rgba(255, 255, 255, 0.7);
@@ -2269,7 +2314,23 @@ footer .custom-btn {
   outline: 1px solid rgba(255, 255, 255, 0.7);
 }
 
+.dark-background .edy-texteditor-active:hover {
+  outline: 1px solid rgba(255, 255, 255, 0.63);
+}
+
+.edys-gallery-item,
+.edy-gallery-item,
+.edy-gallery-sortable-placeholder {
+  display: inline-block;
+  float: none;
+  margin: 3px 0 3px 6px;
+}
+
 @media screen and (min-width: 1024px) {
+  .center-row {
+    padding-bottom: 45px;
+  }
+
   .footer-row {
     position: absolute;
     bottom: 0;

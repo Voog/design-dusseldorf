@@ -61,6 +61,7 @@
 
         if ($('body').hasClass('front-page')) {
             setFrontContent();
+            //$(window).ready(setFrontContent);
             //$(window).load(setFrontContent);
             $(window).resize(setFrontContent);
         }
@@ -77,28 +78,58 @@
       $('.main-menu').removeAttr("style");
       $('.center-row .content-inner').removeAttr("style");
 
-      if ($(window).width() > 320) {
+      // Calc for .main-menu nav element padding, to align with center row
+      var padNav = $('.header-row').height() - parseInt($('.sidebar-inner').css('padding-top')) - $('.sidebar .site-title').outerHeight() - $('.main-menu li').outerHeight() * (1/3);
+      /*if ($(window).height() <= 600 && !$('html').hasClass('editmode') && $(document).width() >= 1024) {
+        var padNavTarget = $('.main-menu').css('padding-top', padNav);
+      };*/
 
-        // Calc for left nav element padding, to align with center row
+      var whViewport = $(window).height(),
+          whDocument = $(document).height(),
+          whTopbar = $('.topbar').height(),
+          whHeader = $('.header-row').height(),
+          whCenter = $('.center-row').height(),
+          whFooter = $('.footer-row').height();
 
-        var whViewp = $(window).height(),
-            whHeader = $('.header-row').height(),
-            whSiteTitle = $('.sidebar .site-title').outerHeight(),
-            padSideIn = parseInt($('.sidebar-inner').css('padding-top')),
-            padLiItem = $('.main-menu li').outerHeight() * (1/3),
-            padNav = whHeader - padSideIn - whSiteTitle - padLiItem;
-            if (padNav < whViewp) {
-              var padNavTarget = $('.main-menu').css('padding-top', padNav);
-            };
+      var whCentInnerPad = parseInt($('.center-row .inner-padding').css('padding-top')) * 2,
+
+          whTri = whDocument - whHeader - whCenter - whFooter - whTopbar,
+          whBodyFootRem = whDocument - whFooter - whHeader - whCentInnerPad + 1,
+          whTriTarget = whDocument - whHeader - whFooter - whCentInnerPad;
+
+      // Adjust center row inner-padding with min-height to make sure viewport is always filled with content
+      if ($(document).width() >= 1024 ) {
 
         // Calc for center row padding, to fill viewport with content areas
+        if (!$('html').hasClass('editmode')) {
+          var whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
+        }
+        else {
+          var whEdy = $('#edy-bar').height(),
+              whBodyFootRemEdy = whBodyFootRem - whEdy,
+              whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
+        };
 
-        var whBody = $(document).height(),
-            whFoot = $('.footer-row').height(),
-            whCentInnerPad = parseInt($('.center-row .inner-padding').css('padding-top')) * 2,
-            whBodyFootRem = whBody - whFoot - whHeader - whCentInnerPad + 1,
-            whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
+        var whLeft = $('.content-left .content-inner').height(),
+            whRight = $('.content-right .content-inner').height();
+
+        // Equalize half content columns
+        if (whLeft > whRight) {
+          $('.content-right .content-inner').css('min-height', whLeft);
+        }
+        else {
+          $('.content-left .content-inner').css('min-height', whRight);
+        }
+
       }
+
+      //
+      else if (whTri > 0) {
+        var whTriCalc = (whTri + whCenter - whCentInnerPad) / 2;
+        var whTriCalc2 = whTri + $('.content-left .content-inner').height();
+            whCenterInnerTarget = $('.content-left .content-inner').css('min-height', whTriCalc2);
+      };
+
     };
 
     var setTitlebox = function() {

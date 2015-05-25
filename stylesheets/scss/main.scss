@@ -173,8 +173,7 @@ form {
   @include hyphenate(false);
 }
 
-pre,
-code {
+pre {
   font-size: 14px;
   @include bg(white, .3);
 
@@ -315,9 +314,13 @@ blockquote {
   color: $main-color;
   border: none;
   outline: none;
-  background: white;
+  background: $white;
   @include border-radius(0);
   @include box-sizing(border-box);
+
+  .light-background & {
+    background: #eee;
+  }
 }
 
 .form_field_textfield,
@@ -502,8 +505,6 @@ label {
   position: relative;
   margin-left: $side-width;
   background: $bg-color;
-  /*
-  min-height: 100vh;*/
 
   .editmode & {
     padding-bottom: 40px;
@@ -567,7 +568,15 @@ label {
 .container-wrap {
   position: relative;
   z-index: 4;
+
+  .editmode & {
+    @media screen and (max-width: $break-small - 1px) {
+      padding-bottom: 40px;
+    }
+  }
 }
+
+
 
 .container {
   float: left;
@@ -585,6 +594,10 @@ label {
   color: $main-color;
   @include hyphenate(true);
 
+  @media screen and (min-width: $break-middle) {
+    min-height: calc(31vh - 85px);
+  }
+
   a {
     color: $main-color;
   }
@@ -599,7 +612,7 @@ label {
 
 /* mainmenu */
 .main-menu {
-  padding-top: 50px;
+  padding-top: 20px;
   @include hyphenate(true);
 
   li {
@@ -1042,11 +1055,17 @@ $flags:
 .content {
   position: relative;
   padding: 0 30px 30px;
+  overflow: hidden;
   @include hyphenate(true);
+
 
   .front-page & {
     padding: 70px 30px;
   }
+}
+
+.content-inner {
+  @include hyphenate(true);
 }
 
 .formatted {
@@ -1293,9 +1312,18 @@ table {
   @media screen and (min-width: $break-large) {
     width: 25%;
   }
+
+  .editmode & {
+    padding-bottom: 40px;
+  }
 }
 .front-page footer {
   display: none;
+
+  .editmode & {
+    padding-bottom: 0;
+  }
+
 }
 
 @media screen and (min-width: $break-small) {
@@ -1789,7 +1817,7 @@ table {
   .wrap-inner,
   .main {
     display: block !important;
-    height: auto !important;
+    /*height: auto !important;*/
   }
 
   .front-page {
@@ -2266,8 +2294,13 @@ table {
   }
 }
 
-.header-row .content-inner, .center-row .content-inner {
-  min-height: 100px;
+.content-inner {
+
+  overflow: hidden;
+
+  .header-row, .center-row & {
+    min-height: 100px;
+  }
 }
 
 .inner-padding {
@@ -2329,16 +2362,31 @@ table {
   padding: 4px 0;
 }
 
-.front-page .main .footer-row .dark-background .content-inner {
-  color: rgba(255, 255, 255, 0.6);
-}
 
-.front-page .main .footer-row .light-background .content-inner {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.dark-background, .front-page .main .footer-row .dark-background .content-inner b, .front-page .main .footer-row .dark-background .content-inner a {
+.footer-row .dark-background b, .footer-row .dark-background a {
   color: $white;
+}
+
+.dark-background {
+  color: $white;
+  & h1, h2, h3, h4, p, pre {
+    color: $white;
+  }
+
+  .footer-row & {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.light-background {
+  color: rgba(0, 0, 0, 0.5);
+  & h1, h2, h3, h4, p {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .footer-row & {
+    color: rgba(0, 0, 0, 0.6);
+  }
 }
 
 .dark-background svg path {
@@ -2371,7 +2419,7 @@ table {
   background: #2b2b2b;
 }
 
-.center-row .custom-btn {
+.custom-btn-bottom {
   position: absolute;
   bottom: 11%;
   left: 50%;
@@ -2444,6 +2492,11 @@ footer .custom-btn {
 
 /* Edy tools */
 
+.dark-background .placeholder {
+  color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .dark-background .edy-empty-bordered {
   color: rgba(255, 255, 255, 0.7);
   border: 1px dashed rgba(255, 255, 255, 0.7);
@@ -2456,11 +2509,28 @@ footer .custom-btn {
 .dark-background .edy-texteditor-active {
   outline: 1px solid rgba(255, 255, 255, 0.7);
 }
+.dark-background .edy-texteditor-active:hover {
+  outline: 1px solid rgba(255, 255, 255, 0.63);
+}
+
+
+.edys-gallery-item,
+   .edy-gallery-item,
+   .edy-gallery-sortable-placeholder {
+     display: inline-block;
+     float: none;
+     margin: 3px 0 3px 6px
+   }
+
 
 
 @media screen and (min-width: $break-middle) {
-.footer-row {
-  position: absolute;
-  bottom: 0;
-}
+
+  .center-row {
+    padding-bottom: 45px;
+  }
+  .footer-row {
+    position: absolute;
+    bottom: 0;
+  }
 }
