@@ -77,8 +77,9 @@
         </div>
 
       </div>
-      {% include "footer" %}
+
     </div>
+    {% include "footer" %}
     </div>
   </div>
   {% include "mobilemenu" %}

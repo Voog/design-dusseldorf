@@ -61,8 +61,6 @@
 
         if ($('body').hasClass('front-page')) {
             setFrontContent();
-            //$(window).ready(setFrontContent);
-            //$(window).load(setFrontContent);
             $(window).resize(setFrontContent);
         }
 
@@ -78,12 +76,6 @@
       $('.main-menu').removeAttr("style");
       $('.center-row .content-inner').removeAttr("style");
 
-      // Calc for .main-menu nav element padding, to align with center row
-      var padNav = $('.header-row').height() - parseInt($('.sidebar-inner').css('padding-top')) - $('.sidebar .site-title').outerHeight() - $('.main-menu li').outerHeight() * (1/3);
-      /*if ($(window).height() <= 600 && !$('html').hasClass('editmode') && $(document).width() >= 1024) {
-        var padNavTarget = $('.main-menu').css('padding-top', padNav);
-      };*/
-
       var whViewport = $(window).height(),
           whDocument = $(document).height(),
           whTopbar = $('.topbar').height(),
@@ -92,10 +84,7 @@
           whFooter = $('.footer-row').height();
 
       var whCentInnerPad = parseInt($('.center-row .inner-padding').css('padding-top')) * 2,
-
-          whTri = whDocument - whHeader - whCenter - whFooter - whTopbar,
-          whBodyFootRem = whDocument - whFooter - whHeader - whCentInnerPad + 1,
-          whTriTarget = whDocument - whHeader - whFooter - whCentInnerPad;
+          whBodyFootRem = whDocument - whFooter - whHeader - whCentInnerPad + 1;
 
       // Adjust center row inner-padding with min-height to make sure viewport is always filled with content
       if ($(document).width() >= 1024 ) {
@@ -110,24 +99,17 @@
               whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
         };
 
+        // Equalize center-row left and right half content columns
         var whLeft = $('.content-left .content-inner').height(),
             whRight = $('.content-right .content-inner').height();
 
-        // Equalize half content columns
         if (whLeft > whRight) {
           $('.content-right .content-inner').css('min-height', whLeft);
         }
         else {
           $('.content-left .content-inner').css('min-height', whRight);
-        }
+        };
 
-      }
-
-      //
-      else if (whTri > 0) {
-        var whTriCalc = (whTri + whCenter - whCentInnerPad) / 2;
-        var whTriCalc2 = whTri + $('.content-left .content-inner').height();
-            whCenterInnerTarget = $('.content-left .content-inner').css('min-height', whTriCalc2);
       };
 
     };
