@@ -450,8 +450,23 @@ label .form_control_indicator:before {
 .editmode .main {
   padding-bottom: 40px;
 }
-.editmode.edy-bar-open .main {
-  margin-bottom: 150px;
+@media screen and (min-width: 600px) {
+  .editmode .main {
+    padding-bottom: 40px;
+  }
+}
+.edy-bar-open .main {
+  padding-bottom: 125px;
+}
+@media screen and (min-width: 641px) {
+  .edy-bar-open .main {
+    padding-bottom: 150px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .main {
+    height: auto !important;
+  }
 }
 @media screen and (min-width: 1500px) {
   .main {
@@ -501,11 +516,11 @@ label .form_control_indicator:before {
 .container-wrap {
   position: relative;
   z-index: 4;
-}
-@media screen and (max-width: 599px) {
-  .editmode .container-wrap {
-    padding-bottom: 40px;
-  }
+  /*.editmode & {
+    @media screen and (max-width: $break-small - 1px) {
+      padding-bottom: 40px;
+    }
+  }*/
 }
 
 .container {
@@ -1233,12 +1248,17 @@ table th {
 .editmode .footer {
   padding-bottom: 40px;
 }
+@media screen and (min-width: 600px) {
+  .edy-bar-open .footer {
+    padding-bottom: 150px;
+  }
+}
 
 .front-page footer {
   display: none;
-}
-.editmode .front-page footer {
-  padding-bottom: 40px;
+  /*.editmode & {
+    padding-bottom: 40px;
+  }*/
 }
 
 @media screen and (min-width: 600px) {
@@ -1279,7 +1299,7 @@ footer .voog-reference {
 }
 .front-page .edys-gallery-area .edys-gallery-item, .front-page
 .edy-gallery-area .edys-gallery-item {
-  float: none;
+  /*float: none;*/
   display: inline-block;
 }
 
@@ -2328,8 +2348,12 @@ footer .custom-btn {
 .edy-gallery-item,
 .edy-gallery-sortable-placeholder {
   display: inline-block;
-  float: none;
+  /*float: none;*/
   margin: 3px 0 3px 6px;
+}
+
+.edy-content-element, .edy-content-default {
+  margin: 0 !important;
 }
 
 @media screen and (min-width: 1024px) {

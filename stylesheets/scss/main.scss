@@ -511,10 +511,21 @@ label {
 
   .editmode & {
     padding-bottom: 40px;
+    @media screen and (min-width: $break-small) {
+      padding-bottom: 40px;
+    }
   }
 
-  .editmode.edy-bar-open & {
-    margin-bottom: 150px;
+  .edy-bar-open & {
+    padding-bottom: 125px;
+
+    @media screen and (min-width: $break-small + 41px) {
+      padding-bottom: 150px;
+    }
+  }
+
+  @media screen and (max-width: $break-small - 1px) {
+    height: auto!important;
   }
 
   @media screen and (min-width: $break-large) {
@@ -572,11 +583,11 @@ label {
   position: relative;
   z-index: 4;
 
-  .editmode & {
+  /*.editmode & {
     @media screen and (max-width: $break-small - 1px) {
       padding-bottom: 40px;
     }
-  }
+  }*/
 }
 
 
@@ -1321,13 +1332,19 @@ table {
   .editmode & {
     padding-bottom: 40px;
   }
+
+  .edy-bar-open & {
+    @media screen and (min-width: $break-small) {
+      padding-bottom: 150px;
+    }
+  }
 }
 .front-page footer {
   display: none;
 
-  .editmode & {
+  /*.editmode & {
     padding-bottom: 40px;
-  }
+  }*/
 
 }
 
@@ -1379,7 +1396,7 @@ table {
 
   .edys-gallery-item {
     .front-page & {
-      float: none;
+      /*float: none;*/
       display: inline-block;
     }
   }
@@ -2520,13 +2537,16 @@ footer .custom-btn {
 
 
 .edys-gallery-item,
-   .edy-gallery-item,
-   .edy-gallery-sortable-placeholder {
-     display: inline-block;
-     float: none;
-     margin: 3px 0 3px 6px
-   }
+.edy-gallery-item,
+.edy-gallery-sortable-placeholder {
+ display: inline-block;
+ /*float: none;*/
+ margin: 3px 0 3px 6px
+}
 
+.edy-content-element, .edy-content-default {
+  margin: 0!important;
+}
 
 
 @media screen and (min-width: $break-middle) {

@@ -11157,6 +11157,10 @@ MMCQ = (function() {
         if ($('body').hasClass('front-page')) {
             setFrontContent();
             $(window).resize(setFrontContent);
+
+            if ($('html').hasClass('editmode')) {
+              $('.content-inner').keyup(setFrontContent);
+            };
         }
 
         if ($('.comment-form').hasClass('form_with_errors')) {
@@ -11180,6 +11184,9 @@ MMCQ = (function() {
 
       var whCentInnerPad = parseInt($('.center-row .inner-padding').css('padding-top')) * 2,
           whBodyFootRem = whDocument - whFooter - whHeader - whCentInnerPad + 1;
+
+      var whTri = whDocument - whHeader - whCenter - whFooter - whTopbar,
+          whTriTarget = whDocument - whHeader - whFooter - whCentInnerPad;
 
       // Adjust center row inner-padding with min-height to make sure viewport is always filled with content
       if ($(document).width() >= 1024 ) {
@@ -11205,6 +11212,13 @@ MMCQ = (function() {
           $('.content-left .content-inner').css('min-height', whRight);
         };
 
+      }
+
+      // Make content areas play nice with long sidebars on smaller than 1024px screens
+      else if (whTri > 0) {
+        var whTriCalc = (whTri + whCenter - whCentInnerPad) / 2;
+        var whTriCalc2 = whTri + $('.content-left .content-inner').height();
+            whCenterInnerTarget = $('.content-left .content-inner').css('min-height', whTriCalc2);
       };
 
     };
@@ -11366,6 +11380,7 @@ MMCQ = (function() {
       if (contentHalfBgImageSizesContains(contentHalfBgImageSizes, contentHalfBgImagePrevious)) {
         contentHalfBgCombinedLightness = getCombinedLightness(contentHalfObj.contentHalfBgImageColor, contentHalfBgColor);
         handleContentHalfImageLightnessClass();
+        console.log(contentHalfObj.contentHalfBgImageColor);
       } else {
         colorExtractImage.attr('src', colorExtractImageUrl.replace(/.*\/photos/g,'/photos'));
         colorExtractImage.load(function() {

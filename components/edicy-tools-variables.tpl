@@ -36,7 +36,7 @@
       {% endif %}
     {% endif %}
   {% else %}
-    {% assign content_top_bg_type = 'dark-background' %}
+    {% assign content_top_bg_type = 'light-background' %}
   {% endif %}
 
   {% if content_top_bg_image_sizes != nil %}
