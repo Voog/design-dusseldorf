@@ -63,8 +63,24 @@
             setFrontContent();
             $(window).resize(setFrontContent);
 
+
+            // In edit mode maintain column equilibrium while user inputs new data
+            var delay = (function(){
+              var timer = 0;
+              return function(callback, ms){
+                clearTimeout (timer);
+                timer = setTimeout(callback, ms);
+              };
+            })();
+
             if ($('html').hasClass('editmode')) {
-              $('.content-inner').keyup(setFrontContent);
+
+              $('.content-inner').keyup(function() {
+                  delay(function(){
+                    setFrontContent();
+                  }, 500 );
+              });
+
             };
         }
 
@@ -90,6 +106,10 @@
       $('.header-row .content-full').removeAttr("style");
       $('.center-row .content-inner').removeAttr("style");
 
+      // Set header row height, to bypass vh rounding issue
+      var whHeaderFullCalc = Math.round($(window).height() * (0.31)),
+          whHeaderFullTarget = $('.header-row .content-full').css('min-height', whHeaderFullCalc);
+
       var whViewport = $(window).height(),
           whDocument = $(document).height(),
           whTopbar = $('.topbar').height(),
@@ -102,10 +122,6 @@
 
       var whColUnder = whDocument - whHeader - whCenter - whFooter,
           whColUnderTarget = whDocument - whHeader - whFooter - whCentInnerPad;
-
-      // Set header row height, to bypass vh rounding issue
-      var whHeaderFullCalc = Math.round(whViewport * (0.31)),
-          whHeaderFullTarget = $('.header-row .content-full').css('min-height', whHeaderFullCalc);
 
       // Adjust center row inner-padding with min-height to make sure viewport is always filled with content
       if ($(document).width() >= 1024 ) {
