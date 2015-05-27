@@ -11163,6 +11163,15 @@ MMCQ = (function() {
             };
         }
 
+        if (!$('body').hasClass('front-page')) {
+            setCommonContent();
+            $(window).resize(setCommonContent);
+
+            if ($('html').hasClass('editmode')) {
+              $('.content-inner').keyup(setFrontContent);
+            };
+        }
+
         if ($('.comment-form').hasClass('form_with_errors')) {
           $('html, body').scrollTop($('.comment-form').offset().top);
         } else if ($('form').find('.form_error, .form_notice').length > 0) {
@@ -11221,6 +11230,15 @@ MMCQ = (function() {
             whCenterInnerTarget = $('.content-left .content-inner').css('min-height', whTriCalc2);
       };
 
+    };
+
+    var setCommonContent = function() {
+      var padSidebar = parseInt($('.sidebar-inner').css('padding-bottom')),
+          whSideFooter = $('.main > footer').height();
+
+      if (padSidebar < whSideFooter) {
+        var padSidebarTarget = $('.sidebar-inner').css('padding-bottom', whSideFooter);
+      };
     };
 
     var setTitlebox = function() {
@@ -11380,7 +11398,6 @@ MMCQ = (function() {
       if (contentHalfBgImageSizesContains(contentHalfBgImageSizes, contentHalfBgImagePrevious)) {
         contentHalfBgCombinedLightness = getCombinedLightness(contentHalfObj.contentHalfBgImageColor, contentHalfBgColor);
         handleContentHalfImageLightnessClass();
-        console.log(contentHalfObj.contentHalfBgImageColor);
       } else {
         colorExtractImage.attr('src', colorExtractImageUrl.replace(/.*\/photos/g,'/photos'));
         colorExtractImage.load(function() {
@@ -11396,8 +11413,14 @@ MMCQ = (function() {
       handleContentHalfImageLightnessClass();
     };
 
+    // Fix Safari from constantly loading a new image on Bg picker slider change
+    var newContentHalfBgImage = contentHalfBgImage.split('/').pop();
+    var oldContentHalfBgImage = contentHalfBgImagePrevious.split('/').pop();
+
     // Updates the contentHalf background image and background color.
-    $(contentHalf).css({'background-image' : contentHalfBgImage});
+    if (newContentHalfBgImage != oldContentHalfBgImage) {
+      $(contentHalf).css({'background-image' : contentHalfBgImage});
+    };
     $(contentHalf).find('.background-color').css({'background-color' : contentHalfBgColor});
   };
 

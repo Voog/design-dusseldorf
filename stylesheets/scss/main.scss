@@ -6,7 +6,6 @@ $secondary-color: #000000;
 
 $link-color: #0066bb;
 $third-color: #a3a3a3;
-/*$bg-color: #e5e5e5;*/
 $bg-color: #f6f6f6;
 $error-color: #c70909;
 $success-color: #409e13;
@@ -491,16 +490,15 @@ label {
   }
 
   .sidebar-inner {
-
-    padding: 45px 30px 190px;
+    padding: 45px 30px 100px;
 
     .front-page & {
-      padding: 45px 30px 100px;
+      /*padding: 45px 30px 100px;*/
     }
-
     .search-enabled & {
       /*padding-bottom: 230px;*/
     }
+
   }
 }
 
@@ -649,7 +647,6 @@ label {
 /* submenu */
 .sub-menu {
   min-height: 35px;
-  padding: 30px 30px 15px 30px;
   font: 14px/1.1 $font-secondary;
   text-align: right;
   word-wrap: break-word;
@@ -1068,14 +1065,9 @@ $flags:
 /* content */
 .content {
   position: relative;
-  padding: 0 30px 30px;
+  padding: 0 50px 30px;
   overflow: hidden;
   @include hyphenate(true);
-
-
-  .front-page & {
-    padding: 70px 30px;
-  }
 }
 
 .content-inner {
@@ -2327,8 +2319,13 @@ table {
 
 .inner-padding {
   height: 100%;
-  padding: 65px 50px;
+  padding: 65px 20px;
   position: relative;
+
+  @media screen and (min-width: $break-small) {
+    padding: 65px 50px;
+  }
+
 }
 
 .content-full, .content-half {
@@ -2361,8 +2358,6 @@ table {
 
 @media screen and (max-width: $break-small) {
   .main .footer-row .inner-padding {
-    padding-left: 30px;
-    padding-right: 30px;
 
     .footer-left {
       max-width:100%;
