@@ -580,12 +580,6 @@ label {
 .container-wrap {
   position: relative;
   z-index: 4;
-
-  /*.editmode & {
-    @media screen and (max-width: $break-small - 1px) {
-      padding-bottom: 40px;
-    }
-  }*/
 }
 
 
@@ -647,6 +641,7 @@ label {
 /* submenu */
 .sub-menu {
   min-height: 35px;
+  padding: 30px 50px 15px 50px;
   font: 14px/1.1 $font-secondary;
   text-align: right;
   word-wrap: break-word;
@@ -913,7 +908,6 @@ $flags:
 
   @media screen and (max-width: $break-small) {
     @include color($white);
-
 
     &:hover {
       @include color($white, .8);
@@ -1333,14 +1327,9 @@ table {
 }
 .front-page footer {
   display: none;
-
-  /*.editmode & {
-    padding-bottom: 40px;
-  }*/
-
 }
 
-@media screen and (min-width: $break-small) {
+@media screen and (min-width: $break-small + 1px) {
   .front-page footer {
     display: block;
   }
@@ -2179,6 +2168,7 @@ table {
       display: table;
       width: 100%;
       height: 100%;
+      word-break: break-all;
 
       ul {
         display: table-cell;
@@ -2286,8 +2276,6 @@ table {
     left: 0;
   }
 }
-
-/**/
 
 @media screen and (min-width: $break-middle) {
   .main-inner-row {
@@ -2441,6 +2429,10 @@ table {
   bottom: 11%;
   left: 50%;
   margin-left: -90px;
+
+  .editmode & {
+    position: relative;
+  }
 }
 
 .dark-background .custom-btn {
@@ -2506,7 +2498,6 @@ footer .custom-btn {
   min-height: 31vh;
 }
 
-
 /* Edy tools */
 
 .dark-background .placeholder {
@@ -2541,16 +2532,4 @@ footer .custom-btn {
 
 .edy-content-element, .edy-content-default {
   margin: 0!important;
-}
-
-
-@media screen and (min-width: $break-middle) {
-
-  .center-row {
-    padding-bottom: 45px;
-  }
-  .footer-row {
-    position: absolute;
-    bottom: 0;
-  }
 }

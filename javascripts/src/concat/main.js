@@ -87,6 +87,7 @@
     var setFrontContent = function() {
 
       $('.main-menu').removeAttr("style");
+      $('.header-row .content-full').removeAttr("style");
       $('.center-row .content-inner').removeAttr("style");
 
       var whViewport = $(window).height(),
@@ -97,10 +98,14 @@
           whFooter = $('.footer-row').height();
 
       var whCentInnerPad = parseInt($('.center-row .inner-padding').css('padding-top')) * 2,
-          whBodyFootRem = whDocument - whFooter - whHeader - whCentInnerPad + 1;
+          whBodyFootRem = whDocument - whFooter - whHeader - whCentInnerPad;
 
-      var whTri = whDocument - whHeader - whCenter - whFooter - whTopbar,
-          whTriTarget = whDocument - whHeader - whFooter - whCentInnerPad;
+      var whColUnder = whDocument - whHeader - whCenter - whFooter,
+          whColUnderTarget = whDocument - whHeader - whFooter - whCentInnerPad;
+
+      // Set header row height, to bypass vh rounding issue
+      var whHeaderFullCalc = Math.round(whViewport * (0.31)),
+          whHeaderFullTarget = $('.header-row .content-full').css('min-height', whHeaderFullCalc);
 
       // Adjust center row inner-padding with min-height to make sure viewport is always filled with content
       if ($(document).width() >= 1024 ) {
@@ -129,10 +134,9 @@
       }
 
       // Make content areas play nice with long sidebars on smaller than 1024px screens
-      else if (whTri > 0) {
-        var whTriCalc = (whTri + whCenter - whCentInnerPad) / 2;
-        var whTriCalc2 = whTri + $('.content-left .content-inner').height();
-            whCenterInnerTarget = $('.content-left .content-inner').css('min-height', whTriCalc2);
+      else if (whColUnder > 0) {
+        var whColUnderCalc = whColUnder + $('.content-left .content-inner').height(),
+            whColUnderCenterInnerTarget = $('.content-left .content-inner').css('min-height', whColUnderCalc);
       };
 
     };
