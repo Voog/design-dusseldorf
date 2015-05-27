@@ -25,8 +25,8 @@ $line-height-xs: 24px;
 $line-height-small: 30px;
 $line-height: 32px;
 
-$font-main: 'Lato', Helvetica, Arial, sans-serif;
-$font-secondary: 'Montserrat', Helvetica, Arial, sans-serif;
+$font-main: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-secondary: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $site-width: 1024px;
 $side-width: 200px;
@@ -619,6 +619,7 @@ label {
 /* mainmenu */
 .main-menu {
   padding-top: 20px;
+  font-family: $font-secondary;
   @include hyphenate(true);
 
   li {
@@ -2057,6 +2058,7 @@ table {
   }
 
   #mobile-menu {
+    font-family: $font-secondary;
     position: fixed;
     z-index: 1000;
     top: 0;
