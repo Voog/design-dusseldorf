@@ -11170,7 +11170,7 @@ MMCQ = (function() {
 
             if ($('html').hasClass('editmode')) {
 
-              $('.content-inner').keyup(function() {
+              $('.center-row .content-inner').keyup(function() {
                   delay(function(){
                     setFrontContent();
                   }, 500 );
@@ -11182,10 +11182,6 @@ MMCQ = (function() {
         if (!$('body').hasClass('front-page')) {
             setCommonContent();
             $(window).resize(setCommonContent);
-
-            if ($('html').hasClass('editmode')) {
-              $('.content-inner').keyup(setFrontContent);
-            };
         }
 
         if ($('.comment-form').hasClass('form_with_errors')) {

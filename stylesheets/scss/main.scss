@@ -1101,6 +1101,10 @@ $flags:
   }
 }
 
+form {
+  padding: 20px 0;
+}
+
 /* articles */
 .blog-content h1 {
   margin: 0;
@@ -1307,6 +1311,7 @@ table {
   font-size: 11px;
   line-height: 1.6;
   @include box-sizing(border-box);
+  @include hyphenate(true);
 
   .footer-inner {
     padding: 20px 30px;
@@ -2301,9 +2306,16 @@ table {
 .content-inner {
 
   overflow: hidden;
+  position: relative;
 
   .header-row, .center-row & {
     min-height: 100px;
+  }
+
+  .inner-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
   }
 }
 
@@ -2390,21 +2402,26 @@ table {
   & h1, h2, h3, h4, p {
     color: rgba(0, 0, 0, 0.5);
   }
+  .footer-row & {
+      a {
+      color: $black;
+    }
+  }
 
   .footer-row & {
     color: rgba(0, 0, 0, 0.6);
   }
 }
 
-.dark-background svg path {
+.dark-background .voog-reference svg path {
     fill: $white;
 }
 
-.light-background, .front-page .main .footer-row .light-background .content-inner b, .front-page .main .footer-row .light-background .content-inner a {
+.light-background, .front-page .main .footer-row .light-background .content-inner b {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.light-background svg path, footer svg path {
+.light-background .voog-reference svg path, footer .voog-reference svg path {
   fill: $third-color;
 }
 
