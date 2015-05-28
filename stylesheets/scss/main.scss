@@ -1090,13 +1090,69 @@ $flags:
     text-align: left;
   }
 
+  // IMAGE CONTAINERS
+  .edy-positionable-container-center,
+  .edy-positionable-container-left-block,
+  .edy-positionable-container-right-block,
+  .edy-texteditor-container-wrapper-center,
+  .edy-texteditor-container-wrapper-left-block,
+  .edy-texteditor-container-wrapper-right-block {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .edy-positionable-container-left,
+  .edy-positionable-container-right {
+    width: 45%;
+  }
+
+  .edy-positionable-container-left,
+  .edy-texteditor-container-wrapper-left {
+    margin-right: 2em;
+  }
+
+  .edy-positionable-container-right,
+  .edy-texteditor-container-wrapper-right {
+    margin-left: 2em;
+  }
+
   // Content area image title
   .edy-image-container-with-title {
     &:after {
       display: block;
       padding: 4px;
-      font-size: 12px;
+      font-size: 16px;
+      line-height: 1.3em;
       content: attr(data-title);
+    }
+  }
+
+  .edys-gallery-area,
+  .edy-gallery-area {
+    margin-left: -6px;
+    font-size: 0;
+    line-height: 1em;
+
+    .edys-gallery-item {
+      @include transition(opacity 0.3s ease-in);
+      -webkit-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+
+      &.inactive {
+        opacity: .6;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .edys-gallery-item,
+    .edy-gallery-item,
+    .edy-gallery-sortable-placeholder {
+      display: inline-block;
+      float: none;
+      margin: 3px 0 3px 6px
     }
   }
 }
@@ -1474,43 +1530,6 @@ table {
   opacity: .5;
 
   filter: alpha(Opacity=50);
-}
-
-// IMAGE CONTAINERS
-.edy-positionable-container-center,
-.edy-positionable-container-left-block,
-.edy-positionable-container-right-block,
-.edy-texteditor-container-wrapper-center,
-.edy-texteditor-container-wrapper-left-block,
-.edy-texteditor-container-wrapper-right-block {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.edy-positionable-container-left,
-.edy-positionable-container-right {
-  width: 45%;
-}
-
-.edy-positionable-container-left,
-.edy-texteditor-container-wrapper-left {
-  margin-right: 2em;
-}
-
-.edy-positionable-container-right,
-.edy-texteditor-container-wrapper-right {
-  margin-left: 2em;
-}
-
-// Content area image title
-.edy-image-container-with-title {
-  &:after {
-    display: block;
-    padding: 4px;
-    font-size: 16px;
-    line-height: 1.3em;
-    content: attr(data-title);
-  }
 }
 
 /* search */
