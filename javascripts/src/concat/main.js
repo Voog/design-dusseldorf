@@ -102,6 +102,17 @@
       $('.header-row .content-full').removeAttr("style");
       $('.center-row .content-inner').removeAttr("style");
 
+
+      var contLeft = $('.content-left .content-inner').height(),
+          contRight = $('.content-right .content-inner').height(),
+          contLeftBottom = $('.content-left .content-inner .inner-bottom').height(),
+          contRightBottom = $('.content-right .content-inner .inner-bottom').height();
+
+      // Remove inner-bottom absolute value, if user content needs to expand the parent container
+      if (contLeft < contLeftBottom || contRight < contRightBottom) {
+        $('.center-row .content-inner .inner-bottom').css("position", "relative");
+      };
+
       // Set header row height, to bypass vh rounding issue
       var whHeaderFullCalc = Math.round($(window).height() * (0.31)),
           whHeaderFullTarget = $('.header-row .content-full').css('min-height', whHeaderFullCalc);
