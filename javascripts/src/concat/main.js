@@ -77,7 +77,7 @@
 
               $('.center-row .content-inner').keyup(function() {
                   delay(function(){
-                    setFrontContent();
+                    setEqualHeights();
                   }, 500 );
               });
 
@@ -139,8 +139,11 @@
             contRightBottom = $('.content-right .content-inner .inner-bottom').height();
 
         // Remove inner-bottom absolute value, if user content needs to expand the parent container
-        if (contLeft < contLeftBottom || contRight < contRightBottom) {
-          $('.center-row .content-inner .inner-bottom').css("position", "relative");
+        if (contLeft < contLeftBottom) {
+          $('.center-row .content-left .inner-bottom').css("position", "relative");
+        };
+        if (contRight < contRightBottom) {
+          $('.center-row .content-right .inner-bottom').css("position", "relative");
         };
 
         // Equalize center-row left and right half content columns
@@ -156,10 +159,53 @@
 
       }
 
+      else if ($(document).width() < 1024) {
+        var contLeft = $('.content-left .content-inner').height(),
+            contRight = $('.content-right .content-inner').height(),
+            contLeftBottom = $('.content-left .content-inner .inner-bottom').height(),
+            contRightBottom = $('.content-right .content-inner .inner-bottom').height();
+
+        // Remove inner-bottom absolute value, if user content needs to expand the parent container
+        if (contLeft < contLeftBottom) {
+          $('.center-row .content-left .inner-bottom').css("position", "relative");
+        };
+        if (contRight < contRightBottom) {
+          $('.center-row .content-right .inner-bottom').css("position", "relative");
+        };
+      }
+
       // Make content areas play nice with long sidebars on smaller than 1024px screens
       else if (whColUnder > 0) {
         var whColUnderCalc = whColUnder + $('.content-left .content-inner').height(),
             whColUnderCenterInnerTarget = $('.content-left .content-inner').css('min-height', whColUnderCalc);
+      };
+
+    };
+
+    var setEqualHeights = function() {
+
+      // Equalize center-row left and right half content columns
+      var whLeft = $('.content-left .content-inner').height(),
+          whRight = $('.content-right .content-inner').height();
+
+      if (whLeft > whRight) {
+        $('.content-right .content-inner').css('min-height', whLeft);
+      }
+      else {
+        $('.content-left .content-inner').css('min-height', whRight);
+      };
+
+      var contLeft = $('.content-left .content-inner').height(),
+          contRight = $('.content-right .content-inner').height(),
+          contLeftBottom = $('.content-left .content-inner .inner-bottom').height(),
+          contRightBottom = $('.content-right .content-inner .inner-bottom').height();
+
+      // Remove inner-bottom absolute value, if user content needs to expand the parent container
+      if (contLeft < contLeftBottom) {
+        $('.center-row .content-left .inner-bottom').css("position", "relative");
+      };
+      if (contRight < contRightBottom) {
+        $('.center-row .content-right .inner-bottom').css("position", "relative");
       };
 
     };

@@ -3,7 +3,9 @@
     <div class="cfx">
       {% include "search" %}
       {% if front_page != true %}
-        {% xcontent name="footer-left" %}
+        <div class="footer-left">
+          {% xcontent name="footer-left" %}
+        </div>
       {% endif %}
     </div>
     {% if site.branding.enabled %}

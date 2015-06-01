@@ -446,6 +446,9 @@ label .form_control_indicator:before {
   margin-left: 200px;
   background: #f6f6f6;
 }
+.main .footer-left {
+  padding-top: 20px;
+}
 .editmode .main {
   padding-bottom: 40px;
 }
@@ -1431,10 +1434,7 @@ footer .voog-reference {
 /* search */
 .search {
   position: relative;
-  padding-bottom: 20px;
-}
-.front-page .search {
-  padding-bottom: 0;
+  padding-bottom: 0px;
 }
 .search .search-box {
   position: relative;
