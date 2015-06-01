@@ -11201,17 +11201,7 @@ MMCQ = (function() {
       $('.main-menu').removeAttr("style");
       $('.header-row .content-full').removeAttr("style");
       $('.center-row .content-inner').removeAttr("style");
-
-
-      var contLeft = $('.content-left .content-inner').height(),
-          contRight = $('.content-right .content-inner').height(),
-          contLeftBottom = $('.content-left .content-inner .inner-bottom').height(),
-          contRightBottom = $('.content-right .content-inner .inner-bottom').height();
-
-      // Remove inner-bottom absolute value, if user content needs to expand the parent container
-      if (contLeft < contLeftBottom || contRight < contRightBottom) {
-        $('.center-row .content-inner .inner-bottom').css("position", "relative");
-      };
+      $('.center-row .content-inner .inner-bottom').removeAttr("style");
 
       // Set header row height, to bypass vh rounding issue
       var whHeaderFullCalc = Math.round($(window).height() * (0.31)),
@@ -11241,6 +11231,16 @@ MMCQ = (function() {
           var whEdy = $('#edy-bar').height(),
               whBodyFootRemEdy = whBodyFootRem - whEdy,
               whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
+        };
+
+        var contLeft = $('.content-left .content-inner').height(),
+            contRight = $('.content-right .content-inner').height(),
+            contLeftBottom = $('.content-left .content-inner .inner-bottom').height(),
+            contRightBottom = $('.content-right .content-inner .inner-bottom').height();
+
+        // Remove inner-bottom absolute value, if user content needs to expand the parent container
+        if (contLeft < contLeftBottom || contRight < contRightBottom) {
+          $('.center-row .content-inner .inner-bottom').css("position", "relative");
         };
 
         // Equalize center-row left and right half content columns
