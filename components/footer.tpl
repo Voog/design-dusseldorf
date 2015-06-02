@@ -4,7 +4,7 @@
       {% include "search" %}
       {% if front_page != true %}
         <div class="footer-left">
-          {% xcontent name="footer-left" %}
+          {% xcontent name="footer" %}
         </div>
       {% endif %}
     </div>

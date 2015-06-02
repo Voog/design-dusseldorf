@@ -172,10 +172,10 @@
         if (contRight < contRightBottom) {
           $('.center-row .content-right .inner-bottom').css("position", "relative");
         };
-      }
+      };
 
       // Make content areas play nice with long sidebars on smaller than 1024px screens
-      else if (whColUnder > 0) {
+      if (whColUnder > 0 && $(document).width() < 1024) {
         var whColUnderCalc = whColUnder + $('.content-left .content-inner').height(),
             whColUnderCenterInnerTarget = $('.content-left .content-inner').css('min-height', whColUnderCalc);
       };
@@ -184,16 +184,32 @@
 
     var setEqualHeights = function() {
 
-      // Equalize center-row left and right half content columns
-      var whLeft = $('.content-left .content-inner').height(),
-          whRight = $('.content-right .content-inner').height();
+      if ($(document).width() >= 1024 ) {
+        // Equalize center-row left and right half content columns
+        var whLeft = $('.content-left .content-inner').height(),
+            whRight = $('.content-right .content-inner').height();
 
-      if (whLeft > whRight) {
-        $('.content-right .content-inner').css('min-height', whLeft);
-      }
-      else {
-        $('.content-left .content-inner').css('min-height', whRight);
+        if (whLeft > whRight) {
+          //$('.content-right .content-inner').css('min-height', whLeft);
+          $('.content-right .content-inner').animate({'min-height': whLeft}, 'slow');
+        }
+        else {
+          //$('.content-left .content-inner').css('min-height', whRight);
+          $('.content-left .content-inner').animate({'min-height': whRight}, 'slow');
+        };
       };
+      /*else if ($(document).width() < 1024) {
+        // Equalize center-row left and right half content columns
+        var whLeft = $('.content-left .content-inner').height(),
+            whRight = $('.content-right .content-inner').height();
+
+        if (whLeft > whRight) {
+          $('.content-right .content-inner').css('min-height', whLeft);
+        }
+        else {
+          $('.content-left .content-inner').css('min-height', whRight);
+        };
+      };*/
 
       var contLeft = $('.content-left .content-inner').height(),
           contRight = $('.content-right .content-inner').height(),

@@ -2530,7 +2530,12 @@ footer .custom-btn {
   text-align: center;
   margin: 0px 0px;
   cursor: pointer;
+
+  &:hover {
+    background: #6b6b6b;
+  }
 }
+
 .footer-right .custom-btn {
   position: absolute;
   right: 15px;
@@ -2546,15 +2551,13 @@ footer .custom-btn {
   color: $black;
 }
 
-.footer-row .custom-btn:hover {
-  background: #6b6b6b;
-}
 .footer-row .light-background .custom-btn:hover a {
   color: $white;
 }
-.front-page .footer-left {
+.front-page .footer-row .footer-left {
   float: left;
-  max-width: calc(100% - 90px);
+  max-width: calc(100% - 100px)!important;
+  padding-top: 0;
 }
 .footer-right {
   float: right;
@@ -2599,4 +2602,12 @@ footer .custom-btn {
 
 .edy-content-element, .edy-content-default {
   margin: 0!important;
+}
+
+.front-page {
+  .footer-row {
+    .edy-empty-bordered {
+      padding: 6px;
+    }
+  }
 }

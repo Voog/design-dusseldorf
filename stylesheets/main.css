@@ -2338,6 +2338,9 @@ footer .custom-btn {
   margin: 0px 0px;
   cursor: pointer;
 }
+.footer-row .custom-btn:hover {
+  background: #6b6b6b;
+}
 
 .footer-right .custom-btn {
   position: absolute;
@@ -2356,17 +2359,14 @@ footer .custom-btn {
   color: #000000;
 }
 
-.footer-row .custom-btn:hover {
-  background: #6b6b6b;
-}
-
 .footer-row .light-background .custom-btn:hover a {
   color: #ffffff;
 }
 
-.front-page .footer-left {
+.front-page .footer-row .footer-left {
   float: left;
-  max-width: calc(100% - 90px);
+  max-width: calc(100% - 100px) !important;
+  padding-top: 0;
 }
 
 .footer-right {
@@ -2412,4 +2412,8 @@ footer .custom-btn {
 
 .edy-content-element, .edy-content-default {
   margin: 0 !important;
+}
+
+.front-page .footer-row .edy-empty-bordered {
+  padding: 6px;
 }
