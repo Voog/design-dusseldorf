@@ -11,18 +11,15 @@ $error-color: #c70909;
 $success-color: #409e13;
 $black: #000000;
 $white: #ffffff;
-$blue: #0066BB;
 
 $font-size-xs: 10px;
 $font-size: 18px;
 $font-size-big: 20px;
 $font-size-xl: 24px;
 $font-size-small: 14px;
-$font-size-medium: 16px;
 
 $line-height-tiny: 18px;
 $line-height-xs: 24px;
-$line-height-small: 30px;
 $line-height: 32px;
 
 $font-main: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -30,7 +27,6 @@ $font-secondary: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 $site-width: 1024px;
 $side-width: 200px;
-$side-width-small: 200px;
 $content-width: $site-width - $side-width;
 
 $search-width: 300px;
@@ -169,7 +165,9 @@ code,
 iframe,
 table,
 form {
-  @include hyphenate(false);
+  .formatted & {
+    @include hyphenate(false);
+  }
 }
 
 pre {
@@ -490,14 +488,6 @@ label {
 
   .sidebar-inner {
     padding: 45px 30px 100px;
-
-    .front-page & {
-      /*padding: 45px 30px 100px;*/
-    }
-    .search-enabled & {
-      /*padding-bottom: 230px;*/
-    }
-
   }
 }
 
@@ -569,8 +559,6 @@ label {
 }
 
 .inner {
-  /*width: $content-width;*/
-
   &.main-inner {
     width: auto !important;
   }
@@ -584,8 +572,6 @@ label {
   position: relative;
   z-index: 4;
 }
-
-
 
 .container {
   float: left;
@@ -876,10 +862,10 @@ $flags:
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
-  @include color($blue);
+  @include color($link-color);
 
   &:hover {
-    @include color($blue, .8);
+    @include color($link-color, .8);
   }
 
   &::-moz-focus-inner {
@@ -1028,14 +1014,6 @@ $flags:
       display: none;
     }
   }
-
-  // TODO: Remove if decided to not use or add back if it is going to be used anyway.
-  // &.open {
-  //   .ico-popover-toggle {
-  //     top: -2px;
-  //     @include transform(rotate(180deg));
-  //   }
-  // }
 }
 
 .lang-menu-popover {
@@ -1069,7 +1047,39 @@ $flags:
 }
 
 .content-inner {
+
+  overflow: hidden;
+  position: relative;
+  font-family: $font-secondary;
   @include hyphenate(true);
+
+  @media screen and (max-width: $break-middle - 1px) {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .header-row & {
+    font-size: $font-size-xl;
+    line-height: $line-height;
+  }
+
+  .footer-row & {
+    font-size: $font-size-small;
+    font-family: $font-secondary;
+    line-height: $line-height-xs;
+    padding: 4px 0;
+  }
+
+  .header-row, .center-row & {
+    min-height: 100px;
+  }
+
+  .inner-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+
 }
 
 .formatted {
@@ -1086,6 +1096,10 @@ $flags:
 
   li {
     padding-left: 3px;
+  }
+
+  form {
+    padding: 20px 0;
   }
 
   form,
@@ -1132,7 +1146,7 @@ $flags:
 
   .edys-gallery-area,
   .edy-gallery-area {
-    margin-left: -6px;
+    /*margin-left: -6px;*/
     font-size: 0;
     line-height: 1em;
 
@@ -1158,10 +1172,6 @@ $flags:
       margin: 3px 0 3px 6px
     }
   }
-}
-
-form {
-  padding: 20px 0;
 }
 
 /* articles */
@@ -1414,16 +1424,26 @@ table {
   svg {
     height: 9px;
     width: 35px;
-  }
 
+    path {
+      .dark-background & {
+        fill: $white;
+      }
+      .light-background & {
+        fill: $third-color;
+      }
+      footer & {
+        fill: $third-color;
+      }
+    }
+  }
   .front-page & {
     display: block;
   }
-}
-
-@media screen and (min-width: $break-small) {
-  .footer-row .voog-reference {
-    display: none;
+  @media screen and (min-width: $break-small) {
+    .footer-row & {
+      display: none;
+    }
   }
 }
 
@@ -1442,7 +1462,6 @@ table {
 
   .edys-gallery-item {
     .front-page & {
-      /*float: none;*/
       display: inline-block;
     }
   }
@@ -1484,10 +1503,18 @@ table {
 
   .edy-texteditor-active {
     outline: 1px solid rgba(255, 255, 255, .2);
+
+    .dark-background & {
+      outline: 1px solid rgba(255, 255, 255, 0.7);
+    }
   }
 
   .edy-texteditor-active:hover {
     outline: 1px solid rgba(255, 255, 255, .3);
+
+    .dark-background & {
+      outline: 1px solid rgba(255, 255, 255, 0.63);
+    }
   }
 
   &.light-background {
@@ -1679,7 +1706,7 @@ table {
 
   @media screen and (min-width: $break-small + 1px) and (max-width: $break-middle - 1px) {
     top: 90px;
-    margin-left: $side-width-small;
+    margin-left: $side-width;
   }
 
   #mobile-search & {
@@ -1803,12 +1830,12 @@ table {
   }
 
   .main {
-    margin-left: $side-width-small;
+    margin-left: $side-width;
     padding-top: 90px;
   }
 
   .sidebar {
-    width: $side-width-small;
+    width: $side-width;
 
     .sidebar-inner {
       padding-top: 90px;
@@ -1846,7 +1873,7 @@ table {
   }
 
   .footer {
-    width: $side-width-small;
+    width: $side-width;
     .footer-inner {
       padding: 20px;
     }
@@ -2344,29 +2371,6 @@ table {
 
 }
 
-@media screen and (max-width: $break-middle - 1px) {
-  .content-inner {
-    display: inline-block;
-    width: 100%;
-  }
-}
-
-.content-inner {
-
-  overflow: hidden;
-  position: relative;
-
-  .header-row, .center-row & {
-    min-height: 100px;
-  }
-
-  .inner-bottom {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-  }
-}
-
 .inner-padding {
   height: 100%;
   padding: 65px 20px;
@@ -2384,54 +2388,12 @@ table {
   background-position: 50% 50%;
 }
 
-.main .background-color {
+.background-color {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-}
-
-.front-page .main .content-inner {
-  font-family: $font-secondary;
-}
-
-.front-page .main .header-row .content-inner {
-  font-size: $font-size-xl;
-  line-height: $line-height;
-}
-
-.front-page .main .footer-row .inner-padding {
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-
-@media screen and (max-width: $break-small) {
-  .main .footer-row .inner-padding {
-
-    .footer-left {
-      max-width:100%;
-    }
-
-    .custom-btn {
-      bottom: 25px;
-      right: 30px;
-    }
-
-  }
-
-}
-
-.front-page .main .footer-row .content-inner {
-  font-size: $font-size-small;
-  font-family: $font-secondary;
-  line-height: $line-height-xs;
-  padding: 4px 0;
-}
-
-
-.footer-row .dark-background b, .footer-row .dark-background a {
-  color: $white;
 }
 
 .dark-background {
@@ -2442,6 +2404,9 @@ table {
 
   .footer-row & {
     color: rgba(255, 255, 255, 0.6);
+    a, b {
+      color: $white;
+    }
   }
 }
 
@@ -2452,25 +2417,16 @@ table {
   }
   .footer-row & {
       a {
-      color: $black;
-    }
+        color: $black;
+      }
+      b {
+        color: rgba(0, 0, 0, 0.5);
+      }
   }
 
   .footer-row & {
     color: rgba(0, 0, 0, 0.6);
   }
-}
-
-.dark-background .voog-reference svg path {
-    fill: $white;
-}
-
-.light-background, .front-page .main .footer-row .light-background .content-inner b {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.light-background .voog-reference svg path, footer .voog-reference svg path {
-  fill: $third-color;
 }
 
 .custom-btn {
@@ -2485,87 +2441,95 @@ table {
   margin: 5px 10px;
   cursor: pointer;
   @include hyphenate(true);
-}
-
-.custom-btn:hover {
-  background: #2b2b2b;
-}
-
-.custom-btn-bottom {
-  position: absolute;
-  bottom: 11%;
-  left: 50%;
-  margin-left: -90px;
-
-  .editmode & {
-    position: relative;
-  }
-}
-
-.dark-background .custom-btn {
-  border: 2px solid $white;
-  color: $white;
-}
-.light-background .custom-btn {
-  border: 2px solid $black;
-  color: $black;
-}
-.light-background .custom-btn:hover {
-  border: 2px solid $white;
-  color: $white;
-}
-
-footer .custom-btn {
-  display: none;
-}
-
-.footer-row .custom-btn {
-  width: 80px;
-  box-sizing: border-box;
-  display: inline-block;
-  padding: 0 10px;
-  text-transform: none;
-  font-size: $font-size-xs;
-  line-height: $line-height-xs;
-  text-align: center;
-  margin: 0px 0px;
-  cursor: pointer;
 
   &:hover {
-    background: #6b6b6b;
+    background: #2b2b2b;
+  }
+
+  .dark-background & {
+    border: 2px solid $white;
+    color: $white;
+  }
+  .light-background & {
+    border: 2px solid $black;
+    color: $black;
+  }
+
+  footer & {
+    display: none;
   }
 }
 
-.footer-right .custom-btn {
-  position: absolute;
-  right: 15px;
-  bottom: 50%;
-  margin-bottom: -14px;
-}
-.footer-row .dark-background .custom-btn {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: $white;
-}
-.footer-row .light-background .custom-btn {
-  border: 2px solid #333;
-  color: $black;
+.header-row {
+
+  .content-full {
+    min-height: 31vh;
+  }
+
 }
 
-.footer-row .light-background .custom-btn:hover a {
-  color: $white;
-}
-.front-page .footer-row .footer-left {
-  float: left;
-  max-width: calc(100% - 100px)!important;
-  padding-top: 0;
-}
-.footer-right {
-  float: right;
-  width: 90px;
-}
+.footer-row {
 
-.header-row .content-full {
-  min-height: 31vh;
+  .inner-padding {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .custom-btn {
+    width: 80px;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 10px;
+    text-transform: none;
+    font-size: $font-size-xs;
+    line-height: $line-height-xs;
+    text-align: center;
+    margin: 0px 0px;
+    cursor: pointer;
+
+    &:hover {
+      background: #6b6b6b;
+
+      .light-background & {
+        border: 2px solid $white;
+        color: $white;
+      }
+    }
+  }
+
+  .dark-background .custom-btn {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: $white;
+  }
+  
+  .light-background .custom-btn {
+    border: 1px solid #333;
+    color: $black;
+  }
+
+  .footer-right {
+    float: right;
+    width: 90px;
+
+    .custom-btn {
+      position: absolute;
+      right: 15px;
+      bottom: 50%;
+      margin-bottom: -14px;
+    }
+  }
+
+  .footer-left {
+    .front-page & {
+      float: left;
+      max-width: calc(100% - 100px)!important;
+      padding-top: 0;
+    }
+  }
+
+  .light-background .custom-btn:hover a {
+    color: $white;
+  }
+
 }
 
 /* Edy tools */
@@ -2582,22 +2546,6 @@ footer .custom-btn {
 .light-background .edy-empty-bordered {
   color: rgba(27,33,36,0.33);
   border: 1px dashed rgba(27,33,36,0.33);
-}
-
-.dark-background .edy-texteditor-active {
-  outline: 1px solid rgba(255, 255, 255, 0.7);
-}
-.dark-background .edy-texteditor-active:hover {
-  outline: 1px solid rgba(255, 255, 255, 0.63);
-}
-
-
-.edys-gallery-item,
-.edy-gallery-item,
-.edy-gallery-sortable-placeholder {
- display: inline-block;
- /*float: none;*/
- margin: 3px 0 3px 6px
 }
 
 .edy-content-element, .edy-content-default {
