@@ -1484,6 +1484,10 @@ table {
   color: white;
   background: rgba(0,0,0,.2);
 
+}
+.light-background {
+  color: $main-color;
+
   .edy-empty-bordered {
     border-color: white;
     border-color: rgba(255,255,255,.35);
@@ -1516,33 +1520,66 @@ table {
       outline: 1px solid rgba(255, 255, 255, 0.63);
     }
   }
+  .edy-empty-bordered {
+    border-color: white;
+    border-color: rgba(0,0,0,.35);
+  }
 
-  &.light-background {
-    color: $main-color;
+  .edy-content-element-hover {
+    border-color: white;
+    border-color: rgba(0,0,0,.1);
+  }
 
-    .edy-empty-bordered {
-      border-color: white;
-      border-color: rgba(0,0,0,.35);
+  .edy-empty-bordered {
+    .edy-empty-header {
+      color: white;
+      color: rgba(0,0,0,.5);
     }
+  }
 
-    .edy-content-element-hover {
-      border-color: white;
-      border-color: rgba(0,0,0,.1);
-    }
+  .edy-texteditor-active {
+    outline: 1px solid rgba(0, 0, 0, .2);
+  }
 
-    .edy-empty-bordered {
-      .edy-empty-header {
-        color: white;
-        color: rgba(0,0,0,.5);
-      }
-    }
+  .edy-texteditor-active:hover {
+    outline: 1px solid rgba(0, 0, 0, .3);
+  }
+
+  .edy-empty-bordered {
+    color: rgba(27,33,36,0.33);
+    border: 1px dashed rgba(27,33,36,0.33);
+  }
+}
+
+.dark-background {
 
     .edy-texteditor-active {
-      outline: 1px solid rgba(0, 0, 0, .2);
+      outline: 1px solid rgba(255, 255, 255, 0.7);
     }
 
     .edy-texteditor-active:hover {
-      outline: 1px solid rgba(0, 0, 0, .3);
+      outline: 1px solid rgba(255, 255, 255, 0.63);
+    }
+
+    .placeholder {
+      color: #FFFFFF;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .edy-empty-bordered {
+      color: rgba(255, 255, 255, 0.7);
+      border: 1px dashed rgba(255, 255, 255, 0.7);
+    }
+}
+
+.edy-content-element, .edy-content-default {
+  margin: 0!important;
+}
+
+.front-page {
+  .footer-row {
+    .edy-empty-bordered {
+      padding: 6px;
     }
   }
 }
@@ -1675,9 +1712,6 @@ table {
     outline: 0;
     background: url('../images/search.png') no-repeat center center;
     background-size: 16px 16px;
-
-    -khtml-opacity: .5;
-    -moz-opacity: .5;
 
     .svg & {
       background-image: url('../assets/search.svg');
@@ -1901,7 +1935,6 @@ table {
   .wrap-inner,
   .main {
     display: block !important;
-    /*height: auto !important;*/
   }
 
   .front-page {
@@ -2432,7 +2465,7 @@ table {
 .custom-btn {
   display: inline-block;
   box-sizing: border-box;
-  width: 180px;
+  min-width: 180px;
   padding: 11px 10px;
   text-transform: uppercase;
   font-size: $font-size;
@@ -2475,7 +2508,7 @@ table {
     padding-top: 10px;
   }
   .custom-btn {
-    width: 80px;
+    min-width: 80px;
     box-sizing: border-box;
     display: inline-block;
     padding: 0 10px;
@@ -2500,7 +2533,7 @@ table {
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: $white;
   }
-  
+
   .light-background .custom-btn {
     border: 1px solid #333;
     color: $black;
@@ -2508,20 +2541,14 @@ table {
 
   .footer-right {
     float: right;
-    width: 90px;
-
-    .custom-btn {
-      position: absolute;
-      right: 15px;
-      bottom: 50%;
-      margin-bottom: -14px;
-    }
+    width: 140px;
+    margin: 0 0 0 10px;
   }
 
   .footer-left {
     .front-page & {
       float: left;
-      max-width: calc(100% - 100px)!important;
+      width: calc(100% - 150px)!important;
       padding-top: 0;
     }
   }
@@ -2530,32 +2557,4 @@ table {
     color: $white;
   }
 
-}
-
-/* Edy tools */
-
-.dark-background .placeholder {
-  color: #FFFFFF;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.dark-background .edy-empty-bordered {
-  color: rgba(255, 255, 255, 0.7);
-  border: 1px dashed rgba(255, 255, 255, 0.7);
-}
-.light-background .edy-empty-bordered {
-  color: rgba(27,33,36,0.33);
-  border: 1px dashed rgba(27,33,36,0.33);
-}
-
-.edy-content-element, .edy-content-default {
-  margin: 0!important;
-}
-
-.front-page {
-  .footer-row {
-    .edy-empty-bordered {
-      padding: 6px;
-    }
-  }
 }

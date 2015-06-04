@@ -1402,50 +1402,78 @@ footer .voog-reference svg path {
   color: white;
   background: rgba(0, 0, 0, 0.2);
 }
-.js-bgpicker-cover-color .edy-empty-bordered {
+
+.light-background {
+  color: #222222;
+}
+.light-background .edy-empty-bordered {
   border-color: white;
   border-color: rgba(255, 255, 255, 0.35);
 }
-.js-bgpicker-cover-color .edy-content-element-hover {
+.light-background .edy-content-element-hover {
   border-color: white;
   border-color: rgba(255, 255, 255, 0.1);
 }
-.js-bgpicker-cover-color .edy-empty-bordered .edy-empty-header {
+.light-background .edy-empty-bordered .edy-empty-header {
   color: white;
   color: rgba(255, 255, 255, 0.5);
 }
-.js-bgpicker-cover-color .edy-texteditor-active {
+.light-background .edy-texteditor-active {
   outline: 1px solid rgba(255, 255, 255, 0.2);
 }
-.dark-background .js-bgpicker-cover-color .edy-texteditor-active {
+.dark-background .light-background .edy-texteditor-active {
   outline: 1px solid rgba(255, 255, 255, 0.7);
 }
-.js-bgpicker-cover-color .edy-texteditor-active:hover {
+.light-background .edy-texteditor-active:hover {
   outline: 1px solid rgba(255, 255, 255, 0.3);
 }
-.dark-background .js-bgpicker-cover-color .edy-texteditor-active:hover {
+.dark-background .light-background .edy-texteditor-active:hover {
   outline: 1px solid rgba(255, 255, 255, 0.63);
 }
-.js-bgpicker-cover-color.light-background {
-  color: #222222;
-}
-.js-bgpicker-cover-color.light-background .edy-empty-bordered {
+.light-background .edy-empty-bordered {
   border-color: white;
   border-color: rgba(0, 0, 0, 0.35);
 }
-.js-bgpicker-cover-color.light-background .edy-content-element-hover {
+.light-background .edy-content-element-hover {
   border-color: white;
   border-color: rgba(0, 0, 0, 0.1);
 }
-.js-bgpicker-cover-color.light-background .edy-empty-bordered .edy-empty-header {
+.light-background .edy-empty-bordered .edy-empty-header {
   color: white;
   color: rgba(0, 0, 0, 0.5);
 }
-.js-bgpicker-cover-color.light-background .edy-texteditor-active {
+.light-background .edy-texteditor-active {
   outline: 1px solid rgba(0, 0, 0, 0.2);
 }
-.js-bgpicker-cover-color.light-background .edy-texteditor-active:hover {
+.light-background .edy-texteditor-active:hover {
   outline: 1px solid rgba(0, 0, 0, 0.3);
+}
+.light-background .edy-empty-bordered {
+  color: rgba(27, 33, 36, 0.33);
+  border: 1px dashed rgba(27, 33, 36, 0.33);
+}
+
+.dark-background .edy-texteditor-active {
+  outline: 1px solid rgba(255, 255, 255, 0.7);
+}
+.dark-background .edy-texteditor-active:hover {
+  outline: 1px solid rgba(255, 255, 255, 0.63);
+}
+.dark-background .placeholder {
+  color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark-background .edy-empty-bordered {
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px dashed rgba(255, 255, 255, 0.7);
+}
+
+.edy-content-element, .edy-content-default {
+  margin: 0 !important;
+}
+
+.front-page .footer-row .edy-empty-bordered {
+  padding: 6px;
 }
 
 .rgba .js-bgpicker-cover-color {
@@ -1563,8 +1591,6 @@ footer .voog-reference svg path {
   outline: 0;
   background: url("../images/search.png") no-repeat center center;
   background-size: 16px 16px;
-  -khtml-opacity: .5;
-  -moz-opacity: .5;
 }
 .svg .search .search-submit {
   background-image: url("../assets/search.svg");
@@ -1769,7 +1795,6 @@ footer .voog-reference svg path {
   .wrap-inner,
   .main {
     display: block !important;
-    /*height: auto !important;*/
   }
 
   .front-page,
@@ -2250,7 +2275,7 @@ footer .voog-reference svg path {
 .custom-btn {
   display: inline-block;
   box-sizing: border-box;
-  width: 180px;
+  min-width: 180px;
   padding: 11px 10px;
   text-transform: uppercase;
   font-size: 18px;
@@ -2288,7 +2313,7 @@ footer .custom-btn {
   padding-top: 10px;
 }
 .footer-row .custom-btn {
-  width: 80px;
+  min-width: 80px;
   box-sizing: border-box;
   display: inline-block;
   padding: 0 10px;
@@ -2316,43 +2341,14 @@ footer .custom-btn {
 }
 .footer-row .footer-right {
   float: right;
-  width: 90px;
-}
-.footer-row .footer-right .custom-btn {
-  position: absolute;
-  right: 15px;
-  bottom: 50%;
-  margin-bottom: -14px;
+  width: 140px;
+  margin: 0 0 0 10px;
 }
 .front-page .footer-row .footer-left {
   float: left;
-  max-width: calc(100% - 100px) !important;
+  width: calc(100% - 150px) !important;
   padding-top: 0;
 }
 .footer-row .light-background .custom-btn:hover a {
   color: #ffffff;
-}
-
-/* Edy tools */
-.dark-background .placeholder {
-  color: #FFFFFF;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.dark-background .edy-empty-bordered {
-  color: rgba(255, 255, 255, 0.7);
-  border: 1px dashed rgba(255, 255, 255, 0.7);
-}
-
-.light-background .edy-empty-bordered {
-  color: rgba(27, 33, 36, 0.33);
-  border: 1px dashed rgba(27, 33, 36, 0.33);
-}
-
-.edy-content-element, .edy-content-default {
-  margin: 0 !important;
-}
-
-.front-page .footer-row .edy-empty-bordered {
-  padding: 6px;
 }

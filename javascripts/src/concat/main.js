@@ -78,7 +78,7 @@
               $('.center-row .content-inner').keyup(function() {
                   delay(function(){
                     setEqualHeights();
-                  }, 500 );
+                  }, 350 );
               });
 
             };
@@ -182,34 +182,30 @@
 
     };
 
+    // Equalize center-row left and right half content columns when user adds or removes content
     var setEqualHeights = function() {
 
       if ($(document).width() >= 1024 ) {
-        // Equalize center-row left and right half content columns
+
+        var whCrow = $('.center-row').height();
+
+        var whLeftCont = $('.content-left').height(),
+            whRightCont = $('.content-right').height();
+
         var whLeft = $('.content-left .content-inner').height(),
             whRight = $('.content-right .content-inner').height();
 
-        if (whLeft > whRight) {
-          //$('.content-right .content-inner').css('min-height', whLeft);
+        var whLeftInner = $('.content-left .content-inner .inner-bottom').height(),
+            whRightInner = $('.content-right .content-inner .inner-bottom').height();
+
+        if (whLeftInner > whRightInner) {
           $('.content-right .content-inner').animate({'min-height': whLeft}, 'slow');
-        }
-        else {
-          //$('.content-left .content-inner').css('min-height', whRight);
+        };
+        if (whRightInner > whLeftInner) {
           $('.content-left .content-inner').animate({'min-height': whRight}, 'slow');
         };
-      };
-      /*else if ($(document).width() < 1024) {
-        // Equalize center-row left and right half content columns
-        var whLeft = $('.content-left .content-inner').height(),
-            whRight = $('.content-right .content-inner').height();
 
-        if (whLeft > whRight) {
-          $('.content-right .content-inner').css('min-height', whLeft);
-        }
-        else {
-          $('.content-left .content-inner').css('min-height', whRight);
-        };
-      };*/
+      };
 
       var contLeft = $('.content-left .content-inner').height(),
           contRight = $('.content-right .content-inner').height(),
@@ -219,9 +215,16 @@
       // Remove inner-bottom absolute value, if user content needs to expand the parent container
       if (contLeft < contLeftBottom) {
         $('.center-row .content-left .inner-bottom').css("position", "relative");
+      }
+      else if (contLeftBottom < contLeft) {
+        $('.center-row .content-left .inner-bottom').css("position", "absolute");
       };
+
       if (contRight < contRightBottom) {
         $('.center-row .content-right .inner-bottom').css("position", "relative");
+      }
+      else if (contRightBottom < contRight) {
+        $('.center-row .content-right .inner-bottom').css("position", "absolute");
       };
 
     };
