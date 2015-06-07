@@ -63,7 +63,6 @@
             setFrontContent();
             $(window).resize(setFrontContent);
 
-
             // In edit mode maintain column equilibrium while user inputs new data
             var delay = (function(){
               var timer = 0;
@@ -118,7 +117,7 @@
           whBodyFootRem = whDocument - whFooter - whHeader - whCentInnerPad;
 
       var whColUnder = whDocument - whHeader - whCenter - whFooter,
-          whColUnderTarget = whDocument - whHeader - whFooter - whCentInnerPad;
+          whColUnderTarget = whDocument - whHeader - whCenter - whFooter - whTopbar;
 
       // Adjust center row inner-padding with min-height to make sure viewport is always filled with content
       if ($(document).width() >= 1024 ) {
@@ -151,15 +150,24 @@
             whRight = $('.content-right .content-inner').height();
 
         if (whLeft > whRight) {
-          $('.content-right .content-inner').css('min-height', whLeft);
-        }
-        else {
-          $('.content-left .content-inner').css('min-height', whRight);
+          var targetCalc = whLeft;
+          $('.center-row .content-inner').css('min-height', targetCalc);
+
+        };
+        if (whLeft < whRight) {
+          var targetCalc = whRight;
+          $('.center-row .content-inner').css('min-height', targetCalc);
         };
 
-      }
+      };
 
-      else if ($(document).width() < 1024) {
+      // Make content areas play nice with long sidebars on smaller than 1024px screens
+      if (whColUnder > 0 && $(document).width() < 1024) {
+        var whColUnderCalc = whColUnderTarget + $('.content-left .content-inner').height(),
+            whColUnderCenterInnerTarget = $('.content-left .content-inner').css('min-height', whColUnderCalc);
+      };
+
+      if ($(document).width() < 1024) {
         var contLeft = $('.content-left .content-inner').height(),
             contRight = $('.content-right .content-inner').height(),
             contLeftBottom = $('.content-left .content-inner .inner-bottom').height(),
@@ -172,12 +180,6 @@
         if (contRight < contRightBottom) {
           $('.center-row .content-right .inner-bottom').css("position", "relative");
         };
-      };
-
-      // Make content areas play nice with long sidebars on smaller than 1024px screens
-      if (whColUnder > 0 && $(document).width() < 1024) {
-        var whColUnderCalc = whColUnder + $('.content-left .content-inner').height(),
-            whColUnderCenterInnerTarget = $('.content-left .content-inner').css('min-height', whColUnderCalc);
       };
 
     };

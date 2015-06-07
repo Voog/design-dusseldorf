@@ -999,17 +999,20 @@ label .form_control_indicator:before {
 /* content */
 .content {
   position: relative;
-  padding: 0 50px 30px;
-  overflow: hidden;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+  padding: 65px 20px;
+}
+@media screen and (min-width: 600px) {
+  .content {
+    padding: 65px 50px;
+  }
 }
 
 .content-inner {
-  overflow: hidden;
   position: relative;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   word-wrap: break-word;
@@ -1038,6 +1041,7 @@ label .form_control_indicator:before {
   min-height: 100px;
 }
 .content-inner .inner-bottom {
+  display: inline-block;
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -1412,25 +1416,9 @@ footer .voog-reference svg path {
   border-color: white;
   border-color: rgba(255, 255, 255, 0.35);
 }
-.light-background .edy-content-element-hover {
-  border-color: white;
-  border-color: rgba(255, 255, 255, 0.1);
-}
 .light-background .edy-empty-bordered .edy-empty-header {
   color: white;
   color: rgba(255, 255, 255, 0.5);
-}
-.light-background .edy-texteditor-active {
-  outline: 1px solid rgba(255, 255, 255, 0.2);
-}
-.dark-background .light-background .edy-texteditor-active {
-  outline: 1px solid rgba(255, 255, 255, 0.7);
-}
-.light-background .edy-texteditor-active:hover {
-  outline: 1px solid rgba(255, 255, 255, 0.3);
-}
-.dark-background .light-background .edy-texteditor-active:hover {
-  outline: 1px solid rgba(255, 255, 255, 0.63);
 }
 .light-background .edy-empty-bordered {
   border-color: white;
@@ -1455,6 +1443,10 @@ footer .voog-reference svg path {
   border: 1px dashed rgba(27, 33, 36, 0.33);
 }
 
+.dark-background .edy-content-element-hover {
+  border-color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
 .dark-background .edy-texteditor-active {
   outline: 1px solid rgba(255, 255, 255, 0.7);
 }
@@ -1468,10 +1460,6 @@ footer .voog-reference svg path {
 .dark-background .edy-empty-bordered {
   color: rgba(255, 255, 255, 0.7);
   border: 1px dashed rgba(255, 255, 255, 0.7);
-}
-
-.edy-content-element, .edy-content-default {
-  margin: 0 !important;
 }
 
 .front-page .footer-row .edy-empty-bordered {
@@ -1867,13 +1855,6 @@ footer .voog-reference svg path {
     padding-right: 90px;
   }
 
-  .content {
-    padding: 0 20px 20px;
-  }
-  .front-page .content {
-    padding: 40px 20px;
-  }
-
   .sub-menu {
     min-height: 0;
     padding: 20px 20px 15px;
@@ -2248,14 +2229,11 @@ footer .voog-reference svg path {
 .dark-background {
   color: #ffffff;
 }
-.dark-background h1, .dark-background h2, .dark-background h3, .dark-background h4, .dark-background p, .dark-background pre {
+.dark-background h1, .dark-background h2, .dark-background h3, .dark-background h4, .dark-background p, .dark-background pre, .dark-background a, .dark-background b {
   color: #ffffff;
 }
 .footer-row .dark-background {
   color: rgba(255, 255, 255, 0.6);
-}
-.footer-row .dark-background a, .footer-row .dark-background b {
-  color: #ffffff;
 }
 
 .light-background {
@@ -2278,6 +2256,7 @@ footer .voog-reference svg path {
   display: inline-block;
   box-sizing: border-box;
   min-width: 180px;
+  max-width: 100%;
   padding: 11px 10px;
   text-transform: uppercase;
   font-size: 18px;
@@ -2291,16 +2270,23 @@ footer .voog-reference svg path {
   -ms-hyphens: auto;
   hyphens: auto;
 }
-.custom-btn:hover {
-  background: #2b2b2b;
-}
 .dark-background .custom-btn {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+.dark-background .custom-btn:hover {
+  background: #2b2b2b;
   border: 2px solid #ffffff;
   color: #ffffff;
 }
 .light-background .custom-btn {
   border: 2px solid #000000;
   color: #000000;
+}
+.light-background .custom-btn:hover {
+  background: #2b2b2b;
+  border: 2px solid #ffffff;
+  color: #ffffff;
 }
 footer .custom-btn {
   display: none;
@@ -2324,14 +2310,9 @@ footer .custom-btn {
   line-height: 24px;
   text-align: center;
   margin: 0px 0px;
-  cursor: pointer;
 }
 .footer-row .custom-btn:hover {
   background: #6b6b6b;
-}
-.light-background .footer-row .custom-btn:hover {
-  border: 2px solid #ffffff;
-  color: #ffffff;
 }
 .footer-row .dark-background .custom-btn {
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2340,6 +2321,9 @@ footer .custom-btn {
 .footer-row .light-background .custom-btn {
   border: 1px solid #333;
   color: #000000;
+}
+.footer-row .light-background .custom-btn:hover {
+  color: #ffffff;
 }
 .footer-row .footer-right {
   float: right;

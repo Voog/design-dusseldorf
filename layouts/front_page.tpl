@@ -99,7 +99,7 @@
     <script type="text/javascript">
       window.edy = window.edy || [];
       edy.push(['texteditorStyles', {name: 'Small', classname: 'font-size-small'}]);
-      edy.push(['texteditorStyles', {name: 'Button', tagname:"a", classname: 'custom-btn', toggle: true}]);
+      edy.push(['texteditorStyles', {name: 'Button', tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
     </script>
   {% endif %}
 

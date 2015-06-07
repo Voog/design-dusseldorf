@@ -1041,14 +1041,16 @@ $flags:
 /* content */
 .content {
   position: relative;
-  padding: 0 50px 30px;
-  overflow: hidden;
   @include hyphenate(true);
+
+  padding: 65px 20px;
+
+  @media screen and (min-width: $break-small) {
+    padding: 65px 50px;
+  }
 }
 
 .content-inner {
-
-  overflow: hidden;
   position: relative;
   font-family: $font-secondary;
   @include hyphenate(true);
@@ -1075,6 +1077,7 @@ $flags:
   }
 
   .inner-bottom {
+    display: inline-block;
     position: absolute;
     width: 100%;
     bottom: 0;
@@ -1485,6 +1488,7 @@ table {
   background: rgba(0,0,0,.2);
 
 }
+
 .light-background {
   color: $main-color;
 
@@ -1493,31 +1497,10 @@ table {
     border-color: rgba(255,255,255,.35);
   }
 
-  .edy-content-element-hover {
-    border-color: white;
-    border-color: rgba(255,255,255,.1);
-  }
-
   .edy-empty-bordered {
     .edy-empty-header {
       color: white;
       color: rgba(255,255,255,.5);
-    }
-  }
-
-  .edy-texteditor-active {
-    outline: 1px solid rgba(255, 255, 255, .2);
-
-    .dark-background & {
-      outline: 1px solid rgba(255, 255, 255, 0.7);
-    }
-  }
-
-  .edy-texteditor-active:hover {
-    outline: 1px solid rgba(255, 255, 255, .3);
-
-    .dark-background & {
-      outline: 1px solid rgba(255, 255, 255, 0.63);
     }
   }
   .edy-empty-bordered {
@@ -1553,27 +1536,28 @@ table {
 
 .dark-background {
 
-    .edy-texteditor-active {
-      outline: 1px solid rgba(255, 255, 255, 0.7);
-    }
+  .edy-content-element-hover {
+    border-color: white;
+    border-color: rgba(255,255,255,.3);
+  }
 
-    .edy-texteditor-active:hover {
-      outline: 1px solid rgba(255, 255, 255, 0.63);
-    }
+  .edy-texteditor-active {
+    outline: 1px solid rgba(255, 255, 255, 0.7);
+  }
 
-    .placeholder {
-      color: #FFFFFF;
-      color: rgba(255, 255, 255, 0.5);
-    }
+  .edy-texteditor-active:hover {
+    outline: 1px solid rgba(255, 255, 255, 0.63);
+  }
 
-    .edy-empty-bordered {
-      color: rgba(255, 255, 255, 0.7);
-      border: 1px dashed rgba(255, 255, 255, 0.7);
-    }
-}
+  .placeholder {
+    color: #FFFFFF;
+    color: rgba(255, 255, 255, 0.5);
+  }
 
-.edy-content-element, .edy-content-default {
-  margin: 0!important;
+  .edy-empty-bordered {
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px dashed rgba(255, 255, 255, 0.7);
+  }
 }
 
 .front-page {
@@ -2015,14 +1999,6 @@ table {
     }
   }
 
-  .content {
-    padding: 0 20px 20px;
-
-    .front-page & {
-      padding: 40px 20px;
-    }
-  }
-
   .sub-menu {
     min-height: 0;
     padding: 20px 20px 15px;
@@ -2431,15 +2407,12 @@ table {
 
 .dark-background {
   color: $white;
-  & h1, h2, h3, h4, p, pre {
+  & h1, h2, h3, h4, p, pre, a, b {
     color: $white;
   }
 
   .footer-row & {
     color: rgba(255, 255, 255, 0.6);
-    a, b {
-      color: $white;
-    }
   }
 }
 
@@ -2466,6 +2439,7 @@ table {
   display: inline-block;
   box-sizing: border-box;
   min-width: 180px;
+  max-width: 100%;
   padding: 11px 10px;
   text-transform: uppercase;
   font-size: $font-size;
@@ -2475,17 +2449,25 @@ table {
   cursor: pointer;
   @include hyphenate(true);
 
-  &:hover {
-    background: #2b2b2b;
-  }
-
   .dark-background & {
     border: 2px solid $white;
     color: $white;
+
+    &:hover {
+      background: #2b2b2b;
+      border: 2px solid $white;
+      color: $white;
+    }
   }
   .light-background & {
     border: 2px solid $black;
     color: $black;
+
+    &:hover {
+      background: #2b2b2b;
+      border: 2px solid $white;
+      color: $white;
+    }
   }
 
   footer & {
@@ -2517,15 +2499,9 @@ table {
     line-height: $line-height-xs;
     text-align: center;
     margin: 0px 0px;
-    cursor: pointer;
 
     &:hover {
       background: #6b6b6b;
-
-      .light-background & {
-        border: 2px solid $white;
-        color: $white;
-      }
     }
   }
 
@@ -2537,6 +2513,10 @@ table {
   .light-background .custom-btn {
     border: 1px solid #333;
     color: $black;
+
+    &:hover {
+      color: $white;
+    }
   }
 
   .footer-right {
