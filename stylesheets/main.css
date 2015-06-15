@@ -408,13 +408,8 @@ label .form_control_indicator:before {
 }
 
 .topbar {
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 0;
   display: none;
   width: 100%;
-  height: 90px;
   background: white;
 }
 
@@ -519,7 +514,6 @@ label .form_control_indicator:before {
 }
 
 .site-title {
-  overflow: hidden;
   padding-top: 20px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 24px;
@@ -542,10 +536,13 @@ label .form_control_indicator:before {
   color: #222222;
 }
 .topbar .site-title {
-  height: 40px;
+  min-height: 40px;
   margin-right: 80px;
-  padding: 27px 0 0 30px;
-  white-space: nowrap;
+  padding: 27px 0 23px 30px;
+}
+.topbar .site-title .edy-positionable-container-maxwidth {
+  max-width: 200px !important;
+  float: left;
 }
 
 /* mainmenu */
@@ -1719,8 +1716,8 @@ footer .voog-reference svg path {
   }
 
   .main {
+    position: relative;
     margin-left: 200px;
-    padding-top: 90px;
   }
 
   .sidebar {
@@ -1853,6 +1850,10 @@ footer .voog-reference svg path {
   }
   .search-enabled .site-title {
     padding-right: 90px;
+  }
+  .site-title .edy-positionable-container-maxwidth {
+    max-width: 200px !important;
+    float: left;
   }
 
   .sub-menu {

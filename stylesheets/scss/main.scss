@@ -464,13 +464,8 @@ label {
 }
 
 .topbar {
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 0;
   display: none;
   width: 100%;
-  height: 90px;
   background: white;
 }
 
@@ -579,7 +574,6 @@ label {
 }
 
 .site-title {
-  overflow: hidden;
   padding-top: 20px;
   font-family: $font-secondary;
   font-size: $font-size-xl;
@@ -598,10 +592,14 @@ label {
   }
 
   .topbar & {
-    height: 40px;
+    min-height: 40px;
     margin-right: 80px;
-    padding: 27px 0 0 30px;
-    white-space: nowrap;
+    padding: 27px 0 23px 30px;
+
+    .edy-positionable-container-maxwidth {
+      max-width: 200px !important;
+      float: left;
+    }
   }
 }
 
@@ -1842,8 +1840,8 @@ table {
   }
 
   .main {
+    position: relative;
     margin-left: $side-width;
-    padding-top: 90px;
   }
 
   .sidebar {
@@ -1990,6 +1988,11 @@ table {
 
     .search-enabled & {
       padding-right: 90px;
+    }
+
+    .edy-positionable-container-maxwidth {
+      max-width: 200px !important;
+      float: left;
     }
   }
 
