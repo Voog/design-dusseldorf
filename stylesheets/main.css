@@ -120,6 +120,7 @@ code, .formatted
 iframe, .formatted
 table, .formatted
 form {
+  word-break: normal;
   word-wrap: normal;
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -521,6 +522,7 @@ label .form_control_indicator:before {
   vertical-align: top;
   text-transform: uppercase;
   color: #222222;
+  word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -549,6 +551,7 @@ label .form_control_indicator:before {
 .main-menu {
   padding-top: 20px;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -996,6 +999,7 @@ label .form_control_indicator:before {
 /* content */
 .content {
   position: relative;
+  word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -1012,6 +1016,7 @@ label .form_control_indicator:before {
 .content-inner {
   position: relative;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -1309,6 +1314,7 @@ table th {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -2265,6 +2271,7 @@ footer .voog-reference svg path {
   text-align: center;
   margin: 5px 10px;
   cursor: pointer;
+  word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
