@@ -467,6 +467,8 @@ label {
   display: none;
   width: 100%;
   background: white;
+  position: relative;
+  z-index: 6;
 }
 
 .sidebar {
