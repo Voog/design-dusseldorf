@@ -8,6 +8,18 @@
   {% endif %}
 
 
+{% if post_page %}
+
+{% comment %}Content top. Assign variables based on page type.{% endcomment %}
+{% assign content_top_bg = article.data.content_top_bg %}
+{% assign content_top_bg_image = article.data.content_top_bg.image %}
+{% assign content_top_bg_image_sizes = article.data.content_top_bg.imageSizes %}
+{% assign content_top_bg_color = article.data.content_top_bg.color %}
+{% assign content_top_bg_color_data = article.data.content_top_bg.colorData %}
+{% assign content_top_bg_combined_lightness = content_top_bg.combinedLightness %}
+
+{% else %}
+
   {% comment %}Content top. Assign variables based on page type.{% endcomment %}
   {% assign content_top_bg = page.data.content_top_bg %}
   {% assign content_top_bg_image = page.data.content_top_bg.image %}
@@ -15,6 +27,8 @@
   {% assign content_top_bg_color = page.data.content_top_bg.color %}
   {% assign content_top_bg_color_data = page.data.content_top_bg.colorData %}
   {% assign content_top_bg_combined_lightness = content_top_bg.combinedLightness %}
+
+  {% endif %}
 
   {% comment %}Content top. Sets the background type.{% endcomment %}
   {% if content_top_bg %}
@@ -44,7 +58,11 @@
   {% endif %}
 
   {% if content_top_bg_color == nil %}
-    {% assign content_top_bg_color = 'rgba(168, 244, 255, 1)' %}
+    {% if front_page %}
+      {% assign content_top_bg_color = 'rgba(168, 244, 255, 1)' %}
+    {% else %}
+      {% assign content_top_bg_color = 'rgba(246, 246, 246, 1);' %}
+    {% endif %}
   {% endif %}
 
   {% if content_top_bg_color_data == nil %}

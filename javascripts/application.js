@@ -11338,6 +11338,14 @@ MMCQ = (function() {
       if (padSidebar < whSideFooter) {
         var padSidebarTarget = $('.sidebar-inner').css('padding-bottom', whSideFooter);
       };
+
+
+      var commonDoc = $(document).height(),
+          commonConTop = $('.content-top').height();
+
+      if (commonConTop < commonDoc) {
+        var commonConTopTarget = $('.content-top').css('min-height', commonDoc);
+      }
     };
 
     var setTitlebox = function() {
@@ -11445,6 +11453,8 @@ MMCQ = (function() {
 
 (function($) {
 
+  var articlePage = $('body').hasClass('blog-article-page');
+
   // contentHalf background image and color preview logic function.
   var contentHalfBgPreview = function(data, contentHalf, contentHalfObj) {
 
@@ -11530,7 +11540,11 @@ MMCQ = (function() {
         commitData.imageSizes = data.imageSizes || '';
         commitData.color = data.color || 'rgba(255,255,255,0)';
         commitData.combinedLightness = contentHalfBgCombinedLightness;
-        pageData.set(dataName, commitData);
+        if (articlePage) {
+          Edicy.articles.currentArticle.setData(dataName, commitData);
+        } else {
+          pageData.set(dataName, commitData);
+        };
   };
 
   var colorSum = function(bgColor, fgColor) {

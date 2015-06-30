@@ -573,6 +573,7 @@ label {
 .container {
   float: left;
   width: 100%;
+  position: relative;
 }
 
 .site-title {
@@ -1548,9 +1549,13 @@ table {
     color: rgba(255, 255, 255, 0.5);
   }
 
-  .edy-empty-bordered {
+  .edy-empty-bordered, .edy-taglist {
     color: rgba(255, 255, 255, 0.7);
     border: 1px dashed rgba(255, 255, 255, 0.7);
+  }
+
+  .edy-taglist-openarrow::after {
+    border-color: #fff transparent transparent;
   }
 }
 
@@ -2406,8 +2411,16 @@ table {
 
 .dark-background {
   color: $white;
-  & h1, h2, h3, h4, p, pre, a, b {
+  & h1, h2, h3, h4, p, pre, a, b, input {
     color: $white;
+  }
+
+  .post-title a {
+    color: $white;
+
+    &:hover {
+      color: rgba(255,255,255,.75);
+    }
   }
 
   .footer-row & {
@@ -2417,9 +2430,14 @@ table {
 
 .light-background {
   color: rgba(0, 0, 0, 0.5);
-  & h1, h2, h3, h4, p {
+  & h1, h2, h3, h4, p, input {
     color: rgba(0, 0, 0, 0.5);
   }
+
+  .post-title a {
+    color: $black;
+  }
+
   .footer-row & {
       a {
         color: $black;

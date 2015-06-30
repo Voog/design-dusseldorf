@@ -6,10 +6,19 @@
       type: 'site'
     });
 
-    var pageData = new Edicy.CustomData({
-      type: 'page',
-      id: '{{ page.id }}'
-    });
+    {% if edicy-tools == "post_page" %}
+      // Article pages custom data variable.
+      var articleData = new Edicy.CustomData({
+        type: 'article',
+        id: '{{ article.id }}'
+      });
+    {% else %}
+      // Article pages custom data variable.
+      var pageData = new Edicy.CustomData({
+        type: 'page',
+        id: '{{ page.id }}'
+      });
+    {% endif %}
 
     {% comment %}/*Initiates language flag toggling functionality.*/{% endcomment %}
     site.toggleFlags();

@@ -514,6 +514,7 @@ label .form_control_indicator:before {
 .container {
   float: left;
   width: 100%;
+  position: relative;
 }
 
 .site-title {
@@ -1462,9 +1463,12 @@ footer .voog-reference svg path {
   color: #FFFFFF;
   color: rgba(255, 255, 255, 0.5);
 }
-.dark-background .edy-empty-bordered {
+.dark-background .edy-empty-bordered, .dark-background .edy-taglist {
   color: rgba(255, 255, 255, 0.7);
   border: 1px dashed rgba(255, 255, 255, 0.7);
+}
+.dark-background .edy-taglist-openarrow::after {
+  border-color: #fff transparent transparent;
 }
 
 .front-page .footer-row .edy-empty-bordered {
@@ -2238,8 +2242,14 @@ footer .voog-reference svg path {
 .dark-background {
   color: #ffffff;
 }
-.dark-background h1, .dark-background h2, .dark-background h3, .dark-background h4, .dark-background p, .dark-background pre, .dark-background a, .dark-background b {
+.dark-background h1, .dark-background h2, .dark-background h3, .dark-background h4, .dark-background p, .dark-background pre, .dark-background a, .dark-background b, .dark-background input {
   color: #ffffff;
+}
+.dark-background .post-title a {
+  color: #ffffff;
+}
+.dark-background .post-title a:hover {
+  color: rgba(255, 255, 255, 0.75);
 }
 .footer-row .dark-background {
   color: rgba(255, 255, 255, 0.6);
@@ -2248,8 +2258,11 @@ footer .voog-reference svg path {
 .light-background {
   color: rgba(0, 0, 0, 0.5);
 }
-.light-background h1, .light-background h2, .light-background h3, .light-background h4, .light-background p {
+.light-background h1, .light-background h2, .light-background h3, .light-background h4, .light-background p, .light-background input {
   color: rgba(0, 0, 0, 0.5);
+}
+.light-background .post-title a {
+  color: #000000;
 }
 .footer-row .light-background a {
   color: #000000;
