@@ -500,11 +500,6 @@ label .form_control_indicator:before {
 .inner.main-inner {
   width: auto !important;
 }
-@media screen and (min-width: 1500px) {
-  .inner {
-    width: 75%;
-  }
-}
 
 .container-wrap {
   position: relative;
