@@ -239,7 +239,7 @@
         var padSidebarTarget = $('.sidebar-inner').css('padding-bottom', whSideFooter);
       };
 
-
+      $('.content-top').removeAttr("style");
       var commonDoc = $(document).height(),
           commonConTop = $('.content-top').height();
 

@@ -559,6 +559,10 @@ label {
   &.main-inner {
     width: auto !important;
   }
+
+  @media screen and (min-width: $break-large) {
+    width: 75%;
+  }
 }
 
 .container-wrap {

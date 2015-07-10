@@ -15,25 +15,28 @@
       {% include "sidebar" %}
     </aside>
     <div class="main">
-      <div class="inner">
+
         <div class="container-wrap cfx">
-          <div class="content-full content-top  js-content-top">
+          <div class="content-full content-top js-content-top">
             <div class="background-color"></div>
             <div class="container  js-background-type {{ content_top_bg_type }}">
 
-              {% include "submenu" %}
-              {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_top_bg_image }}" data-bg-image-sizes="{{ content_top_bg_image_sizes_str | escape }}" data-bg-color="{{ content_top_bg_color }}" data-bg-color-data="{{ content_top_bg_color_data_str | escape }}"></button>{% endif %}
+              <div class="inner">
 
+                {% include "submenu" %}
+                {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_top_bg_image }}" data-bg-image-sizes="{{ content_top_bg_image_sizes_str | escape }}" data-bg-color="{{ content_top_bg_color }}" data-bg-color-data="{{ content_top_bg_color_data_str | escape }}"></button>{% endif %}
 
-              <section class="content cfx formatted">
+                <section class="content cfx formatted">
+                  {% contentblock name="content_header" publish_default_content="true" %}<h1>{{ page.title }}</h1>{% endcontentblock %}
+                  {% content %}
+                </section>
 
-                {% contentblock name="content_header" publish_default_content="true" %}<h1>{{ page.title }}</h1>{% endcontentblock %}
-                {% content %}
-              </section>
+              </div>
+
             </div>
           </div>
         </div>
-      </div>
+
       {% include "footer" %}
     </div>
   </div>
