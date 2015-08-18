@@ -335,7 +335,10 @@ blockquote {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  color: white;
+}
+.light-background .formatted .form_submit input, .light-background .formatted
+.submit {
+  color: #ffffff;
   color: rgba(255, 255, 255, 0.5);
 }
 .form_submit input:hover,
@@ -2246,10 +2249,10 @@ footer .voog-reference svg path {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.light-background {
+.light-background .formatted {
   color: rgba(0, 0, 0, 0.5);
 }
-.light-background h1, .light-background h2, .light-background h3, .light-background h4, .light-background p, .light-background input {
+.light-background .formatted h1, .light-background .formatted h2, .light-background .formatted h3, .light-background .formatted h4, .light-background .formatted p, .light-background .formatted input {
   color: rgba(0, 0, 0, 0.5);
 }
 .light-background .post-title a {

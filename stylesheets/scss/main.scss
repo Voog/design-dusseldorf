@@ -374,7 +374,10 @@ blockquote {
   background: #2b2b2b;
   -webkit-appearance: none;
   @include border-radius(0);
-  @include color(white, .5);
+
+  .light-background .formatted & {
+    @include color($white, .5);
+  }
 
   &:hover {
     @include bg(#2b2b2b, .8);
@@ -2405,6 +2408,7 @@ table {
 .dark-background {
   .formatted {
     color: $white;
+
     & h1, h2, h3, h4, p, pre, a, b, input {
       color: $white;
     }
@@ -2424,9 +2428,12 @@ table {
 }
 
 .light-background {
-  color: rgba(0, 0, 0, 0.5);
-  & h1, h2, h3, h4, p, input {
+  .formatted {
     color: rgba(0, 0, 0, 0.5);
+
+    & h1, h2, h3, h4, p, input {
+      color: rgba(0, 0, 0, 0.5);
+    }
   }
 
   .post-title a {
