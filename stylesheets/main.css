@@ -8,17 +8,17 @@ ol li, .lang-menu-btn {
   padding: 0;
 }
 
-.bgpicker-btn, .lang-menu-btn {
+.voog-bg-picker-btn, .lang-menu-btn {
   margin: 0;
   padding: 0;
   cursor: pointer;
   border: none;
   background: none;
 }
-.bgpicker-btn:focus, .lang-menu-btn:focus {
+.voog-bg-picker-btn:focus, .lang-menu-btn:focus {
   outline: none;
 }
-.bgpicker-btn::-moz-focus-inner, .lang-menu-btn::-moz-focus-inner {
+.voog-bg-picker-btn::-moz-focus-inner, .lang-menu-btn::-moz-focus-inner {
   padding: 0;
   border: none;
 }
