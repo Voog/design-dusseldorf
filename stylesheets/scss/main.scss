@@ -653,6 +653,14 @@ label {
     white-space: nowrap;
     color: $third-color;
 
+    .dark-background & {
+      @include color($white, .42);
+
+      &:hover {
+        @include color($white, 1);
+      }
+    }
+
     &:hover {
       color: $main-color;
     }
@@ -2395,9 +2403,11 @@ table {
 }
 
 .dark-background {
-  color: $white;
-  & h1, h2, h3, h4, p, pre, a, b, input {
+  .formatted {
     color: $white;
+    & h1, h2, h3, h4, p, pre, a, b, input {
+      color: $white;
+    }
   }
 
   .post-title a {

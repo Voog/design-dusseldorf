@@ -596,6 +596,13 @@ label .form_control_indicator:before {
   white-space: nowrap;
   color: #a3a3a3;
 }
+.dark-background .sub-menu a {
+  color: #ffffff;
+  color: rgba(255, 255, 255, 0.42);
+}
+.dark-background .sub-menu a:hover {
+  color: white;
+}
 .sub-menu a:hover {
   color: #222222;
 }
@@ -2223,10 +2230,10 @@ footer .voog-reference svg path {
   bottom: 0;
 }
 
-.dark-background {
+.dark-background .formatted {
   color: #ffffff;
 }
-.dark-background h1, .dark-background h2, .dark-background h3, .dark-background h4, .dark-background p, .dark-background pre, .dark-background a, .dark-background b, .dark-background input {
+.dark-background .formatted h1, .dark-background .formatted h2, .dark-background .formatted h3, .dark-background .formatted h4, .dark-background .formatted p, .dark-background .formatted pre, .dark-background .formatted a, .dark-background .formatted b, .dark-background .formatted input {
   color: #ffffff;
 }
 .dark-background .post-title a {
