@@ -51,6 +51,7 @@
 
         $('.comment-form-focus-input').focus(function() {
             var $el = $(this).hide();
+            setCommonContent();
             $(this).closest('.comment-form').find('.form_area').show().find('textarea').focus();
         });
 
@@ -96,7 +97,6 @@
     });
 
     var setFrontContent = function() {
-
       $('.main-menu').removeAttr("style");
       $('.header-row .content-full').removeAttr("style");
       $('.center-row .content-inner').removeAttr("style");
