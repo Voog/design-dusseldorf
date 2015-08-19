@@ -1216,6 +1216,9 @@ label .form_control_indicator:before {
   min-height: 30px;
   padding-bottom: 10px;
 }
+.comment-form form {
+  padding-top: 0;
+}
 .comment-form .comment-form-focus-input {
   position: absolute;
   z-index: 10;

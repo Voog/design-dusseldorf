@@ -1266,6 +1266,10 @@ $flags:
   min-height: 30px;
   padding-bottom: 10px;
 
+  form {
+    padding-top: 0;
+  }
+
   .comment-form-focus-input {
     position: absolute;
     z-index: 10;

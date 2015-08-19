@@ -11151,8 +11151,8 @@ MMCQ = (function() {
 
         $('.comment-form-focus-input').focus(function() {
             var $el = $(this).hide();
-            setCommonContent();
             $(this).closest('.comment-form').find('.form_area').show().find('textarea').focus();
+            setCommonContent();
         });
 
         if ($('body').hasClass('editmode')) {
