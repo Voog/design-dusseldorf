@@ -265,7 +265,6 @@
           var commonConTopTarget = $('.js-content-top').css('min-height', commonDoc);
         }
       } else {
-        console.log('sadfsafd');
           $('.js-content-top').css('min-height', 0);
       }
     };
