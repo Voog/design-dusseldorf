@@ -232,19 +232,25 @@
     };
 
     var setCommonContent = function() {
-      var padSidebar = parseInt($('.sidebar-inner').css('padding-bottom')),
-          whSideFooter = $('.main > footer').height();
+      if ($(window).width() > 600) {
+        var padSidebar = parseInt($('.sidebar-inner').css('padding-bottom')),
+            whSideFooter = $('.main > footer').height();
 
-      if (padSidebar < whSideFooter) {
-        var padSidebarTarget = $('.sidebar-inner').css('padding-bottom', whSideFooter);
-      };
+        if (padSidebar < whSideFooter) {
+          var padSidebarTarget = $('.sidebar-inner').css('padding-bottom', whSideFooter);
+        }
 
-      $('.js-content-top').removeAttr("style");
-      var commonDoc = $(document).height(),
-          commonConTop = $('.js-content-top').height();
+        $('.js-content-top').removeAttr("style");
+        var commonDoc = $(document).height(),
+            commonConTop = $('.js-content-top').height();
 
-      if (commonConTop < commonDoc) {
-        var commonConTopTarget = $('.js-content-top').css('min-height', commonDoc);
+        if (commonConTop < commonDoc) {
+          var commonConTopTarget = $('.js-content-top').css('min-height', commonDoc);
+        }
+      } else {
+        if ($('.js-content-top').css('min-height') > 0) {
+          $('.js-content-top').css('min-height', 0);
+        }
       }
     };
 

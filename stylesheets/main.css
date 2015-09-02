@@ -483,9 +483,6 @@ label .form_control_indicator:before {
 .main .footer-left {
   padding-top: 20px;
 }
-.editmode .main {
-  padding-bottom: 40px;
-}
 @media screen and (min-width: 600px) {
   .editmode .main {
     padding-bottom: 40px;
