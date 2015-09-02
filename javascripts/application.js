@@ -11101,6 +11101,22 @@ MMCQ = (function() {
 ;(function($) {
 
     $(function() {
+      // Function to limit the rate at which a function can fire.
+      var debounce = function(func, wait, immediate) {
+        var timeout;
+        return function() {
+          var context = this, args = arguments;
+          var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+        };
+      };
+
         $('.js-popup-menu').jsPopupMenu();
 
         if ($('html').hasClass('no-placeholder')) {
@@ -11157,12 +11173,13 @@ MMCQ = (function() {
 
         if ($('body').hasClass('editmode')) {
             setTitlebox();
-            $(window).resize(setTitlebox);
+
+            $(window).resize(debounce(setTitlebox, 100));
         }
 
         if ($('body').hasClass('front-page')) {
             setFrontContent();
-            $(window).resize(setFrontContent);
+            $(window).resize(debounce(setFrontContent, 100));
 
             // In edit mode maintain column equilibrium while user inputs new data
             var delay = (function(){
@@ -11186,7 +11203,7 @@ MMCQ = (function() {
 
         if (!$('body').hasClass('front-page')) {
             setCommonContent();
-            $(window).resize(setCommonContent);
+            $(window).resize(debounce(setCommonContent, 100));
         }
 
         if ($('.comment-form').hasClass('form_with_errors')) {
@@ -11348,9 +11365,7 @@ MMCQ = (function() {
           var commonConTopTarget = $('.js-content-top').css('min-height', commonDoc);
         }
       } else {
-        if ($('.js-content-top').css('min-height') > 0) {
-
-        }
+        console.log('sadfsafd');
         $('.js-content-top').css('min-height', 0);
       }
     };
