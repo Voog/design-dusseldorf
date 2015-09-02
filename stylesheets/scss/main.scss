@@ -9,16 +9,17 @@
 @include font-face('Lato', '../assets/lato-bold', 700);
 @include font-face('Lato', '../assets/lato-bold-italic', 700, italic);
 
-$main-color: #222222;
+$black: #000000;
+$white: #ffffff;
+
+$main-color: rgba($black, .87);
 $secondary-color: #000000;
 
 $link-color: #0066bb;
-$third-color: #a3a3a3;
+$third-color: rgba($black, .36);
 $bg-color: #f6f6f6;
 $error-color: #c70909;
 $success-color: #409e13;
-$black: #000000;
-$white: #ffffff;
 
 $font-size-xs: 10px;
 $font-size: 18px;
@@ -127,6 +128,14 @@ h3 {
   @extend %nulling;
   font: normal 30px/1.1 $font-secondary;
   color: $main-color;
+
+  .dark-background & {
+    color: rgba($white, .87);
+
+    .placeholder {
+      color: rgba(255,255,255,.5);
+    }
+  }
 }
 
 h1 {
@@ -549,18 +558,6 @@ label {
 
     h3 {
       font-size: $font-size-xl * 1.1;
-    }
-
-    .dark-background {
-      h1,
-      h2,
-      h3 {
-        color: white;
-      }
-
-      .placeholder {
-        color: rgba(255,255,255,.5);
-      }
     }
   }
 }
@@ -2425,6 +2422,10 @@ table {
     &:hover {
       color: rgba(255,255,255,.75);
     }
+  }
+
+  .post-date {
+    color: rgba($white, .36);
   }
 
   .footer-row & {

@@ -77,7 +77,7 @@ body {
   position: relative;
   min-width: 1024px;
   text-align: left;
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
   background: white;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -116,7 +116,17 @@ h1,
 h2,
 h3 {
   font: normal 30px/1.1 "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
+}
+.dark-background h1, .dark-background
+h2, .dark-background
+h3 {
+  color: rgba(255, 255, 255, 0.87);
+}
+.dark-background h1 .placeholder, .dark-background
+h2 .placeholder, .dark-background
+h3 .placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 h1 {
@@ -219,7 +229,7 @@ blockquote {
   position: relative;
   font: 18px/1.67 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   cursor: pointer;
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
   background: white;
 }
 .jq-select select {
@@ -235,7 +245,7 @@ blockquote {
   font: 18px/1.67 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   cursor: pointer;
   opacity: 0;
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
   border: none;
   -webkit-appearance: none;
   filter: alpha(opacity=0);
@@ -263,7 +273,7 @@ blockquote {
   pointer-events: none;
   border: solid transparent;
   border-width: 6px;
-  border-top-color: #222222;
+  border-top-color: rgba(0, 0, 0, 0.87);
 }
 
 .jq-select-content {
@@ -299,7 +309,7 @@ blockquote {
   width: 30%;
   padding: 4px 5px;
   font: 18px/1.67 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
   border: none;
   outline: none;
   background: #ffffff;
@@ -421,7 +431,7 @@ label .form_field_radio + .form_control_indicator:before {
   border: 3px solid white;
 }
 label .form_field_radio:checked + .form_control_indicator:before {
-  background-color: #222222;
+  background-color: rgba(0, 0, 0, 0.87);
 }
 label .form_control_indicator {
   position: relative;
@@ -525,14 +535,6 @@ label .form_control_indicator:before {
 .front-page .main-inner h3 {
   font-size: 26.4px;
 }
-.front-page .main-inner .dark-background h1,
-.front-page .main-inner .dark-background h2,
-.front-page .main-inner .dark-background h3 {
-  color: white;
-}
-.front-page .main-inner .dark-background .placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
 
 .inner.main-inner {
   width: auto !important;
@@ -561,7 +563,7 @@ label .form_control_indicator:before {
   line-height: 32px;
   vertical-align: top;
   text-transform: uppercase;
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -575,7 +577,7 @@ label .form_control_indicator:before {
   }
 }
 .site-title a {
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
 }
 .topbar .site-title {
   min-height: 40px;
@@ -605,7 +607,7 @@ label .form_control_indicator:before {
   text-transform: uppercase;
 }
 .main-menu a {
-  color: #a3a3a3;
+  color: rgba(0, 0, 0, 0.36);
 }
 .main-menu a:hover, .main-menu a.active {
   color: #000000;
@@ -628,7 +630,7 @@ label .form_control_indicator:before {
   margin-top: 3px;
   margin-bottom: 11px;
   white-space: nowrap;
-  color: #a3a3a3;
+  color: rgba(0, 0, 0, 0.36);
 }
 .dark-background .sub-menu a {
   color: #ffffff;
@@ -638,13 +640,13 @@ label .form_control_indicator:before {
   color: white;
 }
 .sub-menu a:hover {
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
 }
 .sub-menu a.active {
   margin-bottom: 4px;
   padding-bottom: 4px;
-  color: #222222;
-  border-bottom: 3px solid #222222;
+  color: rgba(0, 0, 0, 0.87);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.87);
 }
 .sub-menu a.edy-cbtn {
   padding: 0;
@@ -1190,7 +1192,7 @@ label .form_control_indicator:before {
 
 .post-date {
   display: inline;
-  color: #a3a3a3;
+  color: rgba(0, 0, 0, 0.36);
 }
 
 .post-content {
@@ -1299,7 +1301,7 @@ label .form_control_indicator:before {
 }
 .comment .comment-info {
   font-size: 14px;
-  color: #a3a3a3;
+  color: rgba(0, 0, 0, 0.36);
 }
 .comment .comment-info .edy-site-btn-removecomment {
   vertical-align: -1px;
@@ -1317,8 +1319,8 @@ table {
 table td,
 table th {
   padding: 10px;
-  border: 1px solid #a3a3a3;
-  border-color: rgba(163, 163, 163, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.36);
+  border-color: rgba(0, 0, 0, 0.9);
 }
 table th {
   font-weight: bold;
@@ -1393,10 +1395,10 @@ footer .voog-reference {
   fill: #ffffff;
 }
 .light-background .voog-reference svg path {
-  fill: #a3a3a3;
+  fill: rgba(0, 0, 0, 0.36);
 }
 footer .voog-reference svg path {
-  fill: #a3a3a3;
+  fill: rgba(0, 0, 0, 0.36);
 }
 .front-page .voog-reference {
   display: block;
@@ -1444,7 +1446,7 @@ footer .voog-reference svg path {
 }
 
 .light-background {
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
 }
 .light-background .edy-empty-bordered {
   border-color: white;
@@ -1540,7 +1542,7 @@ footer .voog-reference svg path {
   margin: 0;
   padding: 4px 0;
   font: 14px/22px "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
   border: none;
   outline: 0;
   background: none;
@@ -1706,7 +1708,7 @@ footer .voog-reference svg path {
   padding: 40px;
   text-align: center;
   vertical-align: middle;
-  color: #a3a3a3;
+  color: rgba(0, 0, 0, 0.36);
 }
 .voog-search-noresults.voog-search-noresults-visible {
   display: table;
@@ -1723,11 +1725,11 @@ footer .voog-reference svg path {
   font-size: 16px;
 }
 .voog-search-result .voog-search-result-link {
-  color: #222222;
+  color: rgba(0, 0, 0, 0.87);
 }
 .voog-search-result .voog-search-result-link:hover {
-  color: #222222;
-  color: rgba(34, 34, 34, 0.8);
+  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.8);
 }
 .voog-search-result .voog-search-result-content {
   margin: 0;
@@ -1994,7 +1996,7 @@ footer .voog-reference svg path {
     width: 20px;
     height: 3px;
     content: '';
-    background: #222222;
+    background: rgba(0, 0, 0, 0.87);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -2188,7 +2190,7 @@ footer .voog-reference svg path {
     width: 20px;
     height: 3px;
     content: '';
-    background: #222222;
+    background: rgba(0, 0, 0, 0.87);
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -2275,6 +2277,9 @@ footer .voog-reference svg path {
 }
 .dark-background .post-title a:hover {
   color: rgba(255, 255, 255, 0.75);
+}
+.dark-background .post-date {
+  color: rgba(255, 255, 255, 0.36);
 }
 .footer-row .dark-background {
   color: rgba(255, 255, 255, 0.6);
