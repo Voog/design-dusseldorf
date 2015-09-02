@@ -11339,12 +11339,12 @@ MMCQ = (function() {
         var padSidebarTarget = $('.sidebar-inner').css('padding-bottom', whSideFooter);
       };
 
-      $('.content-top').removeAttr("style");
+      $('.js-content-top').removeAttr("style");
       var commonDoc = $(document).height(),
-          commonConTop = $('.content-top').height();
+          commonConTop = $('.js-content-top').height();
 
       if (commonConTop < commonDoc) {
-        var commonConTopTarget = $('.content-top').css('min-height', commonDoc);
+        var commonConTopTarget = $('.js-content-top').css('min-height', commonDoc);
       }
     };
 
