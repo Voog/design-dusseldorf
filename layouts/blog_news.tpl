@@ -16,7 +16,7 @@
     </aside>
     <div class="main">
       <div class="container-wrap cfx">
-        <div class="content-full content-top  js-content-top">
+        <div class="content-full content-top cfx js-content-top">
           <div class="background-color"></div>
           <div class="container js-background-type {{ content_top_bg_type }}">
 
