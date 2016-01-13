@@ -19,7 +19,7 @@
       <div class="container-wrap cfx">
       <div class="main-inner-row header-row">
 
-        <div class="content-full content-top cfx js-content-top">
+        <div class="content-full content-top js-content-top">
           <div class="background-color"></div>
           {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_top_bg_image }}" data-bg-image-sizes="{{ content_top_bg_image_sizes_str | escape }}" data-bg-color="{{ content_top_bg_color }}" data-bg-color-data="{{ content_top_bg_color_data_str | escape }}"></button>{% endif %}
           <div class="inner-padding">
