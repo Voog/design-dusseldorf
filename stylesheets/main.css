@@ -179,7 +179,7 @@ pre {
   background-color: rgba(255, 255, 255, 0.3);
 }
 .light-background pre {
-  background-color: #000000;
+  background-color: black;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -310,7 +310,7 @@ blockquote {
   color: rgba(0, 0, 0, 0.87);
   border: none;
   outline: none;
-  background: #ffffff;
+  background: white;
   border-radius: 0;
   box-sizing: border-box;
 }
@@ -377,7 +377,7 @@ blockquote {
 }
 .light-background .formatted .form_submit input, .light-background .formatted
 .submit {
-  color: #ffffff;
+  color: white;
   color: rgba(255, 255, 255, 0.5);
 }
 .form_submit input:hover,
@@ -600,7 +600,7 @@ label .form_control_indicator:before {
   color: rgba(0, 0, 0, 0.36);
 }
 .main-menu a:hover, .main-menu a.active {
-  color: #000000;
+  color: black;
 }
 
 /* submenu */
@@ -623,7 +623,7 @@ label .form_control_indicator:before {
   color: rgba(0, 0, 0, 0.36);
 }
 .dark-background .sub-menu a {
-  color: #ffffff;
+  color: white;
   color: rgba(255, 255, 255, 0.42);
 }
 .dark-background .sub-menu a:hover {
@@ -854,7 +854,7 @@ label .form_control_indicator:before {
 }
 
 .lang-options {
-  background-color: #000000;
+  background-color: black;
   background-color: rgba(0, 0, 0, 0.09);
 }
 .lang-options .menu .menu-item {
@@ -875,7 +875,7 @@ label .form_control_indicator:before {
     padding: 0;
   }
   .lang-options .menu .menu-item {
-    color: #ffffff;
+    color: white;
     color: rgba(255, 255, 255, 0.5);
   }
 }
@@ -916,7 +916,7 @@ label .form_control_indicator:before {
     color: white;
   }
   .option-btn:hover {
-    color: #ffffff;
+    color: white;
     color: rgba(255, 255, 255, 0.8);
   }
 }
@@ -1020,7 +1020,7 @@ label .form_control_indicator:before {
   padding: 5px 0;
   line-height: 1;
   text-align: left;
-  background: #ffffff;
+  background: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) ;
 }
 .no-boxshadow .lang-menu-popover {
@@ -1167,10 +1167,10 @@ label .form_control_indicator:before {
   word-wrap: break-word;
 }
 .blog-list .post-title a {
-  color: #000000;
+  color: black;
 }
 .blog-list .post-title a:hover {
-  color: #000000;
+  color: black;
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -1326,7 +1326,7 @@ table th {
 .footer {
   position: absolute;
   z-index: 6;
-  background: #ffffff;
+  background: white;
   right: 100%;
   bottom: 0;
   width: 200px;
@@ -1378,7 +1378,7 @@ footer .voog-reference {
   width: 35px;
 }
 .dark-background .voog-reference svg path {
-  fill: #ffffff;
+  fill: white;
 }
 .light-background .voog-reference svg path {
   fill: rgba(0, 0, 0, 0.36);
@@ -1992,7 +1992,7 @@ footer .voog-reference svg path {
   .mobile-menu-toggler span.flags-disabled .language-menu-btn .lang-title, .mobile-menu-toggler span:before.flags-disabled .language-menu-btn .lang-title, .mobile-menu-toggler span:after.flags-disabled .language-menu-btn .lang-title {
     display: inline-block;
     position: static;
-    color: #ffffff;
+    color: white;
   }
   .mobile-menu-toggler span:before {
     top: 6px;
@@ -2093,7 +2093,7 @@ footer .voog-reference svg path {
   #mobile-menu.flags-disabled .language-menu-btn .lang-title {
     display: inline-block;
     position: static;
-    color: #ffffff;
+    color: white;
   }
   .language-menu-open #mobile-menu .language-menu-btn {
     display: none;
@@ -2242,13 +2242,13 @@ footer .voog-reference svg path {
 }
 
 .dark-background .formatted {
-  color: #ffffff;
+  color: white;
 }
 .dark-background .formatted h1, .dark-background .formatted h2, .dark-background .formatted h3, .dark-background .formatted h4, .dark-background .formatted p, .dark-background .formatted pre, .dark-background .formatted a, .dark-background .formatted b, .dark-background .formatted input {
-  color: #ffffff;
+  color: white;
 }
 .dark-background .post-title a {
-  color: #ffffff;
+  color: white;
 }
 .dark-background .post-title a:hover {
   color: rgba(255, 255, 255, 0.75);
@@ -2267,10 +2267,10 @@ footer .voog-reference svg path {
   color: rgba(0, 0, 0, 0.5);
 }
 .light-background .post-title a {
-  color: #000000;
+  color: black;
 }
 .footer-row .light-background a {
-  color: #000000;
+  color: black;
 }
 .footer-row .light-background b {
   color: rgba(0, 0, 0, 0.5);
@@ -2299,22 +2299,22 @@ footer .voog-reference svg path {
   hyphens: auto;
 }
 .dark-background .custom-btn {
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid white;
+  color: white;
 }
 .dark-background .custom-btn:hover {
   background: #2b2b2b;
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid white;
+  color: white;
 }
 .light-background .custom-btn {
-  border: 2px solid #000000;
-  color: #000000;
+  border: 2px solid black;
+  color: black;
 }
 .light-background .custom-btn:hover {
   background: #2b2b2b;
-  border: 2px solid #ffffff;
-  color: #ffffff;
+  border: 2px solid white;
+  color: white;
 }
 footer .custom-btn {
   display: none;
@@ -2344,14 +2344,14 @@ footer .custom-btn {
 }
 .footer-row .dark-background .custom-btn {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  color: white;
 }
 .footer-row .light-background .custom-btn {
   border: 1px solid #333;
-  color: #000000;
+  color: black;
 }
 .footer-row .light-background .custom-btn:hover {
-  color: #ffffff;
+  color: white;
 }
 .footer-row .footer-right {
   float: right;
@@ -2364,5 +2364,5 @@ footer .custom-btn {
   padding-top: 0;
 }
 .footer-row .light-background .custom-btn:hover a {
-  color: #ffffff;
+  color: white;
 }
