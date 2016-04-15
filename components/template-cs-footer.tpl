@@ -5,7 +5,7 @@
      "editor": "colorPicker",
      "scope": "global"
   */
-  --footer-background-color: #f4f4f4;
+  --footer-background-color: #f6f6f6;
   /* VoogStyle
      "pathI18n": ["custom_styles.footer", "custom_styles.text"],
      "titleI18n": "custom_styles.font",
@@ -14,7 +14,7 @@
      "featured": true,
      "scope": "global"
   */
-  --footer-font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  --footer-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
      "pathI18n": ["custom_styles.footer", "custom_styles.text"],
      "titleI18n": "custom_styles.alignment",
@@ -43,7 +43,7 @@
      "unit": "em",
      "scope": "global"
   */
-  --footer-line-height: 1.45 #em;
+  --footer-line-height: 32px #em;
   /* VoogStyle
     "pathI18n": ["custom_styles.footer", "custom_styles.text"],
     "titleI18n": "custom_styles.size",
@@ -116,5 +116,5 @@
     "scope": "global",
     "featured": true
   */
-  --footer-color: #333;
+  --footer-color: rgba(0, 0, 0, 0.87);
 }

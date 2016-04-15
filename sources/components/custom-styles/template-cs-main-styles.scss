@@ -21,7 +21,7 @@
 
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles"],
-     "titleI18n": "custom_styles.font",
+     "titleI18n": "custom_styles.font_primary",
      "editor": "listPicker",
      "list": {{ base_font_set }},
      "featured": true,
@@ -42,6 +42,17 @@
 
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles"],
+     "titleI18n": "custom_styles.font_secondary",
+     "editor": "listPicker",
+     "list": {{ base_font_set }},
+     "featured": true,
+     "scope": "global"
+     ]
+  */
+  --font-secondary: $font-secondary;
+
+  /* VoogStyle
+     "pathI18n": ["custom_styles.main_styles"],
      "titleI18n": "custom_styles.background_color",
      "editor": "colorPicker",
      "scope": "global",
@@ -50,7 +61,7 @@
       "--footer-background-color"
     ]
   */
-  --bg-color: $bg-color;
+  --background-color: $color-white;
 
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
@@ -58,19 +69,8 @@
      "editor": "colorPicker",
      "scope": "global",
      "featured": true,
-     "boundVariables": [
-        "--header-site-title-color",
-        "--header-mainmenu-hover-color",
-        "--header-mainmenu-active-color",
-        "--content-submenu--hover-color",
-        "--content-submenu--active-color",
-        "--h1-color",
-        "--h2-color",
-        "--h3-color",
-        "--content-links-hover-color"
-     ]
   */
-  --second-color: $second-color;
+  --main-color: $main-color;
 
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
@@ -84,7 +84,7 @@
         "--footer-text-color"
      ]
   */
-  --main-color: $main-color;
+  --second-color: $second-color;
 
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],

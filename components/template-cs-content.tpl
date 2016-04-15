@@ -26,7 +26,7 @@
      "unit": "px",
      "scope": "global"
   */
-  --main-width: 700px;
+  --site-width: 1024px;
   /* VoogStyle
      "pathI18n": ["custom_styles.content", "custom_styles.sub_menu", "custom_styles.normal"],
      "titleI18n": "custom_styles.font",
@@ -35,7 +35,7 @@
      "featured": true,
      "scope": "global"
   */
-  --content-submenu--font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  --content-submenu--font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
      "pathI18n": ["custom_styles.content", "custom_styles.sub_menu", "custom_styles.normal"],
      "titleI18n": "custom_styles.letter_spacing",
@@ -264,7 +264,7 @@
     "scope": "global",
     "featured": true
   */
-  --content-submenu--color: #818181;
+  --content-submenu--color: rgba(0, 0, 0, 0.36);
  /* VoogStyle
   "pathI18n": ["custom_styles.content", "custom_styles.sub_menu", "custom_styles.hover"],
   "titleI18n": "custom_styles.color",
@@ -292,7 +292,7 @@
        "--form-field-text-font-family"
      ]
   */
-  --content-font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  --content-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
      "pathI18n": ["custom_styles.content", "custom_styles.text"],
      "titleI18n": "custom_styles.alignment",
@@ -321,7 +321,7 @@
      "unit": "em",
      "scope": "global"
   */
-  --content-line-height: 1.45 #em;
+  --content-line-height: 32px #em;
   /* VoogStyle
     "pathI18n": ["custom_styles.content", "custom_styles.text"],
     "titleI18n": "custom_styles.size",
@@ -398,7 +398,7 @@
     "scope": "global",
     "featured": true
   */
-  --content-color: #333;
+  --content-color: rgba(0, 0, 0, 0.87);
   /* VoogStyle
     "pathI18n": ["custom_styles.content", "custom_styles.link", "custom_styles.normal"],
     "titleI18n": "custom_styles.size",
@@ -548,7 +548,7 @@
     "scope": "global",
     "featured": true
   */
-  --content-links-color: #818181;
+  --content-links-color: rgba(0, 0, 0, 0.36);
  /* VoogStyle
   "pathI18n": ["custom_styles.content", "custom_styles.link", "custom_styles.hover"],
   "titleI18n": "custom_styles.color",
@@ -576,7 +576,7 @@
     "featured": true,
     "scope": "global"
   */
-  --content-button-font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  --content-button-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
     "pathI18n": ["custom_styles.content", "custom_styles.button", "custom_styles.normal"],
     "titleI18n": "custom_styles.letter_spacing",

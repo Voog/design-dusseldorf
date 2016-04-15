@@ -1,7 +1,7 @@
 :root {
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles"],
-     "titleI18n": "custom_styles.font",
+     "titleI18n": "custom_styles.font_primary",
      "editor": "listPicker",
      "list": {{ base_font_set }},
      "featured": true,
@@ -18,7 +18,17 @@
       "--form-field-text-font-family"
      ]
   */
-  --font-main: "Montserrat", Helvetica, Arial, sans-serif;
+  --font-main: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* VoogStyle
+     "pathI18n": ["custom_styles.main_styles"],
+     "titleI18n": "custom_styles.font_secondary",
+     "editor": "listPicker",
+     "list": {{ base_font_set }},
+     "featured": true,
+     "scope": "global"
+     ]
+  */
+  --font-secondary: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles"],
      "titleI18n": "custom_styles.background_color",
@@ -29,26 +39,15 @@
       "--footer-background-color"
     ]
   */
-  --bg-color: #f4f4f4;
+  --background-color: white;
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
      "titleI18n": "custom_styles.primary_color",
      "editor": "colorPicker",
      "scope": "global",
      "featured": true,
-     "boundVariables": [
-        "--header-site-title-color",
-        "--header-mainmenu-hover-color",
-        "--header-mainmenu-active-color",
-        "--content-submenu--hover-color",
-        "--content-submenu--active-color",
-        "--h1-color",
-        "--h2-color",
-        "--h3-color",
-        "--content-links-hover-color"
-     ]
   */
-  --second-color: black;
+  --main-color: rgba(0, 0, 0, 0.87);
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
      "titleI18n": "custom_styles.secondary_color",
@@ -61,7 +60,7 @@
         "--footer-text-color"
      ]
   */
-  --main-color: #333;
+  --second-color: black;
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
      "titleI18n": "custom_styles.third_color",
@@ -75,7 +74,7 @@
       "--table-border-color"
      ]
   */
-  --third-color: #818181;
+  --third-color: rgba(0, 0, 0, 0.36);
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
      "titleI18n": "custom_styles.fourth_color",

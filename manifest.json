@@ -197,6 +197,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/template-variables.tpl",
+      "layout_name": "template-variables",
+      "title": "template-variables"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/topbar.tpl",
       "layout_name": "topbar",
       "title": "topbar"
@@ -324,7 +331,7 @@
       "filename": "montserrat-bold.svg"
     },
     {
-      "content_type": "application/x-font-truetype",
+      "content_type": "application/font-sfnt",
       "file": "assets/montserrat-bold.ttf",
       "kind": "assets",
       "filename": "montserrat-bold.ttf"
@@ -354,7 +361,7 @@
       "filename": "montserrat-regular.svg"
     },
     {
-      "content_type": "application/x-font-truetype",
+      "content_type": "application/font-sfnt",
       "file": "assets/montserrat-regular.ttf",
       "kind": "assets",
       "filename": "montserrat-regular.ttf"

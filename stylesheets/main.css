@@ -113,7 +113,7 @@ img {
 h1,
 h2,
 h3 {
-  font: normal 30px/1.1 "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: normal 30px / 1.1 "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: rgba(0, 0, 0, 0.87);
 }
 .dark-background h1, .dark-background
@@ -1453,10 +1453,10 @@ footer .voog-reference svg path {
   color: rgba(0, 0, 0, 0.5);
 }
 .light-background .edy-texteditor-active {
-  outline: 1px solid rgba(0, 0, 0, 0.2);
+  outline: 1px solid black;
 }
 .light-background .edy-texteditor-active:hover {
-  outline: 1px solid rgba(0, 0, 0, 0.3);
+  outline: 1px solid black;
 }
 .light-background .edy-empty-bordered {
   color: rgba(27, 33, 36, 0.33);
@@ -1474,7 +1474,7 @@ footer .voog-reference svg path {
   outline: 1px solid rgba(255, 255, 255, 0.63);
 }
 .dark-background .placeholder {
-  color: #FFFFFF;
+  color: white;
   color: rgba(255, 255, 255, 0.5);
 }
 .dark-background .edy-empty-bordered, .dark-background .edy-taglist {
@@ -1482,7 +1482,7 @@ footer .voog-reference svg path {
   border: 1px dashed rgba(255, 255, 255, 0.7);
 }
 .dark-background .edy-taglist-openarrow::after {
-  border-color: #fff transparent transparent;
+  border-color: white transparent transparent;
 }
 
 .front-page .footer-row .edy-empty-bordered {
@@ -1506,7 +1506,7 @@ footer .voog-reference svg path {
 /* search */
 .search {
   position: relative;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 .search .search-box {
   position: relative;
@@ -1650,7 +1650,7 @@ footer .voog-reference svg path {
   display: block;
   width: 300px;
   opacity: 1;
-  box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.05) ;
+  box-shadow: 10px 0 10px rgba(0, 0, 0, 0.05) ;
 }
 
 .voog-search-inner {
@@ -2337,7 +2337,7 @@ footer .custom-btn {
   font-size: 10px;
   line-height: 24px;
   text-align: center;
-  margin: 0px 0px;
+  margin: 0;
 }
 .footer-row .custom-btn:hover {
   background: #6b6b6b;

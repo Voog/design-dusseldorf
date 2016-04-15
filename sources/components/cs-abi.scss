@@ -1,93 +1,3 @@
-// =============================================================================
-// TEMPLATE CUSTOM STYLES.
-// This file sets the configuration for design editor tool.
-//
-// This file will be converted to CSS, copied under "/components" and renamed to
-// "*.tpl".
-//
-// The output component can be included in any "layout" or "component".
-// =============================================================================
-
-// =============================================================================
-// Modules
-// =============================================================================
-@import '../../stylesheets/modules/variables';
-
-// =============================================================================
-// Default stylesheet override styles.
-// =============================================================================
-
-.topbar,
-.sidebar,
-.footer {
-  background-color: var(--background-color);
-}
-
-// main font 
-
-body,
-h3,
-.font-size-small,
-.jq-select,
-.jq-select select,
-.form_field_textfield,
-.form_field_textarea,
-.form_submit input {
-  font-family: var(--font-main);
-}
-
-h1,
-h2,
-.front-page .main-inner,
-.site-title,
-.main-menu,
-.sub-menu,
-.content-inner,
-.footer-row .content-inner,
-.search .search-input,
-#mobile-menu
- {
-  font-family: var(--font-secondary);
-}
-
-body,
-h1,
-h2,
-h3,
-.jq-select,
-.jq-select select,
-.form_field_textfield,
-.form_field_textarea,
-.site-title,
-.sub-menu a:hover,
-.sub-menu a.active,
-.light-background,
-.search-input,
-.voog-search-result .voog-search-result-link,
-.voog-search-result .voog-search-result-link:hover {
-  color: var(--main-color);
-}
-
-.sub-menu a.active {
-  border-bottom-color: var(--main-color);
-}
-
-.main-menu a:hover,
-.main-menu a.active,
-.blog-list .post-title a,
-.blog-list .post-title a:hover {
-  color: var(--second-color);
-}
-
-.post-date,
-.comment .comment-info {
-  color: var(--third-color);
-}
-
-/*
-.main {
-  background-color: var(--background-color);
-}
 
 .header,
 .main-menu {
@@ -125,7 +35,7 @@ blockquote,
 }
 
 .wrap {
-  max-width: var(--site-width);
+  max-width: var(--main-width);
 }
 
 main .content.formatted,
@@ -532,4 +442,4 @@ label {
     }
   }
 }
-*/
+

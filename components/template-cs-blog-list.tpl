@@ -38,7 +38,7 @@
      "--blog-list-date-font-family"
      ]
   */
-  --blog-list-headings-font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  --blog-list-headings-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
      "pathI18n": ["custom_styles.blog", "custom_styles.headings"],
      "titleI18n": "custom_styles.letter_spacing",
@@ -144,7 +144,7 @@
      "featured": true,
      "scope": "global"
   */
-  --blog-list-date-font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  --blog-list-date-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
      "pathI18n": ["custom_styles.blog", "custom_styles.date"],
      "titleI18n": "custom_styles.character_spacing",

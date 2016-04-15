@@ -2,7 +2,7 @@ $color-black: rgb(0, 0, 0);
 $color-white: rgb(255, 255, 255);
 
 $main-color: rgba($color-black, .87);
-$secondary-color: $color-black;
+$second-color: $color-black;
 
 $link-color: #0066bb;
 $third-color: rgba($color-black, .36);
@@ -15,6 +15,10 @@ $font-size: 18px;
 $font-size-big: 20px;
 $font-size-xl: 24px;
 $font-size-small: 14px;
+
+$h1-size: 30px;
+$h2-size: 24px;
+$h3-size: 18px;
 
 $line-height-tiny: 18px;
 $line-height-xs: 24px;
@@ -33,44 +37,16 @@ $break-small: 600px;
 $break-middle: 1024px;
 $break-large: 1500px;
 
-
+// more colors
+$a1: #acacac;
+$a2: #f9ec5a;
+$a3: #1b2124;
+$a4: #ccc;
+$a5: #2b2b2b;
 
 ///////
 
-$color-white: rgb(255, 255, 255);
-$color-black: rgb(0, 0, 0);
-
-$main-color: #333;
-$second-color: $color-black;
-$third-color: #818181;
 $fourth-color: $color-white;
-$link-color: #919191;
-$link-color: $third-color;
 $focus-color: #f9ec5a;
-
-$black: $second-color;
-$white: $fourth-color;
-
-$bg-color: #f4f4f4;
 $bg-color-dark: #2b2b2b;
 
-$error-color: #c70909;
-$success-color: #409e13;
-
-// FONT SIZES
-$h1-size: 40px;
-$h2-size: 24px;
-$h3-size: 20px;
-$font-size: 18px;
-$line-height: 1.45;
-
-$font-main: "Montserrat", Helvetica, Arial, sans-serif;
-
-$main-width: 700px;
-
-$break-medium: 600px;
-$break-small: 500px;
-
-$header-inner-height: 28px;
-
-$pad-50: 50px;

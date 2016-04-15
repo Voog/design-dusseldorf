@@ -24,7 +24,7 @@
     "scope": "global",
     "featured": true
   */
-  --form-field-text-color: #333;
+  --form-field-text-color: rgba(0, 0, 0, 0.87);
   /* VoogStyle
      "pathI18n": ["custom_styles.form", "custom_styles.field_text"],
      "titleI18n": "custom_styles.font",
@@ -33,7 +33,7 @@
      "featured": true,
      "scope": "global"
   */
-  --form-field-text-font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  --form-field-text-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
      "pathI18n": ["custom_styles.form", "custom_styles.field_text"],
      "titleI18n": "custom_styles.line_height",
@@ -44,7 +44,7 @@
      "unit": "em",
      "scope": "global"
   */
-  --form-field-text-line-height: 1.45 #em;
+  --form-field-text-line-height: 32px #em;
   /* VoogStyle
     "pathI18n": ["custom_styles.form", "custom_styles.field_text"],
     "titleI18n": "custom_styles.size",
@@ -162,7 +162,7 @@
     "featured": true,
     "scope": "global"
   */
-  --form-button-font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  --form-button-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
     "pathI18n": ["custom_styles.form", "custom_styles.button", "custom_styles.normal"],
     "titleI18n": "custom_styles.letter_spacing",

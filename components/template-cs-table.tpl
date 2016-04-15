@@ -12,7 +12,7 @@
     "editor": "colorPicker",
     "scope": "global"
   */
-  --table-border-color: #818181;
+  --table-border-color: rgba(0, 0, 0, 0.36);
   /* VoogStyle
      "pathI18n": ["custom_styles.table"],
      "titleI18n": "custom_styles.border_thickness",

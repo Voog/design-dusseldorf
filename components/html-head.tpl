@@ -23,6 +23,8 @@
 
 {% customstyle %}
   {% include "template-cs-main-styles" %}
+
+{% comment %}  
   {% include "template-cs-header" %}
   {% if html-head == "front_page" %}
     {% include "template-cs-focus-area" %}
@@ -37,6 +39,9 @@
   {% include "template-cs-table" %}
   {% include "template-cs-form" %}
   {% include "template-cs-footer" %}
+
+{% endcomment %}
+
   {% include "template-cs-style-rules" %}
 {% endcustomstyle %}
 

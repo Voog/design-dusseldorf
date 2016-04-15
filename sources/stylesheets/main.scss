@@ -10,41 +10,6 @@
 @include font-face("Lato", "../assets/lato-bold", 700);
 @include font-face("Lato", "../assets/lato-bold-italic", 700, italic);
 
-$color-black: rgb(0, 0, 0);
-$color-white: rgb(255, 255, 255);
-
-$main-color: rgba($color-black, .87);
-$secondary-color: $color-black;
-
-$link-color: #0066bb;
-$third-color: rgba($color-black, .36);
-$bg-color: #f6f6f6;
-$error-color: #c70909;
-$success-color: #409e13;
-
-$font-size-xs: 10px;
-$font-size: 18px;
-$font-size-big: 20px;
-$font-size-xl: 24px;
-$font-size-small: 14px;
-
-$line-height-tiny: 18px;
-$line-height-xs: 24px;
-$line-height: 32px;
-
-$font-main: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-secondary: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-$site-width: 1024px;
-$side-width: 200px;
-$content-width: $site-width - $side-width;
-
-$search-width: 300px;
-
-$break-small: 600px;
-$break-middle: 1024px;
-$break-large: 1500px;
-
 %nulling {
   margin: 0;
   padding: 0;
@@ -126,14 +91,14 @@ h1,
 h2,
 h3 {
   @extend %nulling;
-  font: normal 30px/1.1 $font-secondary;
+  font: normal #{$h1-size} / 1.1 $font-secondary;
   color: $main-color;
 
   .dark-background & {
     color: rgba($color-white, .87);
 
     .placeholder {
-      color: rgba(255,255,255,.5);
+      color: rgba($color-white,.5);
     }
   }
 }
@@ -144,13 +109,13 @@ h1 {
 
 h2 {
   margin: 30px 0 20px;
-  font-size: 24px;
+  font-size: $h2-size;
 }
 
 h3 {
   margin: 30px 0 20px;
   font-family: $font-main;
-  font-size: 18px;
+  font-size: $h3-size;
   font-weight: bold;
 }
 
@@ -188,11 +153,11 @@ form {
 }
 
 pre {
-  font-size: 14px;
-  @include bg(white, .3);
+  font-size: $font-size-small;
+  @include bg($color-white, .3);
 
   .light-background & {
-    @include bg($secondary-color, .2);
+    @include bg($second-color, .2);
   }
 }
 
@@ -631,7 +596,7 @@ label {
 
     &:hover,
     &.active {
-      color: $secondary-color;
+      color: $second-color;
     }
   }
 }
@@ -1191,11 +1156,11 @@ $flags:
     word-wrap: break-word;
 
     a {
-      color: $secondary-color;
+      color: $second-color;
     }
 
     a:hover {
-      @include color($secondary-color, .75);
+      @include color($second-color, .75);
     }
   }
 }
@@ -1489,13 +1454,13 @@ table {
 
   .edy-empty-bordered {
     border-color: $color-white;
-    border-color: rgba(255,255,255,.35);
+    border-color: rgba($color-white,.35);
   }
 
   .edy-empty-bordered {
     .edy-empty-header {
       color: $color-white;
-      color: rgba(255,255,255,.5);
+      color: rgba($color-white,.5);
     }
   }
   .edy-empty-bordered {
@@ -1516,11 +1481,11 @@ table {
   }
 
   .edy-texteditor-active {
-    outline: 1px solid rgba(0, 0, 0, .2);
+    outline: 1px solid $color-black;
   }
 
   .edy-texteditor-active:hover {
-    outline: 1px solid rgba(0, 0, 0, .3);
+    outline: 1px solid $color-black;
   }
 
   .edy-empty-bordered {
@@ -1533,29 +1498,29 @@ table {
 
   .edy-content-element-hover {
     border-color: $color-white;
-    border-color: rgba(255,255,255,.3);
+    border-color: rgba($color-white,.3);
   }
 
   .edy-texteditor-active {
-    outline: 1px solid rgba(255, 255, 255, 0.7);
+    outline: 1px solid rgba($color-white, .7);
   }
 
   .edy-texteditor-active:hover {
-    outline: 1px solid rgba(255, 255, 255, 0.63);
+    outline: 1px solid rgba($color-white, .63);
   }
 
   .placeholder {
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, 0.5);
+    color: $color-white;
+    color: rgba($color-white, .5);
   }
 
   .edy-empty-bordered, .edy-taglist {
-    color: rgba(255, 255, 255, 0.7);
-    border: 1px dashed rgba(255, 255, 255, 0.7);
+    color: rgba($color-white, .7);
+    border: 1px dashed rgba($color-white, .7);
   }
 
   .edy-taglist-openarrow::after {
-    border-color: #fff transparent transparent;
+    border-color: $color-white transparent transparent;
   }
 }
 
@@ -1585,7 +1550,7 @@ table {
 /* search */
 .search {
   position: relative;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 
   .search-box {
     position: relative;
@@ -1744,7 +1709,7 @@ table {
     display: block;
     width: $search-width;
     opacity: 1;
-    @include box-shadow(10px, 0px, 10px, rgba($color-black,.05));
+    @include box-shadow(10px, 0, 10px, rgba($color-black,.05));
   }
 }
 
@@ -2420,7 +2385,7 @@ table {
     color: $color-white;
 
     &:hover {
-      color: rgba(255,255,255,.75);
+      color: rgba($color-white,.75);
     }
   }
 
@@ -2429,16 +2394,16 @@ table {
   }
 
   .footer-row & {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba($color-white, .6);
   }
 }
 
 .light-background {
   .formatted {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba($color-black, .5);
 
     & h1, h2, h3, h4, p, input {
-      color: rgba(0, 0, 0, 0.5);
+      color: rgba($color-black, .5);
     }
   }
 
@@ -2451,12 +2416,12 @@ table {
         color: $color-black;
       }
       b {
-        color: rgba(0, 0, 0, 0.5);
+        color: rgba($color-black, .5);
       }
   }
 
   .footer-row & {
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba($color-black, .6);
   }
 }
 
@@ -2523,7 +2488,7 @@ table {
     font-size: $font-size-xs;
     line-height: $line-height-xs;
     text-align: center;
-    margin: 0px 0px;
+    margin: 0;
 
     &:hover {
       background: #6b6b6b;
@@ -2531,7 +2496,7 @@ table {
   }
 
   .dark-background .custom-btn {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba($color-white, .1);
     color: $color-white;
   }
 
