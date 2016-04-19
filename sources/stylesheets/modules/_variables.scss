@@ -1,14 +1,35 @@
 $color-black: rgb(0, 0, 0);
 $color-white: rgb(255, 255, 255);
 
+$bg-color: #f6f6f6;
+$bg-color: rgb(246,246,246);
+
 $main-color: rgba($color-black, .87);
 $second-color: $color-black;
+$third-color: rgba($color-black, .36);
 
 $link-color: #0066bb;
-$third-color: rgba($color-black, .36);
-$bg-color: #f6f6f6;
+
 $error-color: #c70909;
 $success-color: #409e13;
+
+// more colors
+$a1: #acacac;
+$a1: rgb(172, 172, 172);
+
+$a2: #f9ec5a;
+$a2: rgb(249,236,90);
+
+$a3: #1b2124;
+$a3: rgb(27,33,36);
+
+$a4: #ccc;
+$a4: rgb(204,204,204);
+
+$a5: #2b2b2b;
+$a5: rgb(43,43,43);
+
+//////////
 
 $font-size-xs: 10px;
 $font-size: 18px;
@@ -24,8 +45,8 @@ $line-height-tiny: 18px;
 $line-height-xs: 24px;
 $line-height: 32px;
 
-$font-main: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-secondary: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-secondary: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-primary: "Montserrat", Helvetica, Arial, sans-serif;
 
 $site-width: 1024px;
 $side-width: 200px;
@@ -37,16 +58,8 @@ $break-small: 600px;
 $break-middle: 1024px;
 $break-large: 1500px;
 
-// more colors
-$a1: #acacac;
-$a2: #f9ec5a;
-$a3: #1b2124;
-$a4: #ccc;
-$a5: #2b2b2b;
-
 ///////
 
 $fourth-color: $color-white;
 $focus-color: #f9ec5a;
-$bg-color-dark: #2b2b2b;
 

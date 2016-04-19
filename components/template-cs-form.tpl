@@ -27,15 +27,6 @@
   --form-field-text-color: rgba(0, 0, 0, 0.87);
   /* VoogStyle
      "pathI18n": ["custom_styles.form", "custom_styles.field_text"],
-     "titleI18n": "custom_styles.font",
-     "editor": "listPicker",
-     "list": {{ base_font_set }},
-     "featured": true,
-     "scope": "global"
-  */
-  --form-field-text-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* VoogStyle
-     "pathI18n": ["custom_styles.form", "custom_styles.field_text"],
      "titleI18n": "custom_styles.line_height",
      "editor": "rangePicker",
      "min": 0.8,
@@ -156,26 +147,6 @@
   --form-button-padding: 12px;
   /* VoogStyle
     "pathI18n": ["custom_styles.form", "custom_styles.button", "custom_styles.normal"],
-    "titleI18n": "custom_styles.font",
-    "editor": "listPicker",
-    "list": {{ base_font_set }},
-    "featured": true,
-    "scope": "global"
-  */
-  --form-button-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /* VoogStyle
-    "pathI18n": ["custom_styles.form", "custom_styles.button", "custom_styles.normal"],
-    "titleI18n": "custom_styles.letter_spacing",
-    "editor": "rangePicker",
-    "min": 0,
-    "max": 5,
-    "step": 0.1,
-    "unit": "em",
-    "scope": "global"
-  */
-  --form-button-letter-spacing: 0;
-  /* VoogStyle
-    "pathI18n": ["custom_styles.form", "custom_styles.button", "custom_styles.normal"],
     "titleI18n": "custom_styles.line_height",
     "editor": "rangePicker",
     "min": 1,
@@ -194,14 +165,14 @@
       "--form-button-hover-background-color"
     ]
   */
-  --form-button-background-color: #2b2b2b;
+  --form-button-background-color: #f6f6f6;
   /* VoogStyle
     "pathI18n": ["custom_styles.form", "custom_styles.button", "custom_styles.hover"],
     "titleI18n": "custom_styles.background_color",
     "editor": "colorPicker",
     "scope": "global"
   */
-  --form-button-hover-background-color: rgba(43, 43, 43, 0.8);
+  --form-button-hover-background-color: rgba(246, 246, 246, 0.8);
   /* VoogStyle
     "pathI18n": ["custom_styles.form", "custom_styles.button", "custom_styles.normal"],
     "titleI18n": "custom_styles.size",

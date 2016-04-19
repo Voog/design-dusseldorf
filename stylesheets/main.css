@@ -113,18 +113,21 @@ img {
 h1,
 h2,
 h3 {
-  font: normal 30px / 1.1 "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: rgba(0, 0, 0, 0.87);
+  color: black;
+  font: normal 30px / 1.1 "Montserrat", Helvetica, Arial, sans-serif;
+  opacity: .87;
 }
 .dark-background h1, .dark-background
 h2, .dark-background
 h3 {
-  color: rgba(255, 255, 255, 0.87);
+  color: white;
+  opacity: .87;
 }
 .dark-background h1 .placeholder, .dark-background
 h2 .placeholder, .dark-background
 h3 .placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
+  opacity: .5;
 }
 
 h1 {
@@ -459,12 +462,12 @@ label .form_control_indicator:before {
 }
 
 .sidebar {
+  box-shadow: 5px -50px 50px rgba(0, 0, 0, 0.05) ;
   float: left;
-  width: 200px;
   min-height: 100%;
   position: relative;
+  width: 200px;
   z-index: 5;
-  box-shadow: 5px -50px 50px rgba(0, 0, 0, 0.05) ;
 }
 @media screen and (min-width: 1500px) {
   .sidebar {
@@ -476,9 +479,9 @@ label .form_control_indicator:before {
 }
 
 .main {
-  position: relative;
-  margin-left: 200px;
   background: #f6f6f6;
+  margin-left: 200px;
+  position: relative;
 }
 .main .footer-left {
   padding-top: 20px;
@@ -511,7 +514,7 @@ label .form_control_indicator:before {
   position: relative;
 }
 .front-page .main-inner {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 24px;
   line-height: 32px;
   text-align: center;
@@ -548,12 +551,13 @@ label .form_control_indicator:before {
 
 .site-title {
   padding-top: 20px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 24px;
   line-height: 32px;
   vertical-align: top;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.87);
+  color: black;
+  opacity: .87;
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -567,7 +571,8 @@ label .form_control_indicator:before {
   }
 }
 .site-title a {
-  color: rgba(0, 0, 0, 0.87);
+  color: black;
+  opacity: .87;
 }
 .topbar .site-title {
   min-height: 40px;
@@ -582,7 +587,7 @@ label .form_control_indicator:before {
 /* mainmenu */
 .main-menu {
   padding-top: 20px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -597,17 +602,19 @@ label .form_control_indicator:before {
   text-transform: uppercase;
 }
 .main-menu a {
-  color: rgba(0, 0, 0, 0.36);
+  color: black;
+  opacity: .36;
 }
 .main-menu a:hover, .main-menu a.active {
   color: black;
+  opacity: 1;
 }
 
 /* submenu */
 .sub-menu {
   min-height: 35px;
   padding: 30px 50px 15px 50px;
-  font: 14px/1.1 "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/1.1 "Montserrat", Helvetica, Arial, sans-serif;
   text-align: right;
   word-wrap: break-word;
 }
@@ -620,22 +627,26 @@ label .form_control_indicator:before {
   margin-top: 3px;
   margin-bottom: 11px;
   white-space: nowrap;
-  color: rgba(0, 0, 0, 0.36);
+  color: black;
+  opacity: .36;
 }
 .dark-background .sub-menu a {
   color: white;
-  color: rgba(255, 255, 255, 0.42);
+  opacity: .42;
 }
 .dark-background .sub-menu a:hover {
   color: white;
+  opacity: 1;
 }
 .sub-menu a:hover {
-  color: rgba(0, 0, 0, 0.87);
+  color: black;
+  opacity: .87;
 }
 .sub-menu a.active {
   margin-bottom: 4px;
   padding-bottom: 4px;
-  color: rgba(0, 0, 0, 0.87);
+  color: black;
+  opacity: .87;
   border-bottom: 3px solid rgba(0, 0, 0, 0.87);
 }
 .sub-menu a.edy-cbtn {
@@ -1049,7 +1060,7 @@ label .form_control_indicator:before {
 
 .content-inner {
   position: relative;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -1069,7 +1080,7 @@ label .form_control_indicator:before {
 }
 .footer-row .content-inner {
   font-size: 14px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   line-height: 24px;
   padding: 4px 0;
 }
@@ -1171,7 +1182,7 @@ label .form_control_indicator:before {
 }
 .blog-list .post-title a:hover {
   color: black;
-  color: rgba(0, 0, 0, 0.75);
+  opacity: .75;
 }
 
 .post-header {
@@ -1180,7 +1191,8 @@ label .form_control_indicator:before {
 
 .post-date {
   display: inline;
-  color: rgba(0, 0, 0, 0.36);
+  color: black;
+  opacity: .36;
 }
 
 .post-content {
@@ -1288,8 +1300,9 @@ label .form_control_indicator:before {
   word-wrap: break-word;
 }
 .comment .comment-info {
+  color: black;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.36);
+  opacity: .36;
 }
 .comment .comment-info .edy-site-btn-removecomment {
   vertical-align: -1px;
@@ -1308,7 +1321,7 @@ table td,
 table th {
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.36);
-  border-color: rgba(0, 0, 0, 0.9);
+  border-color: rgba(0, 0, 0, 0.32);
 }
 table th {
   font-weight: bold;
@@ -1381,10 +1394,12 @@ footer .voog-reference {
   fill: white;
 }
 .light-background .voog-reference svg path {
-  fill: rgba(0, 0, 0, 0.36);
+  fill: black;
+  opacity: .36;
 }
 footer .voog-reference svg path {
-  fill: rgba(0, 0, 0, 0.36);
+  fill: black;
+  opacity: .36;
 }
 .front-page .voog-reference {
   display: block;
@@ -1525,7 +1540,7 @@ footer .voog-reference svg path {
   width: 100%;
   margin: 0;
   padding: 4px 0;
-  font: 14px/22px "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/22px "Montserrat", Helvetica, Arial, sans-serif;
   color: rgba(0, 0, 0, 0.87);
   border: none;
   outline: 0;
@@ -1709,7 +1724,7 @@ footer .voog-reference svg path {
   color: rgba(0, 0, 0, 0.87);
 }
 .voog-search-result .voog-search-result-link:hover {
-  color: rgba(0, 0, 0, 0.87);
+  color: black;
   color: rgba(0, 0, 0, 0.8);
 }
 .voog-search-result .voog-search-result-content {
@@ -2004,7 +2019,7 @@ footer .voog-reference svg path {
   }
 
   #mobile-menu {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
     position: fixed;
     z-index: 1000;
     top: 0;

@@ -25,6 +25,16 @@
      "editor": "listPicker",
      "list": {{ base_font_set }},
      "featured": true,
+     "scope": "global"
+  */
+  --font-primary: $font-primary;
+
+  /* VoogStyle
+     "pathI18n": ["custom_styles.main_styles"],
+     "titleI18n": "custom_styles.font_secondary",
+     "editor": "listPicker",
+     "list": {{ base_font_set }},
+     "featured": true,
      "scope": "global",
      "boundVariables": [
       "--header-site-title-font-family",
@@ -38,79 +48,33 @@
       "--form-field-text-font-family"
      ]
   */
-  --font-main: $font-main;
-
-  /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles"],
-     "titleI18n": "custom_styles.font_secondary",
-     "editor": "listPicker",
-     "list": {{ base_font_set }},
-     "featured": true,
-     "scope": "global"
-     ]
-  */
   --font-secondary: $font-secondary;
-
-  /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles"],
-     "titleI18n": "custom_styles.background_color",
-     "editor": "colorPicker",
-     "scope": "global",
-     "boundVariables": [
-      "--header-background-color",
-      "--footer-background-color"
-    ]
-  */
-  --background-color: $color-white;
 
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
      "titleI18n": "custom_styles.primary_color",
      "editor": "colorPicker",
      "scope": "global",
-     "featured": true,
+     "featured": true
   */
-  --main-color: $main-color;
+  --color-dark: rgba($color-black, .87);
 
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
      "titleI18n": "custom_styles.secondary_color",
      "editor": "colorPicker",
      "scope": "global",
-     "featured": true,
-     "boundVariables": [
-        "--content-color",
-        "--form-field-text-color",
-        "--footer-text-color"
-     ]
+     "featured": true
   */
-  --second-color: $second-color;
+  --color-light: $color-white;
 
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
      "titleI18n": "custom_styles.third_color",
      "editor": "colorPicker",
      "scope": "global",
-     "featured": true,
-     "boundVariables": [
-      "--header-mainmenu-color",
-      "--content-submenu--color",
-      "--content-links-color",
-      "--table-border-color"
-     ]
+     "featured": true
   */
-  --third-color: $third-color;
+  --link-color: $link-color;
 
-  /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
-     "titleI18n": "custom_styles.fourth_color",
-     "editor": "colorPicker",
-     "scope": "global",
-     "featured": true,
-     "boundVariables": [
-      "--blog-list-headings-color",
-      "--form-field-background-color"
-    ]
-  */
-  --fourth-color: $fourth-color;
 }

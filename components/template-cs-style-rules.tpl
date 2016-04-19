@@ -1,9 +1,234 @@
-.topbar,
-.sidebar,
-.footer {
-  background-color: var(--background-color);
+.light-background {
+  color: var(--color-dark);
+}
+.light-background .post-title a,
+.light-background .custom-btn {
+  color: var(--color-dark);
+}
+.light-background .formatted {
+  color: var(--color-dark);
+}
+.light-background .formatted h1,
+.light-background .formatted h2,
+.light-background .formatted h3,
+.light-background .formatted h4,
+.light-background .formatted p,
+.light-background .formatted input {
+  color: var(--color-dark);
+}
+.light-background .formatted .form_submit input,
+.light-background .formatted .submit {
+  color: var(--color-light);
+}
+.light-background .formatted a {
+  color: var(--link-color);
+}
+.light-background .formatted a.custom-btn {
+  color: var(--color-dark);
+}
+.light-background .formatted a.custom-btn:hover {
+  color: var(--color-light);
 }
 
+.dark-background {
+  color: var(--color-light);
+}
+.dark-background h1,
+.dark-background h2,
+.dark-background h3 {
+  color: var(--color-light);
+  opacity: .87;
+}
+.dark-background h1 .placeholder,
+.dark-background h2 .placeholder,
+.dark-background h3 .placeholder {
+  color: var(--color-light);
+  opacity: .5;
+}
+.dark-background .sub-menu a {
+  color: var(--color-light);
+  opacity: .42;
+}
+.dark-background .sub-menu a:hover {
+  color: var(--color-light);
+  opacity: 1;
+}
+.dark-background .placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.dark-background .post-title a {
+  color: var(--color-light);
+}
+.dark-background .post-title a:hover {
+  opacity: .75;
+}
+.dark-background .post-date {
+  color: rgba(255, 255, 255, 0.36);
+}
+.dark-background .formatted {
+  color: var(--color-light);
+}
+.dark-background .formatted h1,
+.dark-background .formatted h2,
+.dark-background .formatted h3,
+.dark-background .formatted h4,
+.dark-background .formatted p,
+.dark-background .formatted b,
+.dark-background .formatted input {
+  color: var(--color-light);
+}
+.dark-background .formatted a {
+  color: var(--link-color);
+}
+.dark-background .formatted a.custom-btn {
+  color: var(--color-light);
+}
+.dark-background .custom-btn {
+  border-color: var(--color-light);
+  color: var(--color-light);
+}
+
+.main-menu a {
+  color: var(--color-dark);
+  opacity: .36;
+}
+.main-menu a:hover, .main-menu a.active {
+  color: var(--color-dark);
+  opacity: 1;
+}
+
+.post-date,
+.comment .comment-info {
+  color: var(--color-dark);
+  opacity: .36;
+}
+
+.sub-menu a {
+  color: var(--color-dark);
+  opacity: .36;
+}
+.sub-menu a:hover, .sub-menu a.active {
+  color: var(--color-dark);
+  opacity: .87;
+}
+
+.blog-list .post-title a {
+  color: var(--color-dark);
+  opacity: 1;
+}
+.blog-list .post-title a:hover {
+  color: var(--color-dark);
+  opacity: .75;
+}
+.blog-list .post-wrap {
+  border-top-color: var(--color-light);
+}
+
+.lang-flag::before {
+  background-color: var(--color-dark);
+}
+
+body,
+.topbar,
+.footer,
+.comments:before,
+label .form_field_checkbox + .form_control_indicator::before,
+.form_field_textfield,
+.form_field_textarea {
+  background-color: var(--color-light);
+}
+
+body,
+h1,
+h2,
+h3,
+.form_field_textfield,
+.form_field_textarea,
+.search .search-input {
+  color: var(--color-dark);
+}
+
+.site-title {
+  color: var(--color-dark);
+}
+.site-title a {
+  color: var(--color-dark);
+}
+
+table td,
+table th {
+  border-color: rgba(0, 0, 0, 0.36);
+}
+
+.footer-row .light-background {
+  color: rgba(0, 0, 0, 0.6);
+}
+.footer-row .light-background b {
+  color: rgba(0, 0, 0, 0.5);
+}
+.footer-row .light-background .custom-btn {
+  color: var(--color-dark);
+}
+.footer-row .light-background .custom-btn:hover {
+  color: var(--color-light);
+}
+.footer-row .light-background .custom-btn:hover:hover a {
+  color: var(--color-light);
+}
+.footer-row .dark-background {
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer-row .dark-background .custom-btn {
+  color: var(--color-light);
+}
+
+label .form_field_radio + .form_control_indicator::before {
+  border-color: var(--color-light);
+}
+
+@media screen and (max-width: 600px) {
+  .lang-options .menu .menu-item {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .option-btn {
+    color: var(--color-light);
+  }
+
+  .option-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .front-page .main-inner {
+    color: var(--color-light);
+  }
+
+  .footer {
+    background: white;
+  }
+
+  .mobile-menu-toggler span.flags-disabled .language-menu-btn .lang-title, .mobile-menu-toggler span:before.flags-disabled .language-menu-btn .lang-title, .mobile-menu-toggler span:after.flags-disabled .language-menu-btn .lang-title {
+    color: var(--color-light);
+  }
+
+  #mobile-menu .mobile-menu-close:before, #mobile-menu .mobile-menu-close:after {
+    background: white;
+  }
+
+  #mobile-menu .navigation-menu ul a,
+  #mobile-menu .language-menu ul a {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  #mobile-menu .navigation-menu ul a.active,
+  #mobile-menu .language-menu ul a.active {
+    color: var(--color-light);
+  }
+
+  .mobile-menu-toggler span, .mobile-menu-toggler span:before, .mobile-menu-toggler span:after {
+    background-color: rgba(0, 0, 0, 0.87);
+  }
+}
 body,
 h3,
 .font-size-small,
@@ -12,7 +237,7 @@ h3,
 .form_field_textfield,
 .form_field_textarea,
 .form_submit input {
-  font-family: var(--font-main);
+  font-family: var(--font-secondary);
 }
 
 h1,
@@ -25,41 +250,7 @@ h2,
 .footer-row .content-inner,
 .search .search-input,
 #mobile-menu {
-  font-family: var(--font-secondary);
-}
-
-body,
-h1,
-h2,
-h3,
-.jq-select,
-.jq-select select,
-.form_field_textfield,
-.form_field_textarea,
-.site-title,
-.sub-menu a:hover,
-.sub-menu a.active,
-.light-background,
-.search-input,
-.voog-search-result .voog-search-result-link,
-.voog-search-result .voog-search-result-link:hover {
-  color: var(--main-color);
-}
-
-.sub-menu a.active {
-  border-bottom-color: var(--main-color);
-}
-
-.main-menu a:hover,
-.main-menu a.active,
-.blog-list .post-title a,
-.blog-list .post-title a:hover {
-  color: var(--second-color);
-}
-
-.post-date,
-.comment .comment-info {
-  color: var(--third-color);
+  font-family: var(--font-primary);
 }
 
 /*
@@ -79,7 +270,7 @@ body,
 .search-submit,
 .lang-menu-btn,
 .option-btn {
-  font-family: var(--font-main);
+  font-family: var(--font-secondary);
 }
 
 body,

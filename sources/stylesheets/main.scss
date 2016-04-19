@@ -37,7 +37,7 @@ body {
   @extend %nulling;
   height: 100% !important;
   min-height: 100%;
-  font: #{$font-size}/1.67 $font-main;
+  font: #{$font-size}/1.67 $font-secondary;
 
   @media screen and (min-width: $break-large) {
     font-size: $font-size-big;
@@ -48,7 +48,7 @@ body {
   position: relative;
   min-width: $site-width;
   text-align: left;
-  color: $main-color;
+  color: rgba($color-black, .87);
   background: $color-white;
 
   @include box-sizing(border-box);
@@ -91,14 +91,19 @@ h1,
 h2,
 h3 {
   @extend %nulling;
-  font: normal #{$h1-size} / 1.1 $font-secondary;
-  color: $main-color;
+  color: $color-black;
+  font: normal #{$h1-size} / 1.1 $font-primary;
+  opacity: .87;
 
   .dark-background & {
-    color: rgba($color-white, .87);
+    // color: rgba($color-white, .87);
+    color: $color-white;
+    opacity: .87;
 
     .placeholder {
-      color: rgba($color-white,.5);
+      // color: rgba($color-white,.5);
+      color: $color-white;
+      opacity: .5;
     }
   }
 }
@@ -114,7 +119,7 @@ h2 {
 
 h3 {
   margin: 30px 0 20px;
-  font-family: $font-main;
+  font-family: $font-secondary;
   font-size: $h3-size;
   font-weight: bold;
 }
@@ -157,7 +162,7 @@ pre {
   @include bg($color-white, .3);
 
   .light-background & {
-    @include bg($second-color, .2);
+    @include bg($color-black, .2);
   }
 }
 
@@ -192,7 +197,7 @@ blockquote {
 
 
 .font-size-small {
-  font: #{$font-size}/1.67 $font-main !important;
+  font: #{$font-size}/1.67 $font-secondary !important;
 
   @media screen and (min-width: $break-large) {
     font-size: $font-size-big !important;
@@ -206,9 +211,9 @@ blockquote {
 /* select */
 .jq-select {
   position: relative;
-  font: #{$font-size}/1.67 $font-main;
+  font: #{$font-size}/1.67 $font-secondary;
   cursor: pointer;
-  color: $main-color;
+  color: rgba($color-black, .87);
   background: $color-white;
 
   select {
@@ -221,10 +226,10 @@ blockquote {
     height: 100%;
     margin: 0;
     padding: 0;
-    font: #{$font-size}/1.67 $font-main;
+    font: #{$font-size}/1.67 $font-secondary;
     cursor: pointer;
     opacity: 0;
-    color: $main-color;
+    color: rgba($color-black, .87);
     border: none;
     -webkit-appearance: none;
     filter: alpha(opacity=0);
@@ -253,7 +258,7 @@ blockquote {
     pointer-events: none;
     border: solid transparent;
     border-width: 6px;
-    border-top-color: $main-color;
+    border-top-color: rgba($color-black, .87);
   }
 }
 
@@ -289,8 +294,8 @@ blockquote {
 .form_field_textarea {
   width: 30%;
   padding: 4px 5px;
-  font: #{$font-size}/1.67 $font-main;
-  color: $main-color;
+  font: #{$font-size}/1.67 $font-secondary;
+  color: rgba($color-black, .87);
   border: none;
   outline: none;
   background: $color-white;
@@ -349,7 +354,7 @@ blockquote {
 .form_submit input,
 .submit {
   height: 45px;
-  font: #{$font-size}/1.67 $font-main;
+  font: #{$font-size}/1.67 $font-secondary;
   cursor: pointer;
   border: 0;
   outline: 0;
@@ -416,7 +421,7 @@ label {
 
     &:checked {
       + .form_control_indicator:before {
-        background-color: $main-color;
+        background-color: rgba($color-black, .87);
       }
     }
   }
@@ -457,12 +462,12 @@ label {
 }
 
 .sidebar {
+  @include box-shadow(5px, -50px, 50px, rgba($color-black, .05));
   float: left;
-  width: $side-width;
   min-height: 100%;
   position: relative;
+  width: $side-width;
   z-index: 5;
-  @include box-shadow(5px,-50px,50px,rgba($color-black,.05));
 
   @media screen and (min-width: $break-large) {
     width: 20%;
@@ -474,9 +479,9 @@ label {
 }
 
 .main {
-  position: relative;
-  margin-left: $side-width;
   background: $bg-color;
+  margin-left: $side-width;
+  position: relative;
 
   .footer-left {
     padding-top: 20px;
@@ -508,7 +513,7 @@ label {
   position: relative;
 
   .front-page & {
-    font-family: $font-secondary;
+    font-family: $font-primary;
     font-size: $font-size-xl;
     line-height: $line-height;
     text-align: center;
@@ -550,12 +555,13 @@ label {
 
 .site-title {
   padding-top: 20px;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   font-size: $font-size-xl;
   line-height: $line-height;
   vertical-align: top;
   text-transform: uppercase;
-  color: $main-color;
+  color: $color-black;
+  opacity: .87;
   @include hyphenate(true);
 
   @media screen and (min-width: $break-middle) {
@@ -563,7 +569,8 @@ label {
   }
 
   a {
-    color: $main-color;
+    color: $color-black;
+    opacity: .87;
   }
 
   .topbar & {
@@ -581,7 +588,7 @@ label {
 /* mainmenu */
 .main-menu {
   padding-top: 20px;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   @include hyphenate(true);
 
   li {
@@ -592,12 +599,14 @@ label {
   }
 
   a {
-    color: $third-color;
+    color: $color-black;
+    opacity: .36;
 
     &:hover,
     &.active {
-      color: $second-color;
-    }
+      color: $color-black;
+      opacity: 1;
+    } 
   }
 }
 
@@ -605,7 +614,7 @@ label {
 .sub-menu {
   min-height: 35px;
   padding: 30px 50px 15px 50px;
-  font: 14px/1.1 $font-secondary;
+  font: 14px/1.1 $font-primary;
   text-align: right;
   word-wrap: break-word;
 
@@ -619,25 +628,30 @@ label {
     margin-top: 3px;
     margin-bottom: 11px;
     white-space: nowrap;
-    color: $third-color;
+    color: $color-black;
+    opacity: .36;
 
     .dark-background & {
-      @include color($color-white, .42);
+      color: $color-white;
+      opacity: .42;
 
       &:hover {
-        @include color($color-white, 1);
+        color: $color-white;
+        opacity: 1;
       }
     }
 
     &:hover {
-      color: $main-color;
+      color: $color-black;
+      opacity: .87;
     }
 
     &.active {
       margin-bottom: 4px;
       padding-bottom: 4px;
-      color: $main-color;
-      border-bottom: 3px solid $main-color;
+      color: $color-black;
+      opacity: .87;
+      border-bottom: 3px solid rgba($color-black, .87);
     }
 
     &.edy-cbtn {
@@ -1029,7 +1043,7 @@ $flags:
 
 .content-inner {
   position: relative;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   @include hyphenate(true);
 
   @media screen and (max-width: $break-middle - 1px) {
@@ -1044,7 +1058,7 @@ $flags:
 
   .footer-row & {
     font-size: $font-size-small;
-    font-family: $font-secondary;
+    font-family: $font-primary;
     line-height: $line-height-xs;
     padding: 4px 0;
   }
@@ -1156,11 +1170,12 @@ $flags:
     word-wrap: break-word;
 
     a {
-      color: $second-color;
+      color: $color-black;
     }
 
     a:hover {
-      @include color($second-color, .75);
+      color: $color-black;
+      opacity: .75;
     }
   }
 }
@@ -1171,7 +1186,8 @@ $flags:
 
 .post-date {
   display: inline;
-  color: $third-color;
+  color: $color-black;
+  opacity: .36;
 }
 
 .post-content {
@@ -1293,8 +1309,9 @@ $flags:
   word-wrap: break-word;
 
   .comment-info {
+    color: $color-black;
     font-size: 14px;
-    color: $third-color;
+    opacity: .36;
 
     .edy-site-btn-removecomment {
       vertical-align: -1px;
@@ -1314,8 +1331,8 @@ table {
   td,
   th {
     padding: 10px;
-    border: 1px solid $third-color;
-    border-color: rgba($third-color, .9);
+    border: 1px solid rgba($color-black, .36);
+    border-color: rgba($color-black, .32);
   }
 
   th {
@@ -1393,10 +1410,12 @@ table {
         fill: $color-white;
       }
       .light-background & {
-        fill: $third-color;
+        fill: $color-black;
+        opacity: .36;
       }
       footer & {
-        fill: $third-color;
+        fill: $color-black;
+        opacity: .36;
       }
     }
   }
@@ -1450,7 +1469,7 @@ table {
 }
 
 .light-background {
-  color: $main-color;
+  color: rgba($color-black, .87);
 
   .edy-empty-bordered {
     border-color: $color-white;
@@ -1572,8 +1591,8 @@ table {
     width: 100%;
     margin: 0;
     padding: 4px 0;
-    font: #{$font-size-small}/22px $font-secondary;
-    color: $main-color;
+    font: #{$font-size-small}/22px $font-primary;
+    color: rgba($color-black, .87);
     border: none;
     outline: 0;
     background: none;
@@ -1752,7 +1771,7 @@ table {
     padding: 40px;
     text-align: center;
     vertical-align: middle;
-    color: $third-color;
+    color: rgba($color-black, .36);
   }
 
   &.voog-search-noresults-visible {
@@ -1772,10 +1791,10 @@ table {
   }
 
   .voog-search-result-link {
-    color: $main-color;
+    color: rgba($color-black, .87);
 
     &:hover {
-      @include color($main-color, .8);
+      @include color($color-black, .8);
     }
   }
 
@@ -2077,7 +2096,7 @@ table {
         width: 20px;
         height: 3px;
         content: '';
-        background: $main-color;
+        background: rgba($color-black, .87);
         @include border-radius(5px);
 
         &.flags-disabled {
@@ -2114,7 +2133,7 @@ table {
   }
 
   #mobile-menu {
-    font-family: $font-secondary;
+    font-family: $font-primary;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -2296,7 +2315,7 @@ table {
         width: 20px;
         height: 3px;
         content: '';
-        background: $main-color; @include border-radius(3px);
+        background: rgba($color-black, .87); @include border-radius(3px);
       }
 
       &:before {

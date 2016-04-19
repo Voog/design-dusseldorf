@@ -17,14 +17,282 @@
 // Default stylesheet override styles.
 // =============================================================================
 
+// scss-lint:disable SelectorFormat, SelectorDepth, NestingDepth
+.light-background {
+  color: var(--color-dark);
+
+  .post-title a,
+  .custom-btn {
+    color: var(--color-dark);
+  }
+
+  .formatted {
+    color: var(--color-dark);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    input {
+      color: var(--color-dark);
+    }
+
+    .form_submit input,
+    .submit {
+      color: var(--color-light);
+    }
+
+    a {
+      color: var(--link-color);
+
+      &.custom-btn {
+        color: var(--color-dark);
+        
+        &:hover {
+          color: var(--color-light);  
+        }
+      }
+    }
+  }
+}
+
+
+.dark-background {
+  color: var(--color-light);
+
+  h1,
+  h2,
+  h3 {
+    color: var(--color-light);
+    opacity: .87;
+
+    .placeholder {
+      color: var(--color-light);
+      opacity: .5;
+    }
+  }
+
+  .sub-menu a {
+    color: var(--color-light);
+    opacity: .42;
+
+    &:hover {
+      color: var(--color-light);
+      opacity: 1;
+    }
+  }
+
+  .placeholder {
+    color: rgba($color-white, .5);
+  }
+
+  .post-title a {
+    color: var(--color-light);
+
+    &:hover {
+      opacity: .75;
+    }
+  }
+
+  .post-date {
+    color: rgba($color-white, .36);
+  }
+
+  .formatted {
+    color: var(--color-light);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    b,
+    input {
+      color: var(--color-light);
+    }
+
+    a {
+      color: var(--link-color);
+
+      &.custom-btn {
+        color: var(--color-light);        
+      }
+    }
+  }
+
+  .custom-btn {
+    border-color: var(--color-light);
+    color: var(--color-light);
+  }
+}
+
+.main-menu {
+  a {
+    color: var(--color-dark);
+    opacity: .36;
+
+    &:hover,
+    &.active {
+      color: var(--color-dark);
+      opacity: 1;
+    }
+  }
+}
+
+.post-date,
+.comment .comment-info {
+  color: var(--color-dark);
+  opacity: .36;
+}
+
+.sub-menu {
+  a {
+    color: var(--color-dark);
+    opacity: .36;
+
+    &:hover,
+    &.active {
+      color: var(--color-dark);
+      opacity: .87;
+    }
+  }
+}
+
+.blog-list {
+  .post-title {
+    a {
+      color: var(--color-dark);
+      opacity: 1;
+
+      &:hover {
+        color: var(--color-dark);
+        opacity: .75;
+      }
+    }
+  }
+
+  .post-wrap {
+    border-top-color: var(--color-light);
+  }
+}
+
+.lang-flag::before {
+  background-color: var(--color-dark);
+}
+
+body,
 .topbar,
-.sidebar,
-.footer {
-  background-color: var(--background-color);
+.footer,
+.comments:before,
+label .form_field_checkbox + .form_control_indicator::before,
+.form_field_textfield,
+.form_field_textarea {
+  background-color: var(--color-light);
+}
+
+body,
+h1,
+h2,
+h3,
+.form_field_textfield,
+.form_field_textarea,
+.search .search-input {
+  color: var(--color-dark);
+}
+
+.site-title {
+  color: var(--color-dark);
+
+  a {
+    color: var(--color-dark);
+  }
+}
+
+table td,
+table th {
+  border-color: rgba($color-black, .36);
+}
+
+.footer-row {
+  .light-background {
+    color: rgba($color-black, .6);
+
+    b {
+      color: rgba($color-black, .5);
+    }
+
+    .custom-btn {
+      color: var(--color-dark);
+    }
+
+    .custom-btn:hover {
+      color: var(--color-light);
+
+      &:hover a {
+        color: var(--color-light);
+      }
+    }
+  }
+
+  .dark-background {
+    color: rgba($color-white, .6);
+
+    .custom-btn {
+      color: var(--color-light);
+    }
+  }
+}
+
+label .form_field_radio + .form_control_indicator::before {
+  border-color: var(--color-light);
+}
+
+@media screen and (max-width: 600px) {
+  .lang-options .menu .menu-item {
+    color: rgba($color-white, .5);
+  }
+
+  .option-btn {
+    color: var(--color-light);
+  }
+
+  .option-btn:hover {
+    color: rgba($color-white, .8);
+  }
+
+  .front-page .main-inner {
+    color: var(--color-light);
+  }
+
+  .footer {
+    background: $color-white;
+  }
+
+  .mobile-menu-toggler span.flags-disabled .language-menu-btn .lang-title, .mobile-menu-toggler span:before.flags-disabled .language-menu-btn .lang-title, .mobile-menu-toggler span:after.flags-disabled .language-menu-btn .lang-title {
+    color: var(--color-light);
+  }
+
+  #mobile-menu .mobile-menu-close:before, #mobile-menu .mobile-menu-close:after {
+    background: $color-white;
+  }
+
+  #mobile-menu .navigation-menu ul a,
+  #mobile-menu .language-menu ul a {
+    color: rgba($color-white, .5);
+  }
+
+  #mobile-menu .navigation-menu ul a.active,
+  #mobile-menu .language-menu ul a.active {
+    color: var(--color-light);
+  }  
+
+  .mobile-menu-toggler span, .mobile-menu-toggler span:before, .mobile-menu-toggler span:after {
+    background-color: rgba($color-black, .87);
+  }
 }
 
 // main font 
-
 body,
 h3,
 .font-size-small,
@@ -33,7 +301,7 @@ h3,
 .form_field_textfield,
 .form_field_textarea,
 .form_submit input {
-  font-family: var(--font-main);
+  font-family: var(--font-secondary);
 }
 
 h1,
@@ -47,42 +315,9 @@ h2,
 .search .search-input,
 #mobile-menu
  {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
 }
 
-body,
-h1,
-h2,
-h3,
-.jq-select,
-.jq-select select,
-.form_field_textfield,
-.form_field_textarea,
-.site-title,
-.sub-menu a:hover,
-.sub-menu a.active,
-.light-background,
-.search-input,
-.voog-search-result .voog-search-result-link,
-.voog-search-result .voog-search-result-link:hover {
-  color: var(--main-color);
-}
-
-.sub-menu a.active {
-  border-bottom-color: var(--main-color);
-}
-
-.main-menu a:hover,
-.main-menu a.active,
-.blog-list .post-title a,
-.blog-list .post-title a:hover {
-  color: var(--second-color);
-}
-
-.post-date,
-.comment .comment-info {
-  color: var(--third-color);
-}
 
 /*
 .main {
@@ -101,7 +336,7 @@ body,
 .search-submit,
 .lang-menu-btn,
 .option-btn {
-  font-family: var(--font-main);
+  font-family: var(--font-secondary);
 }
 
 body,

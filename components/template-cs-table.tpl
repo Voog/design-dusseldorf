@@ -1,10 +1,10 @@
 :root {
   /* VoogStyle
-  "pathI18n": ["custom_styles.table"],
-  "titleI18n": "custom_styles.background_color",
-  "editor": "colorPicker",
-  "scope": "global"
-*/
+    "pathI18n": ["custom_styles.table"],
+    "titleI18n": "custom_styles.background_color",
+    "editor": "colorPicker",
+    "scope": "global"
+  */
   --table-background-color: transparent;
   /* VoogStyle
     "pathI18n": ["custom_styles.table"],
