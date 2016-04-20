@@ -134,13 +134,6 @@
     {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-blog-list.tpl",
-      "layout_name": "template-cs-blog-list",
-      "title": "template-cs-blog-list"
-    },
-    {
-      "content_type": "component",
-      "component": true,
       "file": "components/template-cs-content.tpl",
       "layout_name": "template-cs-content",
       "title": "template-cs-content"
@@ -186,6 +179,13 @@
       "file": "components/template-cs-main-styles.tpl",
       "layout_name": "template-cs-main-styles",
       "title": "template-cs-main-styles"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-sidebar.tpl",
+      "layout_name": "template-cs-sidebar",
+      "title": "template-cs-sidebar"
     },
     {
       "content_type": "component",

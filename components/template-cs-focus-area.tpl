@@ -3,7 +3,7 @@
      "pathI18n": ["custom_styles.focus_area"],
      "titleI18n": "custom_styles.alignment",
      "editor": "listPicker",
-     "list": {{ base_alignment_horizontal_set }},
+     "list": {{ base_alignment_set }},
      "scope": "global"
   */
   --focus-area-alignment: left;
@@ -42,7 +42,7 @@
     "type": "button",
     "editor": "rangePicker",
     "min": 8,
-    "max": 80,
+    "max": 100,
     "unit": "px",
     "scope": "global",
     "featured": true

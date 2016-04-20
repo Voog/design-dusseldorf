@@ -42,7 +42,7 @@
     "type": "button",
     "editor": "rangePicker",
     "min": 8,
-    "max": 80,
+    "max": 100,
     "unit": "px",
     "scope": "global",
     "featured": true
@@ -179,7 +179,7 @@
     "type": "button",
     "editor": "rangePicker",
     "min": 8,
-    "max": 80,
+    "max": 100,
     "unit": "px",
     "featured": true,
     "scope": "global",
@@ -194,7 +194,7 @@
     "type": "button",
     "editor": "rangePicker",
     "min": 8,
-    "max": 80,
+    "max": 100,
     "unit": "px",
     "scope": "global"
   */

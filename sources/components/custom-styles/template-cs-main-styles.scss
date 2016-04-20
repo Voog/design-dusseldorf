@@ -55,7 +55,11 @@
      "titleI18n": "custom_styles.primary_color",
      "editor": "colorPicker",
      "scope": "global",
-     "featured": true
+     "featured": true,
+     "boundVariables": [
+      "--sidebar-site-title-color",
+      "--sidebar-mainmenu-color"
+      ]
   */
   --color-dark: rgba($color-black, .87);
 
@@ -66,15 +70,6 @@
      "scope": "global",
      "featured": true
   */
-  --color-light: $color-white;
-
-  /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
-     "titleI18n": "custom_styles.third_color",
-     "editor": "colorPicker",
-     "scope": "global",
-     "featured": true
-  */
-  --link-color: $link-color;
+  --color-light: rgba($color-white, .87);
 
 }

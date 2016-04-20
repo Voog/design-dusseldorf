@@ -131,19 +131,21 @@ h3 .placeholder {
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 0.66667em;
 }
 
 h2 {
-  margin: 30px 0 20px;
   font-size: 24px;
+  margin-bottom: 0.83333em;
+  margin-top: 1.25em;
 }
 
 h3 {
-  margin: 30px 0 20px;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: bold;
+  margin-bottom: 1.11111em;
+  margin-top: 1.66667em;
 }
 
 p {

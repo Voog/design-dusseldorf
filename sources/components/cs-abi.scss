@@ -246,31 +246,31 @@ main .post-content {
 
 .sub-menu {
   a {
-      color: var(--content-submenu--color);
-      font-family: var(--content-submenu--font-family);
-      font-size: var(--content-submenu--font-size);
-      font-style: var(--content-submenu--font-style);
-      font-weight: var(--content-submenu--font-weight);
-      letter-spacing: var(--content-submenu--letter-spacing);
-      text-decoration: var(--content-submenu--text-decoration);
-      text-transform: var(--content-submenu--text-transform);
+      color: var(--content-submenu-color);
+      font-family: var(--content-submenu-font-family);
+      font-size: var(--content-submenu-font-size);
+      font-style: var(--content-submenu-font-style);
+      font-weight: var(--content-submenu-font-weight);
+      letter-spacing: var(--content-submenu-letter-spacing);
+      text-decoration: var(--content-submenu-text-decoration);
+      text-transform: var(--content-submenu-text-transform);
 
       &:hover {
-        color: var(--content-submenu--hover-color);
-        font-size: var(--content-submenu--hover-font-size);
-        font-style: var(--content-submenu--hover-font-style);
-        font-weight: var(--content-submenu--hover-font-weight);
-        text-decoration: var(--content-submenu--hover-text-decoration);
-        text-transform: var(--content-submenu--hover-text-transform);
+        color: var(--content-submenu-hover-color);
+        font-size: var(--content-submenu-hover-font-size);
+        font-style: var(--content-submenu-hover-font-style);
+        font-weight: var(--content-submenu-hover-font-weight);
+        text-decoration: var(--content-submenu-hover-text-decoration);
+        text-transform: var(--content-submenu-hover-text-transform);
       }
 
       &.active {
-        color: var(--content-submenu--active-color);
-        font-size: var(--content-submenu--active-font-size);
-        font-style: var(--content-submenu--active-font-style);
-        font-weight: var(--content-submenu--active-font-weight);
-        text-decoration: var(--content-submenu--active-text-decoration);
-        text-transform: var(--content-submenu--active-text-transform);
+        color: var(--content-submenu-active-color);
+        font-size: var(--content-submenu-active-font-size);
+        font-style: var(--content-submenu-active-font-style);
+        font-weight: var(--content-submenu-active-font-weight);
+        text-decoration: var(--content-submenu-active-text-decoration);
+        text-transform: var(--content-submenu-active-text-transform);
       }
     }
   }

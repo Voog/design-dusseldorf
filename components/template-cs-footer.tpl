@@ -10,7 +10,7 @@
      "pathI18n": ["custom_styles.footer", "custom_styles.text"],
      "titleI18n": "custom_styles.alignment",
      "editor": "listPicker",
-     "list": {{ base_alignment_horizontal_set }},
+     "list": {{ base_alignment_set }},
      "scope": "global"
   */
   --footer-alignment: center;
@@ -31,7 +31,7 @@
     "type": "button",
     "editor": "rangePicker",
     "min": 8,
-    "max": 80,
+    "max": 100,
     "unit": "px",
     "scope": "global",
     "featured": true

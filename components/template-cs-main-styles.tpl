@@ -33,7 +33,11 @@
      "titleI18n": "custom_styles.primary_color",
      "editor": "colorPicker",
      "scope": "global",
-     "featured": true
+     "featured": true,
+     "boundVariables": [
+      "--sidebar-site-title-color",
+      "--sidebar-mainmenu-color"
+      ]
   */
   --color-dark: rgba(0, 0, 0, 0.87);
   /* VoogStyle
@@ -43,13 +47,5 @@
      "scope": "global",
      "featured": true
   */
-  --color-light: white;
-  /* VoogStyle
-     "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
-     "titleI18n": "custom_styles.third_color",
-     "editor": "colorPicker",
-     "scope": "global",
-     "featured": true
-  */
-  --link-color: #0066bb;
+  --color-light: rgba(255, 255, 255, 0.87);
 }
