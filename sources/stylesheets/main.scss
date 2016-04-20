@@ -2449,18 +2449,19 @@ table {
 }
 
 .custom-btn {
-  display: inline-block;
+  @include hyphenate(true);
   box-sizing: border-box;
-  min-width: 180px;
-  max-width: 100%;
-  padding: 11px 10px;
-  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
   font-size: $font-size;
   line-height: $line-height-xs;
+  margin: 5px 0;
+  max-width: 100%;
+  min-width: 180px;
+  padding: 11px 10px;
+  padding: 0.61em 0.55em;
   text-align: center;
-  margin: 5px 10px;
-  cursor: pointer;
-  @include hyphenate(true);
+  text-transform: uppercase;
 
   .dark-background & {
     border: 2px solid $color-white;

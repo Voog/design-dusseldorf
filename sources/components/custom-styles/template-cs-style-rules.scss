@@ -43,6 +43,24 @@
     .submit {
       color: var(--color-light);
     }
+    
+    a, a:hover {
+      color: var(--content-links-color);
+
+      &.custom-btn {
+        color: var(--color-dark);
+        text-transform: var(--content-button-text-transform);
+      }
+    }
+
+    a:hover {
+      color: var(--content-links-hover-color);
+
+      &.custom-btn {
+        color: var(--color-light);
+        text-transform: var(--content-button-text-transform);
+      }
+    }
   }
 }
 
@@ -99,6 +117,15 @@
     b,
     input {
       color: var(--color-light);
+    }
+
+    a, a:hover {
+      color: var(--content-links-color);
+
+      &.custom-btn {
+        color: var(--color-light);
+        text-transform: var(--content-button-text-transform);
+      }
     }
   }
 
@@ -420,35 +447,9 @@ h2,
       text-transform: var(--h3-text-transform);
     }
   }
-
-/*
-  .custom-btn {
-    padding: var(--content-button-padding);
-    font-family: var(--content-button-font-family);
-    font-size: var(--content-button-font-size);
-    font-style: var(--content-button-font-style);
-    font-weight: var(--content-button-font-weight);
-    line-height: var(--content-button-line-height);
-    letter-spacing: var(--content-button-letter-spacing);
-    color: var(--content-button-color);
-    text-decoration: var(--content-button-text-decoration);
-    text-transform: var(--content-button-text-transform);
-    background-color: var(--content-button-background-color);
-
-    &:hover {
-      font-size: var(--content-button-hover-font-size);
-      font-style: var(--content-button-hover-font-style);
-      font-weight: var(--content-button-hover-font-weight);
-      color: var(--content-button-hover-color);
-      text-decoration: var(--content-button-hover-text-decoration);
-      text-transform: var(--content-button-hover-text-transform);
-      background-color: var(--content-button-hover-background-color);
-    }
-  }
-  */
 }
 
-.main .content, 
+.main .formatted, 
 .main .post-content {
   font-size: var(--content-font-size);
   font-style: var(--content-font-style);
@@ -457,9 +458,16 @@ h2,
   text-align: var(--content-alignment);
   text-decoration: var(--content-text-decoration);
   text-transform: var(--content-text-transform);
+
+  .custom-btn, .custom-btn:hover {
+    font-size: var(--content-button-font-size);
+    font-style: var(--content-button-font-style);
+    font-weight: var(--content-button-font-weight);
+    text-decoration: var(--content-button-text-decoration);
+  }
 }
 
-.main .content,
+.main .formatted,
 .main .post-content,
 .main .footer {
   a {
