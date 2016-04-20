@@ -61,7 +61,7 @@
       "--sidebar-mainmenu-color"
       ]
   */
-  --color-dark: rgba($color-black, .87);
+  --color-dark: $color-black;
 
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
@@ -70,6 +70,6 @@
      "scope": "global",
      "featured": true
   */
-  --color-light: rgba($color-white, .87);
+  --color-light: $color-white;
 
 }

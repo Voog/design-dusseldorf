@@ -34,6 +34,9 @@
   color: var(--color-light);
   text-transform: var(--content-button-text-transform);
 }
+.light-background .formatted table th, .light-background .formatted table td {
+  border-color: var(--color-dark);
+}
 
 .dark-background {
   color: var(--color-light);
@@ -88,6 +91,9 @@
 .dark-background .formatted a.custom-btn, .dark-background .formatted a:hover.custom-btn {
   color: var(--color-light);
   text-transform: var(--content-button-text-transform);
+}
+.dark-background .formatted table th, .dark-background .formatted table td {
+  border-color: var(--color-dark);
 }
 .dark-background .custom-btn {
   border-color: var(--color-light);
@@ -377,6 +383,13 @@ h2,
   font-weight: var(--content-button-font-weight);
   text-decoration: var(--content-button-text-decoration);
 }
+.main .formatted table td,
+.main .formatted table th,
+.main .post-content table td,
+.main .post-content table th {
+  padding: var(--table-cell-padding);
+  border-style: var(--table-border-style);
+}
 
 .main .formatted a,
 .main .post-content a,
@@ -417,18 +430,6 @@ h2,
   }
 }
 
-// TABLES
-main .content {
-  table {
-    background-color: var(--table-background-color);
-
-    td,
-    th {
-      border: var(--table-border-width) var(--table-border-color) solid;
-      padding: var(--table-cell-padding);
-    }
-  }
-}
 
 // FORMS
 .formatted {

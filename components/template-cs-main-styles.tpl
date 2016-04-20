@@ -39,7 +39,7 @@
       "--sidebar-mainmenu-color"
       ]
   */
-  --color-dark: rgba(0, 0, 0, 0.87);
+  --color-dark: black;
   /* VoogStyle
      "pathI18n": ["custom_styles.main_styles", "custom_styles.colors"],
      "titleI18n": "custom_styles.secondary_color",
@@ -47,5 +47,5 @@
      "scope": "global",
      "featured": true
   */
-  --color-light: rgba(255, 255, 255, 0.87);
+  --color-light: white;
 }

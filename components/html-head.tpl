@@ -30,11 +30,10 @@
   {% include "template-cs-headings" %}
   {% include "template-cs-content" %}
   {% include "template-cs-table" %}
-  {% include "template-cs-form" %}
   {% include "template-cs-footer" %}
   {% comment %}
   {% endcomment %}
-  {% include "template-cs-style-rules" %}
+    {% include "template-cs-style-rules" %}
 {% endcustomstyle %}
 
 {% comment %}MODERNIZR - HTML5 SUPPORT FOR OLDER BROWSERS, SVG SUPPORT DETECTION ETC{% endcomment %}

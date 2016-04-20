@@ -61,6 +61,12 @@
         text-transform: var(--content-button-text-transform);
       }
     }
+
+    table {
+      th, td {
+        border-color: var(--color-dark);
+      }
+    }
   }
 }
 
@@ -125,6 +131,12 @@
       &.custom-btn {
         color: var(--color-light);
         text-transform: var(--content-button-text-transform);
+      }
+    }
+
+    table {
+      th, td {
+        border-color: var(--color-dark);
       }
     }
   }
@@ -465,6 +477,15 @@ h2,
     font-weight: var(--content-button-font-weight);
     text-decoration: var(--content-button-text-decoration);
   }
+
+  table {
+
+    td,
+    th {
+      padding: var(--table-cell-padding);
+      border-style: var(--table-border-style);
+    }
+  }
 }
 
 .main .formatted,
@@ -507,18 +528,6 @@ h2,
   }
 }
 
-// TABLES
-main .content {
-  table {
-    background-color: var(--table-background-color);
-
-    td,
-    th {
-      border: var(--table-border-width) var(--table-border-color) solid;
-      padding: var(--table-cell-padding);
-    }
-  }
-}
 
 // FORMS
 .formatted {
