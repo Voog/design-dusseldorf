@@ -371,24 +371,43 @@ blockquote {
 
 .form_submit input,
 .submit {
-  height: 45px;
-  font: 18px/1.67 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  cursor: pointer;
-  border: 0;
-  outline: 0;
-  background: #2b2b2b;
-  -webkit-appearance: none;
   border-radius: 0;
+  -webkit-appearance: none;
+  background: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 5px 0;
+  max-width: 100%;
+  min-width: 180px;
+  outline: 0;
+  padding: 0.61em 0.55em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.dark-background .formatted .form_submit input, .dark-background .formatted
+.submit {
+  border: 2px solid white;
+  color: white;
+}
+.dark-background .formatted .form_submit input:hover, .dark-background .formatted
+.submit:hover {
+  background: #2b2b2b;
+  border: 2px solid white;
+  color: white;
 }
 .light-background .formatted .form_submit input, .light-background .formatted
 .submit {
-  color: white;
-  color: rgba(255, 255, 255, 0.5);
+  border: 2px solid black;
+  color: black;
 }
-.form_submit input:hover,
+.light-background .formatted .form_submit input:hover, .light-background .formatted
 .submit:hover {
-  background-color: #2b2b2b;
-  background-color: rgba(43, 43, 43, 0.8);
+  background: #2b2b2b;
+  border: 2px solid white;
+  color: white;
 }
 
 .form_field_required .form_field_label:after {
@@ -2311,7 +2330,6 @@ footer .voog-reference svg path {
   margin: 5px 0;
   max-width: 100%;
   min-width: 180px;
-  padding: 11px 10px;
   padding: 0.61em 0.55em;
   text-align: center;
   text-transform: uppercase;

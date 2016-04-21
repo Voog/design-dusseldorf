@@ -18,12 +18,14 @@
 }
 .light-background .formatted .form_submit input,
 .light-background .formatted .submit {
-  color: var(--color-light);
+  color: var(--color-dark);
+  border-color: var(--color-dark);
 }
 .light-background .formatted a, .light-background .formatted a:hover {
   color: var(--content-links-color);
 }
 .light-background .formatted a.custom-btn, .light-background .formatted a:hover.custom-btn {
+  border-color: var(--color-dark);
   color: var(--color-dark);
   text-transform: var(--content-button-text-transform);
 }
@@ -31,6 +33,7 @@
   color: var(--content-links-hover-color);
 }
 .light-background .formatted a:hover.custom-btn {
+  border-color: var(--color-light);
   color: var(--color-light);
   text-transform: var(--content-button-text-transform);
 }
@@ -85,10 +88,16 @@
 .dark-background .formatted input {
   color: var(--color-light);
 }
+.dark-background .formatted .form_submit input,
+.dark-background .formatted .submit {
+  color: var(--color-light);
+  border-color: var(--color-light);
+}
 .dark-background .formatted a, .dark-background .formatted a:hover {
   color: var(--content-links-color);
 }
 .dark-background .formatted a.custom-btn, .dark-background .formatted a:hover.custom-btn {
+  border-color: var(--color-light);
   color: var(--color-light);
   text-transform: var(--content-button-text-transform);
 }
@@ -104,15 +113,6 @@
 .comment .comment-info {
   color: var(--color-dark);
   opacity: .36;
-}
-
-.sub-menu a {
-  color: var(--color-dark);
-  opacity: .36;
-}
-.sub-menu a:hover, .sub-menu a.active {
-  color: var(--color-dark);
-  opacity: .87;
 }
 
 .blog-list .post-title a {
@@ -158,40 +158,14 @@ h3,
   color: var(--color-dark);
 }
 
-table td,
-table th {
-  border-color: rgba(0, 0, 0, 0.36);
-}
-
-.footer-row .light-background {
-  color: rgba(0, 0, 0, 0.6);
-}
-.footer-row .light-background b {
-  color: rgba(0, 0, 0, 0.5);
-}
-.footer-row .light-background .custom-btn {
-  color: var(--color-dark);
-}
-.footer-row .light-background .custom-btn:hover {
-  color: var(--color-light);
-}
-.footer-row .light-background .custom-btn:hover:hover a {
-  color: var(--color-light);
-}
-.footer-row .dark-background {
-  color: rgba(255, 255, 255, 0.6);
-}
-.footer-row .dark-background .custom-btn {
-  color: var(--color-light);
-}
-
 label .form_field_radio + .form_control_indicator::before {
   border-color: var(--color-light);
 }
 
 @media screen and (max-width: 600px) {
   .lang-options .menu .menu-item {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-light);
+    opacity: .5;
   }
 
   .option-btn {
@@ -199,7 +173,8 @@ label .form_field_radio + .form_control_indicator::before {
   }
 
   .option-btn:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-light);
+    opacity: .8;
   }
 
   .front-page .main-inner {
@@ -207,7 +182,7 @@ label .form_field_radio + .form_control_indicator::before {
   }
 
   .footer {
-    background: white;
+    background: var(--color-light);
   }
 
   .mobile-menu-toggler span.flags-disabled .language-menu-btn .lang-title, .mobile-menu-toggler span:before.flags-disabled .language-menu-btn .lang-title, .mobile-menu-toggler span:after.flags-disabled .language-menu-btn .lang-title {
@@ -215,12 +190,13 @@ label .form_field_radio + .form_control_indicator::before {
   }
 
   #mobile-menu .mobile-menu-close:before, #mobile-menu .mobile-menu-close:after {
-    background: white;
+    background: var(--color-light);
   }
 
   #mobile-menu .navigation-menu ul a,
   #mobile-menu .language-menu ul a {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-light);
+    opacity: .5;
   }
 
   #mobile-menu .navigation-menu ul a.active,
@@ -229,7 +205,7 @@ label .form_field_radio + .form_control_indicator::before {
   }
 
   .mobile-menu-toggler span, .mobile-menu-toggler span:before, .mobile-menu-toggler span:after {
-    background-color: rgba(0, 0, 0, 0.87);
+    background-color: var(--color-dark);
   }
 }
 body,
@@ -298,22 +274,28 @@ h2,
 }
 
 .sub-menu a {
+  color: var(--color-dark);
   font-family: var(--content-submenu-font-family);
   font-size: var(--content-submenu-font-size);
   font-style: var(--content-submenu-font-style);
   font-weight: var(--content-submenu-font-weight);
+  opacity: .36;
   text-decoration: var(--content-submenu-text-decoration);
   text-transform: var(--content-submenu-text-transform);
 }
 .sub-menu a:hover {
+  color: var(--color-dark);
   font-style: var(--content-submenu-hover-font-style);
   font-weight: var(--content-submenu-hover-font-weight);
+  opacity: .87;
   text-decoration: var(--content-submenu-hover-text-decoration);
   text-transform: var(--content-submenu-hover-text-transform);
 }
 .sub-menu a.active {
+  color: var(--color-dark);
   font-style: var(--content-submenu-active-font-style);
   font-weight: var(--content-submenu-active-font-weight);
+  opacity: .87;
   text-decoration: var(--content-submenu-active-text-decoration);
   text-transform: var(--content-submenu-active-text-transform);
 }
@@ -410,104 +392,51 @@ h2,
   text-transform: var(--content-links-hover-text-transform);
 }
 
-/*
-
-// Footer
-.footer {
-  background-color: var(--footer-background-color);
-
-  .footer-content {
-    color: var(--footer-color);
-    font-family: var(--footer-font-family);
-    font-size: var(--footer-font-size);
-    font-style: var(--footer-font-style);
-    font-weight: var(--footer-font-weight);
-    letter-spacing: var(--footer-letter-spacing);
-    line-height: var(--footer-line-height);
-    text-align: var(--footer-alignment);
-    text-decoration: var(--footer-text-decoration);
-    text-transform: var(--footer-text-transform);
-  }
+.main .footer-row .formatted {
+  font-size: var(--footer-font-size);
+  font-style: var(--footer-font-style);
+  font-weight: var(--footer-font-weight);
+  line-height: var(--footer-line-height);
+  text-transform: var(--footer-text-transform);
+}
+.main .footer-row .formatted a:not(.custom-btn) {
+  color: var(--content-links-color);
+}
+.main .footer-row .formatted a:not(.custom-btn):hover {
+  color: var(--content-links-hover-color);
+}
+.main .footer-row .formatted a, .main .footer-row .formatted a:hover {
+  font-style: var(--footer-font-style);
+  font-weight: var(--footer-font-weight);
+  line-height: var(--footer-line-height);
+  text-transform: var(--footer-text-transform);
+}
+.main .footer-row .formatted a.custom-btn {
+  font-size: calc(var(--footer-font-size) - 4px);
 }
 
-
-// FORMS
-.formatted {
-  form,
-  .form {
-    padding: var(--form-padding);
-    background-color: var(--form-background-color);
-  }
+.footer-row .light-background {
+  color: var(--color-dark);
 }
-
-.form_field_textfield,
-.form_field_textarea,
-.form_submit input,
-input[type=submit],
-input[type=text],
-textarea {
-  font-family: var(--form-field-text-font-family);
+.footer-row .light-background b {
+  color: var(--color-dark);
 }
-
-// scss-lint:disable SelectorFormat, ImportantRule
-.form_field_textfield,
-.form_field_textarea {
-  background-color: var(--form-field-background-color);
-  border: var(--form-field-border-width) var(--form-field-border-color) solid;
-  color: var(--form-field-text-color);
-  font-size: var(--form-field-text-font-size);
-  line-height: var(--form-field-text-line-height);
-  font-style: var(--form-field-text-font-style);
-  font-weight: var(--form-field-text-font-weight);
-  padding-left: var(--form-field-padding);
-  padding-right: var(--form-field-padding);
-  text-decoration: var(--form-field-text-text-decoration);
-  text-transform: var(--form-field-text-text-transform);
+.footer-row .light-background .custom-btn {
+  color: var(--color-dark);
+  border: 1px solid var(--color-dark);
+  font-size: var(--footer-font-size);
 }
-
-.form_submit input,
-.submit {
-  padding: var(--form-button-padding);
-  font-family: var(--form-button-font-family);
-  font-size: var(--form-button-font-size);
-  font-style: var(--form-button-font-style);
-  font-weight: var(--form-button-font-weight);
-  line-height: var(--form-button-line-height);
-  letter-spacing: var(--form-button-letter-spacing);
-  color: var(--form-button-color);
-  text-decoration: var(--form-button-text-decoration);
-  text-transform: var(--form-button-text-transform);
-  background-color: var(--form-button-background-color);
-
-  &:hover {
-    font-size: var(--form-button-hover-font-size);
-    font-style: var(--form-button-hover-font-style);
-    font-weight: var(--form-button-hover-font-weight);
-    color: var(--form-button-hover-color);
-    text-decoration: var(--form-button-hover-text-decoration);
-    text-transform: var(--form-button-hover-text-transform);
-    background-color: var(--form-button-hover-background-color);
-  }
+.footer-row .light-background .custom-btn:hover {
+  color: var(--color-light);
+  border-color: var(--color-light);
 }
-
-label {
-  .form_field_checkbox {
-    + .form_control_indicator::before {
-      background: var(--form-field-background-color);
-    }
-  }
-
-  .form_field_radio {
-    + .form_control_indicator::before {
-      border-color: var(--form-field-background-color);
-    }
-
-    // scss-lint: disable NestingDepth
-    &:checked {
-      + .form_control_indicator::before {
-        background-color: var(--form-field-text-color);
-      }
-    }
-  }
+.footer-row .light-background .custom-btn:hover:hover a {
+  color: var(--color-light);
 }
-*/
+.footer-row .dark-background {
+  color: var(--color-light);
+}
+.footer-row .dark-background .custom-btn {
+  color: var(--color-light);
+  border: 1px solid var(--color-light);
+}
