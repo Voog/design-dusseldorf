@@ -278,14 +278,12 @@ h3,
   text-transform: var(--sidebar-mainmenu-text-transform);
 }
 .main-menu ul a:hover {
-  color: var(--sidebar-mainmenu-hover-color);
   font-style: var(--sidebar-mainmenu-hover-font-style);
   font-weight: var(--sidebar-mainmenu-hover-font-weight);
   text-decoration: var(--sidebar-mainmenu-hover-text-decoration);
   text-transform: var(--sidebar-mainmenu-hover-text-transform);
 }
 .main-menu ul a.active {
-  color: var(--sidebar-mainmenu-active-color);
   font-style: var(--sidebar-mainmenu-active-font-style);
   font-weight: var(--sidebar-mainmenu-active-font-weight);
   text-decoration: var(--sidebar-mainmenu-active-text-decoration);
