@@ -93,12 +93,12 @@ h3 {
   @extend %nulling;
   color: $color-black;
   font: normal #{$h1-size} / 1.1 $font-primary;
-  opacity: .87;
+  
 
   .dark-background & {
     // color: rgba($color-white, .87);
     color: $color-white;
-    opacity: .87;
+    
 
     .placeholder {
       // color: rgba($color-white,.5);
@@ -587,7 +587,7 @@ label {
   vertical-align: top;
   text-transform: uppercase;
   color: $color-black;
-  opacity: .87;
+  
   @include hyphenate(true);
 
   @media screen and (min-width: $break-middle) {
@@ -596,7 +596,7 @@ label {
 
   a {
     color: $color-black;
-    opacity: .87;
+    
   }
 
   .topbar & {
@@ -669,14 +669,12 @@ label {
 
     &:hover {
       color: $color-black;
-      opacity: .87;
     }
 
     &.active {
       margin-bottom: 4px;
       padding-bottom: 4px;
       color: $color-black;
-      opacity: .87;
       border-bottom: 3px solid rgba($color-black, .87);
     }
 

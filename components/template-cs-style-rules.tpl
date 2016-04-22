@@ -53,7 +53,6 @@
 .dark-background h2,
 .dark-background h3 {
   color: var(--color-light);
-  opacity: .87;
 }
 .dark-background h1 .placeholder,
 .dark-background h2 .placeholder,
@@ -297,24 +296,41 @@ h3,
   font-style: var(--content-submenu-font-style);
   font-weight: var(--content-submenu-font-weight);
   opacity: .36;
-  text-decoration: var(--content-submenu-text-decoration);
+  border-bottom-style: var(--content-submenu-text-decoration);
   text-transform: var(--content-submenu-text-transform);
+  border-bottom-width: 3px;
+}
+.dark-background .sub-menu a {
+  color: var(--color-light);
+}
+.light-background .sub-menu a {
+  color: var(--color-dark);
 }
 .sub-menu a:hover {
   color: var(--color-dark);
   font-style: var(--content-submenu-hover-font-style);
   font-weight: var(--content-submenu-hover-font-weight);
-  opacity: .87;
-  text-decoration: var(--content-submenu-hover-text-decoration);
+  opacity: 1;
+  border-bottom-style: var(--content-submenu-hover-text-decoration);
   text-transform: var(--content-submenu-hover-text-transform);
+  border-bottom-width: 3px;
 }
 .sub-menu a.active {
   color: var(--color-dark);
   font-style: var(--content-submenu-active-font-style);
   font-weight: var(--content-submenu-active-font-weight);
-  opacity: .87;
-  text-decoration: var(--content-submenu-active-text-decoration);
+  opacity: 1;
+  border-bottom-style: var(--content-submenu-active-text-decoration);
   text-transform: var(--content-submenu-active-text-transform);
+  border-bottom-width: 3px;
+}
+.dark-background .sub-menu a.active {
+  color: var(--color-light);
+  border-bottom-color: var(--color-light);
+}
+.light-background .sub-menu a.active {
+  color: var(--color-dark);
+  border-bottom-color: var(--color-dark);
 }
 
 .formatted h1 {
