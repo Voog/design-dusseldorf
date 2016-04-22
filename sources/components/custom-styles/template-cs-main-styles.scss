@@ -68,7 +68,10 @@
      "titleI18n": "custom_styles.secondary_color",
      "editor": "colorPicker",
      "scope": "global",
-     "featured": true
+     "featured": true,
+     "boundVariables": [
+        "--sidebar-background-color"
+     ]
   */
   --color-light: $color-white;
 

@@ -20,6 +20,15 @@
   // scss-lint:disable Comment, Indentation
 
   /* VoogStyle
+     "pathI18n": ["custom_styles.sidebar"],
+     "titleI18n": "custom_styles.background_color",
+     "editor": "colorPicker",
+     "scope": "global",
+     "featured": true
+  */
+  --sidebar-background-color: $color-white;
+
+  /* VoogStyle
     "pathI18n": ["custom_styles.sidebar", "custom_styles.title"],
     "titleI18n": "custom_styles.size",
     "editor": "rangePicker",
@@ -107,7 +116,7 @@
     "scope": "global",
     "featured": true
   */
-  --sidebar-site-title-color: rgba($color-black, .87);
+  --sidebar-site-title-color: $color-black;
 
   /* VoogStyle
     "pathI18n": ["custom_styles.sidebar", "custom_styles.main_menu", "custom_styles.normal"],
@@ -329,7 +338,7 @@
       "--sidebar-mainmenu-active-color"
     ]
   */
-  --sidebar-mainmenu-color: rgba($color-black, .87);
+  --sidebar-mainmenu-color: $color-black;
 
    /* VoogStyle
     "pathI18n": ["custom_styles.sidebar", "custom_styles.main_menu", "custom_styles.hover"],
@@ -338,7 +347,7 @@
     "editor": "colorPicker",
     "scope": "global"
   */
-  --sidebar-mainmenu-hover-color: rgba($color-black, .87);
+  --sidebar-mainmenu-hover-color: $color-black;
 
    /* VoogStyle
     "pathI18n": ["custom_styles.sidebar", "custom_styles.main_menu", "custom_styles.active"],
@@ -347,7 +356,7 @@
     "editor": "colorPicker",
     "scope": "global"
   */
-  --sidebar-mainmenu-active-color: rgba($color-black, .87);
+  --sidebar-mainmenu-active-color: $color-black;
 
   // scss-lint:enable Comment, Indentation
 }

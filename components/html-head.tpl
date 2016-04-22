@@ -24,9 +24,6 @@
 {% customstyle %}
   {% include "template-cs-main-styles" %}
   {% include "template-cs-sidebar" %}
-  {% if html-head == "front_page" %}
-    {% include "template-cs-focus-area" %}
-  {% endif %}
   {% include "template-cs-headings" %}
   {% include "template-cs-content" %}
   {% include "template-cs-table" %}

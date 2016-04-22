@@ -131,14 +131,16 @@
   background-color: var(--color-dark);
 }
 
-body,
 .topbar,
-.footer,
 .comments:before,
 label .form_field_checkbox + .form_control_indicator::before,
 .form_field_textfield,
 .form_field_textarea {
   background-color: var(--color-light);
+}
+
+body, .footer {
+  background-color: var(--sidebar-background-color);
 }
 
 body,
