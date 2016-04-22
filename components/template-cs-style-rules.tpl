@@ -18,8 +18,13 @@
 }
 .light-background .formatted .form_submit input,
 .light-background .formatted .submit {
-  color: var(--color-dark);
   border-color: var(--color-dark);
+  color: var(--color-dark);
+  font-size: var(--content-button-font-size);
+  font-style: var(--content-button-font-style);
+  font-weight: var(--content-button-font-weight);
+  text-decoration: var(--content-button-text-decoration);
+  text-transform: var(--content-button-text-transform);
 }
 .light-background .formatted a, .light-background .formatted a:hover {
   color: var(--content-links-color);
@@ -90,18 +95,26 @@
 }
 .dark-background .formatted .form_submit input,
 .dark-background .formatted .submit {
-  color: var(--color-light);
   border-color: var(--color-light);
+  color: var(--color-light);
+  font-size: var(--content-button-font-size);
+  font-style: var(--content-button-font-style);
+  font-weight: var(--content-button-font-weight);
+  text-decoration: var(--content-button-text-decoration);
+  text-transform: var(--content-button-text-transform);
 }
-.dark-background .formatted a, .dark-background .formatted a:hover {
+.dark-background .formatted a,
+.dark-background .formatted a:hover {
   color: var(--content-links-color);
 }
-.dark-background .formatted a.custom-btn, .dark-background .formatted a:hover.custom-btn {
+.dark-background .formatted a.custom-btn,
+.dark-background .formatted a:hover.custom-btn {
   border-color: var(--color-light);
   color: var(--color-light);
   text-transform: var(--content-button-text-transform);
 }
-.dark-background .formatted table th, .dark-background .formatted table td {
+.dark-background .formatted table th,
+.dark-background .formatted table td {
   border-color: var(--color-dark);
 }
 .dark-background .custom-btn {
@@ -131,7 +144,6 @@
   background-color: var(--color-dark);
 }
 
-.topbar,
 .comments:before,
 label .form_field_checkbox + .form_control_indicator::before,
 .form_field_textfield,
@@ -139,7 +151,7 @@ label .form_field_checkbox + .form_control_indicator::before,
   background-color: var(--color-light);
 }
 
-body, .footer {
+body, .footer, .topbar {
   background-color: var(--sidebar-background-color);
 }
 
@@ -215,18 +227,17 @@ label .form_field_radio + .form_control_indicator::before {
   }
 }
 body,
-h3,
 .font-size-small,
 .jq-select,
 .jq-select select,
 .form_field_textfield,
-.form_field_textarea,
-.form_submit input {
+.form_field_textarea {
   font-family: var(--font-secondary);
 }
 
 h1,
 h2,
+h3,
 .front-page .main-inner,
 .site-title,
 .main-menu,
@@ -234,7 +245,9 @@ h2,
 .content-inner,
 .footer-row .content-inner,
 .search .search-input,
-#mobile-menu {
+#mobile-menu,
+.form_submit input,
+.custom-btn {
   font-family: var(--font-primary);
 }
 
@@ -242,7 +255,7 @@ h2,
   background-color: var(--sidebar-background-color);
 }
 .sidebar .site-title {
-  color: var(--sidebar-site-title-color);
+  color: var(--color-dark);
   font-size: var(--sidebar-site-title-font-size);
   font-style: var(--sidebar-site-title-font-style);
   font-weight: var(--sidebar-site-title-font-weight);
@@ -255,7 +268,7 @@ h2,
 }
 
 .main-menu ul a {
-  color: var(--sidebar-mainmenu-color);
+  color: var(--color-dark);
   font-family: var(--sidebar-mainmenu-font-family);
   font-size: var(--sidebar-mainmenu-font-size);
   font-style: var(--sidebar-mainmenu-font-style);
@@ -418,7 +431,8 @@ h2,
   text-transform: var(--footer-text-transform);
 }
 .main .footer-row .formatted a.custom-btn {
-  font-size: calc(var(--footer-font-size) - 4px);
+  font-size: var(--footer-font-size);
+  text-decoration: none;
 }
 
 .footer-row .light-background {

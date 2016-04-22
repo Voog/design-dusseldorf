@@ -14,18 +14,7 @@
      "editor": "listPicker",
      "list": {{ base_font_set }},
      "featured": true,
-     "scope": "global",
-     "boundVariables": [
-      "--header-site-title-font-family",
-      "--header-mainmenu-font-family",
-      "--blog-list-headings-font-family",
-      "--h1-font-family",
-      "--h2-font-family",
-      "--h3-font-family",
-      "--content-font-family",
-      "--footer-font-family",
-      "--form-field-text-font-family"
-     ]
+     "scope": "global"
   */
   --font-secondary: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* VoogStyle
@@ -33,11 +22,7 @@
      "titleI18n": "custom_styles.primary_color",
      "editor": "colorPicker",
      "scope": "global",
-     "featured": true,
-     "boundVariables": [
-      "--sidebar-site-title-color",
-      "--sidebar-mainmenu-color"
-      ]
+     "featured": true
   */
   --color-dark: black;
   /* VoogStyle

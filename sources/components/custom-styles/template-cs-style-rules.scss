@@ -41,8 +41,14 @@
 
     .form_submit input,
     .submit {
-      color: var(--color-dark);
       border-color: var(--color-dark);
+      color: var(--color-dark);
+      // font-family: var(--font-secondary);
+      font-size: var(--content-button-font-size);
+      font-style: var(--content-button-font-style);
+      font-weight: var(--content-button-font-weight);
+      text-decoration: var(--content-button-text-decoration);
+      text-transform: var(--content-button-text-transform);
     }
     
     a, a:hover {
@@ -51,6 +57,7 @@
       &.custom-btn {
         border-color: var(--color-dark);
         color: var(--color-dark);
+        // font-family: var(--font-secondary);
         text-transform: var(--content-button-text-transform);
       }
     }
@@ -130,22 +137,31 @@
 
     .form_submit input,
     .submit {
-      color: var(--color-light);
       border-color: var(--color-light);
+      color: var(--color-light);
+      // font-family: var(--font-secondary);
+      font-size: var(--content-button-font-size);
+      font-style: var(--content-button-font-style);
+      font-weight: var(--content-button-font-weight);
+      text-decoration: var(--content-button-text-decoration);
+      text-transform: var(--content-button-text-transform);
     }
 
-    a, a:hover {
+    a,
+    a:hover {
       color: var(--content-links-color);
 
       &.custom-btn {
         border-color: var(--color-light);
         color: var(--color-light);
+        // font-family: var(--font-secondary);
         text-transform: var(--content-button-text-transform);
       }
     }
 
     table {
-      th, td {
+      th,
+      td {
         border-color: var(--color-dark);
       }
     }
@@ -185,7 +201,6 @@
   background-color: var(--color-dark);
 }
 
-.topbar,
 .comments:before,
 label .form_field_checkbox + .form_control_indicator::before,
 .form_field_textfield,
@@ -193,7 +208,7 @@ label .form_field_checkbox + .form_control_indicator::before,
   background-color: var(--color-light);
 }
 
-body, .footer {
+body, .footer, .topbar {
   background-color: var(--sidebar-background-color);
 }
 
@@ -272,18 +287,17 @@ label .form_field_radio + .form_control_indicator::before {
 
 // main font 
 body,
-h3,
 .font-size-small,
 .jq-select,
 .jq-select select,
 .form_field_textfield,
-.form_field_textarea,
-.form_submit input {
+.form_field_textarea {
   font-family: var(--font-secondary);
 }
 
 h1,
 h2,
+h3,
 .front-page .main-inner,
 .site-title,
 .main-menu,
@@ -291,7 +305,9 @@ h2,
 .content-inner,
 .footer-row .content-inner,
 .search .search-input,
-#mobile-menu
+#mobile-menu,
+.form_submit input,
+.custom-btn
  {
   font-family: var(--font-primary);
 }
@@ -302,7 +318,7 @@ h2,
   background-color: var(--sidebar-background-color);
 
   .site-title {
-    color: var(--sidebar-site-title-color);
+    color: var(--color-dark);
     font-size: var(--sidebar-site-title-font-size);
     font-style: var(--sidebar-site-title-font-style);
     font-weight: var(--sidebar-site-title-font-weight);
@@ -320,7 +336,7 @@ h2,
 .main-menu {
   ul {
     a {
-      color: var(--sidebar-mainmenu-color);
+      color: var(--color-dark);
       font-family: var(--sidebar-mainmenu-font-family);
       font-size: var(--sidebar-mainmenu-font-size);
       font-style: var(--sidebar-mainmenu-font-style);
@@ -507,7 +523,8 @@ h2,
   }
 
   a.custom-btn {
-    font-size: calc(var(--footer-font-size) - 4px);
+    font-size: var(--footer-font-size);
+    text-decoration: none;
   }
 }
 
