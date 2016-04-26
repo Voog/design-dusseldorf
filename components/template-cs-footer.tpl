@@ -1,7 +1,7 @@
 :root {
   /* VoogStyle
-    "pathI18n": ["custom_styles.footer", "custom_styles.text"],
-    "titleI18n": "custom_styles.size",
+    "pathI18n": ["footer", "text"],
+    "titleI18n": "size",
     "editor": "rangePicker",
     "min": 8,
     "max": 60,
@@ -11,8 +11,8 @@
   */
   --footer-font-size: 14px;
   /* VoogStyle
-     "pathI18n": ["custom_styles.footer", "custom_styles.text"],
-     "titleI18n": "custom_styles.line_height",
+     "pathI18n": ["footer", "text"],
+     "titleI18n": "line_height",
      "editor": "rangePicker",
      "min": 0.8,
      "max": 3,
@@ -22,8 +22,8 @@
   */
   --footer-line-height: 1.7em;
   /* VoogStyle
-    "pathI18n": ["custom_styles.footer", "custom_styles.text"],
-    "titleI18n": "custom_styles.font_weight",
+    "pathI18n": ["footer", "text"],
+    "titleI18n": "font_weight",
     "type": "button",
     "editor": "toggleIcon",
     "states": {
@@ -35,8 +35,8 @@
   */
   --footer-font-weight: 400;
   /* VoogStyle
-    "pathI18n": ["custom_styles.footer", "custom_styles.text"],
-    "titleI18n": "custom_styles.font_style",
+    "pathI18n": ["footer", "text"],
+    "titleI18n": "font_style",
     "type": "button",
     "editor": "toggleIcon",
     "states": {
@@ -48,8 +48,8 @@
   */
   --footer-font-style: normal;
   /* VoogStyle
-    "pathI18n": ["custom_styles.footer", "custom_styles.text"],
-    "titleI18n": "custom_styles.text_transform",
+    "pathI18n": ["footer", "text"],
+    "titleI18n": "text_transform",
     "type": "button",
     "editor": "toggleIcon",
     "states": {
