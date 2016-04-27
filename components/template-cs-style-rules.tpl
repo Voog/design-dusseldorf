@@ -43,6 +43,11 @@
   text-decoration: var(--content-button-text-decoration);
   text-transform: var(--content-button-text-transform);
 }
+.light-background .formatted .form_submit input:hover,
+.light-background .formatted .submit:hover {
+  border-color: var(--color-light);
+  color: var(--color-light);
+}
 .light-background .formatted a, .light-background .formatted a:hover {
   color: var(--content-links-color);
 }
@@ -119,6 +124,11 @@
   line-height: var(--content-button-line-height);
   text-decoration: var(--content-button-text-decoration);
   text-transform: var(--content-button-text-transform);
+}
+.dark-background .formatted .form_submit input:hover,
+.dark-background .formatted .submit:hover {
+  border-color: var(--color-light);
+  color: var(--color-light);
 }
 .dark-background .formatted a,
 .dark-background .formatted a:hover {
