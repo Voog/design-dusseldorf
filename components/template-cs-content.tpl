@@ -201,7 +201,10 @@
      "max": 3,
      "step": 0.1,
      "unit": "em",
-     "scope": "global"
+     "scope": "global",
+     "boundVariables": [
+        "--content-button-line-height"
+     ]
   */
   --content-line-height: 1.7em;
   /* VoogStyle

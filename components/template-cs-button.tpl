@@ -11,6 +11,17 @@
   */
   --content-button-font-size: 18px;
   /* VoogStyle
+     "pathI18n": ["button"],
+     "titleI18n": "line_height",
+     "editor": "rangePicker",
+     "min": 0.8,
+     "max": 3,
+     "step": 0.1,
+     "unit": "em",
+     "scope": "global"
+  */
+  --content-button-line-height: 1.7em;
+  /* VoogStyle
     "pathI18n": ["button"],
     "titleI18n": "font_weight",
     "type": "button",

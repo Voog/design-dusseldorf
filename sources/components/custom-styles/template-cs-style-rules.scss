@@ -19,8 +19,26 @@
 
 // scss-lint:disable SelectorFormat, SelectorDepth, NestingDepth
 
+.jq-select-content {
+  padding: 0 28px 0 0;
+}
+
+.jq-select-inner {
+  padding: 4px 10px;
+}
+
+
 .light-background {
   color: var(--color-dark);
+
+  .jq-select-arrow,
+  .form_field_select,
+  .jq-select-inner,
+  .form_field_textfield,
+  .form_field_textarea {
+    color: var(--color-dark);
+    background-color: var(--color-light);
+  }
 
   .post-title a,
   .custom-btn {
@@ -43,10 +61,10 @@
     .submit {
       border-color: var(--color-dark);
       color: var(--color-dark);
-      // font-family: var(--font-secondary);
       font-size: var(--content-button-font-size);
       font-style: var(--content-button-font-style);
       font-weight: var(--content-button-font-weight);
+      line-height: var(--content-button-line-height);
       text-decoration: var(--content-button-text-decoration);
       text-transform: var(--content-button-text-transform);
     }
@@ -57,7 +75,6 @@
       &.custom-btn {
         border-color: var(--color-dark);
         color: var(--color-dark);
-        // font-family: var(--font-secondary);
         text-transform: var(--content-button-text-transform);
       }
     }
@@ -138,10 +155,10 @@
     .submit {
       border-color: var(--color-light);
       color: var(--color-light);
-      // font-family: var(--font-secondary);
       font-size: var(--content-button-font-size);
       font-style: var(--content-button-font-style);
       font-weight: var(--content-button-font-weight);
+      line-height: var(--content-button-line-height);
       text-decoration: var(--content-button-text-decoration);
       text-transform: var(--content-button-text-transform);
     }
@@ -153,7 +170,7 @@
       &.custom-btn {
         border-color: var(--color-light);
         color: var(--color-light);
-        // font-family: var(--font-secondary);
+        // font-family: var(--font-primary);
         text-transform: var(--content-button-text-transform);
       }
     }
@@ -215,8 +232,6 @@ body,
 h1,
 h2,
 h3,
-.form_field_textfield,
-.form_field_textarea,
 .search .search-input {
   color: var(--color-dark);
 }
@@ -289,9 +304,11 @@ body,
 .font-size-small,
 .jq-select,
 .jq-select select,
+.form_field_select,
+.jq-select-inner,
 .form_field_textfield,
 .form_field_textarea {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
 }
 
 h1,
@@ -464,6 +481,11 @@ h3,
       text-transform: var(--h3-text-transform);
     }
   }
+
+  .comment-form,
+  .comments {
+    h2 {font-size: $h2-size}
+  }
 }
 
 .main .formatted, 
@@ -480,6 +502,7 @@ h3,
     font-size: var(--content-button-font-size);
     font-style: var(--content-button-font-style);
     font-weight: var(--content-button-font-weight);
+    line-height: var(--content-button-line-height);
     text-decoration: var(--content-button-text-decoration);
   }
 

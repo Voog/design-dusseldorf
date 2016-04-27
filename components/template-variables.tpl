@@ -106,19 +106,19 @@
   {% capture base_border_style_set %}
     [
       {
-        "titleI18n": "custom_styles.solid",
+        "titleI18n": "solid",
         "value": "solid"
       },
       {
-        "titleI18n": "custom_styles.dotted",
+        "titleI18n": "dotted",
         "value": "dotted"
       },
       {
-        "titleI18n": "custom_styles.dashed",
+        "titleI18n": "dashed",
         "value": "dashed"
       },
       {
-        "titleI18n": "custom_styles.none",
+        "titleI18n": "none",
         "value": "hidden"
       }
     ]
@@ -127,19 +127,11 @@
   {% capture base_border_style_set %}
     [
       {
-        "titleI18n": "custom_styles.solid",
+        "titleI18n": "solid",
         "value": "solid"
       },
       {
-        "titleI18n": "custom_styles.dotted",
-        "value": "dotted"
-      },
-      {
-        "titleI18n": "custom_styles.dashed",
-        "value": "dashed"
-      },
-      {
-        "titleI18n": "custom_styles.none",
+        "titleI18n": "none",
         "value": "hidden"
       }
     ]

@@ -1,5 +1,21 @@
+.jq-select-content {
+  padding: 0 28px 0 0;
+}
+
+.jq-select-inner {
+  padding: 4px 10px;
+}
+
 .light-background {
   color: var(--color-dark);
+}
+.light-background .jq-select-arrow,
+.light-background .form_field_select,
+.light-background .jq-select-inner,
+.light-background .form_field_textfield,
+.light-background .form_field_textarea {
+  color: var(--color-dark);
+  background-color: var(--color-light);
 }
 .light-background .post-title a,
 .light-background .custom-btn {
@@ -23,6 +39,7 @@
   font-size: var(--content-button-font-size);
   font-style: var(--content-button-font-style);
   font-weight: var(--content-button-font-weight);
+  line-height: var(--content-button-line-height);
   text-decoration: var(--content-button-text-decoration);
   text-transform: var(--content-button-text-transform);
 }
@@ -99,6 +116,7 @@
   font-size: var(--content-button-font-size);
   font-style: var(--content-button-font-style);
   font-weight: var(--content-button-font-weight);
+  line-height: var(--content-button-line-height);
   text-decoration: var(--content-button-text-decoration);
   text-transform: var(--content-button-text-transform);
 }
@@ -158,8 +176,6 @@ body,
 h1,
 h2,
 h3,
-.form_field_textfield,
-.form_field_textarea,
 .search .search-input {
   color: var(--color-dark);
 }
@@ -229,9 +245,11 @@ body,
 .font-size-small,
 .jq-select,
 .jq-select select,
+.form_field_select,
+.jq-select-inner,
 .form_field_textfield,
 .form_field_textarea {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
 }
 
 h1,
@@ -379,6 +397,10 @@ h3,
   text-decoration: var(--h3-text-decoration);
   text-transform: var(--h3-text-transform);
 }
+.formatted .comment-form h2,
+.formatted .comments h2 {
+  font-size: 24px;
+}
 
 .main .formatted,
 .main .post-content {
@@ -396,6 +418,7 @@ h3,
   font-size: var(--content-button-font-size);
   font-style: var(--content-button-font-style);
   font-weight: var(--content-button-font-weight);
+  line-height: var(--content-button-line-height);
   text-decoration: var(--content-button-text-decoration);
 }
 .main .formatted table td,
