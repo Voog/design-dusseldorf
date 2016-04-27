@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% include "template-variables" %}
 <html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {% assign front_page = true %}
   {% include "edicy-tools-variables" %}
-  {% include "html-head" %}
+  {% include "html-head" front_page: true %}
   {% include "edicy-tools-styles" %}
 
   {% if editmode %}<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">{% endif %}

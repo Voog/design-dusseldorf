@@ -1,49 +1,14 @@
 @import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
-@import '_mixins';
+@import 'mixins';
+@import 'modules/variables';
 
 /* FONTS */
-@include font-face('Montserrat', '../assets/montserrat-regular', 400);
-@include font-face('Montserrat', '../assets/montserrat-bold', 700);
-@include font-face('Lato', '../assets/lato-regular', 400);
-@include font-face('Lato', '../assets/lato-italic', 400, italic);
-@include font-face('Lato', '../assets/lato-bold', 700);
-@include font-face('Lato', '../assets/lato-bold-italic', 700, italic);
-
-$black: #000000;
-$white: #ffffff;
-
-$main-color: rgba($black, .87);
-$secondary-color: #000000;
-
-$link-color: #0066bb;
-$third-color: rgba($black, .36);
-$bg-color: #f6f6f6;
-$error-color: #c70909;
-$success-color: #409e13;
-
-$font-size-xs: 10px;
-$font-size: 18px;
-$font-size-big: 20px;
-$font-size-xl: 24px;
-$font-size-small: 14px;
-
-$line-height-tiny: 18px;
-$line-height-xs: 24px;
-$line-height: 32px;
-
-$font-main: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-secondary: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-$site-width: 1024px;
-$side-width: 200px;
-$content-width: $site-width - $side-width;
-
-$search-width: 300px;
-
-$break-small: 600px;
-$break-middle: 1024px;
-$break-large: 1500px;
-
+@include font-face("Montserrat", "../assets/montserrat-regular", 400);
+@include font-face("Montserrat", "../assets/montserrat-bold", 700);
+@include font-face("Lato", "../assets/lato-regular", 400);
+@include font-face("Lato", "../assets/lato-italic", 400, italic);
+@include font-face("Lato", "../assets/lato-bold", 700);
+@include font-face("Lato", "../assets/lato-bold-italic", 700, italic);
 
 %nulling {
   margin: 0;
@@ -72,7 +37,7 @@ body {
   @extend %nulling;
   height: 100% !important;
   min-height: 100%;
-  font: #{$font-size}/1.67 $font-main;
+  font: #{$font-size}/1.67 $font-secondary;
 
   @media screen and (min-width: $break-large) {
     font-size: $font-size-big;
@@ -83,8 +48,8 @@ body {
   position: relative;
   min-width: $site-width;
   text-align: left;
-  color: $main-color;
-  background: white;
+  color: rgba($color-black, .87);
+  background: $color-white;
 
   @include box-sizing(border-box);
   -webkit-text-size-adjust: none;
@@ -126,32 +91,43 @@ h1,
 h2,
 h3 {
   @extend %nulling;
-  font: normal 30px/1.1 $font-secondary;
-  color: $main-color;
+  color: $color-black;
+  font: normal #{$h1-size} / 1.1 $font-primary;
+  
 
   .dark-background & {
-    color: rgba($white, .87);
+    // color: rgba($color-white, .87);
+    color: $color-white;
+    
 
     .placeholder {
-      color: rgba(255,255,255,.5);
+      // color: rgba($color-white,.5);
+      color: $color-white;
+      opacity: .5;
     }
   }
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 20px / $h1-size * 1em;
 }
 
 h2 {
-  margin: 30px 0 20px;
-  font-size: 24px;
+  font-size: $h2-size;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px / $h2-size * 1em;
+  margin-top: 30px / $h2-size * 1em;
+  // margin: 30px 0 20px;
 }
 
 h3 {
-  margin: 30px 0 20px;
-  font-family: $font-main;
-  font-size: 18px;
+  // margin: 30px 0 20px;
+  font-family: $font-secondary;
+  font-size: $h3-size;
   font-weight: bold;
+  margin-bottom: 20px / $h3-size * 1em;
+  margin-top: 30px / $h3-size * 1em;
 }
 
 p {
@@ -188,11 +164,11 @@ form {
 }
 
 pre {
-  font-size: 14px;
-  @include bg(white, .3);
+  font-size: $font-size-small;
+  @include bg($color-white, .3);
 
   .light-background & {
-    @include bg($secondary-color, .2);
+    @include bg($color-black, .2);
   }
 }
 
@@ -225,9 +201,8 @@ blockquote {
   }
 }
 
-
 .font-size-small {
-  font: #{$font-size}/1.67 $font-main !important;
+  font: #{$font-size}/1.67 $font-secondary !important;
 
   @media screen and (min-width: $break-large) {
     font-size: $font-size-big !important;
@@ -241,10 +216,10 @@ blockquote {
 /* select */
 .jq-select {
   position: relative;
-  font: #{$font-size}/1.67 $font-main;
+  font: #{$font-size}/1.67 $font-secondary;
   cursor: pointer;
-  color: $main-color;
-  background: white;
+  color: rgba($color-black, .87);
+  background: $color-white;
 
   select {
     position: absolute;
@@ -256,10 +231,10 @@ blockquote {
     height: 100%;
     margin: 0;
     padding: 0;
-    font: #{$font-size}/1.67 $font-main;
+    font: #{$font-size}/1.67 $font-secondary;
     cursor: pointer;
     opacity: 0;
-    color: $main-color;
+    color: rgba($color-black, .87);
     border: none;
     -webkit-appearance: none;
     filter: alpha(opacity=0);
@@ -274,7 +249,7 @@ blockquote {
   width: 30px;
   height: 100%;
   border-left: 3px solid $bg-color;
-  background: white;
+  background: $color-white;
 
   &:before {
     position: absolute;
@@ -288,7 +263,7 @@ blockquote {
     pointer-events: none;
     border: solid transparent;
     border-width: 6px;
-    border-top-color: $main-color;
+    border-top-color: rgba($color-black, .87);
   }
 }
 
@@ -324,11 +299,11 @@ blockquote {
 .form_field_textarea {
   width: 30%;
   padding: 4px 5px;
-  font: #{$font-size}/1.67 $font-main;
-  color: $main-color;
+  font: #{$font-size}/1.67 $font-secondary;
+  color: rgba($color-black, .87);
   border: none;
   outline: none;
-  background: $white;
+  background: $color-white;
   @include border-radius(0);
   @include box-sizing(border-box);
 
@@ -383,21 +358,42 @@ blockquote {
 
 .form_submit input,
 .submit {
-  height: 45px;
-  font: #{$font-size}/1.67 $font-main;
-  cursor: pointer;
-  border: 0;
-  outline: 0;
-  background: #2b2b2b;
-  -webkit-appearance: none;
   @include border-radius(0);
+  -webkit-appearance: none;
+  background: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: $font-secondary;
+  font-size: $font-size;
+  line-height: $line-height-xs;
+  margin: 5px 0;
+  max-width: 100%;
+  min-width: 180px;
+  outline: 0;
+  padding: 0.61em 0.55em;
+  text-align: center;
+  text-transform: uppercase;
 
-  .light-background .formatted & {
-    @include color($white, .5);
+  .dark-background .formatted & {
+    border: 2px solid $color-white;
+    color: $color-white;
+
+    &:hover {
+      background: #2b2b2b;
+      border: 2px solid $color-white;
+      color: $color-white;
+    }
   }
 
-  &:hover {
-    @include bg(#2b2b2b, .8);
+  .light-background .formatted & {
+    border: 2px solid $color-black;
+    color: $color-black;
+
+    &:hover {
+      background: #2b2b2b;
+      border: 2px solid $color-white;
+      color: $color-white;
+    }
   }
 }
 
@@ -424,7 +420,7 @@ label {
 
   .form_field_checkbox {
     + .form_control_indicator:before {
-      background: white;
+      background: $color-white;
     }
 
     &:checked {
@@ -446,12 +442,12 @@ label {
     + .form_control_indicator:before {
       width: 9px;
       height: 9px;
-      border: 3px solid white;
+      border: 3px solid $color-white;
     }
 
     &:checked {
       + .form_control_indicator:before {
-        background-color: $main-color;
+        background-color: rgba($color-black, .87);
       }
     }
   }
@@ -486,18 +482,18 @@ label {
 .topbar {
   display: none;
   width: 100%;
-  background: white;
+  background: $color-white;
   position: relative;
   z-index: 6;
 }
 
 .sidebar {
+  @include box-shadow(5px, -50px, 50px, rgba($color-black, .05));
   float: left;
-  width: $side-width;
   min-height: 100%;
   position: relative;
+  width: $side-width;
   z-index: 5;
-  @include box-shadow(5px,-50px,50px,rgba(0,0,0,.05));
 
   @media screen and (min-width: $break-large) {
     width: 20%;
@@ -509,9 +505,9 @@ label {
 }
 
 .main {
-  position: relative;
-  margin-left: $side-width;
   background: $bg-color;
+  margin-left: $side-width;
+  position: relative;
 
   .footer-left {
     padding-top: 20px;
@@ -543,7 +539,7 @@ label {
   position: relative;
 
   .front-page & {
-    font-family: $font-secondary;
+    font-family: $font-primary;
     font-size: $font-size-xl;
     line-height: $line-height;
     text-align: center;
@@ -585,12 +581,13 @@ label {
 
 .site-title {
   padding-top: 20px;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   font-size: $font-size-xl;
   line-height: $line-height;
   vertical-align: top;
   text-transform: uppercase;
-  color: $main-color;
+  color: $color-black;
+  
   @include hyphenate(true);
 
   @media screen and (min-width: $break-middle) {
@@ -598,7 +595,8 @@ label {
   }
 
   a {
-    color: $main-color;
+    color: $color-black;
+    
   }
 
   .topbar & {
@@ -616,7 +614,7 @@ label {
 /* mainmenu */
 .main-menu {
   padding-top: 20px;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   @include hyphenate(true);
 
   li {
@@ -627,12 +625,14 @@ label {
   }
 
   a {
-    color: $third-color;
+    color: $color-black;
+    opacity: .36;
 
     &:hover,
     &.active {
-      color: $secondary-color;
-    }
+      color: $color-black;
+      opacity: 1;
+    } 
   }
 }
 
@@ -640,7 +640,7 @@ label {
 .sub-menu {
   min-height: 35px;
   padding: 30px 50px 15px 50px;
-  font: 14px/1.1 $font-secondary;
+  font: 14px/1.1 $font-primary;
   text-align: right;
   word-wrap: break-word;
 
@@ -654,25 +654,28 @@ label {
     margin-top: 3px;
     margin-bottom: 11px;
     white-space: nowrap;
-    color: $third-color;
+    color: $color-black;
+    opacity: .36;
 
     .dark-background & {
-      @include color($white, .42);
+      color: $color-white;
+      opacity: .42;
 
       &:hover {
-        @include color($white, 1);
+        color: $color-white;
+        opacity: 1;
       }
     }
 
     &:hover {
-      color: $main-color;
+      color: $color-black;
     }
 
     &.active {
       margin-bottom: 4px;
       padding-bottom: 4px;
-      color: $main-color;
-      border-bottom: 3px solid $main-color;
+      color: $color-black;
+      border-bottom: 3px solid rgba($color-black, .87);
     }
 
     &.edy-cbtn {
@@ -704,7 +707,7 @@ label {
 }
 
 .lang-flag:before {
-  @include bg($black);
+  @include bg($color-black);
 }
 
 .lang-flag:after {
@@ -837,7 +840,7 @@ $flags:
 }
 
 .lang-options {
-  @include bg($black, 0.09);
+  @include bg($color-black, 0.09);
 
   .menu {
     .menu-item {
@@ -860,7 +863,7 @@ $flags:
       }
 
       .menu-item {
-        @include color($white, .5);
+        @include color($color-white, .5);
       }
     }
   }
@@ -909,10 +912,10 @@ $flags:
   }
 
   @media screen and (max-width: $break-small) {
-    @include color($white);
+    @include color($color-white);
 
     &:hover {
-      @include color($white, .8);
+      @include color($color-white, .8);
     }
   }
 }
@@ -1038,8 +1041,8 @@ $flags:
   padding: 5px 0;
   line-height: 1;
   text-align: left;
-  background: #ffffff;
-  @include box-shadow(0,0,5px,rgba(0,0,0,.3));
+  background: $color-white;
+  @include box-shadow(0,0,5px,rgba($color-black,.3));
 
   .no-boxshadow & {
     border: 1px solid #eeeeee;
@@ -1064,7 +1067,7 @@ $flags:
 
 .content-inner {
   position: relative;
-  font-family: $font-secondary;
+  font-family: $font-primary;
   @include hyphenate(true);
 
   @media screen and (max-width: $break-middle - 1px) {
@@ -1079,7 +1082,7 @@ $flags:
 
   .footer-row & {
     font-size: $font-size-small;
-    font-family: $font-secondary;
+    font-family: $font-primary;
     line-height: $line-height-xs;
     padding: 4px 0;
   }
@@ -1176,7 +1179,7 @@ $flags:
 
 .blog-list {
   .post-wrap {
-    border-top: 2px solid white;
+    border-top: 2px solid $color-white;
   }
 
   .post {
@@ -1191,11 +1194,12 @@ $flags:
     word-wrap: break-word;
 
     a {
-      color: $secondary-color;
+      color: $color-black;
     }
 
     a:hover {
-      @include color($secondary-color, .75);
+      color: $color-black;
+      opacity: .75;
     }
   }
 }
@@ -1206,7 +1210,8 @@ $flags:
 
 .post-date {
   display: inline;
-  color: $third-color;
+  color: $color-black;
+  opacity: .36;
 }
 
 .post-content {
@@ -1252,7 +1257,7 @@ $flags:
     width: 250px;
     height: 2px;
     content: '';
-    background: white;
+    background: $color-white;
   }
 
   h3 {
@@ -1328,8 +1333,9 @@ $flags:
   word-wrap: break-word;
 
   .comment-info {
+    color: $color-black;
     font-size: 14px;
-    color: $third-color;
+    opacity: .36;
 
     .edy-site-btn-removecomment {
       vertical-align: -1px;
@@ -1349,8 +1355,8 @@ table {
   td,
   th {
     padding: 10px;
-    border: 1px solid $third-color;
-    border-color: rgba($third-color, .9);
+    border: 1px solid rgba($color-black, .36);
+    border-color: rgba($color-black, .32);
   }
 
   th {
@@ -1371,7 +1377,7 @@ table {
 .footer {
   position: absolute;
   z-index: 6;
-  background: $white;
+  background: $color-white;
   right: 100%;
   bottom: 0;
   width: $side-width;
@@ -1425,13 +1431,15 @@ table {
 
     path {
       .dark-background & {
-        fill: $white;
+        fill: $color-white;
       }
       .light-background & {
-        fill: $third-color;
+        fill: $color-black;
+        opacity: .36;
       }
       footer & {
-        fill: $third-color;
+        fill: $color-black;
+        opacity: .36;
       }
     }
   }
@@ -1479,48 +1487,48 @@ table {
 .js-bgpicker-cover-color {
   position: relative;
   z-index: 1;
-  color: white;
-  background: rgba(0,0,0,.2);
+  color: $color-white;
+  background: rgba($color-black,.2);
 
 }
 
 .light-background {
-  color: $main-color;
+  color: rgba($color-black, .87);
 
   .edy-empty-bordered {
-    border-color: white;
-    border-color: rgba(255,255,255,.35);
+    border-color: $color-white;
+    border-color: rgba($color-white,.35);
   }
 
   .edy-empty-bordered {
     .edy-empty-header {
-      color: white;
-      color: rgba(255,255,255,.5);
+      color: $color-white;
+      color: rgba($color-white,.5);
     }
   }
   .edy-empty-bordered {
-    border-color: white;
-    border-color: rgba(0,0,0,.35);
+    border-color: $color-white;
+    border-color: rgba($color-black,.35);
   }
 
   .edy-content-element-hover {
-    border-color: white;
-    border-color: rgba(0,0,0,.1);
+    border-color: $color-white;
+    border-color: rgba($color-black,.1);
   }
 
   .edy-empty-bordered {
     .edy-empty-header {
-      color: white;
-      color: rgba(0,0,0,.5);
+      color: $color-white;
+      color: rgba($color-black,.5);
     }
   }
 
   .edy-texteditor-active {
-    outline: 1px solid rgba(0, 0, 0, .2);
+    outline: 1px solid $color-black;
   }
 
   .edy-texteditor-active:hover {
-    outline: 1px solid rgba(0, 0, 0, .3);
+    outline: 1px solid $color-black;
   }
 
   .edy-empty-bordered {
@@ -1532,30 +1540,30 @@ table {
 .dark-background {
 
   .edy-content-element-hover {
-    border-color: white;
-    border-color: rgba(255,255,255,.3);
+    border-color: $color-white;
+    border-color: rgba($color-white,.3);
   }
 
   .edy-texteditor-active {
-    outline: 1px solid rgba(255, 255, 255, 0.7);
+    outline: 1px solid rgba($color-white, .7);
   }
 
   .edy-texteditor-active:hover {
-    outline: 1px solid rgba(255, 255, 255, 0.63);
+    outline: 1px solid rgba($color-white, .63);
   }
 
   .placeholder {
-    color: #FFFFFF;
-    color: rgba(255, 255, 255, 0.5);
+    color: $color-white;
+    color: rgba($color-white, .5);
   }
 
   .edy-empty-bordered, .edy-taglist {
-    color: rgba(255, 255, 255, 0.7);
-    border: 1px dashed rgba(255, 255, 255, 0.7);
+    color: rgba($color-white, .7);
+    border: 1px dashed rgba($color-white, .7);
   }
 
   .edy-taglist-openarrow::after {
-    border-color: #fff transparent transparent;
+    border-color: $color-white transparent transparent;
   }
 }
 
@@ -1585,7 +1593,7 @@ table {
 /* search */
 .search {
   position: relative;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 
   .search-box {
     position: relative;
@@ -1607,8 +1615,8 @@ table {
     width: 100%;
     margin: 0;
     padding: 4px 0;
-    font: #{$font-size-small}/22px $font-secondary;
-    color: $main-color;
+    font: #{$font-size-small}/22px $font-primary;
+    color: rgba($color-black, .87);
     border: none;
     outline: 0;
     background: none;
@@ -1618,22 +1626,22 @@ table {
     }
     &::-webkit-input-placeholder {
       opacity: 1;
-      color: rgba(0,0,0,.2);
+      color: rgba($color-black,.2);
     }
 
     &:-moz-placeholder {
       opacity: 1;
-      color: rgba(0,0,0,.2);
+      color: rgba($color-black,.2);
     }
 
     &::-moz-placeholder {
       opacity: 1;
-      color: rgba(0,0,0,.2);
+      color: rgba($color-black,.2);
     }
 
     &:-ms-input-placeholder {
       opacity: 1;
-      color: rgba(0,0,0,.2);
+      color: rgba($color-black,.2);
     }
 
     #mobile-search & {
@@ -1744,7 +1752,7 @@ table {
     display: block;
     width: $search-width;
     opacity: 1;
-    @include box-shadow(10px, 0px, 10px, rgba(0,0,0,.05));
+    @include box-shadow(10px, 0, 10px, rgba($color-black,.05));
   }
 }
 
@@ -1787,7 +1795,7 @@ table {
     padding: 40px;
     text-align: center;
     vertical-align: middle;
-    color: $third-color;
+    color: rgba($color-black, .36);
   }
 
   &.voog-search-noresults-visible {
@@ -1807,10 +1815,10 @@ table {
   }
 
   .voog-search-result-link {
-    color: $main-color;
+    color: rgba($color-black, .87);
 
     &:hover {
-      @include color($main-color, .8);
+      @include color($color-black, .8);
     }
   }
 
@@ -1911,7 +1919,7 @@ table {
 
   body {
     min-width: 320px;
-    background: white;
+    background: $color-white;
   }
 
   .wrap,
@@ -1961,7 +1969,7 @@ table {
     .front-page & {
       font-size: 22px;
       line-height: $line-height;
-      color: white;
+      color: $color-white;
 
       h1 {
         font-size: 22px * 1.5;
@@ -2071,7 +2079,7 @@ table {
     left: auto;
     display: block;
     width: auto;
-    background: white;
+    background: $color-white;
     .footer-inner {
       padding: 20px;
     }
@@ -2112,7 +2120,7 @@ table {
         width: 20px;
         height: 3px;
         content: '';
-        background: $main-color;
+        background: rgba($color-black, .87);
         @include border-radius(5px);
 
         &.flags-disabled {
@@ -2130,7 +2138,7 @@ table {
             .lang-title {
               display: inline-block;
               position: static;
-              color: $white;
+              color: $color-white;
             }
           }
         }
@@ -2149,7 +2157,7 @@ table {
   }
 
   #mobile-menu {
-    font-family: $font-secondary;
+    font-family: $font-primary;
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -2182,7 +2190,7 @@ table {
         width: 20px;
         height: 3px;
         content: '';
-        background: white; @include border-radius(3px);
+        background: $color-white; @include border-radius(3px);
       }
 
       &:before {
@@ -2231,7 +2239,7 @@ table {
         display: inline-block;
         vertical-align: top;
         padding: 11px 9px 17px;
-        @include color($white);
+        @include color($color-white);
 
         &:before,
         &:after {
@@ -2245,7 +2253,7 @@ table {
         .lang-title {
           display: inline-block;
           position: static;
-          color: $white;
+          color: $color-white;
         }
       }
     }
@@ -2283,7 +2291,7 @@ table {
           line-height: $line-height; @include color(white, .5);
 
           &.active {
-            color: white;
+            color: $color-white;
           }
         }
       }
@@ -2331,7 +2339,7 @@ table {
         width: 20px;
         height: 3px;
         content: '';
-        background: $main-color; @include border-radius(3px);
+        background: rgba($color-black, .87); @include border-radius(3px);
       }
 
       &:before {
@@ -2409,89 +2417,89 @@ table {
 
 .dark-background {
   .formatted {
-    color: $white;
+    color: $color-white;
 
     & h1, h2, h3, h4, p, pre, a, b, input {
-      color: $white;
+      color: $color-white;
     }
   }
 
   .post-title a {
-    color: $white;
+    color: $color-white;
 
     &:hover {
-      color: rgba(255,255,255,.75);
+      color: rgba($color-white,.75);
     }
   }
 
   .post-date {
-    color: rgba($white, .36);
+    color: rgba($color-white, .36);
   }
 
   .footer-row & {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba($color-white, .6);
   }
 }
 
 .light-background {
   .formatted {
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba($color-black, .5);
 
     & h1, h2, h3, h4, p, input {
-      color: rgba(0, 0, 0, 0.5);
+      color: rgba($color-black, .5);
     }
   }
 
   .post-title a {
-    color: $black;
+    color: $color-black;
   }
 
   .footer-row & {
       a {
-        color: $black;
+        color: $color-black;
       }
       b {
-        color: rgba(0, 0, 0, 0.5);
+        color: rgba($color-black, .5);
       }
   }
 
   .footer-row & {
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba($color-black, .6);
   }
 }
 
 .custom-btn {
-  display: inline-block;
+  @include hyphenate(true);
   box-sizing: border-box;
-  min-width: 180px;
-  max-width: 100%;
-  padding: 11px 10px;
-  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
   font-size: $font-size;
   line-height: $line-height-xs;
+  margin: 5px 0;
+  max-width: 100%;
+  min-width: 180px;
+  padding: 0.61em 0.55em;
   text-align: center;
-  margin: 5px 10px;
-  cursor: pointer;
-  @include hyphenate(true);
+  text-transform: uppercase;
 
   .dark-background & {
-    border: 2px solid $white;
-    color: $white;
+    border: 2px solid $color-white;
+    color: $color-white;
 
     &:hover {
       background: #2b2b2b;
-      border: 2px solid $white;
-      color: $white;
+      border: 2px solid $color-white;
+      color: $color-white;
     }
   }
   .light-background & {
-    border: 2px solid $black;
-    color: $black;
+    border: 2px solid $color-black;
+    color: $color-black;
 
     &:hover {
       background: #2b2b2b;
-      border: 2px solid $white;
-      color: $white;
+      border: 2px solid $color-white;
+      color: $color-white;
     }
   }
 
@@ -2523,7 +2531,7 @@ table {
     font-size: $font-size-xs;
     line-height: $line-height-xs;
     text-align: center;
-    margin: 0px 0px;
+    margin: 0;
 
     &:hover {
       background: #6b6b6b;
@@ -2531,16 +2539,16 @@ table {
   }
 
   .dark-background .custom-btn {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: $white;
+    border: 1px solid rgba($color-white, .1);
+    color: $color-white;
   }
 
   .light-background .custom-btn {
     border: 1px solid #333;
-    color: $black;
+    color: $color-black;
 
     &:hover {
-      color: $white;
+      color: $color-white;
     }
   }
 
@@ -2559,7 +2567,7 @@ table {
   }
 
   .light-background .custom-btn:hover a {
-    color: $white;
+    color: $color-white;
   }
 
 }

@@ -1,0 +1,47 @@
+$color-black: rgb(0, 0, 0);
+$color-white: rgb(255, 255, 255);
+
+$bg-color: #f6f6f6;
+$bg-color: rgb(246,246,246);
+
+$main-color: rgba($color-black, .87);
+$second-color: $color-black;
+$third-color: rgba($color-black, .36);
+
+$link-color: #0066bb;
+
+$error-color: #c70909;
+$success-color: #409e13;
+
+$font-size-xs: 10px;
+$font-size: 18px;
+$font-size-big: 20px;
+$font-size-xl: 24px;
+$font-size-small: 14px;
+
+$h1-size: 30px;
+$h2-size: 24px;
+$h3-size: 18px;
+
+$line-height-tiny: 18px;
+$line-height-xs: 24px;
+$line-height: 32px;
+
+$line-height-headings: 1.1em;
+
+$font-secondary: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-primary: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$site-width: 1024px;
+$side-width: 200px;
+$content-width: $site-width - $side-width;
+
+$search-width: 300px;
+
+$break-small: 600px;
+$break-middle: 1024px;
+$break-large: 1500px;
+
+$fourth-color: $color-white;
+$focus-color: #f9ec5a;
+
