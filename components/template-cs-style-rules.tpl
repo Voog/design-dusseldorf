@@ -128,6 +128,7 @@
 .dark-background .formatted a:hover.custom-btn {
   border-color: var(--color-light);
   color: var(--color-light);
+  font-family: var(--font-primary);
   text-transform: var(--content-button-text-transform);
 }
 .dark-background .formatted table th,
