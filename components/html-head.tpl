@@ -24,13 +24,13 @@
 {% customstyle %}
   {% include "template-cs-main-styles" %}
   {% include "template-cs-sidebar" %}
-  {% include "template-cs-headings" %}
   {% include "template-cs-content" %}
-  {% include "template-cs-table" %}
-  {% include "template-cs-button" %}
   {% if front_page %}
     {% include "template-cs-footer" %}
   {% endif %}
+  {% include "template-cs-headings" %}
+  {% include "template-cs-table" %}
+  {% include "template-cs-button" %}
   {% include "template-cs-style-rules" %}
   {% comment %}
   {% endcomment %}
