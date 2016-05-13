@@ -48,19 +48,7 @@
   */
   --focus-area-padding: 45px;
 
-  /* VoogStyle
-     "pathI18n": ["focus_area", "text"],
-     "titleI18n": "line_height",
-     "editor": "rangePicker",
-     "min": 0.8,
-     "max": 3,
-     "step": 0.1,
-     "unit": "em",
-     "scope": "global"
-  */
-  --focus-area-line-height: $line-height;
-
-  /* VoogStyle
+/* VoogStyle
     "pathI18n": ["focus_area", "text"],
     "titleI18n": "size",
     "type": "button",
@@ -72,6 +60,18 @@
     "featured": true
   */
   --focus-area-font-size: $h2-size;
+
+  /* VoogStyle
+     "pathI18n": ["focus_area", "text"],
+     "titleI18n": "line_height",
+     "editor": "rangePicker",
+     "min": 0.8,
+     "max": 3,
+     "step": 0.1,
+     "unit": "em",
+     "scope": "global"
+  */
+  --focus-area-line-height: 1.05;
 
   /* VoogStyle
     "pathI18n": ["focus_area", "text"],

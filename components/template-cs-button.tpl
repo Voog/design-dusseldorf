@@ -20,7 +20,7 @@
      "unit": "em",
      "scope": "global"
   */
-  --content-button-line-height: 1.7em;
+  --content-button-line-height: 1.333;
   /* VoogStyle
     "pathI18n": ["button"],
     "titleI18n": "font_weight",

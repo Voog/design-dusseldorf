@@ -206,7 +206,7 @@
         "--content-button-line-height"
      ]
   */
-  --content-line-height: 1.7em;
+  --content-line-height: 1.7;
   /* VoogStyle
     "pathI18n": ["content", "link", "normal"],
     "titleI18n": "font_weight",

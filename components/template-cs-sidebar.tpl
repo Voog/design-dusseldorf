@@ -28,7 +28,7 @@
      "unit": "em",
      "scope": "global"
   */
-  --sidebar-site-title-line-height: 1.3em;
+  --sidebar-site-title-line-height: 1.3;
   /* VoogStyle
     "pathI18n": ["sidebar", "title"],
     "titleI18n": "font_weight",
@@ -102,7 +102,7 @@
      "unit": "em",
      "scope": "global"
   */
-  --sidebar-mainmenu-line-height: 1.3em;
+  --sidebar-mainmenu-line-height: 1.3;
   /* VoogStyle
     "pathI18n": ["sidebar", "main_menu", "normal"],
     "titleI18n": "font_weight",
