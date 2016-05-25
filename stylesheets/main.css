@@ -173,7 +173,6 @@ form {
   word-break: normal;
   word-wrap: normal;
   -webkit-hyphens: none;
-  -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
 }
@@ -581,7 +580,6 @@ label .form_control_indicator:before {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
 }
@@ -610,7 +608,6 @@ label .form_control_indicator:before {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
 }
@@ -1064,7 +1061,6 @@ label .form_control_indicator:before {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   padding: 65px 20px;
@@ -1081,7 +1077,6 @@ label .form_control_indicator:before {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
 }
@@ -1366,7 +1361,6 @@ table th {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
 }
@@ -2315,7 +2309,6 @@ footer .voog-reference svg path {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   box-sizing: border-box;
