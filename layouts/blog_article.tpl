@@ -39,8 +39,8 @@
                   <h1>{% editable article.title %} <time class="post-date" datetime="{{ article.created_at | date : "%Y-%m-%d" }}">{{ article.created_at | date : "%d.%m" }}</time></h1>
                 </header>
                 <section class="post-content">
-                  <div class="post-excerpt cfx formatted">{% editable article.excerpt %}</div>
-                  <div class="post-body cfx formatted" {{ edy_intro_edit_text }}>{% editable article.body %}</div>
+                  <div class="post-excerpt cfx formatted" {{ edy_intro_edit_text }}>{% editable article.excerpt %}</div>
+                  <div class="post-body cfx formatted">{% editable article.body %}</div>
 
                   {% if editmode %}
                   <div class="post-tags">
