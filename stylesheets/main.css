@@ -1514,62 +1514,6 @@ footer .voog-reference svg path {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.light-background {
-  color: rgba(0, 0, 0, 0.87);
-}
-.light-background .edy-empty-bordered {
-  border-color: white;
-  border-color: rgba(255, 255, 255, 0.35);
-}
-.light-background .edy-empty-bordered .edy-empty-header {
-  color: white;
-  color: rgba(255, 255, 255, 0.5);
-}
-.light-background .edy-empty-bordered {
-  border-color: white;
-  border-color: rgba(0, 0, 0, 0.35);
-}
-.light-background .edy-content-element-hover {
-  border-color: white;
-  border-color: rgba(0, 0, 0, 0.1);
-}
-.light-background .edy-empty-bordered .edy-empty-header {
-  color: white;
-  color: rgba(0, 0, 0, 0.5);
-}
-.light-background .edy-texteditor-active {
-  outline: 1px solid black;
-}
-.light-background .edy-texteditor-active:hover {
-  outline: 1px solid black;
-}
-.light-background .edy-empty-bordered {
-  color: rgba(27, 33, 36, 0.33);
-  border: 1px dashed rgba(27, 33, 36, 0.33);
-}
-
-.dark-background .edy-content-element-hover {
-  border-color: white;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-.dark-background .edy-texteditor-active {
-  outline: 1px solid rgba(255, 255, 255, 0.7);
-}
-.dark-background .edy-texteditor-active:hover {
-  outline: 1px solid rgba(255, 255, 255, 0.63);
-}
-.dark-background .placeholder {
-  color: white;
-  color: rgba(255, 255, 255, 0.5);
-}
-.dark-background .edy-empty-bordered, .dark-background .edy-taglist {
-  color: rgba(255, 255, 255, 0.7);
-  border: 1px dashed rgba(255, 255, 255, 0.7);
-}
-.dark-background .edy-taglist-openarrow::after {
-  border-color: white transparent transparent;
-}
-
 .front-page .footer-row .edy-empty-bordered {
   padding: 6px;
 }
