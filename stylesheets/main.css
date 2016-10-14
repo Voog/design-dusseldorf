@@ -2454,3 +2454,50 @@ footer .custom-btn {
 .footer-row .light-background .custom-btn:hover a {
   color: white;
 }
+
+.public .edy-ecommerce-shopping-cart-button {
+  display: inline-block;
+  padding: .44em;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.87);
+  border: 0;
+  outline: 0;
+}
+.public .edy-ecommerce-shopping-cart-button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.public .edy-ecommerce-shopping-cart-button, .public .edy-ecommerce-shopping-cart-button:hover {
+  color: white;
+}
+.public .edy-ecommerce-shopping-cart-button:hover {
+  background-color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+@media screen and (max-width: 600px) {
+  .public .edy-ecommerce-shopping-cart-button {
+    top: 11px;
+    right: 44px;
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 601px) {
+  .public .edy-ecommerce-shopping-cart-button {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .public .edy-ecommerce-shopping-cart-button {
+    top: 115px;
+    right: 25px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .public .edy-ecommerce-shopping-cart-button {
+    top: 23px;
+    right: 30px;
+  }
+}
+.public .edy-ecommerce-shopping-cart-button .edy-ecommerce-shopping-cart-button-flash {
+  line-height: 2.6;
+}
