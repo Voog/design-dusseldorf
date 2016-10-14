@@ -73,8 +73,8 @@
         color: var(--color-light);
       }
     }
-    
-    a, a:hover {
+
+    a, a:hover, button, button:hover {
       color: var(--content-links-color);
 
       &.custom-btn {
@@ -84,7 +84,7 @@
       }
     }
 
-    a:hover {
+    a:hover, button:hover {
       color: var(--content-links-hover-color);
 
       &.custom-btn {
@@ -173,8 +173,7 @@
       }
     }
 
-    a,
-    a:hover {
+    a, a:hover, button, button:hover {
       color: var(--content-links-color);
 
       &.custom-btn {
@@ -302,14 +301,14 @@ label .form_field_radio + .form_control_indicator::before {
   #mobile-menu .navigation-menu ul a.active,
   #mobile-menu .language-menu ul a.active {
     color: var(--color-light);
-  }  
+  }
 
   .mobile-menu-toggler span, .mobile-menu-toggler span:before, .mobile-menu-toggler span:after {
     background-color: var(--color-dark);
   }
 }
 
-// main font 
+// main font
 body,
 .font-size-small,
 .jq-select,
@@ -498,7 +497,7 @@ h3,
   }
 }
 
-.main .formatted, 
+.main .formatted,
 .main .post-content {
   font-size: var(--content-font-size);
   font-style: var(--content-font-style);
@@ -568,7 +567,7 @@ h3,
     text-transform: var(--footer-text-transform);
   }
 
-  a.custom-btn {
+  .custom-btn {
     font-size: var(--footer-font-size);
     text-decoration: none;
   }
@@ -592,7 +591,7 @@ h3,
       color: var(--color-light);
       border-color: var(--color-light);
 
-      &:hover a {
+      &:hover a, &:hover button {
         color: var(--color-light);
       }
     }

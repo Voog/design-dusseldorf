@@ -1184,6 +1184,50 @@ label .form_control_indicator:before {
 .formatted .form_fields {
   text-align: left;
 }
+.formatted .custom-btn {
+  word-break: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 5px 0;
+  max-width: 100%;
+  min-width: 180px;
+  padding: 0.61em 0.55em;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+.formatted .custom-btn::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.dark-background .formatted .custom-btn {
+  border: 2px solid white;
+  color: white;
+}
+.dark-background .formatted .custom-btn:hover {
+  background: #2b2b2b;
+  border: 2px solid white;
+  color: white;
+}
+.light-background .formatted .custom-btn {
+  border: 2px solid black;
+  color: black;
+}
+.light-background .formatted .custom-btn:hover {
+  background: #2b2b2b;
+  border: 2px solid white;
+  color: white;
+}
+footer .formatted .custom-btn {
+  display: none;
+}
 .formatted .edy-positionable-container-center,
 .formatted .edy-positionable-container-left-block,
 .formatted .edy-positionable-container-right-block,
@@ -2362,50 +2406,6 @@ footer .voog-reference svg path {
 }
 .footer-row .light-background {
   color: rgba(0, 0, 0, 0.6);
-}
-
-.custom-btn {
-  word-break: break-word;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-  box-sizing: border-box;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 18px;
-  line-height: 24px;
-  margin: 5px 0;
-  max-width: 100%;
-  min-width: 180px;
-  padding: 0.61em 0.55em;
-  text-align: center;
-  text-transform: uppercase;
-}
-.custom-btn::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-.dark-background .custom-btn {
-  border: 2px solid white;
-  color: white;
-}
-.dark-background .custom-btn:hover {
-  background: #2b2b2b;
-  border: 2px solid white;
-  color: white;
-}
-.light-background .custom-btn {
-  border: 2px solid black;
-  color: black;
-}
-.light-background .custom-btn:hover {
-  background: #2b2b2b;
-  border: 2px solid white;
-  color: white;
-}
-footer .custom-btn {
-  display: none;
 }
 
 .header-row .content-full {
