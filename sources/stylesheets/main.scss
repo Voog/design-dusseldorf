@@ -1209,12 +1209,17 @@ $flags:
 
 // Post navigation menu
 .post-nav {
-  padding-right: 30px;
   padding-bottom: 20px;
-  padding-left: 30px;
+
+  @media screen and (max-width: $break-small) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
 
   @media screen and (min-width: $break-small + 1) {
     padding-top: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
   }
 }
 
