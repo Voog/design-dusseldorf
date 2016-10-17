@@ -172,6 +172,12 @@
   background-color: var(--color-dark);
 }
 
+@media screen and (max-width: 600px) {
+  .post-nav-link:nth-child(2)::before {
+    background-color: var(--color-light);
+  }
+}
+
 .comments:before,
 label .form_field_checkbox + .form_control_indicator::before,
 .form_field_textfield,

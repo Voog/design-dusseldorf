@@ -73,7 +73,7 @@
         color: var(--color-light);
       }
     }
-    
+
     a, a:hover {
       color: var(--content-links-color);
 
@@ -227,6 +227,16 @@
   background-color: var(--color-dark);
 }
 
+.post-nav-link {
+  &:nth-child(2) {
+    &::before {
+      @media screen and (max-width: $break-small) {
+        background-color: var(--color-light);
+      }
+    }
+  }
+}
+
 .comments:before,
 label .form_field_checkbox + .form_control_indicator::before,
 .form_field_textfield,
@@ -302,14 +312,14 @@ label .form_field_radio + .form_control_indicator::before {
   #mobile-menu .navigation-menu ul a.active,
   #mobile-menu .language-menu ul a.active {
     color: var(--color-light);
-  }  
+  }
 
   .mobile-menu-toggler span, .mobile-menu-toggler span:before, .mobile-menu-toggler span:after {
     background-color: var(--color-dark);
   }
 }
 
-// main font 
+// main font
 body,
 .font-size-small,
 .jq-select,
@@ -498,7 +508,7 @@ h3,
   }
 }
 
-.main .formatted, 
+.main .formatted,
 .main .post-content {
   font-size: var(--content-font-size);
   font-style: var(--content-font-style);
