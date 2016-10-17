@@ -87,7 +87,7 @@ a {
   text-decoration: none;
   color: #0066bb;
 }
-a:hover {
+a:not(.post-nav-link):hover {
   color: #0066bb;
   color: rgba(0, 102, 187, 0.85);
 }

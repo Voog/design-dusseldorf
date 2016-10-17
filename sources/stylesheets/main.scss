@@ -59,7 +59,7 @@ a {
   text-decoration: none;
   color: $link-color;
 
-  &:hover {
+  &:not(.post-nav-link):hover {
     @include color($link-color, .85);
   }
 }
