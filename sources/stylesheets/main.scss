@@ -1247,9 +1247,9 @@ $flags:
       @media screen and (max-width: $break-small) {
         position: absolute;
         top: 0;
+        right: -30px;
         left: -30px;
         display: block;
-        width: 250px;
         height: 2px;
         background-color: $color-white;
         content: '';
