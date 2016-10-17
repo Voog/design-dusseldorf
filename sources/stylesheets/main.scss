@@ -1207,6 +1207,84 @@ $flags:
   }
 }
 
+// Post navigation menu
+.post-nav {
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+
+  @media screen and (min-width: $break-small + 1) {
+    padding-top: 20px;
+  }
+}
+
+.post-nav-inner {
+  @media screen and (min-width: $break-small + 1) {
+    display: flex;
+  }
+}
+
+.post-nav-link {
+  position: relative;
+  display: block;
+  flex: 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: currentColor;
+
+  &:hover {
+    .post-nav-direction {
+      opacity: 1;
+    }
+
+    .post-nav-title {
+      opacity: 1;
+    }
+  }
+
+  &:nth-child(2) {
+    &::before {
+      @media screen and (max-width: $break-small) {
+        position: absolute;
+        top: 0;
+        left: -30px;
+        display: block;
+        width: 250px;
+        height: 2px;
+        background-color: $color-white;
+        content: '';
+      }
+    }
+  }
+}
+
+.post-nav-link-older {
+  @media screen and (min-width: $break-small + 1) {
+    padding-right: 20px;
+  }
+}
+
+.post-nav-link-newer {
+  @media screen and (min-width: $break-small + 1) {
+    padding-left: 20px;
+    text-align: right;
+  }
+}
+
+.post-nav-direction {
+  font-size: 13px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: .3;
+}
+
+.post-nav-title {
+  margin-top: 6px;
+  font-size: 18px;
+  opacity: .7;
+}
+
+
 /* comments */
 .comments {
   position: relative;
