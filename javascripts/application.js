@@ -10805,20 +10805,27 @@ MMCQ = (function() {
         });
 
         $('.mobile-menu-toggler').click(function(event) {
-            event.preventDefault();
-            $('body').toggleClass('mobilemenu-open');
-            $('body').removeClass('mobilesearch-open');
+          event.preventDefault();
+          $('body').toggleClass('mobilemenu-open');
+          $('body').removeClass('mobilesearch-open');
+
+          $('.edy-ecommerce-shopping-cart-button').hide();
         });
 
         $('.mobile-menu-close').on('click', function(event) {
-            event.preventDefault();
+          event.preventDefault();
 
-            if ($('body').hasClass('language-menu-open')) {
-                $('body').removeClass('language-menu-open');
-            }
-            else {
-                $('body').removeClass('mobilemenu-open');
-            }
+          if ($('body').hasClass('language-menu-open')) {
+              $('body').removeClass('language-menu-open');
+          }
+          else {
+              $('body').removeClass('mobilemenu-open');
+          }
+
+          if ($('.edy-ecommerce-shopping-cart-button').length > 0) {
+            $('body').addClass('edy-checkout-button-visible');
+            $('.edy-ecommerce-shopping-cart-button').show();
+          }
         });
 
 

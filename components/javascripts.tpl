@@ -28,17 +28,26 @@
       $('.mobile-search-toggler').click(function(event) {
           event.preventDefault();
           var $body = $('body');
-          if ($body.hasClass('mobilesearch-open')) {
-              $body.removeClass('mobilesearch-open');
-              mobilesearch.reset();
-          }
-          else {
-              var top = $('.sidebar').height();
-              $('#mobile-search').css('top', top + 'px');
-              $('body').addClass('mobilesearch-open');
-              $('#mobile-search .search-input').get(0).focus();
-          }
 
+          if ($body.hasClass('mobilesearch-open')) {
+            $body.removeClass('mobilesearch-open');
+            $body.removeClass('edy-checkout-button-visible');
+
+            mobilesearch.reset();
+
+            if ($('.edy-ecommerce-shopping-cart-button').length > 0) {
+              $body.addClass('edy-checkout-button-visible');
+              $('.edy-ecommerce-shopping-cart-button').show();
+            }
+          } else {
+            var top = $('.sidebar').height();
+
+            $('#mobile-search').css('top', top + 'px');
+            $('body').addClass('mobilesearch-open');
+            $('#mobile-search .search-input').get(0).focus();
+
+            $('.edy-ecommerce-shopping-cart-button').hide();
+          }
       });
     });
   </script>
