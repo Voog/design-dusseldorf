@@ -1013,6 +1013,9 @@ label .form_control_indicator:before {
   left: 30px;
   height: 13px;
 }
+.edy-checkout-button-visible .lang-menu {
+  top: 71px;
+}
 .lang-menu li {
   display: block;
   font-size: 12px;
@@ -1732,6 +1735,9 @@ footer .voog-reference svg path {
   opacity: 0;
   background: #f6f6f6;
 }
+.edy-checkout-button-visible .voog-search-container {
+  top: 41px;
+}
 @media screen and (min-width: 1500px) {
   .voog-search-container {
     margin-left: 20%;
@@ -2405,6 +2411,7 @@ footer .voog-reference svg path {
   padding: 0.61em 0.55em;
   text-align: center;
   text-transform: uppercase;
+  background-color: transparent;
 }
 .dark-background .custom-btn {
   border: 2px solid white;
