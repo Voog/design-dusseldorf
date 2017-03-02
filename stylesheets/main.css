@@ -1168,6 +1168,9 @@ label .form_control_indicator:before {
   bottom: 0;
 }
 
+.formatted:empty {
+  display: none;
+}
 .formatted ul,
 .formatted ol {
   margin: 15px 0;
