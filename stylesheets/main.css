@@ -1356,7 +1356,6 @@ label .form_control_indicator:before {
 
 @media screen and (min-width: 601px) {
   .post-nav-inner {
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
   }
@@ -1365,9 +1364,8 @@ label .form_control_indicator:before {
 .post-nav-link {
   position: relative;
   display: block;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+      flex: 1;
   padding-top: 20px;
   padding-bottom: 20px;
   color: currentColor;
@@ -2195,12 +2193,10 @@ footer .voog-reference svg path {
     border-radius: 3px;
   }
   #mobile-menu .mobile-menu-close:before {
-    -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
         transform: rotate(45deg);
   }
   #mobile-menu .mobile-menu-close:after {
-    -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
   }
@@ -2325,12 +2321,10 @@ footer .voog-reference svg path {
     border-radius: 3px;
   }
   .mobilesearch-open .mobile-search-toggler:before {
-    -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
         transform: rotate(45deg);
   }
   .mobilesearch-open .mobile-search-toggler:after {
-    -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
   }
