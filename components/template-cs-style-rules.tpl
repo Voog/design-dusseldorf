@@ -18,8 +18,12 @@
   background-color: var(--color-light);
 }
 .light-background .post-title a,
-.light-background .custom-btn {
+.light-background .custom-btn:not(.custom-btn-disabled) {
   color: var(--color-dark);
+}
+.light-background .post-title a:hover,
+.light-background .custom-btn:not(.custom-btn-disabled):hover {
+  color: var(--color-light);
 }
 .light-background .formatted {
   color: var(--color-dark);
@@ -52,17 +56,21 @@
   color: var(--content-links-color);
 }
 .light-background .formatted a.custom-btn, .light-background .formatted a:hover.custom-btn {
+  text-transform: var(--content-button-text-transform);
+}
+.light-background .formatted a.custom-btn:not(.custom-btn-disabled), .light-background .formatted a:hover.custom-btn:not(.custom-btn-disabled) {
   border-color: var(--color-dark);
   color: var(--color-dark);
-  text-transform: var(--content-button-text-transform);
 }
 .light-background .formatted a:hover {
   color: var(--content-links-hover-color);
 }
 .light-background .formatted a:hover.custom-btn {
+  text-transform: var(--content-button-text-transform);
+}
+.light-background .formatted a:hover.custom-btn:not(.custom-btn-disabled) {
   border-color: var(--color-light);
   color: var(--color-light);
-  text-transform: var(--content-button-text-transform);
 }
 .light-background .formatted table th, .light-background .formatted table td {
   border-color: var(--color-dark);
@@ -136,16 +144,19 @@
 }
 .dark-background .formatted a.custom-btn,
 .dark-background .formatted a:hover.custom-btn {
-  border-color: var(--color-light);
-  color: var(--color-light);
   font-family: var(--font-primary);
   text-transform: var(--content-button-text-transform);
+}
+.dark-background .formatted a.custom-btn:not(.custom-btn-disabled),
+.dark-background .formatted a:hover.custom-btn:not(.custom-btn-disabled) {
+  border-color: var(--color-light);
+  color: var(--color-light);
 }
 .dark-background .formatted table th,
 .dark-background .formatted table td {
   border-color: var(--color-dark);
 }
-.dark-background .custom-btn {
+.dark-background .custom-btn:not(.custom-btn-disabled) {
   border-color: var(--color-light);
   color: var(--color-light);
 }
@@ -496,21 +507,25 @@ h3,
   color: var(--color-dark);
 }
 .footer-row .light-background .custom-btn {
-  color: var(--color-dark);
   border: 1px solid var(--color-dark);
   font-size: var(--footer-font-size);
 }
-.footer-row .light-background .custom-btn:hover {
-  color: var(--color-light);
+.footer-row .light-background .custom-btn:not(.custom-btn-disabled) {
+  color: var(--color-dark);
+}
+.footer-row .light-background .custom-btn:not(.custom-btn-disabled):hover {
   border-color: var(--color-light);
 }
-.footer-row .light-background .custom-btn:hover:hover a {
+.footer-row .light-background .custom-btn:not(.custom-btn-disabled):hover:hover a {
+  color: var(--color-light);
+}
+.footer-row .light-background .custom-btn:not(.custom-btn-disabled):hover:not(.custom-btn-disabled) {
   color: var(--color-light);
 }
 .footer-row .dark-background {
   color: var(--color-light);
 }
-.footer-row .dark-background .custom-btn {
+.footer-row .dark-background .custom-btn:not(.custom-btn-disabled) {
   color: var(--color-light);
   border: 1px solid var(--color-light);
 }

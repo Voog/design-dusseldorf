@@ -280,9 +280,17 @@ blockquote {
 }
 
 /* form */
-.edy-fe-field,
 .form_field {
-  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 }
 
 .edy-fe-label,
@@ -375,23 +383,23 @@ blockquote {
   text-transform: uppercase;
 
   .dark-background .formatted & {
-    border: 2px solid $color-white;
+    border: 2px solid;
     color: $color-white;
 
     &:hover {
       background: #2b2b2b;
-      border: 2px solid $color-white;
+      border: 2px solid;
       color: $color-white;
     }
   }
 
   .light-background .formatted & {
-    border: 2px solid $color-black;
+    border: 2px solid;
     color: $color-black;
 
     &:hover {
       background: #2b2b2b;
-      border: 2px solid $color-white;
+      border: 2px solid;
       color: $color-white;
     }
   }
@@ -2479,7 +2487,6 @@ table {
 .custom-btn {
   @include hyphenate(true);
   box-sizing: border-box;
-  cursor: pointer;
   display: inline-block;
   font-size: $font-size;
   line-height: $line-height-xs;
@@ -2491,29 +2498,44 @@ table {
   text-transform: uppercase;
   background-color: transparent;
 
+  .public & {
+    cursor: pointer;
+  }
+
   .dark-background & {
-    border: 2px solid $color-white;
+    border: 2px solid;
     color: $color-white;
 
-    &:hover {
+    &:not(.custom-btn-disabled):hover {
       background: #2b2b2b;
-      border: 2px solid $color-white;
+      border: 2px solid;
       color: $color-white;
     }
   }
+
   .light-background & {
-    border: 2px solid $color-black;
+    border: 2px solid;
     color: $color-black;
 
-    &:hover {
+    &:not(.custom-btn-disabled):hover {
       background: #2b2b2b;
-      border: 2px solid $color-white;
+      border: 2px solid;
       color: $color-white;
     }
   }
 
   footer & {
     display: none;
+  }
+
+  &-disabled {
+    // scss-lint:disable NestingDepth
+    .public & {
+      cursor: default;
+      color: $disabled-color;
+      border-color: $disabled-color;
+    }
+    // scss-lint:enable NestingDepth
   }
 }
 
@@ -2547,12 +2569,12 @@ table {
     }
   }
 
-  .dark-background .custom-btn {
+  .dark-background .custom-btn:not(.custom-btn-disabled) {
     border: 1px solid rgba($color-white, .1);
     color: $color-white;
   }
 
-  .light-background .custom-btn {
+  .light-background .custom-btn:not(.custom-btn-disabled) {
     border: 1px solid #333;
     color: $color-black;
 

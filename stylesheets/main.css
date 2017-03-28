@@ -291,9 +291,15 @@ blockquote {
 }
 
 /* form */
-.edy-fe-field,
 .form_field {
-  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.form_field:first-child {
+  padding-top: 0;
+}
+.form_field:last-child {
+  padding-bottom: 0;
 }
 
 .edy-fe-label,
@@ -388,24 +394,24 @@ blockquote {
 }
 .dark-background .formatted .form_submit input, .dark-background .formatted
 .submit {
-  border: 2px solid white;
+  border: 2px solid;
   color: white;
 }
 .dark-background .formatted .form_submit input:hover, .dark-background .formatted
 .submit:hover {
   background: #2b2b2b;
-  border: 2px solid white;
+  border: 2px solid;
   color: white;
 }
 .light-background .formatted .form_submit input, .light-background .formatted
 .submit {
-  border: 2px solid black;
+  border: 2px solid;
   color: black;
 }
 .light-background .formatted .form_submit input:hover, .light-background .formatted
 .submit:hover {
   background: #2b2b2b;
-  border: 2px solid white;
+  border: 2px solid;
   color: white;
 }
 
@@ -2434,7 +2440,6 @@ footer .voog-reference svg path {
   -ms-hyphens: auto;
   hyphens: auto;
   box-sizing: border-box;
-  cursor: pointer;
   display: inline-block;
   font-size: 18px;
   line-height: 24px;
@@ -2446,26 +2451,34 @@ footer .voog-reference svg path {
   text-transform: uppercase;
   background-color: transparent;
 }
+.public .custom-btn {
+  cursor: pointer;
+}
 .dark-background .custom-btn {
-  border: 2px solid white;
+  border: 2px solid;
   color: white;
 }
-.dark-background .custom-btn:hover {
+.dark-background .custom-btn:not(.custom-btn-disabled):hover {
   background: #2b2b2b;
-  border: 2px solid white;
+  border: 2px solid;
   color: white;
 }
 .light-background .custom-btn {
-  border: 2px solid black;
+  border: 2px solid;
   color: black;
 }
-.light-background .custom-btn:hover {
+.light-background .custom-btn:not(.custom-btn-disabled):hover {
   background: #2b2b2b;
-  border: 2px solid white;
+  border: 2px solid;
   color: white;
 }
 footer .custom-btn {
   display: none;
+}
+.public .custom-btn-disabled {
+  cursor: default;
+  color: #dadada;
+  border-color: #dadada;
 }
 
 .header-row .content-full {
@@ -2490,15 +2503,15 @@ footer .custom-btn {
 .footer-row .custom-btn:hover {
   background: #6b6b6b;
 }
-.footer-row .dark-background .custom-btn {
+.footer-row .dark-background .custom-btn:not(.custom-btn-disabled) {
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
 }
-.footer-row .light-background .custom-btn {
+.footer-row .light-background .custom-btn:not(.custom-btn-disabled) {
   border: 1px solid #333;
   color: black;
 }
-.footer-row .light-background .custom-btn:hover {
+.footer-row .light-background .custom-btn:not(.custom-btn-disabled):hover {
   color: white;
 }
 .footer-row .footer-right {
