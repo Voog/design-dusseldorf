@@ -64,7 +64,7 @@ html,
 body {
   height: 100% !important;
   min-height: 100%;
-  font: 18px/1.67 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 18px/1.67 "Lato", sans-serif;
 }
 @media screen and (min-width: 1500px) {
   html,
@@ -114,7 +114,7 @@ h1,
 h2,
 h3 {
   color: black;
-  font: normal 30px / 1.1 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: normal 30px / 1.1 "Lato", sans-serif;
 }
 .dark-background h1, .dark-background
 h2, .dark-background
@@ -141,7 +141,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 1.11111em;
@@ -218,7 +218,7 @@ blockquote {
 }
 
 .font-size-small {
-  font: 18px/1.67 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font: 18px/1.67 "Lato", sans-serif !important;
 }
 @media screen and (min-width: 1500px) {
   .font-size-small {
@@ -229,7 +229,7 @@ blockquote {
 /* select */
 .jq-select {
   position: relative;
-  font: 18px/1.67 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 18px/1.67 "Lato", sans-serif;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.87);
   background: white;
@@ -244,7 +244,7 @@ blockquote {
   height: 100%;
   margin: 0;
   padding: 0;
-  font: 18px/1.67 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 18px/1.67 "Lato", sans-serif;
   cursor: pointer;
   opacity: 0;
   color: rgba(0, 0, 0, 0.87);
@@ -316,7 +316,7 @@ blockquote {
 .form_field_textarea {
   width: 30%;
   padding: 4px 5px;
-  font: 18px/1.67 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 18px/1.67 "Lato", sans-serif;
   color: rgba(0, 0, 0, 0.87);
   border: none;
   outline: none;
@@ -381,7 +381,7 @@ blockquote {
   background: none;
   box-sizing: border-box;
   cursor: pointer;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 18px;
   line-height: 24px;
   margin: 5px 0;
@@ -540,7 +540,7 @@ label .form_control_indicator:before {
   position: relative;
 }
 .front-page .main-inner {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 24px;
   line-height: 32px;
   text-align: center;
@@ -577,7 +577,7 @@ label .form_control_indicator:before {
 
 .site-title {
   padding-top: 20px;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 24px;
   line-height: 32px;
   vertical-align: top;
@@ -610,7 +610,7 @@ label .form_control_indicator:before {
 /* mainmenu */
 .main-menu {
   padding-top: 20px;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -636,7 +636,7 @@ label .form_control_indicator:before {
 .sub-menu {
   min-height: 35px;
   padding: 30px 50px 15px 50px;
-  font: 14px/1.1 "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/1.1 "Lato", sans-serif;
   text-align: right;
   word-wrap: break-word;
 }
@@ -1141,7 +1141,7 @@ label .form_control_indicator:before {
 
 .content-inner {
   position: relative;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: auto;
@@ -1160,7 +1160,7 @@ label .form_control_indicator:before {
 }
 .footer-row .content-inner {
   font-size: 14px;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lato", sans-serif;
   line-height: 24px;
   padding: 4px 0;
 }
@@ -1680,7 +1680,7 @@ footer .voog-reference svg path {
   width: 100%;
   margin: 0;
   padding: 4px 0;
-  font: 14px/22px "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/22px "Lato", sans-serif;
   color: rgba(0, 0, 0, 0.87);
   border: none;
   outline: 0;
@@ -2162,7 +2162,7 @@ footer .voog-reference svg path {
   }
 
   #mobile-menu {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Lato", sans-serif;
     position: fixed;
     z-index: 1000;
     top: 0;
