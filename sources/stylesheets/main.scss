@@ -2490,7 +2490,6 @@ table {
   display: inline-block;
   font-size: $font-size;
   line-height: $line-height-xs;
-  margin: 5px 0;
   max-width: 100%;
   min-width: 180px;
   padding: 0.61em 0.55em;
@@ -2602,3 +2601,5 @@ table {
   }
 
 }
+
+@import 'buy-button';
