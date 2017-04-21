@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% include "template-variables" %}
+{% include "blog-article-variables" %}
 <html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
   {% assign post_page = true %}
@@ -36,7 +37,16 @@
                   {% endif %}
                 </nav>
                 <header class="post-header">
-                  <h1>{% editable article.title %} <time class="post-date" datetime="{{ article.created_at | date : "%Y-%m-%d" }}">{{ article.created_at | date : "%d.%m" }}</time></h1>
+                  <h1>{% editable article.title %}
+                    {% assign article_year = article.created_at | format_date: "%Y" | to_num %}
+
+                    {% if article_year == current_year %}
+                      {% assign article_date_format = "long_without_year" %}
+                    {% else %}
+                      {% assign article_date_format = "long" %}
+                    {% endif %}
+
+                    <time class="post-date" datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}</time>
                 </header>
                 <section class="post-content">
                   <div class="post-excerpt cfx formatted" {{ edy_intro_edit_text }}>{% editable article.excerpt %}</div>
