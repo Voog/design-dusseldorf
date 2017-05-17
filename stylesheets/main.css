@@ -79,6 +79,7 @@ body {
   text-align: left;
   color: rgba(0, 0, 0, 0.87);
   background: white;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-text-size-adjust: none;
 }
@@ -322,6 +323,7 @@ blockquote {
   outline: none;
   background: white;
   border-radius: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 .light-background .form_field_textfield, .light-background
@@ -379,7 +381,8 @@ blockquote {
   border-radius: 0;
   -webkit-appearance: none;
   background: none;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   cursor: pointer;
   font-family: "Lato", sans-serif;
   font-size: 18px;
@@ -488,6 +491,7 @@ label .form_control_indicator:before {
 }
 
 .sidebar {
+  -webkit-box-shadow: 5px -50px 50px rgba(0, 0, 0, 0.05) ;
   box-shadow: 5px -50px 50px rgba(0, 0, 0, 0.05) ;
   float: left;
   min-height: 100%;
@@ -706,7 +710,8 @@ label .form_control_indicator:before {
   text-transform: uppercase;
   background-position: 0 -75px;
   content: attr(data-lang-code);
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .no-boxshadow .lang-flag:after {
   border: 1px solid #eeeeee;
@@ -1114,6 +1119,7 @@ label .form_control_indicator:before {
   line-height: 1;
   text-align: left;
   background: white;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) ;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) ;
 }
 .no-boxshadow .lang-menu-popover {
@@ -1362,6 +1368,7 @@ label .form_control_indicator:before {
 
 @media screen and (min-width: 601px) {
   .post-nav-inner {
+    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
@@ -1370,8 +1377,9 @@ label .form_control_indicator:before {
 .post-nav-link {
   position: relative;
   display: block;
-  -ms-flex: 1;
-      flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding-top: 20px;
   padding-bottom: 20px;
   color: currentColor;
@@ -1542,6 +1550,7 @@ table th {
   width: 200px;
   font-size: 11px;
   line-height: 1.6;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   word-break: break-word;
   word-wrap: break-word;
@@ -1774,6 +1783,8 @@ footer .voog-reference svg path {
   width: 0;
   height: 100%;
   margin-left: 200px;
+  -webkit-transition: opacity .1s ease-in, width .3s ease-in;
+  -o-transition: opacity .1s ease-in, width .3s ease-in;
   transition: opacity .1s ease-in, width .3s ease-in;
   opacity: 0;
   background: #f6f6f6;
@@ -1808,6 +1819,7 @@ footer .voog-reference svg path {
   display: block;
   width: 300px;
   opacity: 1;
+  -webkit-box-shadow: 10px 0 10px rgba(0, 0, 0, 0.05) ;
   box-shadow: 10px 0 10px rgba(0, 0, 0, 0.05) ;
 }
 
@@ -2199,10 +2211,12 @@ footer .voog-reference svg path {
     border-radius: 3px;
   }
   #mobile-menu .mobile-menu-close:before {
+    -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
         transform: rotate(45deg);
   }
   #mobile-menu .mobile-menu-close:after {
+    -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
   }
@@ -2327,10 +2341,12 @@ footer .voog-reference svg path {
     border-radius: 3px;
   }
   .mobilesearch-open .mobile-search-toggler:before {
+    -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
         transform: rotate(45deg);
   }
   .mobilesearch-open .mobile-search-toggler:after {
+    -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
   }
@@ -2439,7 +2455,8 @@ footer .voog-reference svg path {
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
   font-size: 18px;
   line-height: 24px;
@@ -2490,7 +2507,8 @@ footer .custom-btn {
 }
 .footer-row .custom-btn {
   min-width: 80px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
   padding: 0 10px;
   text-transform: none;
