@@ -27,7 +27,7 @@
      "featured": true,
      "scope": "global"
   */
-  --font-primary: $font-primary;
+  #{--font-primary}: $font-primary;
 
   /* VoogStyle
      "pathI18n": ["main_styles", "colors"],
@@ -36,7 +36,7 @@
      "scope": "global",
      "featured": true
   */
-  --color-dark: $color-black;
+  #{--color-dark}: $color-black;
 
   /* VoogStyle
      "pathI18n": ["main_styles", "colors"],
@@ -48,6 +48,6 @@
         "--sidebar-background-color"
      ]
   */
-  --color-light: $color-white;
+  #{--color-light}: $color-white;
 
 }
