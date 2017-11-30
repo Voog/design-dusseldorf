@@ -15,18 +15,18 @@
       "file": "layouts/common_page.tpl"
     },
     {
-      "title": "Product",
-      "layout_name": "product",
-      "content_type": "page",
-      "component": false,
-      "file": "layouts/product.tpl"
-    },
-    {
       "title": "Product list",
       "layout_name": "product_list",
       "content_type": "page",
       "component": false,
       "file": "layouts/product_list.tpl"
+    },
+    {
+      "title": "Product",
+      "layout_name": "product",
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/product.tpl"
     },
     {
       "title": "Blog & news",
@@ -43,11 +43,11 @@
       "file": "layouts/blog_article.tpl"
     },
     {
-      "title": "template-cs-button",
-      "layout_name": "template-cs-button",
+      "title": "topbar",
+      "layout_name": "topbar",
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-button.tpl"
+      "file": "components/topbar.tpl"
     },
     {
       "title": "edicy-tools-variables",
@@ -113,18 +113,11 @@
       "file": "components/sidebar.tpl"
     },
     {
-      "title": "footer",
-      "layout_name": "footer",
+      "title": "submenu",
+      "layout_name": "submenu",
       "content_type": "component",
       "component": true,
-      "file": "components/footer.tpl"
-    },
-    {
-      "title": "topbar",
-      "layout_name": "topbar",
-      "content_type": "component",
-      "component": true,
-      "file": "components/topbar.tpl"
+      "file": "components/submenu.tpl"
     },
     {
       "title": "edicy-tools-styles",
@@ -132,6 +125,13 @@
       "content_type": "component",
       "component": true,
       "file": "components/edicy-tools-styles.tpl"
+    },
+    {
+      "title": "template-cs-button",
+      "layout_name": "template-cs-button",
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-cs-button.tpl"
     },
     {
       "title": "template-cs-content",
@@ -225,11 +225,18 @@
       "file": "components/comment-form.tpl"
     },
     {
-      "title": "submenu",
-      "layout_name": "submenu",
+      "title": "footer",
+      "layout_name": "footer",
       "content_type": "component",
       "component": true,
-      "file": "components/submenu.tpl"
+      "file": "components/footer.tpl"
+    },
+    {
+      "title": "template-svg-spritesheet",
+      "layout_name": "template-svg-spritesheet",
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-svg-spritesheet.tpl"
     }
   ],
   "assets": [
