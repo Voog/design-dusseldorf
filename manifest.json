@@ -237,6 +237,20 @@
       "content_type": "component",
       "component": true,
       "file": "components/template-svg-spritesheet.tpl"
+    },
+    {
+      "title": "product-list-loop",
+      "layout_name": "product-list-loop",
+      "content_type": "component",
+      "component": true,
+      "file": "components/product-list-loop.tpl"
+    },
+    {
+      "title": "product-list-item",
+      "layout_name": "product-list-item",
+      "content_type": "component",
+      "component": true,
+      "file": "components/product-list-item.tpl"
     }
   ],
   "assets": [
