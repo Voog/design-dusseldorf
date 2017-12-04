@@ -1,4 +1,8 @@
 {% capture dont_render %}
+
+  {% assign product_list_layout = "Product list" %}
+  {% assign product_layout = "Product" %}
+
   {% comment %}=================================================================
   | Design editor variables.
   ============================================================= {% endcomment %}
