@@ -9,6 +9,8 @@
   {% if editmode %}<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">{% endif %}
 </head>
 <body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
+  {% include "template-svg-spritesheet" %}
+  
   <div class="wrap cfx">
     {% include "langmenu" %}
     {% include "topbar" %}
