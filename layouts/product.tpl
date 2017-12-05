@@ -31,7 +31,7 @@
 </head>
 <body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
   {% include "template-svg-spritesheet" %}
-  
+
   <div class="wrap cfx">
     {% include "langmenu" %}
     {% include "topbar" %}
@@ -47,7 +47,6 @@
 
               <div class="inner">
 
-                {% include "submenu" %}
                 {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_top_bg_image }}" data-bg-image-sizes="{{ content_top_bg_image_sizes_str | escape }}" data-bg-color="{{ content_top_bg_color }}" data-bg-color-data="{{ content_top_bg_color_data_str | escape }}"></button>{% endif %}
 
                 <section class="content cfx formatted" {{ edy_intro_edit_text }}>
