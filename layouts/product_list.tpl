@@ -10,7 +10,7 @@
 </head>
 <body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
   {% include "template-svg-spritesheet" %}
-  
+
   <div class="wrap cfx">
     {% include "langmenu" %}
     {% include "topbar" %}
@@ -54,7 +54,7 @@
   </div>
   {% include "mobilemenu" %}
   {% include "javascripts" %}
-  {% include "edicy-tools" %}
+  {% include "edicy-tools" items_page: true %}
 
   {% if editmode %}
     <script type="text/javascript">
