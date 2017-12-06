@@ -21,6 +21,7 @@
     "grunt-exec": "^3.0.0",
     "grunt-file-append": "0.0.7",
     "grunt-modernizr-builder": "^0.1.9",
-    "grunt-postcss": "^0.9.0"
+    "grunt-postcss": "^0.9.0",
+    "breakpoint-sass": "^2.7.1"
   }
 }

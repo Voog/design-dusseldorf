@@ -1,0 +1,399 @@
+// =============================================================================
+// CONTENT ITEM
+// =============================================================================
+// TODO: Convert to BEM layout block.
+.content-item-boxes {
+  margin-right: -20px;
+  margin-left: -20px;
+  font-size: 0;
+
+  @include breakpoint($xx-small-up) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+// .content-inner {
+// }
+
+// TODO: Convert to BEM component block.
+.content-item-box {
+  text-decoration: none;
+
+  .item-list-page & {
+    padding-right: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+
+    @include breakpoint(max-width $xx-small) {
+      display: block;
+    }
+
+    @include breakpoint(($xx-small-up) (max-width $medium)) {
+      width: 50%;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    @include breakpoint($medium-up) {
+      max-width: 376px;
+      min-width: 200px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  .content-illustrations & {
+    margin-bottom: 32px;
+  }
+
+  .top-inner {
+    opacity: 1;
+
+    &::after {
+      .editmode &,
+      .item-list-page & {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        background-color: $color-white;
+        content: '';
+        opacity: 0;
+        transition: opacity .5s;
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    @include breakpoint(($xx-small-up) (max-width $medium)) {
+      padding-right: 8px;
+    }
+  }
+
+  &:nth-child(even) {
+    @include breakpoint(($xx-small-up) (max-width $medium)) {
+      padding-left: 8px;
+    }
+  }
+
+  &:hover {
+      .top-inner {
+        // scss-lint:disable NestingDepth
+        &::after {
+          [data-view-state="editmode"] &,
+          .item-list-page & {
+            opacity: .2;
+          }
+        }
+        // scss-lint:enable NestingDepth
+      }
+    }
+
+  &--placeholder {
+    .item-list-page & {
+      height: 0;
+      padding: 0;
+    }
+  }
+}
+
+.content-item {
+  margin-bottom: 16px;
+}
+
+.item-top {
+  @include aspect-ratio(1, 1);
+
+  &:hover {
+    .btn,
+    .edy-img-drop-area-remove-image {
+      opacity: 1;
+    }
+  }
+
+  .btn {
+    padding: 0;
+    background-color: rgba($color-science-blue, .3);
+    border: 0;
+    opacity: 0;
+    transition: background-color .5s, opacity .5s;
+
+    &:hover {
+      background-color: rgba($color-science-blue, 1);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .bg-crop-btn {
+    @include size(45px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    margin-top: 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    border-radius: 100%;
+    color: rgba($color-white, 1);
+
+    &.is-visible {
+      display: block;
+    }
+
+    &.is-hidden,
+    .without-image & {
+      display: none;
+    }
+  }
+
+  .edy-img-drop-area-remove-image {
+    @include size(45px);
+    top: 10px;
+    right: 10px;
+    z-index: 9;
+    color: rgba($color-white, 1);
+    background-color: rgba($color-science-blue, .3);
+    border: 0;
+    opacity: 0;
+    transition: background-color .5s, opacity .5s;
+
+    &:hover {
+      background-color: rgba($color-science-blue, 1);
+    }
+  }
+
+  .edy-img-drop-area-remove-image-ico {
+    margin-top: -10px;
+    margin-left: -8px;
+  }
+
+  .top-inner {
+    @include hyphenate;
+    display: flex !important; // scss-lint:disable ImportantRule
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+
+    @include breakpoint(max-width $xx-small) {
+      font-size: 16px;
+    }
+
+    @include breakpoint($xx-small-up) {
+      font-size: 12px;
+    }
+
+    @include breakpoint($x-small-up) {
+      font-size: 16px;
+    }
+
+    @include breakpoint($small-up) {
+      font-size: 20px;
+    }
+
+    @include breakpoint($large-up) {
+      font-size: 32px;
+    }
+
+    [data-view-state="publicmode"] & {
+      overflow: hidden;
+
+      // scss-lint:disable SelectorDepth, NestingDepth
+      .image-landscape {
+        &.not-cropped {
+          width: 100%;
+          height: auto;
+          max-width: 100%;
+        }
+
+        &.is-cropped {
+          width: auto;
+          height: 100%;
+        }
+      }
+
+      .image-portrait {
+        &.not-cropped {
+          width: auto;
+          height: 100%;
+          max-height: 100%;
+        }
+
+        &.is-cropped {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .image-square {
+        width: 100%;
+        height: auto;
+      }
+      // scss-lint:enable SelectorDepth, NestingDepth
+    }
+
+    .with-image & {
+      background-color: rgba($color-primary, .02);
+    }
+
+    .without-image & {
+      border-color: rgba($color-primary, .1);
+      border-style: solid;
+      border-width: 1px;
+    }
+  }
+
+  .image-drop-area {
+    background-position: center !important; // scss-lint:disable ImportantRule
+    background-repeat: no-repeat;
+
+    &.not-cropped {
+      background-size: contain;
+    }
+
+    &:not(.active) {
+      border-color: rgba($color-primary, .4);
+      border-style: dashed;
+      border-width: 1px;
+
+      // scss-lint:disable NestingDepth
+      &:hover {
+        border-style: solid;
+      }
+      // scss-lint:enable NestingDepth
+    }
+
+    .edy-img-drop-area-placeholder {
+      opacity: .5;
+
+      @include breakpoint(max-width $medium) {
+        font-size: 12px;
+      }
+
+      @include breakpoint($medium-up) {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.item-image {
+  border: 0;
+
+  [data-view-state="publicmode"] & {
+    &.is-cropped {
+      position: absolute;
+      top: -100%;
+      right: -100%;
+      bottom: -100%;
+      left: -100%;
+      max-width: none;
+      margin: auto;
+    }
+  }
+
+  .item-list-page & {
+    display: block;
+  }
+}
+
+
+.item-placeholder {
+  width: 100%;
+  padding: .5em;
+  box-sizing: border-box;
+}
+
+.item-title {
+  @include hyphenate;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2;
+
+  .item-link {
+    color: inherit;
+    text-decoration: none;
+
+    .content-item-box & {
+      display: block;
+    }
+  }
+
+  .content-item-box & {
+    @include breakpoint(max-width $medium) {
+      font-size: 12px;
+    }
+  }
+
+  .content-item & {
+    @include breakpoint(max-width $medium) {
+      font-size: 20px;
+    }
+
+    @include breakpoint($medium-up) {
+      font-size: 32px;
+    }
+  }
+
+  .blog-article-page & {
+    @include breakpoint(max-width $medium) {
+      font-size: 32px;
+    }
+
+    @include breakpoint($medium-up) {
+      font-size: 52px;
+    }
+  }
+
+  .content-item-box > & {
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+}
+
+.content-illustrations {
+  font-size: 0;
+
+  @include breakpoint($medium-up) {
+    flex: 1;
+    max-width: 54%;
+    margin-right: 32px;
+  }
+
+  .content-item-box {
+    padding-right: 0;
+  }
+}
+
+.content-item-title {
+  margin-bottom: .55em;
+
+  @include breakpoint(max-width $medium) {
+    margin-top: .55em;
+  }
+
+  @include breakpoint($medium-up) {
+    margin-top: 0;
+  }
+}
+
+.content-body {
+  @include breakpoint($medium-up) {
+    flex: 1;
+    max-width: 46%;
+  }
+}
+
+.items-body {
+  @include breakpoint($medium-up) {
+    display: flex;
+  }
+}

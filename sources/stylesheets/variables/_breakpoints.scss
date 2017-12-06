@@ -1,0 +1,22 @@
+// =============================================================================
+// MEDIA QUERY BREAKPOINTS
+// =============================================================================
+$large: 1024px;
+$large-down: $large - 1px;
+$large-up: $large + 1px;
+
+$medium: 640px;
+$medium-down: $medium - 1px;
+$medium-up: $medium + 1px;
+
+$small: 320px;
+$small-down: $small - 1px;
+$small-up: $small + 1px;
+
+$x-small: 290px;
+$x-small-down: $x-small - 1px;
+$x-small-up: $x-small + 1px;
+
+$xx-small: 240px;
+$xx-small-down: $xx-small - 1px;
+$xx-small-up: $xx-small + 1px;

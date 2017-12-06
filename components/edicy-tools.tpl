@@ -87,5 +87,21 @@
       }
     });
 
+    //==========================================================================
+    // Initiates the language menu mode toggleing popover.
+    //==========================================================================
+    {% if items_page %}
+      template.bindContentItemImgDropAreas('{{ "drag_picture_for_product_here" | lc }}');
+      template.bindContentItemImageCropToggle();
+
+      {%if site.data.settings_root_item %}
+        rootItemValuesObj = {{ site.data.settings_root_item | json }};
+      {% else %}
+        rootItemValuesObj = {};
+      {% endif %};
+
+      template.bindRootItemSettings(rootItemValuesObj);
+    {% endif %}
+
   </script>
 {% endeditorjsblock %}
