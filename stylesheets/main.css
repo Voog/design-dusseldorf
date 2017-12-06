@@ -2895,6 +2895,10 @@ footer .custom-btn {
   color: white;
 }
 
+.svg-spritesheet {
+  display: none;
+}
+
 .formatted .edy-buy-button-container .form_field label {
   padding-bottom: 0;
 }
