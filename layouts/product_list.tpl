@@ -7,7 +7,6 @@
   {% include "html-head" %}
 </head>
 <body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %} item-list-page">
-  {% include "template-svg-spritesheet" %}
 
   <div class="wrap cfx">
     {% include "langmenu" %}
