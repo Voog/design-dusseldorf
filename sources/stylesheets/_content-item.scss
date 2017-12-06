@@ -7,7 +7,7 @@
   margin-left: -20px;
   font-size: 0;
 
-  @include breakpoint($xx-small-up) { 
+  @include breakpoint($xx-small-up) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -385,12 +385,10 @@
   }
 }
 
-.content-body-inner {
-  .item-page & {
-    @include breakpoint($medium-up) {
-      flex: 1;
-      max-width: 46%;
-    }
+.content-body {
+  @include breakpoint($medium-up) {
+    flex: 1;
+    max-width: 46%;
   }
 }
 

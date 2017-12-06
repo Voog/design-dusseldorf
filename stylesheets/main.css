@@ -369,7 +369,7 @@
 }
 
 @media (min-width: 641px) {
-  .item-page .content-body-inner {
+  .content-body {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
