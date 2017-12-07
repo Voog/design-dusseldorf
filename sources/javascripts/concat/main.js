@@ -787,20 +787,6 @@
   };
 
   // ===========================================================================
-  // Sets functions that will be initiated globally when resizing the browser
-  // window.
-  // ===========================================================================
-  var initWindowResize = function() {
-    $(window).resize(debounce(function() {
-      setHeaderMenuMode();
-
-      if (languageMenuPopoverOpen()) {
-        positionPopoverMenu('.js-toggle-menu-language', '.js-menu-language-popover');
-      }
-    }, 25));
-  };
-
-  // ===========================================================================
   // Sets functions that will be initiated globally.
   // ===========================================================================
   var init = function() {
@@ -834,6 +820,5 @@
   // Initiates global functions.
   // ===========================================================================
   init();
-  initWindowResize();
 
 })(jQuery);
