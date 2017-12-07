@@ -530,6 +530,13 @@
   };
 
   // ===========================================================================
+  // Function to detect if site is displayed in editmode.
+  // ===========================================================================
+  var editmode = function () {
+    return $('html').hasClass('editmode');
+  };
+
+  // ===========================================================================
   // Sets functions that will be initiated on items list layouts.
   // ===========================================================================
   var initItemsPage = function() {
@@ -779,6 +786,16 @@
     });
   };
 
+  // ===========================================================================
+  // Sets functions that will be initiated globally.
+  // ===========================================================================
+  var init = function() {
+    if (!Modernizr.flexbox && editmode()) {
+      bindFallbackHeaderContentAreaWidthCalculation();
+      bindFallbackFooterContentAreaWidthCalculation();
+     }
+  };
+
   // Enables the usage of the initiations outside this file.
   window.template = $.extend(window.template || {}, {
     // Initiations for layouts.
@@ -788,12 +805,9 @@
     // initFrontPage: initFrontPage,
 
     // Initiations for specific functions.
-    bindLanguageMenuSettings: bindLanguageMenuSettings,
     bindRootItemSettings: bindRootItemSettings,
-    bindSiteSearch: bindSiteSearch,
     bindContentItemImgDropAreas: bindContentItemImgDropAreas,
     bindContentItemImageCropToggle: bindContentItemImageCropToggle,
-    bindCustomTexteditorStyles: bindCustomTexteditorStyles
   });
 
   window.site = $.extend(window.site || {}, {
