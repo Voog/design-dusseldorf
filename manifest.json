@@ -22,6 +22,13 @@
       "file": "layouts/product_list.tpl"
     },
     {
+      "title": "Product",
+      "layout_name": "product",
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/product.tpl"
+    },
+    {
       "title": "Blog & news",
       "layout_name": "blog___news",
       "content_type": "blog",
@@ -36,18 +43,11 @@
       "file": "layouts/blog_article.tpl"
     },
     {
-      "title": "search",
-      "layout_name": "search",
+      "title": "template-cs-button",
+      "layout_name": "template-cs-button",
       "content_type": "component",
       "component": true,
-      "file": "components/search.tpl"
-    },
-    {
-      "title": "comment-form",
-      "layout_name": "comment-form",
-      "content_type": "component",
-      "component": true,
-      "file": "components/comment-form.tpl"
+      "file": "components/template-cs-button.tpl"
     },
     {
       "title": "edicy-tools-styles",
@@ -113,18 +113,18 @@
       "file": "components/mobilemenu.tpl"
     },
     {
+      "title": "search",
+      "layout_name": "search",
+      "content_type": "component",
+      "component": true,
+      "file": "components/search.tpl"
+    },
+    {
       "title": "blog-article-variables",
       "layout_name": "blog-article-variables",
       "content_type": "component",
       "component": true,
       "file": "components/blog-article-variables.tpl"
-    },
-    {
-      "title": "sidebar",
-      "layout_name": "sidebar",
-      "content_type": "component",
-      "component": true,
-      "file": "components/sidebar.tpl"
     },
     {
       "title": "submenu",
@@ -134,11 +134,11 @@
       "file": "components/submenu.tpl"
     },
     {
-      "title": "template-cs-button",
-      "layout_name": "template-cs-button",
+      "title": "comment-form",
+      "layout_name": "comment-form",
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-button.tpl"
+      "file": "components/comment-form.tpl"
     },
     {
       "title": "template-cs-content",
@@ -230,6 +230,13 @@
       "content_type": "component",
       "component": true,
       "file": "components/product-list-loop.tpl"
+    },
+    {
+      "title": "sidebar",
+      "layout_name": "sidebar",
+      "content_type": "component",
+      "component": true,
+      "file": "components/sidebar.tpl"
     }
   ],
   "assets": [
