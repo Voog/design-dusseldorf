@@ -43,5 +43,7 @@
       edy.push(['texteditorStyles', {name: '{{ "button" | lc: editor_locale }}', tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
     </script>
   {% endif %}
+
+  <script>template.initItemsPage();</script>
 </body>
 </html>
