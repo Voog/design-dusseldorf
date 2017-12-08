@@ -343,6 +343,126 @@
       "file": "stylesheets/main.css",
       "kind": "stylesheets",
       "filename": "main.css"
+    },
+    {
+      "content_type": "application/javascript",
+      "kind": "javascripts",
+      "file": "javascripts/application.js",
+      "filename": "application.js"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/loader.svg",
+      "filename": "loader.svg"
+    },
+    {
+      "content_type": "application/javascript",
+      "kind": "javascripts",
+      "file": "javascripts/modernizr-custom.min.js",
+      "filename": "modernizr-custom.min.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "kind": "javascripts",
+      "file": "javascripts/search.js",
+      "filename": "search.js"
+    },
+    {
+      "content_type": "text/css",
+      "kind": "stylesheets",
+      "file": "stylesheets/main.css",
+      "filename": "main.css"
+    },
+    {
+      "content_type": "application/javascript",
+      "kind": "javascripts",
+      "file": "javascripts/application.min.js",
+      "filename": "application.min.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "kind": "javascripts",
+      "file": "javascripts/search.min.js",
+      "filename": "search.min.js"
+    },
+    {
+      "content_type": "text/css",
+      "kind": "stylesheets",
+      "file": "stylesheets/main.min.css",
+      "filename": "main.min.css"
+    },
+    {
+      "content_type": "image/png",
+      "kind": "images",
+      "file": "images/check.png",
+      "filename": "check.png"
+    },
+    {
+      "content_type": "image/png",
+      "kind": "images",
+      "file": "images/check_small.png",
+      "filename": "check_small.png"
+    },
+    {
+      "content_type": "image/jpeg",
+      "kind": "images",
+      "file": "images/front-page-left-bg.jpg",
+      "filename": "front-page-left-bg.jpg"
+    },
+    {
+      "content_type": "image/jpeg",
+      "kind": "images",
+      "file": "images/front-page-left-bg_block.jpg",
+      "filename": "front-page-left-bg_block.jpg"
+    },
+    {
+      "content_type": "image/jpeg",
+      "kind": "images",
+      "file": "images/front-page-right-bg_block.jpg",
+      "filename": "front-page-right-bg_block.jpg"
+    },
+    {
+      "content_type": "image/png",
+      "kind": "images",
+      "file": "images/search-close.png",
+      "filename": "search-close.png"
+    },
+    {
+      "content_type": "image/png",
+      "kind": "images",
+      "file": "images/search.png",
+      "filename": "search.png"
+    },
+    {
+      "content_type": "image/jpeg",
+      "kind": "images",
+      "file": "images/front-page-right-bg.jpg",
+      "filename": "front-page-right-bg.jpg"
+    },
+    {
+      "content_type": "image/png",
+      "kind": "images",
+      "file": "images/ico-flags.png",
+      "filename": "ico-flags.png"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-flags.svg",
+      "filename": "ico-flags.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/search.svg",
+      "filename": "search.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/search_close.svg",
+      "filename": "search_close.svg"
     }
   ]
 }
