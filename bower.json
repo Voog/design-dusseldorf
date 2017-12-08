@@ -3,5 +3,8 @@
   "devDependencies": {
     "bourbon": "^4.3.4",
     "jquery": "^3.2.1"
+  },
+  "dependencies": {
+    "jquery_lazyload": "jquery.lazyload#^1.9.7"
   }
 }
