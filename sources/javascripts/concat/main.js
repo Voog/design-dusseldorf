@@ -537,15 +537,6 @@
   };
 
   // ===========================================================================
-  // Sets functions that will be initiated on items list layouts.
-  // ===========================================================================
-  var initItemsPage = function() {
-    if (!editmode()) {
-      bindContentItemImageLazyload();
-    }
-  };
-
-  // ===========================================================================
   // Binds editmode image drop areas.
   // ===========================================================================
   var bindContentItemImgDropAreas = function(placeholderText) {
@@ -737,6 +728,15 @@
         }, 3000);
       }
     });
+  };
+
+  // ===========================================================================
+  // Sets functions that will be initiated on items list layouts.
+  // ===========================================================================
+  var initItemsPage = function() {
+    if (!editmode()) {
+      bindContentItemImageLazyload();
+    }
   };
 
   // ===========================================================================
