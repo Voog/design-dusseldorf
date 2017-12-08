@@ -5,6 +5,8 @@
   {% include "edicy-tools-variables" %}
   {% include "html-head" %}
   {% include "edicy-tools-styles" %}
+
+  {% if editmode %}<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">{% endif %}
 </head>
 <body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
   <div class="wrap cfx">
