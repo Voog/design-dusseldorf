@@ -22,6 +22,13 @@
       "file": "layouts/product_list.tpl"
     },
     {
+      "title": "Product",
+      "layout_name": "product",
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/product.tpl"
+    },
+    {
       "title": "Blog & news",
       "layout_name": "blog___news",
       "content_type": "blog",
@@ -36,18 +43,11 @@
       "file": "layouts/blog_article.tpl"
     },
     {
-      "title": "sidebar",
-      "layout_name": "sidebar",
+      "title": "template-cs-content",
+      "layout_name": "template-cs-content",
       "content_type": "component",
       "component": true,
-      "file": "components/sidebar.tpl"
-    },
-    {
-      "title": "edicy-tools-styles",
-      "layout_name": "edicy-tools-styles",
-      "content_type": "component",
-      "component": true,
-      "file": "components/edicy-tools-styles.tpl"
+      "file": "components/template-cs-content.tpl"
     },
     {
       "title": "edicy-tools-variables",
@@ -113,18 +113,18 @@
       "file": "components/search.tpl"
     },
     {
-      "title": "comment-form",
-      "layout_name": "comment-form",
+      "title": "sidebar",
+      "layout_name": "sidebar",
       "content_type": "component",
       "component": true,
-      "file": "components/comment-form.tpl"
+      "file": "components/sidebar.tpl"
     },
     {
-      "title": "submenu",
-      "layout_name": "submenu",
+      "title": "blog-article-variables",
+      "layout_name": "blog-article-variables",
       "content_type": "component",
       "component": true,
-      "file": "components/submenu.tpl"
+      "file": "components/blog-article-variables.tpl"
     },
     {
       "title": "template-cs-button",
@@ -134,11 +134,11 @@
       "file": "components/template-cs-button.tpl"
     },
     {
-      "title": "template-cs-content",
-      "layout_name": "template-cs-content",
+      "title": "edicy-tools-styles",
+      "layout_name": "edicy-tools-styles",
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl"
+      "file": "components/edicy-tools-styles.tpl"
     },
     {
       "title": "template-cs-focus-area",
@@ -218,11 +218,11 @@
       "file": "components/topbar.tpl"
     },
     {
-      "title": "blog-article-variables",
-      "layout_name": "blog-article-variables",
+      "title": "comment-form",
+      "layout_name": "comment-form",
       "content_type": "component",
       "component": true,
-      "file": "components/blog-article-variables.tpl"
+      "file": "components/comment-form.tpl"
     },
     {
       "title": "product-list-loop",
@@ -230,6 +230,13 @@
       "content_type": "component",
       "component": true,
       "file": "components/product-list-loop.tpl"
+    },
+    {
+      "title": "submenu",
+      "layout_name": "submenu",
+      "content_type": "component",
+      "component": true,
+      "file": "components/submenu.tpl"
     }
   ],
   "assets": [
