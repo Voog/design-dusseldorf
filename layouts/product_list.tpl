@@ -17,6 +17,7 @@
 
     <div class="main">
       <section class="content cfx formatted" {{ edy_intro_edit_text }}>
+        {% include "menu-breadcrumbs" %}
         <section class="content-item-boxes">
           {% if site.root_item.selected? %}
             {% for level_1 in site.visible_menuitems_with_data %}

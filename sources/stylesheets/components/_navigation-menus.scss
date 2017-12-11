@@ -1,0 +1,37 @@
+
+// Product list menu
+.menu-item-list {
+  padding-top: 15px;
+  padding-left: 0 !important;
+
+  .menu-item {
+    display: inline-block;
+    font-size: 14px;
+
+    a {
+      color: rgba($color-black, .35) !important;
+
+      &:hover {
+        color: rgba($color-black, 1) !important;
+      }
+    }
+  }
+
+  .current.menu-item {
+    a {
+    color: rgba($color-black, 1) !important;
+    }
+  }
+}
+
+.menu-item-cms {
+  margin-left: 10px;
+
+  &.float-right {
+    float: right;
+  }
+}
+
+.menu-separator {
+  opacity: .5;
+}
