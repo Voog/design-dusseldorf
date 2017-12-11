@@ -2911,6 +2911,35 @@ footer .custom-btn {
   transform: rotate(-45deg);
 }
 
+.menu-item-list {
+  padding-top: 15px;
+  padding-left: 0 !important;
+}
+.menu-item-list .menu-item {
+  display: inline-block;
+  font-size: 14px;
+}
+.menu-item-list .menu-item a {
+  color: rgba(0, 0, 0, 0.35) !important;
+}
+.menu-item-list .menu-item a:hover {
+  color: black !important;
+}
+.menu-item-list .current.menu-item a {
+  color: black !important;
+}
+
+.menu-item-cms {
+  margin-left: 10px;
+}
+.menu-item-cms.float-right {
+  float: right;
+}
+
+.menu-separator {
+  opacity: .5;
+}
+
 .formatted .edy-buy-button-container .form_field label {
   padding-bottom: 0;
 }

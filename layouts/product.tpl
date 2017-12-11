@@ -38,6 +38,7 @@
 
     <div class="main">
       <section class="content cfx formatted" {{ edy_intro_edit_text }}>
+        {% include "menu-breadcrumbs" %}
         <main class="page-content" role="main">
 
           <div class="items-body">
