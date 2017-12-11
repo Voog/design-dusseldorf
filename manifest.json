@@ -1,383 +1,385 @@
 {
-  "description": "New design",
-  "name": "New design",
-  "preview_medium": "",
-  "preview_small": "",
-  "author": "",
   "layouts": [
     {
-      "content_type": "page",
-      "component": false,
-      "file": "layouts/product_list.tpl",
-      "layout_name": "product_list",
-      "title": "Product list"
-    },
-    {
-      "content_type": "page",
-      "component": false,
-      "file": "layouts/product.tpl",
-      "layout_name": "product",
-      "title": "Product"
-    },
-    {
-      "content_type": "page",
-      "component": false,
-      "file": "layouts/common_page.tpl",
-      "layout_name": "common_page",
-      "title": "Common page"
-    },
-    {
-      "content_type": "page",
-      "component": false,
-      "file": "layouts/front_page.tpl",
+      "title": "Front page",
       "layout_name": "front_page",
-      "title": "Front page"
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/front_page.tpl"
     },
     {
+      "title": "Common page",
+      "layout_name": "common_page",
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/common_page.tpl"
+    },
+    {
+      "title": "Product",
+      "layout_name": "product",
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/product.tpl"
+    },
+    {
+      "title": "Product list",
+      "layout_name": "product_list",
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/product_list.tpl"
+    },
+    {
+      "title": "Blog & news",
+      "layout_name": "blog___news",
       "content_type": "blog",
       "component": false,
-      "file": "layouts/blog___news.tpl",
-      "layout_name": "blog___news",
-      "title": "Blog & news"
+      "file": "layouts/blog___news.tpl"
     },
     {
+      "title": "Blog article",
+      "layout_name": "blog_article",
       "content_type": "blog_article",
       "component": false,
-      "file": "layouts/blog_article.tpl",
-      "layout_name": "blog_article",
-      "title": "Blog article"
+      "file": "layouts/blog_article.tpl"
     },
     {
-      "content_type": "component",
-      "component": true,
-      "file": "components/product-list-item.tpl",
-      "layout_name": "product-list-item",
-      "title": "product-list-item"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/comment-form.tpl",
-      "layout_name": "comment-form",
-      "title": "comment-form"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/edicy-tools-styles.tpl",
-      "layout_name": "edicy-tools-styles",
-      "title": "edicy-tools-styles"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/edicy-tools-variables.tpl",
-      "layout_name": "edicy-tools-variables",
-      "title": "edicy-tools-variables"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/edicy-tools.tpl",
-      "layout_name": "edicy-tools",
-      "title": "edicy-tools"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/footer.tpl",
-      "layout_name": "footer",
-      "title": "footer"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/html-head.tpl",
-      "layout_name": "html-head",
-      "title": "html-head"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/javascripts.tpl",
-      "layout_name": "javascripts",
-      "title": "javascripts"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/langmenu.tpl",
-      "layout_name": "langmenu",
-      "title": "langmenu"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/mainmenu.tpl",
-      "layout_name": "mainmenu",
-      "title": "mainmenu"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/menu-breadcrumbs.tpl",
-      "layout_name": "menu-breadcrumbs",
-      "title": "menu-breadcrumbs"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/mobilemenu.tpl",
-      "layout_name": "mobilemenu",
-      "title": "mobilemenu"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/blog-article-variables.tpl",
-      "layout_name": "blog-article-variables",
-      "title": "blog-article-variables"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/product-list-loop.tpl",
-      "layout_name": "product-list-loop",
-      "title": "product-list-loop"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/search.tpl",
-      "layout_name": "search",
-      "title": "search"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/sidebar.tpl",
-      "layout_name": "sidebar",
-      "title": "sidebar"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/submenu.tpl",
-      "layout_name": "submenu",
-      "title": "submenu"
-    },
-    {
-      "content_type": "component",
-      "component": true,
-      "file": "components/template-cs-button.tpl",
+      "title": "template-cs-button",
       "layout_name": "template-cs-button",
-      "title": "template-cs-button"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-content.tpl",
+      "file": "components/template-cs-button.tpl"
+    },
+    {
+      "title": "edicy-tools-variables",
+      "layout_name": "edicy-tools-variables",
+      "content_type": "component",
+      "component": true,
+      "file": "components/edicy-tools-variables.tpl"
+    },
+    {
+      "title": "edicy-tools",
+      "layout_name": "edicy-tools",
+      "content_type": "component",
+      "component": true,
+      "file": "components/edicy-tools.tpl"
+    },
+    {
+      "title": "footer",
+      "layout_name": "footer",
+      "content_type": "component",
+      "component": true,
+      "file": "components/footer.tpl"
+    },
+    {
+      "title": "html-head",
+      "layout_name": "html-head",
+      "content_type": "component",
+      "component": true,
+      "file": "components/html-head.tpl"
+    },
+    {
+      "title": "javascripts",
+      "layout_name": "javascripts",
+      "content_type": "component",
+      "component": true,
+      "file": "components/javascripts.tpl"
+    },
+    {
+      "title": "langmenu",
+      "layout_name": "langmenu",
+      "content_type": "component",
+      "component": true,
+      "file": "components/langmenu.tpl"
+    },
+    {
+      "title": "mainmenu",
+      "layout_name": "mainmenu",
+      "content_type": "component",
+      "component": true,
+      "file": "components/mainmenu.tpl"
+    },
+    {
+      "title": "mobilemenu",
+      "layout_name": "mobilemenu",
+      "content_type": "component",
+      "component": true,
+      "file": "components/mobilemenu.tpl"
+    },
+    {
+      "title": "search",
+      "layout_name": "search",
+      "content_type": "component",
+      "component": true,
+      "file": "components/search.tpl"
+    },
+    {
+      "title": "sidebar",
+      "layout_name": "sidebar",
+      "content_type": "component",
+      "component": true,
+      "file": "components/sidebar.tpl"
+    },
+    {
+      "title": "submenu",
+      "layout_name": "submenu",
+      "content_type": "component",
+      "component": true,
+      "file": "components/submenu.tpl"
+    },
+    {
+      "title": "edicy-tools-styles",
+      "layout_name": "edicy-tools-styles",
+      "content_type": "component",
+      "component": true,
+      "file": "components/edicy-tools-styles.tpl"
+    },
+    {
+      "title": "template-cs-content",
       "layout_name": "template-cs-content",
-      "title": "template-cs-content"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-focus-area.tpl",
+      "file": "components/template-cs-content.tpl"
+    },
+    {
+      "title": "template-cs-focus-area",
       "layout_name": "template-cs-focus-area",
-      "title": "template-cs-focus-area"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-footer.tpl",
+      "file": "components/template-cs-focus-area.tpl"
+    },
+    {
+      "title": "template-cs-footer",
       "layout_name": "template-cs-footer",
-      "title": "template-cs-footer"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-header.tpl",
+      "file": "components/template-cs-footer.tpl"
+    },
+    {
+      "title": "template-cs-header",
       "layout_name": "template-cs-header",
-      "title": "template-cs-header"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-headings.tpl",
+      "file": "components/template-cs-header.tpl"
+    },
+    {
+      "title": "template-cs-headings",
       "layout_name": "template-cs-headings",
-      "title": "template-cs-headings"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-main-styles.tpl",
+      "file": "components/template-cs-headings.tpl"
+    },
+    {
+      "title": "template-cs-main-styles",
       "layout_name": "template-cs-main-styles",
-      "title": "template-cs-main-styles"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-sidebar.tpl",
+      "file": "components/template-cs-main-styles.tpl"
+    },
+    {
+      "title": "template-cs-sidebar",
       "layout_name": "template-cs-sidebar",
-      "title": "template-cs-sidebar"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-style-rules.tpl",
+      "file": "components/template-cs-sidebar.tpl"
+    },
+    {
+      "title": "template-cs-style-rules",
       "layout_name": "template-cs-style-rules",
-      "title": "template-cs-style-rules"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-cs-table.tpl",
+      "file": "components/template-cs-style-rules.tpl"
+    },
+    {
+      "title": "template-cs-table",
       "layout_name": "template-cs-table",
-      "title": "template-cs-table"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-meta.tpl",
+      "file": "components/template-cs-table.tpl"
+    },
+    {
+      "title": "template-meta",
       "layout_name": "template-meta",
-      "title": "template-meta"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/template-variables.tpl",
+      "file": "components/template-meta.tpl"
+    },
+    {
+      "title": "template-variables",
       "layout_name": "template-variables",
-      "title": "template-variables"
-    },
-    {
       "content_type": "component",
       "component": true,
-      "file": "components/topbar.tpl",
+      "file": "components/template-variables.tpl"
+    },
+    {
+      "title": "topbar",
       "layout_name": "topbar",
-      "title": "topbar"
+      "content_type": "component",
+      "component": true,
+      "file": "components/topbar.tpl"
+    },
+    {
+      "title": "comment-form",
+      "layout_name": "comment-form",
+      "content_type": "component",
+      "component": true,
+      "file": "components/comment-form.tpl"
+    },
+    {
+      "title": "product-list-loop",
+      "layout_name": "product-list-loop",
+      "content_type": "component",
+      "component": true,
+      "file": "components/product-list-loop.tpl"
+    },
+    {
+      "title": "blog-article-variables",
+      "layout_name": "blog-article-variables",
+      "content_type": "component",
+      "component": true,
+      "file": "components/blog-article-variables.tpl"
+    },
+    {
+      "title": "product-list-item",
+      "layout_name": "product-list-item",
+      "content_type": "component",
+      "component": true,
+      "file": "components/product-list-item.tpl"
+    },
+    {
+      "title": "menu-breadcrumbs",
+      "layout_name": "menu-breadcrumbs",
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-breadcrumbs.tpl"
+    },
+    {
+      "title": "template-svg-spritesheet",
+      "layout_name": "template-svg-spritesheet",
+      "content_type": "component",
+      "component": true,
+      "file": "components/template-svg-spritesheet.tpl"
     }
   ],
   "assets": [
     {
-      "content_type": "unknown/unknown",
-      "file": "assets/ico-flags.svg",
-      "kind": "asset",
-      "filename": "ico-flags.svg"
-    },
-    {
-      "content_type": "unknown/unknown",
-      "file": "assets/loader.svg",
-      "kind": "asset",
-      "filename": "loader.svg"
-    },
-    {
-      "content_type": "unknown/unknown",
-      "file": "assets/search.svg",
-      "kind": "asset",
-      "filename": "search.svg"
-    },
-    {
-      "content_type": "unknown/unknown",
-      "file": "assets/search_close.svg",
-      "kind": "asset",
-      "filename": "search_close.svg"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/check.png",
-      "kind": "image",
-      "filename": "check.png"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/check_small.png",
-      "kind": "image",
-      "filename": "check_small.png"
-    },
-    {
-      "content_type": "image/jpg",
-      "file": "images/front-page-left-bg.jpg",
-      "kind": "image",
-      "filename": "front-page-left-bg.jpg"
-    },
-    {
-      "content_type": "image/jpg",
-      "file": "images/front-page-left-bg_block.jpg",
-      "kind": "image",
-      "filename": "front-page-left-bg_block.jpg"
-    },
-    {
-      "content_type": "image/jpg",
-      "file": "images/front-page-right-bg.jpg",
-      "kind": "image",
-      "filename": "front-page-right-bg.jpg"
-    },
-    {
-      "content_type": "image/jpg",
-      "file": "images/front-page-right-bg_block.jpg",
-      "kind": "image",
-      "filename": "front-page-right-bg_block.jpg"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/ico-flags.png",
-      "kind": "image",
-      "filename": "ico-flags.png"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/search-close.png",
-      "kind": "image",
-      "filename": "search-close.png"
-    },
-    {
-      "content_type": "image/png",
-      "file": "images/search.png",
-      "kind": "image",
-      "filename": "search.png"
-    },
-    {
-      "content_type": "text/javascript",
-      "file": "javascripts/application.js",
-      "kind": "javascript",
-      "filename": "application.js"
-    },
-    {
-      "content_type": "text/javascript",
-      "file": "javascripts/application.min.js",
-      "kind": "javascript",
-      "filename": "application.min.js"
-    },
-    {
-      "content_type": "text/javascript",
-      "file": "javascripts/modernizr-custom.min.js",
-      "kind": "javascript",
-      "filename": "modernizr-custom.min.js"
-    },
-    {
-      "content_type": "text/javascript",
-      "file": "javascripts/search.js",
-      "kind": "javascript",
-      "filename": "search.js"
-    },
-    {
-      "content_type": "text/javascript",
-      "file": "javascripts/search.min.js",
-      "kind": "javascript",
-      "filename": "search.min.js"
-    },
-    {
-      "content_type": "text/css",
+      "kind": "stylesheet",
+      "filename": "main.css",
       "file": "stylesheets/main.css",
-      "kind": "stylesheet",
-      "filename": "main.css"
+      "content_type": "text/css"
     },
     {
-      "content_type": "text/css",
-      "file": "stylesheets/main.min.css",
       "kind": "stylesheet",
-      "filename": "main.min.css"
+      "filename": "main.min.css",
+      "file": "stylesheets/main.min.css",
+      "content_type": "text/css"
+    },
+    {
+      "kind": "javascript",
+      "filename": "application.js",
+      "file": "javascripts/application.js",
+      "content_type": "text/javascript"
+    },
+    {
+      "kind": "javascript",
+      "filename": "application.min.js",
+      "file": "javascripts/application.min.js",
+      "content_type": "text/javascript"
+    },
+    {
+      "kind": "javascript",
+      "filename": "modernizr-custom.min.js",
+      "file": "javascripts/modernizr-custom.min.js",
+      "content_type": "text/javascript"
+    },
+    {
+      "kind": "javascript",
+      "filename": "search.js",
+      "file": "javascripts/search.js",
+      "content_type": "text/javascript"
+    },
+    {
+      "kind": "javascript",
+      "filename": "search.min.js",
+      "file": "javascripts/search.min.js",
+      "content_type": "text/javascript"
+    },
+    {
+      "kind": "image",
+      "filename": "check.png",
+      "file": "images/check.png",
+      "content_type": "image/png"
+    },
+    {
+      "kind": "image",
+      "filename": "check_small.png",
+      "file": "images/check_small.png",
+      "content_type": "image/png"
+    },
+    {
+      "kind": "image",
+      "filename": "front-page-left-bg.jpg",
+      "file": "images/front-page-left-bg.jpg",
+      "content_type": "image/jpg"
+    },
+    {
+      "kind": "image",
+      "filename": "front-page-left-bg_block.jpg",
+      "file": "images/front-page-left-bg_block.jpg",
+      "content_type": "image/jpg"
+    },
+    {
+      "kind": "image",
+      "filename": "front-page-right-bg.jpg",
+      "file": "images/front-page-right-bg.jpg",
+      "content_type": "image/jpg"
+    },
+    {
+      "kind": "image",
+      "filename": "front-page-right-bg_block.jpg",
+      "file": "images/front-page-right-bg_block.jpg",
+      "content_type": "image/jpg"
+    },
+    {
+      "kind": "image",
+      "filename": "ico-flags.png",
+      "file": "images/ico-flags.png",
+      "content_type": "image/png"
+    },
+    {
+      "kind": "image",
+      "filename": "search-close.png",
+      "file": "images/search-close.png",
+      "content_type": "image/png"
+    },
+    {
+      "kind": "image",
+      "filename": "search.png",
+      "file": "images/search.png",
+      "content_type": "image/png"
+    },
+    {
+      "kind": "asset",
+      "filename": "ico-flags.svg",
+      "file": "assets/ico-flags.svg",
+      "content_type": "unknown/unknown"
+    },
+    {
+      "kind": "asset",
+      "filename": "loader.svg",
+      "file": "assets/loader.svg",
+      "content_type": "unknown/unknown"
+    },
+    {
+      "kind": "asset",
+      "filename": "search.svg",
+      "file": "assets/search.svg",
+      "content_type": "unknown/unknown"
+    },
+    {
+      "kind": "asset",
+      "filename": "search_close.svg",
+      "file": "assets/search_close.svg",
+      "content_type": "unknown/unknown"
     }
   ]
 }
