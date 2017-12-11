@@ -8,6 +8,8 @@
 </head>
 
 <body class="item-list-page {% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
+  {% include "template-svg-spritesheet" %}
+
   <div class="wrap cfx">
     {% include "langmenu" %}
     {% include "topbar" %}
