@@ -836,6 +836,9 @@ label .form_control_indicator:before {
   line-height: 18px;
   text-transform: uppercase;
 }
+.main-menu li.is-hidden {
+  display: none;
+}
 .main-menu a {
   color: black;
   opacity: .36;

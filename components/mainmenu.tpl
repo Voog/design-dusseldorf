@@ -7,9 +7,23 @@
     {% endunless %}
 
     {% for item in site.visible_menuitems %}
-      <li>
-        <a href="{{ item.url }}" {% if item.selected? %} class="active"{% endif %}{% unless item.translated? %} class="fci-editor-menuadd untranslated"{% endunless %}>{{ item.title }}</a>
-      </li>
+      {% if site.root_item.layout_title == product_list_layout %}
+        {% if editmode %}
+          {% include "menu-level-1-link" render_product_related_pages: true %}
+        {% else %}
+          {% unless show_product_related_pages_in_main_menu %}
+            {% unless item.layout_title == product_list_layout or item.layout_title == product_layout %}
+              {% include "menu-level-1-link" render_product_related_pages: true %}
+            {% endunless %}
+          {% else %}
+            {% unless item.layout_title == product_layout %}
+              {% include "menu-level-1-link" %}
+            {% endunless %}
+          {% endunless %}
+        {% endif %}
+      {% else %}
+        {% include "menu-level-1-link" %}
+      {% endif %}
     {% endfor %}
 
     {% if editmode %}

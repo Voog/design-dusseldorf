@@ -740,6 +740,15 @@
   };
 
   // ===========================================================================
+  // Sets header menu initial width attribute for menu mode calculation.
+  // ===========================================================================
+  var setHeaderMenuInitialWidth = function() {
+    var $headerMenu = $('.js-header-menu');
+
+    $headerMenu.attr('data-initial-width', $headerMenu.outerWidth(true));
+  };
+
+  // ===========================================================================
   // Toggles product categories visibility in main menu.
   // ===========================================================================
   var bindRootItemSettings = function(rootItemValuesObj) {
@@ -773,10 +782,6 @@
           } else {
             $('.js-menu-item-products').removeClass('is-hidden');
           }
-
-          // TODO: Find out why it doesn't work in some edge cases.
-          setHeaderMenuInitialWidth();
-          setHeaderMenuMode();
         },
 
         commit: function(data) {
@@ -785,6 +790,8 @@
       });
     });
   };
+
+
 
   // ===========================================================================
   // Sets functions that will be initiated globally.
