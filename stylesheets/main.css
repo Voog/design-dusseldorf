@@ -2914,21 +2914,20 @@ footer .custom-btn {
   transform: rotate(-45deg);
 }
 
-.menu-item-list {
-  padding-top: 15px;
+.menu-horizontal {
   padding-left: 0 !important;
 }
-.menu-item-list .menu-item {
+.menu-horizontal .menu-item {
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
 }
-.menu-item-list .menu-item a {
+.menu-horizontal .menu-item a {
   color: rgba(0, 0, 0, 0.35) !important;
 }
-.menu-item-list .menu-item a:hover {
+.menu-horizontal .menu-item a:hover {
   color: black !important;
 }
-.menu-item-list .current.menu-item a {
+.menu-horizontal .current.menu-item a {
   color: black !important;
 }
 
@@ -2940,7 +2939,11 @@ footer .custom-btn {
 }
 
 .menu-separator {
-  opacity: .5;
+  opacity: .36;
+}
+
+.menu-separator:first-child {
+  display: none;
 }
 
 .formatted .edy-buy-button-container .form_field label {

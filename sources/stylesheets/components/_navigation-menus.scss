@@ -1,12 +1,11 @@
 
 // Product list menu
-.menu-item-list {
-  padding-top: 15px;
+.menu-horizontal {
   padding-left: 0 !important;
 
   .menu-item {
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
 
     a {
       color: rgba($color-black, .35) !important;
@@ -33,5 +32,11 @@
 }
 
 .menu-separator {
-  opacity: .5;
+  opacity: .36;
+}
+
+.menu-separator {
+  &:first-child {
+    display: none;
+  }
 }
