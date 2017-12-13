@@ -58,7 +58,7 @@
           transform: rotate($value);
 }
 
-@mixin query($value: $tablet-1) {
+@mixin query($value: $break-middle-1) {
   @media screen and (max-width: $value) {
     @content;
   }

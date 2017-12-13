@@ -38,19 +38,14 @@ $content-width: $site-width - $side-width;
 
 $search-width: 300px;
 
-$break-small: 600px;
-$break-middle: 1024px;
+// Media query breakpoints.
 $break-large: 1500px;
+$break-middle: 1024px;
+$mobile: 640px;
+$break-small: 600px;
+$nano: 240px;
 
 $fourth-color: $color-white;
 $focus-color: #f9ec5a;
-
-// Media query breakpoints.
-$tablet: 1024px;
-$mobile: 640px;
-$small: 380px;
-$tiny: 340px;
-$micro: 290px;
-$nano: 240px;
 
 $color-science-blue: #06b;
