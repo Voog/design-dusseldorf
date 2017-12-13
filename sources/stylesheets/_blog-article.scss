@@ -15,17 +15,16 @@
       vertical-align: top;
     }
 
-    @media screen and (min-width: $nano + 1) and (max-width: $mobile) {
+    @media screen and (min-width: $nano + 1) and (max-width: $tablet) {
       width: 50%;
       padding-right: 10px;
       padding-left: 10px;
     }
 
-    @media screen and (min-width: $mobile + 1) {
+    @media screen and (min-width: $tablet + 1) {
       width: 33.3%;
-      min-width: 213px;
-      padding-right: 20px;
-      padding-left: 20px;
+      padding-right: 15px;
+      padding-left: 15px;
     }
   }
 
@@ -72,7 +71,7 @@
 }
 
 .item-top {
-    position: relative;
+  position: relative;
 }
 
 .item-top {

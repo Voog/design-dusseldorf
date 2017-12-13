@@ -7,30 +7,29 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-@media screen and (max-width: 240px) {
+@media screen and (max-width: 320px) {
   .item-list-page .content-item-box {
     display: block;
   }
 }
-@media screen and (min-width: 241px) {
+@media screen and (min-width: 321px) {
   .item-list-page .content-item-box {
     display: inline-block;
     vertical-align: top;
   }
 }
-@media screen and (min-width: 241px) and (max-width: 640px) {
+@media screen and (min-width: 321px) and (max-width: 768px) {
   .item-list-page .content-item-box {
     width: 50%;
     padding-right: 10px;
     padding-left: 10px;
   }
 }
-@media screen and (min-width: 641px) {
+@media screen and (min-width: 769px) {
   .item-list-page .content-item-box {
     width: 33.3%;
-    min-width: 213px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 .blog-article-page .content-item-box {
