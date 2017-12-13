@@ -148,6 +148,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 300;
+    font-size: 16px;
     line-height: 1.2;
     text-align: center;
 
@@ -200,26 +201,6 @@
       border-width: 1px;
     }
 
-    @media screen and (max-width: $nano) {
-      font-size: 16px;
-    }
-
-    @media screen and (min-width: $nano + 1) {
-      font-size: 13px;
-    }
-
-    @media screen and (min-width: $micro + 1) {
-      font-size: 16px;
-    }
-
-    @media screen and (min-width: $tiny + 1) {
-      font-size: 20px;
-    }
-
-    @media screen and (min-width: $tablet + 1) {
-      font-size: 30px;
-    }
-
     .cms-blog-article-add-button & {
       border-color: rgba($color-black, .4);
       border-style: dashed;
@@ -256,5 +237,48 @@
         font-size: $base-font-size;
       }
     }
+  }
+}
+
+.item-title {
+  @include hyphenate;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  .item-link {
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+
+    &:hover {
+      font-size: 14px;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: underline !important;
+    }
+  }
+
+  .content-item-box > & {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
+
+.content-item-title h1 {
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+  font-weight: 600 !important;
+}
+
+.item-page {
+  .content-header {
+    margin-bottom: 20px;
+  }
+
+  .content-area {
+    font-size: 16px;
   }
 }
