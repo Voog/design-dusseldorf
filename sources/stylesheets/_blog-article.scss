@@ -200,10 +200,8 @@
       border-width: 1px;
     }
 
-    .cms-blog-article-add-button & {
-      border-color: rgba($color-black, .4);
-      border-style: dashed;
-      border-width: 1px;
+    .item-placeholder {
+      padding: .5em;
     }
   }
 
@@ -233,7 +231,7 @@
       }
 
       @media screen and (min-width: $mobile + 1) {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }

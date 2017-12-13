@@ -188,10 +188,8 @@
   border-style: solid;
   border-width: 1px;
 }
-.cms-blog-article-add-button .item-top .top-inner {
-  border-color: rgba(0, 0, 0, 0.4);
-  border-style: dashed;
-  border-width: 1px;
+.item-top .top-inner .item-placeholder {
+  padding: .5em;
 }
 .item-top .image-drop-area {
   background-position: center !important;
@@ -215,7 +213,7 @@
 }
 @media screen and (min-width: 641px) {
   .item-top .image-drop-area .edy-img-drop-area-placeholder {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
