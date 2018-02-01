@@ -2931,6 +2931,9 @@ footer .custom-btn {
 .menu-horizontal {
   padding-left: 0 !important;
 }
+.menu-horizontal.menu-breadcrumbs .menu-item {
+  padding-left: 0;
+}
 .menu-horizontal .menu-item {
   display: inline-block;
   font-size: 12px;
@@ -2954,6 +2957,7 @@ footer .custom-btn {
 
 .menu-separator {
   opacity: .36;
+  font-size: 12px;
 }
 
 .menu-separator:first-child {
