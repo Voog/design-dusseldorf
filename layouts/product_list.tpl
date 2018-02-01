@@ -18,6 +18,7 @@
     </aside>
 
     <div class="main">
+      {% include "submenu_for_current" exclude_products: true %}
       <section class="content cfx formatted" {{ edy_intro_edit_text }}>
         {% include "menu-breadcrumbs" %}
         <section class="content-item-boxes">

@@ -4,7 +4,11 @@
       {% if editmode or item.children? %}
           <ul>
           {% for level2 in item.visible_children %}
-            <li><a href="{{level2.url}}"{% if level2.selected? %} class="active"{% endif %}{% unless level2.translated? %} class="untranslated fci-editor-menuadd"{% endunless %}>{{level2.title}}</a></li>
+            {% if exclude_products == true and level2.layout_title != 'Product' and level2.layout_title != "Product list" %}
+              <li><a href="{{level2.url}}"{% if level2.selected? %} class="active"{% endif %}{% unless level2.translated? %} class="untranslated fci-editor-menuadd"{% endunless %}>{{level2.title}}</a></li>
+            {% elsif exclude_products == false %}
+              <li><a href="{{level2.url}}"{% if level2.selected? %} class="active"{% endif %}{% unless level2.translated? %} class="untranslated fci-editor-menuadd"{% endunless %}>{{level2.title}}</a></li>
+            {% endif %}
           {% endfor %}
           {% if editmode %}
             {% if item.hidden_children.size > 0 %}<li class="edy-btn">{% menubtn item.hidden_children %}</li>{% endif %}
