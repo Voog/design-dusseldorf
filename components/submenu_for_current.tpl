@@ -4,7 +4,7 @@
   {% for level2 in page.menuitem.visible_children %}
     {% if exclude_products == true and level2.layout_title != 'Product' and level2.layout_title != "Product list" %}
       <li><a href="{{level2.url}}"{% if level2.selected? %} class="active"{% endif %}{% unless level2.translated? %} class="untranslated fci-editor-menuadd"{% endunless %}>{{level2.title}}</a></li>
-    {% elsif exclude_products == false %}
+    {% elsif exclude_products != true %}
       <li><a href="{{level2.url}}"{% if level2.selected? %} class="active"{% endif %}{% unless level2.translated? %} class="untranslated fci-editor-menuadd"{% endunless %}>{{level2.title}}</a></li>
     {% endif %}
   {% endfor %}
