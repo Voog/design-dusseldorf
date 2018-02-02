@@ -2798,7 +2798,6 @@ footer .custom-btn {
   }
 }
 .content-item-boxes {
-  padding-top: 15px;
   font-size: 0;
   line-height: 1.3;
 }
@@ -2930,6 +2929,9 @@ footer .custom-btn {
 
 .menu-horizontal {
   padding-left: 0 !important;
+}
+.menu-horizontal.menu-breadcrumbs {
+  margin: 0;
 }
 .menu-horizontal.menu-breadcrumbs .menu-item {
   padding-left: 0;
