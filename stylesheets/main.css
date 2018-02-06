@@ -2811,8 +2811,8 @@ footer .custom-btn {
 @media screen and (min-width: 641px) {
   .content-item-boxes {
     padding-bottom: 80px;
-    margin-right: -20px;
-    margin-left: -20px;
+    margin-right: -15px;
+    margin-left: -15px;
   }
 }
 .items-body {
@@ -2930,8 +2930,12 @@ footer .custom-btn {
 .menu-horizontal {
   padding-left: 0 !important;
 }
-.menu-horizontal.menu-breadcrumbs {
-  margin: 0;
+.menu-horizontal .menu-separator {
+  opacity: .36;
+  font-size: 12px;
+}
+.menu-horizontal .menu-separator:first-child {
+  display: none;
 }
 .menu-horizontal.menu-breadcrumbs .menu-item {
   padding-left: 0;
@@ -2950,20 +2954,15 @@ footer .custom-btn {
   color: black !important;
 }
 
+.item-list-page .menu-breadcrumbs {
+  margin: 0;
+}
+
 .menu-item-cms {
   margin-left: 10px;
 }
 .menu-item-cms.float-right {
   float: right;
-}
-
-.menu-separator {
-  opacity: .36;
-  font-size: 12px;
-}
-
-.menu-separator:first-child {
-  display: none;
 }
 
 .formatted .edy-buy-button-container .form_field label {

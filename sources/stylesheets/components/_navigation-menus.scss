@@ -3,8 +3,16 @@
 .menu-horizontal {
   padding-left: 0 !important;
 
+  .menu-separator {
+    opacity: .36;
+    font-size: 12px;
+
+    &:first-child {
+      display: none;
+    }
+  }
+  
   &.menu-breadcrumbs {
-    margin: 0;
     .menu-item {
       padding-left: 0;
     }
@@ -30,21 +38,16 @@
   }
 }
 
+.item-list-page {
+  .menu-breadcrumbs {
+    margin: 0;
+  }
+}
+
 .menu-item-cms {
   margin-left: 10px;
 
   &.float-right {
     float: right;
-  }
-}
-
-.menu-separator {
-  opacity: .36;
-  font-size: 12px;
-}
-
-.menu-separator {
-  &:first-child {
-    display: none;
   }
 }
