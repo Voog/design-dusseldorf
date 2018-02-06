@@ -7,6 +7,8 @@
   {% include "edicy-tools-variables" with 'post_page' %}
   {% include "html-head" %}
   {% include "edicy-tools-styles" %}
+
+  {% if editmode %}<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">{% endif %}
 </head>
 <body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %} blog-article-page">
   <div class="wrap cfx">

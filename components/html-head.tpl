@@ -15,10 +15,6 @@
 {% comment %}TODO: Add functionality after the CMS is going to support it{% endcomment %}
 {% if site.data.touch_icon %}<link rel="apple-touch-icon" href="{{ site.data.touch_icon }}">{% endif %}
 
-{% if editmode %}
-  <link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">
-{% endif %}
-
 {% comment %}STYLESHEETS{% endcomment %}
 {% stylesheet_link "main.min.css" %}
 
