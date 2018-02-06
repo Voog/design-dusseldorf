@@ -39,7 +39,9 @@
     </aside>
 
     <div class="main">
-      {% include "submenu_for_current" exclude_products: true %}
+      {% if page_level == 0 %}
+        {% include "submenu_for_current" exclude_products: true %}
+      {% endif %}
       <section class="content cfx formatted" {{ edy_intro_edit_text }}>
         {% include "menu-breadcrumbs" %}
         <main class="page-content" role="main">
