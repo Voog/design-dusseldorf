@@ -28,6 +28,9 @@
   {% include "edicy-tools-styles" %}
 
   {% if editmode %}<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">{% endif %}
+
+  {% comment %}STYLESHEETS{% endcomment %}
+  {% stylesheet_link "main.min.css" %}
 </head>
 
 <body class="item-page {% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">

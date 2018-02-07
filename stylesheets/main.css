@@ -2965,6 +2965,28 @@ footer .custom-btn {
   float: right;
 }
 
+.item-top .edy-img-drop-area-remove-image {
+  height: 45px;
+  width: 45px;
+  top: 10px;
+  right: 10px;
+  z-index: 9;
+  color: white;
+  background-color: rgba(0, 102, 187, 0.3);
+  border: 0;
+  opacity: 0;
+  -webkit-transition: background-color .5s, opacity .5s;
+  -o-transition: background-color .5s, opacity .5s;
+  transition: background-color .5s, opacity .5s;
+}
+.item-top .edy-img-drop-area-remove-image:hover {
+  background-color: #0066bb;
+}
+.item-top .edy-img-drop-area-remove-image-ico {
+  margin-top: -10px;
+  margin-left: -8px;
+}
+
 .formatted .edy-buy-button-container .form_field label {
   padding-bottom: 0;
 }
