@@ -268,7 +268,7 @@ ol li, .lang-menu-btn {
   padding: 0;
 }
 
-.voog-bg-picker-btn, .lang-menu-btn {
+.lang-menu-btn {
   margin: 0;
   padding: 0;
   cursor: pointer;
@@ -448,6 +448,17 @@ blockquote {
   .font-size-small {
     font-size: 20px !important;
   }
+}
+
+.voog-bg-picker-btn {
+  top: 0;
+  left: 10px;
+  padding: 0;
+  border-style: none;
+  opacity: .9;
+}
+.voog-bg-picker-btn:hover {
+  opacity: 1;
 }
 
 /* select */
