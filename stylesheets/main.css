@@ -2949,6 +2949,9 @@ footer .custom-btn {
 .menu-horizontal .menu-separator:first-child {
   display: none;
 }
+.menu-horizontal.menu-breadcrumbs {
+  line-height: 16px;
+}
 .menu-horizontal.menu-breadcrumbs .menu-item {
   padding-left: 0;
 }

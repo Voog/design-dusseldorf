@@ -11,8 +11,10 @@
       display: none;
     }
   }
-  
+
   &.menu-breadcrumbs {
+    line-height: 16px;
+    
     .menu-item {
       padding-left: 0;
     }
