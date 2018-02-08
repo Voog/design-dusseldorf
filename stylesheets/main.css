@@ -268,7 +268,7 @@ ol li, .lang-menu-btn {
   padding: 0;
 }
 
-.lang-menu-btn {
+.voog-bg-picker-btn, .lang-menu-btn {
   margin: 0;
   padding: 0;
   cursor: pointer;
@@ -2653,6 +2653,16 @@ footer .voog-reference svg path {
 }
 .dark-background .formatted h1, .dark-background .formatted h2, .dark-background .formatted h3, .dark-background .formatted h4, .dark-background .formatted p, .dark-background .formatted pre, .dark-background .formatted a, .dark-background .formatted b, .dark-background .formatted input {
   color: white;
+}
+.dark-background .menu-horizontal li a {
+  color: white;
+  opacity: .7;
+}
+.dark-background .menu-horizontal li a:hover {
+  opacity: 1;
+}
+.dark-background .menu-horizontal li.current a {
+  color: white !important;
 }
 .dark-background .post-title a {
   color: white;

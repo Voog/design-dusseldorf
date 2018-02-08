@@ -2259,7 +2259,7 @@ table {
     }
 
     &.flags-disabled {
-      .language-menu-btn { 
+      .language-menu-btn {
         top: 0;
         left: 0;
         width: auto;
@@ -2449,6 +2449,21 @@ table {
 
     & h1, h2, h3, h4, p, pre, a, b, input {
       color: $color-white;
+    }
+  }
+
+  .menu-horizontal li a {
+    color: rgba($color-white, 1);
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .menu-horizontal li.current {
+    a {
+    color: rgba($color-white, 1) !important;
     }
   }
 
