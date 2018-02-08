@@ -2644,14 +2644,16 @@ footer .voog-reference svg path {
   color: white;
 }
 .dark-background .menu-horizontal li a {
-  color: white;
+  color: white !important;
   opacity: .7;
 }
 .dark-background .menu-horizontal li a:hover {
+  color: white !important;
   opacity: 1;
 }
 .dark-background .menu-horizontal li.current a {
   color: white !important;
+  opacity: 1;
 }
 .dark-background .post-title a {
   color: white;

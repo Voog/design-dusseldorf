@@ -2436,17 +2436,19 @@ table {
   }
 
   .menu-horizontal li a {
-    color: rgba($color-white, 1);
+    color: rgba($color-white, 1) !important;
     opacity: .7;
 
     &:hover {
+      color: rgba($color-white, 1) !important;
       opacity: 1;
     }
   }
 
   .menu-horizontal li.current {
     a {
-    color: rgba($color-white, 1) !important;
+      color: rgba($color-white, 1) !important;
+      opacity: 1;
     }
   }
 
