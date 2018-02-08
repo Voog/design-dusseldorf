@@ -23,9 +23,9 @@
     </aside>
 
     <div class="main">
-      <div class="content-top js-content-top">
+      <div class="content-full content-top cfx js-content-top">
         <div class="background-color"></div>
-        <div class="js-background-type {{ content_top_bg_type }}">
+        <div class="container js-background-type {{ content_top_bg_type }}">
 
           {% if page_level == 0 %}
             {% include "submenu_for_current" exclude_products: true %}
@@ -47,11 +47,13 @@
               {% endif %}
             </section>
           </section>
-          {% include "footer" %}
         </div>
       </div>
+
+      {% include "footer" %}
     </div>
   </div>
+
   {% include "mobilemenu" %}
   {% include "javascripts" %}
   {% include "edicy-tools" items_page: true  %}
