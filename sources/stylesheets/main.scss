@@ -204,23 +204,6 @@ blockquote {
   }
 }
 
-.voog-bg-picker-btn {
-  @extend %button;
-}
-
-.voog-bg-picker-btn {
-  @extend %button;
-  top: 0;
-  left: 10px;
-  padding: 0;
-  border-style: none;
-  opacity: .9;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
 /* select */
 .jq-select {
   position: relative;
