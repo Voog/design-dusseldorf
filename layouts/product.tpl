@@ -26,9 +26,7 @@
   {% include "edicy-tools-variables" %}
   {% include "html-head" %}
   {% include "edicy-tools-styles" %}
-
   {% if editmode %}<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">{% endif %}
-  {% comment %}STYLESHEETS{% endcomment %}
   {% stylesheet_link "main.min.css" %}
 </head>
 
@@ -66,7 +64,6 @@
                             <use xlink:href="#ico-toggle"></use>
                           </svg>
                         </button>
-
                         <div class="loader js-loader"></div>
                         <div class="top-inner aspect-ratio-inner image-drop-area {{ page_image_orientation }} {{ page_image_crop_state }} js-content-item-img-drop-area" data-image="{{ page.image.for-width-680.schemeless_url }}"></div>
                       </div>
@@ -89,7 +86,6 @@
                   {% endif %}
                   <div class="content-gallery content-area">{% content name="gallery" %}</div>
                 </div>
-
                 <div class="content-body">
                   <header class="content-header">
                     <div class="content-item-title content-area">{% contentblock name="content_header_test" publish_default_content="true" %}<h1>{{ page.title }}</h1>{% endcontentblock %}</div>
