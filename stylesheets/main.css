@@ -2809,6 +2809,10 @@ footer .custom-btn {
     flex: 1;
   }
 }
+.intro-content {
+  padding-bottom: 50px;
+}
+
 .content-item-boxes {
   font-size: 0;
   line-height: 1.3;
