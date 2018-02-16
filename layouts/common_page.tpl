@@ -26,7 +26,7 @@
             <div class="container js-background-type {{ content_top_bg_type }}">
 
               <div class="inner">
-                {% if page.level == 0 %}
+                {% if page.level != 0 %}
                   {% include "submenu" %}
                 {% endif %}
                 {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_top_bg_image }}" data-bg-image-sizes="{{ content_top_bg_image_sizes_str | escape }}" data-bg-color="{{ content_top_bg_color }}" data-bg-color-data="{{ content_top_bg_color_data_str | escape }}"></button>{% endif %}
