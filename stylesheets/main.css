@@ -2729,11 +2729,6 @@ footer .voog-reference svg path {
 footer .custom-btn {
   display: none;
 }
-.public .custom-btn-disabled {
-  cursor: default;
-  color: #dadada;
-  border-color: #dadada;
-}
 
 .header-row .content-full {
   min-height: 31vh;
@@ -3016,4 +3011,44 @@ footer .custom-btn {
 .formatted .edy-buy-button-variants .form_field_select {
   width: initial;
   outline: 0;
+}
+
+.dark-background .edy-buy-button-variants .form_field_label {
+  color: #fff;
+}
+
+.light-background .edy-buy-button-variants .form_field_label {
+  color: #000;
+}
+
+.content-area .edy-buy-button-variants .form_field_select {
+  border-color: #fff;
+  position: relative;
+  padding: 6px 25px 6px 7px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  vertical-align: bottom;
+  background-image: url(../assets/ico-arrow-white.svg);
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.light-background .edy-buy-button-variants .form_field_select {
+  border-color: #000;
+}
+
+.public .custom-btn-disabled {
+  cursor: default;
+  color: rgba(0, 0, 0, 0.35);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.public .dark-background .custom-btn-disabled {
+  color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.35);
 }

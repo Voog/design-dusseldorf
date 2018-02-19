@@ -2538,16 +2538,6 @@ table {
   footer & {
     display: none;
   }
-
-  &-disabled {
-    // scss-lint:disable NestingDepth
-    .public & {
-      cursor: default;
-      color: $disabled-color;
-      border-color: $disabled-color;
-    }
-    // scss-lint:enable NestingDepth
-  }
 }
 
 .header-row {
