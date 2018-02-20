@@ -2730,6 +2730,17 @@ footer .custom-btn {
   display: none;
 }
 
+.public .light-background .custom-btn-disabled {
+  cursor: default;
+  color: rgba(0, 0, 0, 0.35);
+  border-color: rgba(0, 0, 0, 0.35);
+}
+
+.public .dark-background .custom-btn-disabled {
+  color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
 .header-row .content-full {
   min-height: 31vh;
 }
@@ -3038,15 +3049,4 @@ footer .custom-btn {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}
-
-.public .light-background .custom-btn-disabled {
-  cursor: default;
-  color: rgba(0, 0, 0, 0.35);
-  border-color: rgba(0, 0, 0, 0.35);
-}
-
-.public .dark-background .custom-btn-disabled {
-  color: rgba(255, 255, 255, 0.35);
-  border-color: rgba(255, 255, 255, 0.35);
 }
