@@ -65,21 +65,19 @@
   }
 }
 
-.custom-btn {
-  &-disabled {
-    // scss-lint:disable NestingDepth
+.light-background {
+  .custom-btn-disabled {
     .public & {
       cursor: default;
       color: rgba(0,0,0,.35);
       border-color: rgba(0,0,0,.35);
     }
-    // scss-lint:enable NestingDepth
   }
 }
 
-.public {
-  .dark-background {
-    .custom-btn-disabled {
+.dark-background {
+  .custom-btn-disabled {
+    .public & {
       color: rgba(255,255,255,.35);
       border-color: rgba(255,255,255,.35);
     }

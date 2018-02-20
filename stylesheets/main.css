@@ -3040,7 +3040,7 @@ footer .custom-btn {
   appearance: none;
 }
 
-.public .custom-btn-disabled {
+.public .light-background .custom-btn-disabled {
   cursor: default;
   color: rgba(0, 0, 0, 0.35);
   border-color: rgba(0, 0, 0, 0.35);
