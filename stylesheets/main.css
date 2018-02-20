@@ -3002,6 +3002,7 @@ footer .custom-btn {
 }
 
 .formatted .edy-buy-button-container .form_field label {
+  font-size: 16px;
   padding-bottom: 0;
 }
 .formatted .edy-buy-button-variants .form_field {
@@ -3021,7 +3022,7 @@ footer .custom-btn {
   color: #000;
 }
 
-.content-area .edy-buy-button-variants .form_field_select {
+.edy-buy-button-variants .form_field_select {
   border-color: #fff;
   position: relative;
   padding: 6px 25px 6px 7px;

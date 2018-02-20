@@ -6,6 +6,7 @@
     // sass-lint:disable class-name-format
     .form_field {
       label {
+        font-size: 16px;
         padding-bottom: 0;
       }
     }
@@ -43,24 +44,22 @@
   }
 }
 
-.content-area {
-  .edy-buy-button-variants {
-    .form_field_select {
-      border-color: #fff;
-      position: relative;
-      padding: 6px 25px 6px 7px;
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 1.5;
-      vertical-align: bottom;
-      background-image: url(../assets/ico-arrow-white.svg);
-      background-position: right 10px center;
-      background-repeat: no-repeat;
-      border-radius: 0;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
+.edy-buy-button-variants {
+  .form_field_select {
+    border-color: #fff;
+    position: relative;
+    padding: 6px 25px 6px 7px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    vertical-align: bottom;
+    background-image: url(../assets/ico-arrow-white.svg);
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 }
 
