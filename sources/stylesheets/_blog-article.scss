@@ -108,6 +108,10 @@
     border-radius: 100%;
     color: rgba($color-white, 1);
 
+    &:focus {
+      outline: 0;
+    }
+
     &.is-visible {
       display: block;
     }
