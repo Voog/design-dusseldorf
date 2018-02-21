@@ -2727,7 +2727,7 @@ footer .voog-reference svg path {
 .light-background .custom-btn:not(.custom-btn-disabled):hover {
   background: #2b2b2b;
   border: 2px solid;
-  color: white;
+  color: white !important;
 }
 footer .custom-btn {
   display: none;

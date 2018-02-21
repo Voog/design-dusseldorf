@@ -2531,7 +2531,7 @@ table {
     &:not(.custom-btn-disabled):hover {
       background: #2b2b2b;
       border: 2px solid;
-      color: $color-white;
+      color: $color-white !important;
     }
   }
 
@@ -2546,7 +2546,7 @@ table {
       cursor: default;
       color: rgba(0,0,0,.35);
       border-color: rgba(0,0,0,.35);
-    } 
+    }
   }
 }
 
