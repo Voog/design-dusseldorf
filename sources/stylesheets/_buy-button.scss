@@ -11,6 +11,12 @@
       }
     }
     // sass-lint:enable class-name-format
+
+    .edy-buy-button:not(.custom-btn-disabled) {
+      .light-background & {
+        color: #000;
+      }
+    }
   }
 
   .edy-buy-button-variants {

@@ -3019,6 +3019,9 @@ footer .custom-btn {
   font-size: 16px;
   padding-bottom: 0;
 }
+.light-background .formatted .edy-buy-button-container .edy-buy-button:not(.custom-btn-disabled) {
+  color: #000;
+}
 .formatted .edy-buy-button-variants .form_field {
   padding-top: 0;
   padding-bottom: 0;
