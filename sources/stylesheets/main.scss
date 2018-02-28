@@ -2,9 +2,6 @@
 @import 'mixins';
 @import 'modules/variables';
 
-// CONTENT AREAS
-@import 'blog-article';
-
 %nulling {
   margin: 0;
   padding: 0;
@@ -2779,5 +2776,5 @@ table {
 
 // COMPONENTS
 @import 'components/navigation-menus';
-@import 'components/content-item';
+@import 'content-item';
 @import 'buy-button';
