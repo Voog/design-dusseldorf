@@ -6,11 +6,6 @@
   {% include "edicy-tools-variables" %}
   {% include "html-head" front_page: true %}
   {% include "edicy-tools-styles" %}
-
-  {% comment %}STYLESHEETS{% endcomment %}
-  {% stylesheet_link "main.min.css" %}
-  
-  {% if editmode %}<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">{% endif %}
 </head>
 <body class="front-page{% if editmode %} editmode{% endif %}{% if site.search.enabled %} search-enabled{% endif %}">
   <div class="wrap cfx">
