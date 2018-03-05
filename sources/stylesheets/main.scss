@@ -2528,6 +2528,7 @@ table {
     &:not(.custom-btn-disabled):hover {
       background: #2b2b2b;
       border: 2px solid;
+      border-color: $color-black; 
       color: $color-white !important;
     }
   }
