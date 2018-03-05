@@ -14,7 +14,7 @@
 
   &.menu-breadcrumbs {
     line-height: 16px;
-    
+
     .menu-item {
       padding-left: 0;
     }
@@ -23,20 +23,6 @@
   .menu-item {
     display: inline-block;
     font-size: 12px;
-
-    a {
-      color: rgba($color-black, .35) !important;
-
-      &:hover {
-        color: rgba($color-black, 1) !important;
-      }
-    }
-  }
-
-  .current.menu-item {
-    a {
-    color: rgba($color-black, 1) !important;
-    }
   }
 }
 

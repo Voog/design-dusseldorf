@@ -2384,15 +2384,12 @@ footer .voog-reference svg path {
   color: white;
 }
 .dark-background .menu-horizontal li a {
-  color: white !important;
   opacity: .7;
 }
 .dark-background .menu-horizontal li a:hover {
-  color: white !important;
   opacity: 1;
 }
 .dark-background .menu-horizontal li.current a {
-  color: white !important;
   opacity: 1;
 }
 .dark-background .post-title a {
@@ -2413,6 +2410,15 @@ footer .voog-reference svg path {
 }
 .light-background .formatted h1, .light-background .formatted h2, .light-background .formatted h3, .light-background .formatted h4, .light-background .formatted p, .light-background .formatted input {
   color: rgba(0, 0, 0, 0.5);
+}
+.light-background .menu-horizontal li a {
+  opacity: .7;
+}
+.light-background .menu-horizontal li a:hover {
+  opacity: 1;
+}
+.light-background .menu-horizontal li.current a {
+  opacity: 1;
 }
 .light-background .post-title a {
   color: black;
@@ -2710,15 +2716,6 @@ footer .custom-btn {
   display: inline-block;
   font-size: 12px;
 }
-.menu-horizontal .menu-item a {
-  color: rgba(0, 0, 0, 0.35) !important;
-}
-.menu-horizontal .menu-item a:hover {
-  color: black !important;
-}
-.menu-horizontal .current.menu-item a {
-  color: black !important;
-}
 
 .item-list-page .menu-breadcrumbs {
   margin: 0;
@@ -3009,15 +3006,10 @@ footer .custom-btn {
   width: initial !important;
   outline: 0;
 }
-.dark-background .formatted .edy-buy-button-variants .form_field_label {
-  color: #fff;
-}
-.light-background .formatted .edy-buy-button-variants .form_field_label {
-  color: #000;
-}
 .light-background .formatted .edy-buy-button-variants .form_field_select {
   border-color: #000;
   color: #000;
+  background-color: white;
 }
 
 .edy-buy-button-variants .form_field_select {

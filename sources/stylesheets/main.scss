@@ -2433,18 +2433,15 @@ table {
   }
 
   .menu-horizontal li a {
-    color: rgba($color-white, 1) !important;
     opacity: .7;
 
     &:hover {
-      color: rgba($color-white, 1) !important;
       opacity: 1;
     }
   }
 
   .menu-horizontal li.current {
     a {
-      color: rgba($color-white, 1) !important;
       opacity: 1;
     }
   }
@@ -2472,6 +2469,20 @@ table {
 
     & h1, h2, h3, h4, p, input {
       color: rgba($color-black, .5);
+    }
+  }
+
+  .menu-horizontal li a {
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .menu-horizontal li.current {
+    a {
+      opacity: 1;
     }
   }
 
@@ -2528,7 +2539,7 @@ table {
     &:not(.custom-btn-disabled):hover {
       background: #2b2b2b;
       border: 2px solid;
-      border-color: $color-black; 
+      border-color: $color-black;
       color: $color-white !important;
     }
   }

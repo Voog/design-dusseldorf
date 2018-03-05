@@ -34,20 +34,11 @@
   }
 
   .edy-buy-button-variants {
-    .form_field_label {
-      .dark-background & {
-        color: #fff;
-      }
-
-      .light-background & {
-        color: #000;
-      }
-    }
-
     .form_field_select {
       .light-background & {
         border-color: #000;
         color: #000;
+        background-color: $color-white;
       }
     }
   }

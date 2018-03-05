@@ -76,6 +76,12 @@
 .light-background .formatted table th, .light-background .formatted table td {
   border-color: var(--color-dark);
 }
+.light-background .menu-horizontal li a {
+  color: var(--color-dark);
+}
+.light-background .menu-horizontal li a:hover {
+  color: var(--color-dark);
+}
 
 .dark-background {
   color: var(--color-light);
@@ -160,6 +166,12 @@
 }
 .dark-background .custom-btn:not(.custom-btn-disabled) {
   border-color: var(--color-light);
+  color: var(--color-light);
+}
+.dark-background .menu-horizontal li a {
+  color: var(--color-light);
+}
+.dark-background .menu-horizontal li a:hover {
   color: var(--color-light);
 }
 
