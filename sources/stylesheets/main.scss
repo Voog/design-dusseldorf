@@ -2,9 +2,6 @@
 @import 'mixins';
 @import 'modules/variables';
 
-// CONTENT AREAS
-@import 'blog-article';
-
 %nulling {
   margin: 0;
   padding: 0;
@@ -2436,18 +2433,15 @@ table {
   }
 
   .menu-horizontal li a {
-    color: rgba($color-white, 1) !important;
     opacity: .7;
 
     &:hover {
-      color: rgba($color-white, 1) !important;
       opacity: 1;
     }
   }
 
   .menu-horizontal li.current {
     a {
-      color: rgba($color-white, 1) !important;
       opacity: 1;
     }
   }
@@ -2475,6 +2469,20 @@ table {
 
     & h1, h2, h3, h4, p, input {
       color: rgba($color-black, .5);
+    }
+  }
+
+  .menu-horizontal li a {
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .menu-horizontal li.current {
+    a {
+      opacity: 1;
     }
   }
 
@@ -2531,12 +2539,32 @@ table {
     &:not(.custom-btn-disabled):hover {
       background: #2b2b2b;
       border: 2px solid;
-      color: $color-white;
+      border-color: $color-black;
+      color: $color-white !important;
     }
   }
 
   footer & {
     display: none;
+  }
+}
+
+.light-background {
+  .custom-btn-disabled {
+    .public & {
+      cursor: default;
+      color: rgba(0,0,0,.35);
+      border-color: rgba(0,0,0,.35);
+    }
+  }
+}
+
+.dark-background {
+  .custom-btn-disabled {
+    .public & {
+      color: rgba(255,255,255,.35);
+      border-color: rgba(255,255,255,.35);
+    }
   }
 }
 
@@ -2760,5 +2788,5 @@ table {
 
 // COMPONENTS
 @import 'components/navigation-menus';
-@import 'components/content-item';
+@import 'content-item';
 @import 'buy-button';
