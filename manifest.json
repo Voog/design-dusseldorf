@@ -426,6 +426,12 @@
       "file": "stylesheets/main.css",
       "kind": "stylesheet",
       "filename": "main.css"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "kind": "assets",
+      "file": "assets/ico-arrow-white.svg",
+      "filename": "ico-arrow-white.svg"
     }
   ]
 }
