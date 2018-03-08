@@ -8,23 +8,16 @@
     {
       "content_type": "page",
       "component": false,
-      "file": "layouts/front_page.tpl",
-      "layout_name": "page_front",
-      "title": "Front page"
-    },
-    {
-      "content_type": "page",
-      "component": false,
-      "file": "layouts/common_page.tpl",
-      "layout_name": "page_default",
-      "title": "Common page"
-    },
-    {
-      "content_type": "page",
-      "component": false,
       "file": "layouts/product.tpl",
       "layout_name": "product",
       "title": "Product"
+    },
+    {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/front_page.tpl",
+      "layout_name": "page_front",
+      "title": "Front page"
     },
     {
       "content_type": "page",
@@ -426,12 +419,6 @@
       "file": "stylesheets/main.css",
       "kind": "stylesheet",
       "filename": "main.css"
-    },
-    {
-      "content_type": "image/svg+xml",
-      "kind": "assets",
-      "file": "assets/ico-arrow-white.svg",
-      "filename": "ico-arrow-white.svg"
     }
   ]
 }

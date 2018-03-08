@@ -2960,6 +2960,7 @@ footer .custom-btn {
   margin-bottom: 0;
 }
 .item-title .item-link {
+  color: inherit !important;
   font-size: 14px;
   line-height: 1.2;
   text-align: center;
