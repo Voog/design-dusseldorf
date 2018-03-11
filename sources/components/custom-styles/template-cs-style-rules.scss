@@ -118,6 +118,10 @@
       color: var(--color-dark);
     }
   }
+
+  .item-placeholder {
+    color: var(--color-dark);
+  }
 }
 
 
@@ -225,6 +229,10 @@
     &:hover {
       color: var(--color-light);
     }
+  }
+
+  .item-placeholder {
+    color: var(--color-light);
   }
 }
 

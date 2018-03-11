@@ -82,6 +82,9 @@
 .light-background .menu-horizontal li a:hover {
   color: var(--color-dark);
 }
+.light-background .item-placeholder {
+  color: var(--color-dark);
+}
 
 .dark-background {
   color: var(--color-light);
@@ -172,6 +175,9 @@
   color: var(--color-light);
 }
 .dark-background .menu-horizontal li a:hover {
+  color: var(--color-light);
+}
+.dark-background .item-placeholder {
   color: var(--color-light);
 }
 
