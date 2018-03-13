@@ -301,12 +301,6 @@
       "filename": "search.svg"
     },
     {
-      "content_type": "image/svg+xml",
-      "file": "assets/ico-arrow-white.svg",
-      "kind": "assets",
-      "filename": "ico-arrow-white.svg"
-    },
-    {
       "content_type": "unknown/unknown",
       "file": "assets/search_close.svg",
       "kind": "asset",
@@ -317,6 +311,12 @@
       "file": "assets/loader.svg",
       "kind": "asset",
       "filename": "loader.svg"
+    },
+    {
+      "content_type": "image/svg+xml",
+      "file": "assets/ico-arrow-black.svg",
+      "kind": "assets",
+      "filename": "ico-arrow-black.svg"
     },
     {
       "content_type": "unknown/unknown",
