@@ -270,6 +270,7 @@ blockquote {
 .form_field_label {
   display: block;
   padding-bottom: 5px;
+  cursor: default;
 }
 
 .form_field label {
