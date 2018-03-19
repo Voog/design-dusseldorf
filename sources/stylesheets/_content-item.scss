@@ -8,6 +8,8 @@
 
     @media screen and (max-width: $nano) {
       display: block;
+      padding-right: 10px;
+      padding-left: 10px;
     }
 
     @media screen and (min-width: $nano + 1) {
@@ -23,6 +25,11 @@
 
     @media screen and (min-width: $tablet + 1) {
       width: 33.3%;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    @media screen and (min-width: $mobile) and (max-width: $tablet)  {
       padding-right: 15px;
       padding-left: 15px;
     }
