@@ -49,7 +49,7 @@
 
           {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_top_bg_image }}" data-bg-image-sizes="{{ content_top_bg_image_sizes_str | escape }}" data-bg-color="{{ content_top_bg_color }}" data-bg-color-data="{{ content_top_bg_color_data_str | escape }}"></button>{% endif %}
 
-          <section class="content cfx formatted" {{ edy_intro_edit_text }}>
+          <section class="content cfx" {{ edy_intro_edit_text }}>
             {% include "menu-breadcrumbs" %}
             <main class="page-content" role="main">
 
@@ -83,13 +83,13 @@
                       </div>
                     {% endif %}
                   {% endif %}
-                  <div class="content-area" data-search-indexing-allowed="true">{% content name="gallery" %}</div>
+                  <div class="formatted content-area" data-search-indexing-allowed="true">{% content name="gallery" %}</div>
                 </div>
                 <div class="content-body">
                   <header class="content-header">
-                    <div class="content-item-title content-area" data-search-indexing-allowed="true">{% contentblock name="content_header_test" publish_default_content="true" %}<h1>{{ page.title }}</h1>{% endcontentblock %}</div>
+                    <div class="formatted content-item-title" data-search-indexing-allowed="true">{% contentblock name="content_header_test" publish_default_content="true" %}<h1>{{ page.title }}</h1>{% endcontentblock %}</div>
                   </header>
-                  <div class="content-area area-normal" data-search-indexing-allowed="true" {{ edy_intro_edit_text }}>{% contentblock %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}</div>
+                  <div class="formatted area-normal" data-search-indexing-allowed="true" {{ edy_intro_edit_text }}>{% contentblock %}{{ "write_product_description_here" | lc: editor_locale }}{% endcontentblock %}</div>
                 </div>
               </div>
             </main>
