@@ -196,10 +196,7 @@
 
     .with-image & {
       background-color: rgba($color-white, 1);
-
-      .editmode & {
-        background-color: transparent;
-      }
+      border: 0;
     }
 
     .without-image & {
