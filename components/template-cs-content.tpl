@@ -188,8 +188,7 @@
     "scope": "global",
     "featured": true,
     "boundVariables": [
-      "--form-field-text-font-size",
-      "--content-button-font-size"
+      "--form-field-text-font-size"
     ]
   */
   --content-font-size: 18px;
