@@ -83,7 +83,7 @@
                       </div>
                     {% endif %}
                   {% endif %}
-                  <div class="formatted content-area" data-search-indexing-allowed="true">{% content name="gallery" %}</div>
+                  <div class="formatted" data-search-indexing-allowed="true">{% content name="gallery" %}</div>
                 </div>
                 <div class="content-body">
                   <header class="content-header">
