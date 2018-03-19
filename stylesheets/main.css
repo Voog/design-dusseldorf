@@ -2709,6 +2709,7 @@ footer .custom-btn {
 }
 .menu-horizontal.menu-breadcrumbs {
   line-height: 16px;
+  padding-bottom: 20px;
 }
 .menu-horizontal.menu-breadcrumbs .menu-item {
   padding-left: 0;
