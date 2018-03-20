@@ -2986,7 +2986,7 @@ footer .custom-btn {
   font-size: 14px;
   line-height: 1.2;
   text-align: center;
-  text-decoration: underline !important;
+  opacity: .7;
 }
 .content-item-box > .item-title {
   margin-top: 15px;
