@@ -22,7 +22,7 @@
   {% for item in site.all_menuitems_on_level_2 %}
     {% if item.selected? and page.level == 3 %}
       {% if editmode or item.children? %}
-        {% if item.layout_title == 'Product' or 'Product list' %}
+        {% if item.layout_title == 'Product' or item.layout_title == 'Product list' %}
           <ul>
             {% for level2 in item.visible_children %}
               {% if exclude_products == true and level2.layout_title != 'Product' and level2.layout_title != "Product list" %}
@@ -36,4 +36,41 @@
       {% endif %}
     {% endif %}
   {% endfor %}
+
+  {% for item in site.all_menuitems_on_level_3 %}
+    {% if item.selected? and page.level == 4 %}
+      {% if editmode or item.children? %}
+        {% if item.layout_title == 'Product' or item.layout_title == 'Product list' %}
+          <ul>
+            {% for level3 in item.visible_children %}
+              {% if exclude_products == true and level3.layout_title != 'Product' and level3.layout_title != "Product list" %}
+                <li><a href="{{level3.url}}"{% if level3.selected? %} class="active"{% endif %}{% unless level3.translated? %} class="untranslated fci-editor-menuadd"{% endunless %}>{{level3.title}}</a></li>
+                {% elsif exclude_products != true %}
+                <li><a href="{{level3.url}}"{% if level3.selected? %} class="active"{% endif %}{% unless level3.translated? %} class="untranslated fci-editor-menuadd"{% endunless %}>{{level3.title}}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% for item in site.all_menuitems_on_level_4 %}
+    {% if item.selected? and page.level == 5 %}
+      {% if editmode or item.children? %}
+        {% if item.layout_title == 'Product' or item.layout_title == 'Product list' %}
+          <ul>
+            {% for level4 in item.visible_children %}
+              {% if exclude_products == true and level4.layout_title != 'Product' and level4.layout_title != "Product list" %}
+                <li><a href="{{level4.url}}"{% if level4.selected? %} class="active"{% endif %}{% unless level4.translated? %} class="untranslated fci-editor-menuadd"{% endunless %}>{{level4.title}}</a></li>
+                {% elsif exclude_products != true %}
+                <li><a href="{{level4.url}}"{% if level4.selected? %} class="active"{% endif %}{% unless level4.translated? %} class="untranslated fci-editor-menuadd"{% endunless %}>{{level4.title}}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
 </nav>
