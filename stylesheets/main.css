@@ -2775,9 +2775,6 @@ footer .custom-btn {
     padding-left: 15px;
   }
 }
-.blog-article-page .content-item-box {
-  padding-bottom: 30px;
-}
 .content-illustrations .content-item-box {
   margin-bottom: 40px;
 }
@@ -2804,9 +2801,6 @@ footer .custom-btn {
 
 .item-top {
   position: relative;
-}
-
-.item-top {
   position: relative;
 }
 .item-top::before {

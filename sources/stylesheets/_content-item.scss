@@ -35,10 +35,6 @@
     }
   }
 
-  .blog-article-page & {
-    padding-bottom: 30px;
-  }
-
   .content-illustrations & {
     margin-bottom: 40px;
   }
@@ -79,9 +75,6 @@
 
 .item-top {
   position: relative;
-}
-
-.item-top {
   @include aspect-ratio(1, 1);
 
   &:hover {
