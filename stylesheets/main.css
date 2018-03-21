@@ -2978,28 +2978,15 @@ footer .custom-btn {
 }
 .item-title .item-link {
   color: inherit !important;
-  font-size: 14px;
-  line-height: 1.2;
-  text-align: center;
+  font-weight: 700 !important;
 }
 .item-title .item-link:hover {
-  font-size: 14px;
-  line-height: 1.2;
-  text-align: center;
   opacity: .7;
 }
 .content-item-box > .item-title {
   margin-top: 15px;
-  margin-bottom: 5px;
-  font-size: 14px;
-  line-height: 1.2;
+  font-weight: 700;
   text-align: center;
-}
-
-.content-item-title h1 {
-  font-size: 20px !important;
-  line-height: 1.4 !important;
-  font-weight: 600 !important;
 }
 
 .item-page .content-header {
