@@ -74,12 +74,5 @@
   {% include "javascripts" %}
   {% include "edicy-tools" %}
 
-  {% if editmode %}
-    <script type="text/javascript">
-      window.edy = window.edy || [];
-      edy.push(['texteditorStyles', {name: 'Small', classname: 'font-size-small'}]);
-      edy.push(['texteditorStyles', {name: '{{ "button" | lc: editor_locale | escape }}', tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
-    </script>
-  {% endif %}
 </body>
 </html>
