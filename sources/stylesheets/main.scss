@@ -1374,7 +1374,8 @@ $flags:
   .comment-email-field {
     float: left;
     width: 250px;
-
+    padding-top: 0;
+    
     input {
       width: 100% !important;
       border-bottom: 1px solid #cecece;
