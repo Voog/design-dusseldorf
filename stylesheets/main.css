@@ -1441,6 +1441,7 @@ label .form_control_indicator:before {
 .comment-form .comment-email-field {
   float: left;
   width: 250px;
+  padding-top: 0;
 }
 .comment-form .comment-name-field input,
 .comment-form .comment-email-field input {
