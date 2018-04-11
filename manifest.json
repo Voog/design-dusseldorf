@@ -8,6 +8,13 @@
     {
       "content_type": "page",
       "component": false,
+      "file": "layouts/product.tpl",
+      "layout_name": "product",
+      "title": "Product"
+    },
+    {
+      "content_type": "page",
+      "component": false,
       "file": "layouts/front_page.tpl",
       "layout_name": "page_front",
       "title": "Front page"
@@ -20,10 +27,17 @@
       "title": "Common page"
     },
     {
+      "content_type": "page",
+      "component": false,
+      "file": "layouts/product_list.tpl",
+      "layout_name": "product_list",
+      "title": "Product list"
+    },
+    {
       "content_type": "blog",
       "component": false,
       "file": "layouts/blog___news.tpl",
-      "layout_name": "blog",
+      "layout_name": "blog___news",
       "title": "Blog & news"
     },
     {
@@ -39,6 +53,13 @@
       "file": "components/search.tpl",
       "layout_name": "search",
       "title": "search"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-level-1-link.tpl",
+      "layout_name": "menu-level-1-link",
+      "title": "menu-level-1-link"
     },
     {
       "content_type": "component",
@@ -78,6 +99,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/submenu_for_current.tpl",
+      "layout_name": "submenu_for_current",
+      "title": "submenu_for_current"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/edicy-tools-variables.tpl",
       "layout_name": "edicy-tools-variables",
       "title": "edicy-tools-variables"
@@ -113,6 +141,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/product-list-item.tpl",
+      "layout_name": "product-list-item",
+      "title": "product-list-item"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-cs-content.tpl",
       "layout_name": "template-cs-content",
       "title": "template-cs-content"
@@ -123,6 +158,13 @@
       "file": "components/edicy-tools-styles.tpl",
       "layout_name": "edicy-tools-styles",
       "title": "edicy-tools-styles"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/product-list-loop.tpl",
+      "layout_name": "product-list-loop",
+      "title": "product-list-loop"
     },
     {
       "content_type": "component",
@@ -151,6 +193,13 @@
       "file": "components/javascripts.tpl",
       "layout_name": "javascripts",
       "title": "javascripts"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-breadcrumbs-buttons-loop.tpl",
+      "layout_name": "menu-breadcrumbs-buttons-loop",
+      "title": "menu-breadcrumbs-buttons-loop"
     },
     {
       "content_type": "component",
@@ -218,6 +267,27 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/template-svg-spritesheet.tpl",
+      "layout_name": "template-svg-spritesheet",
+      "title": "template-svg-spritesheet"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-breadcrumbs.tpl",
+      "layout_name": "menu-breadcrumbs",
+      "title": "menu-breadcrumbs"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/menu-breadcrumbs-items-loop.tpl",
+      "layout_name": "menu-breadcrumbs-items-loop",
+      "title": "menu-breadcrumbs-items-loop"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/comment-form.tpl",
       "layout_name": "comment-form",
       "title": "comment-form"
@@ -225,123 +295,129 @@
   ],
   "assets": [
     {
-      "content_type": "image/svg+xml",
+      "content_type": "unknown/unknown",
       "file": "assets/search.svg",
-      "kind": "assets",
+      "kind": "asset",
       "filename": "search.svg"
     },
     {
-      "content_type": "image/svg+xml",
+      "content_type": "unknown/unknown",
       "file": "assets/search_close.svg",
-      "kind": "assets",
+      "kind": "asset",
       "filename": "search_close.svg"
     },
     {
-      "content_type": "image/svg+xml",
+      "content_type": "unknown/unknown",
       "file": "assets/loader.svg",
-      "kind": "assets",
+      "kind": "asset",
       "filename": "loader.svg"
     },
     {
       "content_type": "image/svg+xml",
-      "file": "assets/ico-flags.svg",
+      "file": "assets/ico-arrow-black.svg",
       "kind": "assets",
+      "filename": "ico-arrow-black.svg"
+    },
+    {
+      "content_type": "unknown/unknown",
+      "file": "assets/ico-flags.svg",
+      "kind": "asset",
       "filename": "ico-flags.svg"
     },
     {
       "content_type": "image/png",
       "file": "images/check.png",
-      "kind": "images",
+      "kind": "image",
       "filename": "check.png"
     },
     {
       "content_type": "image/png",
       "file": "images/search-close.png",
-      "kind": "images",
+      "kind": "image",
       "filename": "search-close.png"
     },
     {
-      "content_type": "image/jpeg",
+      "content_type": "image/jpg",
       "file": "images/front-page-left-bg_block.jpg",
-      "kind": "images",
+      "kind": "image",
       "filename": "front-page-left-bg_block.jpg"
     },
     {
-      "content_type": "image/jpeg",
+      "content_type": "image/jpg",
       "file": "images/front-page-right-bg_block.jpg",
-      "kind": "images",
+      "kind": "image",
       "filename": "front-page-right-bg_block.jpg"
     },
     {
-      "content_type": "image/jpeg",
+      "content_type": "image/jpg",
       "file": "images/front-page-left-bg.jpg",
-      "kind": "images",
+      "kind": "image",
       "filename": "front-page-left-bg.jpg"
     },
     {
-      "content_type": "image/jpeg",
+      "content_type": "image/jpg",
       "file": "images/front-page-right-bg.jpg",
-      "kind": "images",
+      "kind": "image",
       "filename": "front-page-right-bg.jpg"
     },
     {
       "content_type": "image/png",
       "file": "images/search.png",
-      "kind": "images",
+      "kind": "image",
       "filename": "search.png"
     },
     {
       "content_type": "image/png",
       "file": "images/check_small.png",
-      "kind": "images",
+      "kind": "image",
       "filename": "check_small.png"
     },
     {
       "content_type": "image/png",
       "file": "images/ico-flags.png",
-      "kind": "images",
+      "kind": "image",
       "filename": "ico-flags.png"
     },
     {
-      "content_type": "application/javascript",
+      "content_type": "text/javascript",
       "file": "javascripts/search.min.js",
-      "kind": "javascripts",
+      "kind": "javascript",
       "filename": "search.min.js"
     },
     {
-      "content_type": "application/javascript",
+      "content_type": "text/javascript",
       "file": "javascripts/application.min.js",
-      "kind": "javascripts",
+      "kind": "javascript",
       "filename": "application.min.js"
     },
     {
-      "content_type": "application/javascript",
+      "content_type": "text/javascript",
       "file": "javascripts/application.js",
-      "kind": "javascripts",
+      "kind": "javascript",
       "filename": "application.js"
     },
     {
-      "content_type": "application/javascript",
+      "content_type": "text/javascript",
       "file": "javascripts/search.js",
-      "kind": "javascripts",
+      "kind": "javascript",
       "filename": "search.js"
     },
     {
-      "content_type": "application/javascript",
+      "content_type": "text/javascript",
       "file": "javascripts/modernizr-custom.min.js",
-      "kind": "javascripts",
+      "kind": "javascript",
       "filename": "modernizr-custom.min.js"
     },
     {
       "content_type": "text/css",
       "file": "stylesheets/main.min.css",
-      "kind": "stylesheets",
+      "kind": "stylesheet",
       "filename": "main.min.css"
     },
     {
       "content_type": "text/css",
       "file": "stylesheets/main.css",
-      "kind": "stylesheets",
+      "kind": "stylesheet",
       "filename": "main.css"
     }
   ]
