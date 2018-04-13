@@ -110,6 +110,18 @@
       }
     }
   }
+
+  .menu-horizontal li a {
+    color: var(--color-dark);
+
+    &:hover {
+      color: var(--color-dark);
+    }
+  }
+
+  .item-placeholder {
+    color: var(--color-dark);
+  }
 }
 
 
@@ -208,6 +220,18 @@
 
   .custom-btn:not(.custom-btn-disabled) {
     border-color: var(--color-light);
+    color: var(--color-light);
+  }
+
+  .menu-horizontal li a {
+    color: var(--color-light);
+
+    &:hover {
+      color: var(--color-light);
+    }
+  }
+
+  .item-placeholder {
     color: var(--color-light);
   }
 }

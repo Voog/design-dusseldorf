@@ -6,6 +6,19 @@
       type: 'site'
     });
 
+    {% if items_page %}
+      template.bindContentItemImgDropAreas('{{ "drag_picture_for_product_here" | lc: editor_locale }}');
+      template.bindContentItemImageCropToggle();
+
+      {%if site.data.settings_root_item %}
+        rootItemValuesObj = {{ site.data.settings_root_item | json }};
+      {% else %}
+        rootItemValuesObj = {};
+      {% endif %};
+
+      template.bindRootItemSettings(rootItemValuesObj);
+    {% endif %}
+
     {% if edicy-tools == "post_page" %}
       // Article pages custom data variable.
       var articleData = new Edicy.CustomData({
