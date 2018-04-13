@@ -71,6 +71,7 @@
     </div>
   </div>
   {% include "mobilemenu" %}
+  {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "edicy-tools" %}
 
