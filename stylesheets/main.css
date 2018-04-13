@@ -43,7 +43,9 @@
 }
 
 html,
-body, form, h1, h2, h3, ul,
+body, form, h1,
+h2,
+h3, ul,
 ol, ul li,
 ol li, .lang-menu-btn {
   margin: 0;
@@ -116,31 +118,33 @@ img {
   border: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: black;
-  font: normal 30px / 1.1 "Lato", sans-serif;
+  font: normal 30px/1.1 "Lato", sans-serif;
 }
-.dark-background h1,
-.dark-background h2,
-.dark-background h3 {
+.dark-background h1, .dark-background
+h2, .dark-background
+h3 {
   color: white;
 }
-.dark-background h1 .placeholder,
-.dark-background h2 .placeholder,
-.dark-background h3 .placeholder {
+.dark-background h1 .placeholder, .dark-background
+h2 .placeholder, .dark-background
+h3 .placeholder {
   color: white;
   opacity: .5;
 }
 
 h1 {
-  margin-bottom: 0.6666666667em;
+  margin-bottom: 0.66667em;
 }
 
 h2 {
   font-size: 24px;
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: 0.8333333333em;
+  margin-bottom: 0.83333em;
   margin-top: 1.25em;
 }
 
@@ -148,8 +152,8 @@ h3 {
   font-family: "Lato", sans-serif;
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 1.1111111111em;
-  margin-top: 1.6666666667em;
+  margin-bottom: 1.11111em;
+  margin-top: 1.66667em;
 }
 
 p {
@@ -169,13 +173,6 @@ textarea {
   -webkit-appearance: none;
 }
 
-<<<<<<< HEAD
-.formatted pre,
-.formatted code,
-.formatted iframe,
-.formatted table,
-.formatted form {
-=======
 .formatted pre, .formatted
 code, .formatted
 iframe, .formatted
@@ -184,7 +181,6 @@ form {
   -webkit-hyphens: none;
       -ms-hyphens: none;
           hyphens: none;
->>>>>>> master
   word-break: normal;
   word-wrap: normal;
 }
@@ -325,7 +321,8 @@ blockquote {
   display: block;
 }
 
-.form_field_textfield, .form_field_textarea {
+.form_field_textfield,
+.form_field_textarea {
   width: 30%;
   padding: 4px 5px;
   font: 18px/1.67 "Lato", sans-serif;
@@ -337,8 +334,8 @@ blockquote {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.light-background .form_field_textfield,
-.light-background .form_field_textarea {
+.light-background .form_field_textfield, .light-background
+.form_field_textarea {
   background: #eee;
 }
 
@@ -1637,11 +1634,12 @@ footer .voog-reference svg path {
   clear: both;
 }
 
-.front-page .edys-gallery-area,
-.front-page .edy-gallery-area {
+.front-page .edys-gallery-area, .front-page
+.edy-gallery-area {
   font-size: 0;
 }
-.front-page .edys-gallery-area .edys-gallery-item, .front-page .edy-gallery-area .edys-gallery-item {
+.front-page .edys-gallery-area .edys-gallery-item, .front-page
+.edy-gallery-area .edys-gallery-item {
   display: inline-block;
 }
 
