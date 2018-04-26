@@ -39,7 +39,7 @@
                   {% endif %}
                 {% endfor %}
               {% else %}
-                {% include "product-list-loop" menu_items: site.visible_menuitems %}
+                {% include "product-list-loop" %}
               {% endif %}
             </section>
           </section>
