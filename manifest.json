@@ -302,19 +302,19 @@
   ],
   "assets": [
     {
-      "content_type": "unknown/unknown",
+      "content_type": "image/svg+xml",
       "file": "assets/search.svg",
       "kind": "asset",
       "filename": "search.svg"
     },
     {
-      "content_type": "unknown/unknown",
+      "content_type": "image/svg+xml",
       "file": "assets/search_close.svg",
       "kind": "asset",
       "filename": "search_close.svg"
     },
     {
-      "content_type": "unknown/unknown",
+      "content_type": "image/svg+xml",
       "file": "assets/loader.svg",
       "kind": "asset",
       "filename": "loader.svg"
@@ -326,7 +326,7 @@
       "filename": "ico-arrow-black.svg"
     },
     {
-      "content_type": "unknown/unknown",
+      "content_type": "image/svg+xml",
       "file": "assets/ico-flags.svg",
       "kind": "asset",
       "filename": "ico-flags.svg"
