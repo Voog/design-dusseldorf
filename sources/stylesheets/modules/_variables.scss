@@ -14,6 +14,11 @@ $error-color: #c70909;
 $success-color: #409e13;
 $disabled-color: #dadada;
 
+// Sign out button
+$color-common-gray: rgb(27,33,36);
+$color-toolbar-bg: rgb(238,238,238);
+$color-silver-2: rgb(196,196,196);
+
 $font-size-xs: 10px;
 $font-size: 18px;
 $font-size-big: 20px;
@@ -31,6 +36,7 @@ $line-height: 32px;
 $line-height-headings: 1.1;
 
 $font-primary: 'Lato', sans-serif;
+$avenir: 'Avenir Next', 'AvenirX';
 
 $site-width: 1024px;
 $side-width: 200px;
@@ -38,9 +44,15 @@ $content-width: $site-width - $side-width;
 
 $search-width: 300px;
 
-$break-small: 600px;
-$break-middle: 1024px;
+// Media query breakpoints.
 $break-large: 1500px;
+$break-middle: 1024px;
+$tablet: 768px;
+$mobile: 640px;
+$break-small: 600px;
+$nano: 320px;
 
 $fourth-color: $color-white;
 $focus-color: #f9ec5a;
+
+$color-science-blue: #06b;

@@ -5,8 +5,6 @@
   {% include "edicy-tools-variables" %}
   {% include "html-head" %}
   {% include "edicy-tools-styles" %}
-
-  {% if editmode %}<link rel="stylesheet" href="{{ site.static_asset_host }}/libs/edicy-tools/latest/edicy-tools.css">{% endif %}
 </head>
 <body class="{% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
   <div class="wrap cfx">
@@ -23,8 +21,7 @@
             <div class="container js-background-type {{ content_top_bg_type }}">
 
               <div class="inner">
-
-                {% include "submenu" %}
+                {% include "submenu" exclude_products: true %}
                 {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_top_bg_image }}" data-bg-image-sizes="{{ content_top_bg_image_sizes_str | escape }}" data-bg-color="{{ content_top_bg_color }}" data-bg-color-data="{{ content_top_bg_color_data_str | escape }}"></button>{% endif %}
 
                 <section class="content cfx formatted" {{ edy_intro_edit_text }}>
@@ -42,15 +39,9 @@
     </div>
   </div>
   {% include "mobilemenu" %}
+  {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "edicy-tools" %}
 
-  {% if editmode %}
-    <script type="text/javascript">
-      window.edy = window.edy || [];
-      edy.push(['texteditorStyles', {name: 'Small', classname: 'font-size-small'}]);
-      edy.push(['texteditorStyles', {name: '{{ "button" | lc: editor_locale | escape }}', tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
-    </script>
-  {% endif %}
 </body>
 </html>
