@@ -1181,7 +1181,7 @@ $flags:
   }
 
   .post {
-    padding: 30px 30px;
+    padding: 30px 30px 30px 50px;
   }
 
   .post-title {
@@ -1203,7 +1203,7 @@ $flags:
 }
 
 .post-header {
-  padding: 0 30px 0;
+  padding: 0 30px 0 50px;
 }
 
 .post-date {
@@ -1213,7 +1213,7 @@ $flags:
 }
 
 .post-content {
-  padding: 0 30px 60px;
+  padding: 0 30px 60px 50px;
   word-wrap: break-word;
 }
 
@@ -1254,7 +1254,7 @@ $flags:
   @media screen and (min-width: $break-small + 1) {
     padding-top: 20px;
     padding-right: 30px;
-    padding-left: 30px;
+    padding-left: 50px;
   }
 }
 
@@ -1328,7 +1328,7 @@ $flags:
 /* comments */
 .comments {
   position: relative;
-  padding: 0 30px 30px;
+  padding: 0 30px 30px 50px;
 
   &:before {
     position: absolute;
@@ -1377,7 +1377,7 @@ $flags:
     float: left;
     width: 250px;
     padding-top: 0;
-    
+
     input {
       width: 100% !important;
       border-bottom: 1px solid #cecece;
@@ -2050,6 +2050,7 @@ table {
   .blog-list .post {
     padding-top: 20px;
     padding-bottom: 20px;
+    padding-left: 20px;
   }
 
   .post-header {
