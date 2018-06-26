@@ -461,11 +461,19 @@
     $(contentHalf).find('.background-color').css({'background-color' : contentHalfBgColor});
   };
 
+  var normalizeValue = function(value) {
+    if (value == null || (typeof value == 'string' && value.match(/^[\\'"]+$/))) {
+      return '';
+    } else {
+      return value;
+    }
+  };
+
   // contentHalf background image and color save logic function.
   var contentHalfBgCommit = function(data, dataName) {
     var commitData = $.extend(true, {}, data);
         commitData.image = data.image || '';
-        commitData.imageSizes = data.imageSizes || '';
+        commitData.imageSizes = normalizeValue(data.imageSizes);
         commitData.color = data.color || 'rgba(255,255,255,0)';
         commitData.combinedLightness = contentHalfBgCombinedLightness;
         if (articlePage) {
