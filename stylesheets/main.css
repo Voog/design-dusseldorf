@@ -3064,3 +3064,6 @@ footer .custom-btn {
   -moz-appearance: none;
   appearance: none;
 }
+.edy-buy-button-variants .form_field_select::-ms-expand {
+  display: none;
+}
