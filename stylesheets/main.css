@@ -984,6 +984,11 @@ label .form_control_indicator:before {
   content: '';
 }
 
+[data-lang-code^="fr_CA"]:after {
+  background-position: -105px -60px;
+  content: '';
+}
+
 .lang-options {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.09);
