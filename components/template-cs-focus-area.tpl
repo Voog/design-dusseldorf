@@ -26,16 +26,16 @@
   */
   --focus-area-padding: 45px;
   /* VoogStyle
-      "pathI18n": ["focus_area", "text"],
-      "titleI18n": "size",
-      "type": "button",
-      "editor": "rangePicker",
-      "min": 8,
-      "max": 100,
-      "unit": "px",
-      "scope": "global",
-      "featured": true
-    */
+    "pathI18n": ["focus_area", "text"],
+    "titleI18n": "size",
+    "type": "button",
+    "editor": "rangePicker",
+    "min": 8,
+    "max": 100,
+    "unit": "px",
+    "scope": "global",
+    "featured": true
+  */
   --focus-area-font-size: 24px;
   /* VoogStyle
      "pathI18n": ["focus_area", "text"],
