@@ -14,8 +14,10 @@
   {% endfor %}
   {% if editmode %}
     {% if level2.layout_title != product_layout  %}
-      {% if page.menuitem.hidden_children.size > 0 %}<li class="edy-btn">{% menubtn page.menuitem.hidden_children %}</li>{% endif %}
-        {% include 'add-page-button', _menuItem: page, _wrapperClassName: "edy-btn" %}
+      {% if page.menuitem.hidden_children.size > 0 %}
+        <li class="edy-btn">{% menubtn page.menuitem.hidden_children %}</li>
+      {% endif %}
+        <li class="edy-btn">{% menuadd parent=page%}</li>
       {% endif %}
     {% endif %}
   </ul>
