@@ -1,6 +1,4 @@
-<nav class="sub-menu">
-{% if editmode or page.menuitem.children? %}
-  <ul>
+{%- capture lvl2 -%}
   {% for level2 in page.menuitem.visible_children %}
     {% if level2.layout_title != product_layout and level2.layout_title != product_list_layout %}
       <li>
@@ -17,9 +15,15 @@
       {% if page.menuitem.hidden_children.size > 0 %}
         <li class="edy-btn">{% menubtn page.menuitem.hidden_children %}</li>
       {% endif %}
-        <li class="edy-btn">{% menuadd parent=page%}</li>
-      {% endif %}
+      <li class="edy-btn">{% menuadd parent=page%}</li>
     {% endif %}
-  </ul>
-{% endif%}
-</nav>
+  {% endif %}
+{%- endcapture -%}
+
+{%- if lvl2 != blank -%}
+  <nav class="sub-menu">
+    <ul>
+      {{ lvl2 }}
+    </ul>
+  </nav>
+{%- endif -%}
