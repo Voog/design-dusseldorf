@@ -45,10 +45,12 @@
             </section>
             <section class="blog-list">
               {% for article in articles %}
+                {% include "article-settings-variables" %}
                 <div class="post-wrap">
                   <div class="inner">
                     <article class="post">
-                        <div class="post-title"><a href="{{ article.url }}">{{ article.title }}</a>
+                        <div class="post-title">
+                          <a href="{{ article.url }}">{{ article.title }}</a>
                           {% assign article_year = article.created_at | format_date: "%Y" | to_num %}
 
                           {% if article_year == current_year %}
@@ -57,7 +59,9 @@
                             {% assign article_date_format = "long" %}
                           {% endif %}
 
-                          <time class="post-date" datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}</time>
+                          {% if editmode or show_article_date != false %}
+                            <time class="post-date{% if show_article_date != true %} hide-article-date{% endif %}{% if article_data_show_date_defined != true%} site-data{% endif %}" datetime="{{ article.created_at | date: '%Y-%m-%d' }}">{{ article.created_at | format_date: article_date_format }}</time>
+                          {% endif %}
                         </div>
                     </article>
                   </div>
@@ -74,6 +78,7 @@
   {% include "site-signout" %}
   {% include "javascripts" %}
   {% include "edicy-tools" %}
+  {% include "settings-popover", _blogPage: true %}
 
 </body>
 </html>

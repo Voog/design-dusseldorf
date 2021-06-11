@@ -1,6 +1,8 @@
 @import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import 'mixins';
 @import 'modules/variables';
+@import 'blog-and-article';
+@import 'settings';
 @import 'site-signout';
 
 %nulling {
