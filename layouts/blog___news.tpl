@@ -41,7 +41,7 @@
             </div>
             <section class="content blog-content inner cfx" {{ edy_intro_edit_text }}>
               {% content %}
-              {% if editmode %}<div style="padding-top: 20px">{% addbutton %}</div>{% endif %}
+              {% if editmode %}<div class="addbutton">{% addbutton %}</div>{% endif %}
             </section>
             <section class="blog-list">
               {% for article in articles %}

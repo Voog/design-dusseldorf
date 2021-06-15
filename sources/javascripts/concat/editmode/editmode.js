@@ -63,7 +63,7 @@ var initSettingsEditorBtn = function () {
           if ($(window).width() > 768) {
             settingsPopover.css({
               right: window.innerWidth - settingsBtn.getBoundingClientRect().right - (settingsPopover.width() / 2)
-            })
+            });
             settingsPopoverArrow.css({
               right: settingsPopover.width() / 2
             });
@@ -178,6 +178,7 @@ if (!Modernizr.flexbox && editmode()) {
   bindFallbackHeaderContentAreaWidthCalculation();
   bindFallbackFooterContentAreaWidthCalculation();
 }
+
 // ===========================================================================
 // Binds editmode image drop areas.
 // ===========================================================================
@@ -244,8 +245,11 @@ var bindContentItemImgDropAreas = function (placeholderText) {
   });
 };
 
+window.template = $.extend(window.template || {}, {
+  bindContentItemImgDropAreas: bindContentItemImgDropAreas
+});
+
 window.site = $.extend(window.site || {}, {
   initSettingsEditorBtn: initSettingsEditorBtn,
-  bindContentItemImgDropAreas: bindContentItemImgDropAreas,
   toggleFlags: toggleFlags
-})
+});

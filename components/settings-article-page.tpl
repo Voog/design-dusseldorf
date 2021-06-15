@@ -12,23 +12,26 @@
     {% else %}
       var articleDataValues = {};
     {% endif %}
+
     {% if site.data.article_settings %}
       var globalDataValues = {{ site.data.article_settings | json }};
     {% else %}
       var globalDataValues = {};
     {% endif %}
+
     var show_comments, show_date;
+
     if (articleDataValues.show_comments != null && articleDataValues.show_comments !== '') {
-      show_comments = Boolean(articleDataValues.show_comments)
+      show_comments = Boolean(articleDataValues.show_comments);
     } else if (globalDataValues.show_comments != null && globalDataValues.show_comments !== '') {
-      show_comments = Boolean(globalDataValues.show_comments)
+      show_comments = Boolean(globalDataValues.show_comments);
     } else {
       show_comments = true;
     }
     if (articleDataValues.show_date != null && articleDataValues.show_date !== '') {
-      show_date = Boolean(articleDataValues.show_date)
+      show_date = Boolean(articleDataValues.show_date);
     } else if (globalDataValues.show_dates != null && globalDataValues.show_dates !== '') {
-      show_date = Boolean(globalDataValues.show_dates)
+      show_date = Boolean(globalDataValues.show_dates);
     } else {
       show_date = true;
     }
@@ -72,18 +75,18 @@
           var $articleComment = $('.comments'),
               $articleDate = $('.post-date');
               
-          if (data.show_date == true) {
+          if (data.show_date === true) {
             $articleDate.removeClass('hide-article-date');
             $articleDate.addClass('show-article-date');
-          } else if (data.show_date == false) {
+          } else if (data.show_date === false) {
             $articleDate.removeClass('show-article-date');
             $articleDate.addClass('hide-article-date');
           }
           
-          if (data.show_comments == true) {
+          if (data.show_comments === true) {
             $articleComment.removeClass('hide-article-comments');
             $articleComment.addClass('show-article-comments');
-          } else if (data.show_comments == false) {
+          } else if (data.show_comments === false) {
             $articleComment.removeClass('show-article-comments');
             $articleComment.addClass('hide-article-comments');
           }

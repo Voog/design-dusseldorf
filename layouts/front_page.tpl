@@ -93,7 +93,7 @@
   {% include "mobilemenu" %}
   {% include "site-signout" %}
   {% include "javascripts"  with "front_page"  %}
-  {% include "edicy-tools" %}
+  {% include "edicy-tools", front_page: true %}
 
 </body>
 </html>

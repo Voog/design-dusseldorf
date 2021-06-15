@@ -12,21 +12,25 @@
     {% else %}
       var globalDataValues = {};
     {% endif %}
+
     var show_comments, show_dates;
     if (globalDataValues.show_comments != null && globalDataValues.show_comments !== '') {
-      show_comments = Boolean(globalDataValues.show_comments)
+      show_comments = Boolean(globalDataValues.show_comments);
     } else {
       show_comments = true;
     }
+
     if (globalDataValues.show_dates != null && globalDataValues.show_dates !== '') {
-      show_dates = Boolean(globalDataValues.show_dates)
+      show_dates = Boolean(globalDataValues.show_dates);
     } else {
       show_dates = true;
     }
+
     var valuesObj = {
       show_comments: show_comments,
       show_dates: show_dates
     }
+
     initSettingsEditor(
       {
         settingsBtn: document.querySelector('.js-blog-settings-editor'),
@@ -59,10 +63,10 @@
         containerClass: ['bottom-settings-popover', 'first', 'editor_default', 'js-prevent-sideclick'],
         prevFunc: function(data) {
           var $articleDate = $('.post-date.site-data');
-          if (data.show_dates == true) {
+          if (data.show_dates === true) {
             $articleDate.removeClass('hide-article-date');
             $articleDate.addClass('show-article-date');
-          } else if (data.show_dates == false) {
+          } else if (data.show_dates === false) {
             $articleDate.removeClass('show-article-date');
             $articleDate.addClass('hide-article-date');
           }

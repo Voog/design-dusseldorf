@@ -1182,18 +1182,12 @@ MMCQ = (function() {
   window.template = $.extend(window.template || {}, {
     // Initiations for layouts.
     initItemsPage: initItemsPage,
-    // initArticlePage: initArticlePage,
-    // initCommonPage: initCommonPage,
-    // initFrontPage: initFrontPage,
-
+    
     // Initiations for specific functions.
     bindRootItemSettings: bindRootItemSettings,
     bindContentItemImageCropToggle: bindContentItemImageCropToggle,
-  });
-
-  window.site = $.extend(window.site || {}, {
     contentHalfBgPreview: contentHalfBgPreview,
     contentHalfBgCommit: contentHalfBgCommit
   });
-
+  
 })(jQuery);
