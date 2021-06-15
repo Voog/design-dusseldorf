@@ -464,63 +464,6 @@
     return color;
   };
 
-  var setImageOrientation = function ($contentItemBox, width, height) {
-    var $imgDropAreaTarget = $contentItemBox.find('.js-content-item-img-drop-area'),
-      $cropToggleButton = $contentItemBox.find('.js-toggle-crop-state');
-
-    if (width > height) {
-      $imgDropAreaTarget
-        .removeClass('image-landscape image-square image-portrait')
-        .addClass('image-landscape');
-    } else if (width === height) {
-      $imgDropAreaTarget
-        .removeClass('image-landscape image-square image-portrait')
-        .addClass('image-square');
-    } else {
-      $imgDropAreaTarget
-        .removeClass('image-landscape image-square image-portrait')
-        .addClass('image-portrait');
-    }
-
-    if ($imgDropAreaTarget.hasClass('image-square')) {
-      $cropToggleButton
-        .removeClass('is-visible')
-        .addClass('is-hidden');
-    } else {
-      $cropToggleButton
-        .removeClass('is-hidden')
-        .addClass('is-visible');
-    }
-  };
-
-  var setItemImage = function ($contentItemBox, $imgDropArea, itemId, imageId, itemType) {
-    var apiType = itemType === 'article' ? 'articles' : 'pages',
-      itemData = new Edicy.CustomData({
-        type: itemType,
-        id: itemId
-      });
-
-    $.ajax({
-      type: 'PATCH',
-      contentType: 'application/json',
-      url: '/admin/api/' + apiType + '/' + itemId,
-      data: JSON.stringify({
-        'image_id': imageId
-      }),
-      dataType: 'json',
-      success: function (data) {
-        itemData.set('image_crop_state', 'not-cropped');
-        $contentItemBox.removeClass('not-loaded with-error').addClass('is-loaded');
-        $contentItemBox.find('.edy-img-drop-area-placeholder').css('opacity', 1);
-        $imgDropArea.css('opacity', 1);
-      },
-      timeout: 30000,
-      error: function (data) {
-        $contentItemBox.removeClass('not-loaded is-loaded with-error').addClass('with-error');
-      }
-    });
-  };
-
   var bindContentItemImageCropToggle = function () {
     $('.js-toggle-crop-state').on('click', function () {
       var $contentItemBox = $(this).closest('.js-content-item-box'),
@@ -585,15 +528,6 @@
   // ===========================================================================
   var initItemsPage = function () {
     bindContentItemImageLazyload();
-  };
-
-  // ===========================================================================
-  // Sets header menu initial width attribute for menu mode calculation.
-  // ===========================================================================
-  var setHeaderMenuInitialWidth = function () {
-    var $headerMenu = $('.js-header-menu');
-
-    $headerMenu.attr('data-initial-width', $headerMenu.outerWidth(true));
   };
 
   // ===========================================================================
