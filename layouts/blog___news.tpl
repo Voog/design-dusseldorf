@@ -77,7 +77,6 @@
   {% include "mobilemenu" %}
   {% include "site-signout" %}
   {% include "javascripts" %}
-  {% include "edicy-tools" %}
   {% include "settings-popover", _blogPage: true %}
 
 </body>

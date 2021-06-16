@@ -237,8 +237,8 @@ module.exports = function(grunt) {
       },
 
       js_concat: {
-        files: 'sources/javascripts/concat/*.js',
-        tasks: ['concat:build', 'uglify:build', 'exec:kitmanifest', 'exec:kit:javascripts/*.js']
+        files: ['sources/javascripts/concat/*.js', 'sources/javascripts/concat/editmode/*.js'],
+        tasks: ['concat', 'uglify:build', 'exec:kitmanifest', 'exec:kit:javascripts/*.js']
       },
 
       css_main: {
