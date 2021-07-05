@@ -1595,6 +1595,7 @@ table {
 .untranslated {
   zoom: 1;
   opacity: .5;
+  color: red !important;
 
   filter: alpha(Opacity=50);
 }
