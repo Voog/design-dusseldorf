@@ -1,8 +1,6 @@
 @import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import 'mixins';
 @import 'modules/variables';
-@import 'blog-and-article';
-@import 'settings';
 @import 'site-signout';
 
 %nulling {
@@ -2798,3 +2796,7 @@ table {
 @import 'components/navigation-menus';
 @import 'content-item';
 @import 'buy-button';
+
+// Settings editor
+@import 'blog-and-article';
+@import 'settings';

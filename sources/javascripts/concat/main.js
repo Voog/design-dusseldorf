@@ -571,8 +571,7 @@
     });
   };
 
-  // Enables the usage of the initiations outside this file.
-  window.template = $.extend(window.template || {}, {
+  window.site = $.extend(window.site || {}, {
     // Initiations for layouts.
     initItemsPage: initItemsPage,
     

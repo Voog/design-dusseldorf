@@ -311,11 +311,8 @@ var setItemImage = function ($contentItemBox, $imgDropArea, itemId, imageId, ite
   });
 };
 
-window.template = $.extend(window.template || {}, {
-  bindContentItemImgDropAreas: bindContentItemImgDropAreas
-});
-
 window.site = $.extend(window.site || {}, {
+  bindContentItemImgDropAreas: bindContentItemImgDropAreas,
   initSettingsEditorBtn: initSettingsEditorBtn,
   toggleFlags: toggleFlags
 });
