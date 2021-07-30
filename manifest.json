@@ -57,6 +57,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/settings-editor.tpl",
+      "layout_name": "settings-editor",
+      "title": "settings-editor"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/site-signout.tpl",
       "layout_name": "site-signout",
       "title": "site-signout"
@@ -67,6 +74,13 @@
       "file": "components/template-cs-focus-area.tpl",
       "layout_name": "template-cs-focus-area",
       "title": "template-cs-focus-area"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/settings-article-page.tpl",
+      "layout_name": "settings-article-page",
+      "title": "settings-article-page"
     },
     {
       "content_type": "component",
@@ -148,6 +162,20 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/settings-blog-page.tpl",
+      "layout_name": "settings-blog-page",
+      "title": "settings-blog-page"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/settings-popover.tpl",
+      "layout_name": "settings-popover",
+      "title": "settings-popover"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-cs-sidebar.tpl",
       "layout_name": "template-cs-sidebar",
       "title": "template-cs-sidebar"
@@ -155,9 +183,23 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/settings-editor-button.tpl",
+      "layout_name": "settings-editor-button",
+      "title": "settings-editor-button"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/footer.tpl",
       "layout_name": "footer",
       "title": "footer"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/article-settings-variables.tpl",
+      "layout_name": "article-settings-variables",
+      "title": "article-settings-variables"
     },
     {
       "content_type": "component",
@@ -242,6 +284,13 @@
       "file": "components/menu-breadcrumbs.tpl",
       "layout_name": "menu-breadcrumbs",
       "title": "menu-breadcrumbs"
+    },
+    {
+      "content_type": "component",
+      "component": true,
+      "file": "components/comment-form.tpl",
+      "layout_name": "comment-form",
+      "title": "comment-form"
     },
     {
       "content_type": "component",
@@ -378,10 +427,22 @@
       "filename": "search.min.js"
     },
     {
+      "content_type": "application/javascript",
+      "file": "javascripts/editmode.js",
+      "kind": "javascripts",
+      "filename": "editmode.js"
+    },
+    {
       "content_type": "text/javascript",
       "file": "javascripts/application.min.js",
       "kind": "javascript",
       "filename": "application.min.js"
+    },
+    {
+      "content_type": "application/javascript",
+      "file": "javascripts/editmode.min.js",
+      "kind": "javascripts",
+      "filename": "editmode.min.js"
     },
     {
       "content_type": "text/javascript",
