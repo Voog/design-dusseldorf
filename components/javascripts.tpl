@@ -1,6 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js" integrity="sha256-gDUQmMJHiRi7gACNeDZJkwW/b01LKr90K4gjJVu7DY4=" crossorigin="anonymous"></script>
-<script src="{{ javascripts_path }}/application.min.js?v=dusseldorf-2.2.8"></script>
+<script src="{{ javascripts_path }}/application.min.js?v=dusseldorf-2.2.9"></script>
 {% sitejs_include %}
 
 {% if site.search.enabled %}
@@ -61,7 +61,7 @@
     edy.push(['texteditorStyles', {name: 'Small', classname: 'font-size-small'}]);
     edy.push(['texteditorStyles', {name: '{{ "button" | lc: editor_locale | escape }}', tagname:'a', attribute: {'href': '#'}, classname: 'custom-btn', toggle: true}]);
   </script>
-  <script src="{{ javascripts_path }}/editmode.min.js?v=dusseldorf-2.2.8"></script>
+  <script src="{{ javascripts_path }}/editmode.min.js?v=dusseldorf-2.2.9"></script>
 {% endif %}
 
 {% unless editmode %}{{ site.analytics }}{% endunless %}
