@@ -122,12 +122,12 @@
     if ($(document).width() >= 1024) {
 
       // Calc for center row padding, to fill viewport with content areas
-      if (!editmode()) {
-        var whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
-      } else {
+      if ($('html').hasClass('editmode')) {
         var whEdy = $('#edy-bar').height(),
           whBodyFootRemEdy = whBodyFootRem - whEdy,
           whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
+      } else {
+        var whCenterInnerTarget = $('.center-row .content-inner').css('min-height', whBodyFootRem);
       };
 
       var contLeft = $('.content-left .content-inner').height(),
@@ -448,13 +448,6 @@
     var combinedColor = getCombinedColor(bgColor, fgColor);
     var color = Math.round(((+combinedColor[0]) * 0.2126 + (+combinedColor[1]) * 0.7152 + (+combinedColor[2]) * 0.0722) / 2.55) / 100;
     return color;
-  };
-
-  // ===========================================================================
-  // Function to detect if site is displayed in editmode.
-  // ===========================================================================
-  var editmode = function () {
-    return $('html').hasClass('editmode');
   };
 
   // ===========================================================================
