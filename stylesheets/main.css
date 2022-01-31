@@ -3207,6 +3207,14 @@ footer .custom-btn {
   text-align: center;
 }
 
+.item-top .top-inner .item-image.image-portrait {
+  height: 100%;
+}
+
+.item-top .top-inner .item-image.image-landscape, .item-top .top-inner .item-image.image-square {
+  width: 100%;
+}
+
 .public .item-top .top-inner {
   overflow: hidden;
 }
@@ -3315,6 +3323,10 @@ footer .custom-btn {
 
 .item-page .content-header {
   margin-bottom: 20px;
+}
+
+.item-page .product-page-top {
+  padding-bottom: 15px;
 }
 
 .formatted .edy-buy-button-container .form_field label {

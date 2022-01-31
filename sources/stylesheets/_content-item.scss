@@ -155,6 +155,17 @@
     line-height: 1.2;
     text-align: center;
 
+    & .item-image {
+      &.image-portrait {
+        height: 100%;
+      }
+
+      &.image-landscape,
+      &.image-square {
+        width: 100%;
+      }
+    }
+
     .public  & {
       overflow: hidden;
 
@@ -270,5 +281,9 @@
 .item-page {
   .content-header {
     margin-bottom: 20px;
+  }
+
+  .product-page-top {
+    padding-bottom: 15px;
   }
 }
