@@ -56,6 +56,15 @@
                       <h1>{%- editable product.name -%}</h1>
                     </div>
                   </header>
+                  
+                  <div class="product-price">
+                    {%- if product.price_max_with_tax != product.price_min_with_tax -%}
+                      {{ product.price_min_with_tax | money_with_currency: product.currency -}}
+                      <span class="product-price-divider">–</span>
+                    {%- endif -%}
+                    {{ product.price_max_with_tax | money_with_currency: product.currency -}}
+                  </div>
+
                   <div class="formatted area-normal" data-search-indexing-allowed="true">
                     {%- if editmode or product.description != blank -%}
                       <div class="content-product-description">
