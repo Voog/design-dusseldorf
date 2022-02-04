@@ -3763,12 +3763,6 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   max-width: 520px;
 }
 
-@media screen and (min-width: 1024px) {
-  .item-page .flex-col-left {
-    margin-top: 32px;
-  }
-}
-
 .item-page .flex-col .content-body {
   position: -webkit-sticky;
   position: sticky;

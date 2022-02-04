@@ -46,10 +46,6 @@
 
     &-left {
       max-width: 520px;
-
-      @media screen and (min-width: $break-middle) {
-        margin-top: 32px;
-      }
     }
 
     .content-body {
