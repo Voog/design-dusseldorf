@@ -3207,14 +3207,6 @@ footer .custom-btn {
   text-align: center;
 }
 
-.item-top .top-inner .item-image.image-portrait {
-  height: 100%;
-}
-
-.item-top .top-inner .item-image.image-landscape, .item-top .top-inner .item-image.image-square {
-  width: 100%;
-}
-
 .public .item-top .top-inner {
   overflow: hidden;
 }
@@ -3720,4 +3712,35 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 
 .d-none {
   display: none;
+}
+
+.item-page .content-item-title:not(.product-item-title) {
+  margin-bottom: 15px;
+}
+
+.item-page .product-price {
+  padding-bottom: 24px;
+}
+
+.item-page .product-price-divider {
+  margin: 0 4px;
+}
+
+.item-page .product-content .without-image .item-top {
+  background-image: url("../assets/ico-placeholder.svg");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F2F2F2;
+}
+
+.item-page .product-content .item-top .top-inner {
+  background-color: transparent;
+}
+
+.item-page .product-content .item-top .top-inner .item-image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }

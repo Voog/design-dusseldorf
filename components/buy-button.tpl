@@ -1,3 +1,8 @@
+{%- capture _button_attributes %}
+  data-product-id="{{ product.id }}"
+  data-product="{{ product | json | escape }}"
+  data-settings="{&quot;title&quot;:&quot;{{ "add_to_cart" | lc | escape_once }}&quot;}"
+{% endcapture -%}
 {% if editmode != true and product.available? == false %}
   <div class="edy-buy-button-container edy-buy-button-view">
     <div class="form_field">

@@ -155,17 +155,6 @@
     line-height: 1.2;
     text-align: center;
 
-    & .item-image {
-      &.image-portrait {
-        height: 100%;
-      }
-
-      &.image-landscape,
-      &.image-square {
-        width: 100%;
-      }
-    }
-
     .public  & {
       overflow: hidden;
 
