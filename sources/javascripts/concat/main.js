@@ -487,6 +487,39 @@
   };
 
   // ===========================================================================
+  // Change product image position on narrower screens (mobile devices)
+  // ===========================================================================
+
+  var handleProductPageContent = function () {
+    console.log("in func")
+    $(document).ready(function () {
+      changeProductImagePos();
+    });
+
+    $(window).resize(function () {
+      changeProductImagePos();
+    });
+
+    var changeProductImagePos = function () {
+      var productGallery = $('.js-product-gallery');
+      var productImageContentBox = $('.js-content-item-box');
+      var productRightContent = $('.js-product-right-content');
+
+      if ($('.js-buy-btn-content .edy-buy-button-container').length >= 1) {
+        if ($(window).width() < 600) {
+          if ($('.js-product-right-content + .js-product-gallery').length === 0) {
+            productRightContent.append(productGallery);
+          }
+        } else {
+          if ($('.js-content-item-box + .js-product-gallery').length === 0) {
+            productImageContentBox.parent().append(productGallery);
+          }
+        }
+      }
+    }
+  };
+
+  // ===========================================================================
   // Sets header menu initial width attribute for menu mode calculation.
   // ===========================================================================
   var setHeaderMenuInitialWidth = function () {
@@ -539,7 +572,8 @@
     initItemsPage: initItemsPage,
     bindRootItemSettings: bindRootItemSettings,
     contentHalfBgPreview: contentHalfBgPreview,
-    contentHalfBgCommit: contentHalfBgCommit
+    contentHalfBgCommit: contentHalfBgCommit,
+    handleProductPageContent: handleProductPageContent
   });
 
 })(jQuery);

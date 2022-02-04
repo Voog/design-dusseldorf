@@ -52,7 +52,7 @@
             <main class="page-content product-content" role="main">
               <div class="items-body">
                 <div class="content-illustrations">
-                  <div class="content-item-box {{ product_image_state }}">
+                  <div class="content-item-box {{ product_image_state }} js-content-item-box">
                     <div class="item-top">
                       {%- if product.image != blank -%}
                         <div class="top-inner aspect-ratio-inner">
@@ -64,13 +64,13 @@
                   </div>
 
                   {% if gallery_content_size > 0 or editmode %}
-                    <div class="formatted" data-search-indexing-allowed="true">
+                    <div class="formatted js-product-gallery" data-search-indexing-allowed="true">
                       {% content bind=product name="gallery" %}
                     </div>
                   {% endif %}
                 </div>
 
-                <div class="content-body">
+                <div class="content-body js-product-right-content">
                   <header class="content-header">
                     <div class="formatted content-item-title" data-search-indexing-allowed="true">
                       <h1>{%- editable product.name -%}</h1>
@@ -92,8 +92,11 @@
                       </div>
                     {%- endif -%}
 
+                    <div class="buy-btn-content js-buy-btn-content">
+                      {% include "buy-button" %}
+                    </div>
+
                     {% content bind=product %}
-                    {% include "buy-button" %}
                   </div>
                 </div>
               </div>
@@ -116,5 +119,10 @@
   {% include "javascripts" %}
   {% include "edicy-tools" %}
 
+  <script>
+    if (site) {
+      site.handleProductPageContent();
+    }
+  </script>
 </body>
 </html>
