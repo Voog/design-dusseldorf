@@ -61,15 +61,15 @@
                             {%- assign image_class = "item-image not-cropped" -%}
                             {% image product.image target_width: "1280" class: image_class loading: "lazy" %}
                           </div>
-                        {% endif %}
+                        {%- endif -%}
                       </div>
                     </div>
 
-                    {% if gallery_content_size > 0 or editmode %}
+                    {%- if gallery_content_size > 0 or editmode -%}
                       <div class="formatted js-product-gallery" data-search-indexing-allowed="true">
                         {% content bind=product name="gallery" %}
                       </div>
-                    {% endif %}
+                    {%- endif -%}
                   </div>
                 </div>
                 <div class="flex-col">
