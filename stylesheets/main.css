@@ -3754,3 +3754,23 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 .item-page .product-content .buy-btn-content {
   margin-bottom: 24px;
 }
+
+.item-page .flex-col {
+  width: 100%;
+}
+
+.item-page .flex-col-left {
+  max-width: 520px;
+}
+
+@media screen and (min-width: 1024px) {
+  .item-page .flex-col-left {
+    margin-top: 32px;
+  }
+}
+
+.item-page .flex-col .content-body {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 104px;
+}

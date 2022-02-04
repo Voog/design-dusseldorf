@@ -40,4 +40,21 @@
       margin-bottom: 24px;
     }
   }
+
+  .flex-col {
+    width: 100%;
+
+    &-left {
+      max-width: 520px;
+
+      @media screen and (min-width: $break-middle) {
+        margin-top: 32px;
+      }
+    }
+
+    .content-body {
+      position: sticky;
+      top: 104px;
+    }
+  }
 }
