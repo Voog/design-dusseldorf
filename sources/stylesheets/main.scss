@@ -2558,7 +2558,8 @@ table {
 
 .light-background {
   .custom-btn-disabled {
-    .public & {
+    .public &,
+    .product-page & {
       cursor: default;
       color: rgba(0,0,0,.35);
       border-color: rgba(0,0,0,.35);
@@ -2568,7 +2569,8 @@ table {
 
 .dark-background {
   .custom-btn-disabled {
-    .public & {
+    .public &,
+    .product-page & {
       color: rgba(255,255,255,.35);
       border-color: rgba(255,255,255,.35);
     }

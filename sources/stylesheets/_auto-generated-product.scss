@@ -11,6 +11,10 @@
     }
   }
 
+  .content-product-description {
+    margin-bottom: 12px;
+  }
+
   .product-content {
     .without-image .item-top {
       background-image: url("../assets/ico-placeholder.svg");
@@ -30,6 +34,10 @@
           object-fit: contain;
         }
       }
+    }
+
+    .buy-btn-content {
+      margin-bottom: 24px;
     }
   }
 }

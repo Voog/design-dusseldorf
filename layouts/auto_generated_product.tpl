@@ -14,7 +14,7 @@
   {% include "edicy-tools-styles" %}
 </head>
 
-<body class="item-page {% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
+<body class="item-page product-page {% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
 
   {%- capture bottom_content_html -%}
     {%- unless editmode -%}

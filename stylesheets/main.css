@@ -2741,13 +2741,15 @@ footer .custom-btn {
   display: none;
 }
 
-.public .light-background .custom-btn-disabled {
+.public .light-background .custom-btn-disabled,
+.product-page .light-background .custom-btn-disabled {
   cursor: default;
   color: rgba(0, 0, 0, 0.35);
   border-color: rgba(0, 0, 0, 0.35);
 }
 
-.public .dark-background .custom-btn-disabled {
+.public .dark-background .custom-btn-disabled,
+.product-page .dark-background .custom-btn-disabled {
   color: rgba(255, 255, 255, 0.35);
   border-color: rgba(255, 255, 255, 0.35);
 }
@@ -3726,6 +3728,10 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   margin: 0 4px;
 }
 
+.item-page .content-product-description {
+  margin-bottom: 12px;
+}
+
 .item-page .product-content .without-image .item-top {
   background-image: url("../assets/ico-placeholder.svg");
   background-size: 40px;
@@ -3743,4 +3749,8 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.item-page .product-content .buy-btn-content {
+  margin-bottom: 24px;
 }
