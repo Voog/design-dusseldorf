@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 {% include "template-variables" %}
 
-{% if product.image == blank %}
-  {% assign product_image_state = "without-image" %}
-{% else %}
-  {% assign product_image_state = "with-image" %}
-{% endif %}
+{%- if product.image == blank -%}
+  {%- assign product_image_state = "without-image" -%}
+{%- else -%}
+  {%- assign product_image_state = "with-image" -%}
+{%- endif -%}
 
 <html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
@@ -15,6 +15,23 @@
 </head>
 
 <body class="item-page {% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
+
+  {%- capture bottom_content_html -%}
+    {%- unless editmode -%}
+      {%- content bind=product name="content" -%}
+    {%- endunless -%}
+  {%- endcapture -%}
+
+  {%- assign bottom_content_size = bottom_content_html | strip | size -%}
+
+  {%- capture gallery_content_html -%}
+    {%- unless editmode -%}
+      {%- content bind=product name="gallery" -%}
+    {%- endunless -%}
+  {%- endcapture -%}
+
+  {%- assign gallery_content_size = gallery_content_html | strip | size -%}
+
   {% include "template-svg-spritesheet" %}
 
   <div class="wrap cfx">
@@ -45,9 +62,12 @@
                       {% endif %}
                     </div>
                   </div>
-                  <div class="formatted" data-search-indexing-allowed="true">
-                    {% content bind=product name="gallery" %}
-                  </div>
+
+                  {% if gallery_content_size > 0 or editmode %}
+                    <div class="formatted" data-search-indexing-allowed="true">
+                      {% content bind=product name="gallery" %}
+                    </div>
+                  {% endif %}
                 </div>
 
                 <div class="content-body">
@@ -56,7 +76,7 @@
                       <h1>{%- editable product.name -%}</h1>
                     </div>
                   </header>
-                  
+
                   <div class="product-price">
                     {%- if product.price_max_with_tax != product.price_min_with_tax -%}
                       {{ product.price_min_with_tax | money_with_currency: product.currency -}}
@@ -77,6 +97,13 @@
                   </div>
                 </div>
               </div>
+              {%- if bottom_content_size > 0 or editmode -%}
+                <section
+                  class="content-product-wide content-area"
+                  data-search-indexing-allowed="true">
+                  {% content bind=product name="content" %}
+                </section>
+              {%- endif -%}
             </main>
           </section>
         </div>
