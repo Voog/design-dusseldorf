@@ -30,6 +30,8 @@
   {% include "template-cs-content" %}
   {% if front_page %}
     {% include "template-cs-footer" %}
+  {% elsif product_page %}
+    {% include "template-cs-product" %}
   {% endif %}
   {% include "template-cs-headings" %}
   {% include "template-cs-table" %}

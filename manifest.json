@@ -246,6 +246,13 @@
     {
       "content_type": "component",
       "component": true,
+      "file": "components/template-cs-product.tpl",
+      "layout_name": "template-cs-product",
+      "title": "template-cs-product"
+    },
+    {
+      "content_type": "component",
+      "component": true,
       "file": "components/template-cs-sidebar.tpl",
       "layout_name": "template-cs-sidebar",
       "title": "template-cs-sidebar"
