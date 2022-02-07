@@ -1032,7 +1032,6 @@ MMCQ = (function() {
   // ===========================================================================
 
   var handleProductPageContent = function () {
-    console.log("in func")
     $(document).ready(function () {
       changeProductImagePos();
     });
