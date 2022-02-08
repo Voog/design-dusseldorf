@@ -46,6 +46,13 @@
 
     &-left {
       max-width: 520px;
+
+      @media screen and (min-width: $mobile + 1) and (max-width: $tablet) {
+        .content-illustrations {
+          min-width: 180px;
+          margin-right: 20px;
+        }
+      }
     }
 
     .content-body {
