@@ -61,68 +61,70 @@
       });
     });
     
-    {% comment %}/*Front page top content area background picker.*/{% endcomment %}
-      var contentHalfTopBg = new Edicy.BgPicker($('.content-top .js-background-settings'), {
-          picture: true,
-          target_width: 600,
-          color: true,
-          showAlpha: true,
+    {% unless product_page %}
+      {% comment %}/*Front page top content area background picker.*/{% endcomment %}
+        var contentHalfTopBg = new Edicy.BgPicker($('.content-top .js-background-settings'), {
+            picture: true,
+            target_width: 600,
+            color: true,
+            showAlpha: true,
 
-        preview: function(data) {
-          site.contentHalfBgPreview(data, '.js-content-top', contentHalfTopBg);
-        },
+          preview: function(data) {
+            site.contentHalfBgPreview(data, '.js-content-top', contentHalfTopBg);
+          },
 
-        commit: function(data) {
-          site.contentHalfBgCommit(data, 'content_top_bg');
-        }
-      });
+          commit: function(data) {
+            site.contentHalfBgCommit(data, 'content_top_bg');
+          }
+        });
 
-      {% comment %}/*Front page left content area background picker.*/{% endcomment %}
-      var contentHalfLeftBg = new Edicy.BgPicker($('.content-left .js-background-settings'), {
-          picture: true,
-          target_width: 600,
-          color: true,
-          showAlpha: true,
+        {% comment %}/*Front page left content area background picker.*/{% endcomment %}
+        var contentHalfLeftBg = new Edicy.BgPicker($('.content-left .js-background-settings'), {
+            picture: true,
+            target_width: 600,
+            color: true,
+            showAlpha: true,
 
-        preview: function(data) {
-          site.contentHalfBgPreview(data, '.js-content-left', contentHalfLeftBg);
-        },
+          preview: function(data) {
+            site.contentHalfBgPreview(data, '.js-content-left', contentHalfLeftBg);
+          },
 
-        commit: function(data) {
-          site.contentHalfBgCommit(data, 'content_left_bg');
-        }
-      });
+          commit: function(data) {
+            site.contentHalfBgCommit(data, 'content_left_bg');
+          }
+        });
 
-      {% comment %}/*Front page right content area background picker.*/{% endcomment %}
-      var contentHalfRightBg = new Edicy.BgPicker($('.content-right .js-background-settings'), {
-          picture: true,
-          target_width: 600,
-          color: true,
-          showAlpha: true,
+        {% comment %}/*Front page right content area background picker.*/{% endcomment %}
+        var contentHalfRightBg = new Edicy.BgPicker($('.content-right .js-background-settings'), {
+            picture: true,
+            target_width: 600,
+            color: true,
+            showAlpha: true,
 
-        preview: function(data) {
-          site.contentHalfBgPreview(data, '.js-content-right', contentHalfRightBg);
-        },
+          preview: function(data) {
+            site.contentHalfBgPreview(data, '.js-content-right', contentHalfRightBg);
+          },
 
-        commit: function(data) {
-          site.contentHalfBgCommit(data, 'content_right_bg');
-        }
-      });
+          commit: function(data) {
+            site.contentHalfBgCommit(data, 'content_right_bg');
+          }
+        });
 
-      {% comment %}/*Front page bottom content area background picker.*/{% endcomment %}
-      var contentHalfBottomBg = new Edicy.BgPicker($('.content-bottom .js-background-settings'), {
-          picture: false,
-          target_width: 600,
-          color: true,
-          showAlpha: false,
+        {% comment %}/*Front page bottom content area background picker.*/{% endcomment %}
+        var contentHalfBottomBg = new Edicy.BgPicker($('.content-bottom .js-background-settings'), {
+            picture: false,
+            target_width: 600,
+            color: true,
+            showAlpha: false,
 
-        preview: function(data) {
-          site.contentHalfBgPreview(data, '.js-content-bottom', contentHalfBottomBg);
-        },
+          preview: function(data) {
+            site.contentHalfBgPreview(data, '.js-content-bottom', contentHalfBottomBg);
+          },
 
-        commit: function(data) {
-          site.contentHalfBgCommit(data, 'content_bottom_bg');
-        }
-      });
+          commit: function(data) {
+            site.contentHalfBgCommit(data, 'content_bottom_bg');
+          }
+        });
+      {% endunless %}
   </script>
 {% endeditorjsblock %}

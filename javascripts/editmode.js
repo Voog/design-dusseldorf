@@ -93,18 +93,18 @@
     });
   };
 
-  if ($('body').hasClass('editmode')) {
-    setTitlebox;
-
-    $(window).resize(debounce(setTitlebox, 100));
-  }
-
   var setTitlebox = function () {
     var $c = $('.site-title:visible');
     if ($c.is(':empty')) {
       $('.site-title-editable').appendTo($c);
     }
   };
+
+  if ($('body').hasClass('editmode')) {
+    setTitlebox;
+
+    $(window).resize(debounce(setTitlebox, 100));
+  }
 
   if ($('body').hasClass('front-page')) {
     // In edit mode maintain column equilibrium while user inputs new data
