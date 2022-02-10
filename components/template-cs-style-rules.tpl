@@ -625,3 +625,30 @@ h3,
   color: var(--color-light);
   border: 1px solid var(--color-light);
 }
+
+.product-page .content-header h1 {
+  font-size: var(--product-title-size);
+  font-weight: var(--product-title-font-weight);
+  font-style: var(--product-title-font-style);
+  -webkit-text-decoration: var(--product-title-font-text-decoration);
+          text-decoration: var(--product-title-font-text-decoration);
+  color: var(--product-title-color);
+}
+
+.product-page .formatted .content-product-description {
+  color: var(--product-description-color);
+  font-size: var(--product-description-size);
+  font-weight: var(--product-description-font-weight);
+  font-style: var(--product-description-font-style);
+  -webkit-text-decoration: var(--product-description-font-text-decoration);
+          text-decoration: var(--product-description-font-text-decoration);
+}
+
+.product-page .product-price {
+  color: var(--product-price-color);
+  font-size: var(--product-price-size);
+  font-weight: var(--product-price-font-weight);
+  font-style: var(--product-price-font-style);
+  -webkit-text-decoration: var(--product-price-font-text-decoration);
+          text-decoration: var(--product-price-font-text-decoration);
+}

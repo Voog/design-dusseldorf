@@ -2741,13 +2741,15 @@ footer .custom-btn {
   display: none;
 }
 
-.public .light-background .custom-btn-disabled {
+.public .light-background .custom-btn-disabled,
+.product-page .light-background .custom-btn-disabled {
   cursor: default;
   color: rgba(0, 0, 0, 0.35);
   border-color: rgba(0, 0, 0, 0.35);
 }
 
-.public .dark-background .custom-btn-disabled {
+.public .dark-background .custom-btn-disabled,
+.product-page .dark-background .custom-btn-disabled {
   color: rgba(255, 255, 255, 0.35);
   border-color: rgba(255, 255, 255, 0.35);
 }
@@ -3317,6 +3319,10 @@ footer .custom-btn {
   margin-bottom: 20px;
 }
 
+.item-page .product-page-top {
+  padding-bottom: 15px;
+}
+
 .formatted .edy-buy-button-container .form_field label {
   font-size: 16px;
   padding-bottom: 0;
@@ -3708,4 +3714,83 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 
 .d-none {
   display: none;
+}
+
+.item-page .content-item-title:not(.product-item-title) {
+  margin-bottom: 15px;
+}
+
+.item-page .product-price {
+  padding-bottom: 24px;
+}
+
+.item-page .product-price-divider {
+  margin: 0 4px;
+}
+
+.item-page .content-product-description {
+  margin-bottom: 12px;
+}
+
+.editmode .item-page .product-content .product-image {
+  cursor: pointer;
+}
+
+.item-page .product-content .without-image .item-top {
+  background-image: url("../assets/ico-placeholder.svg");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F2F2F2;
+}
+
+.item-page .product-content .item-top .top-inner {
+  background-color: transparent;
+}
+
+.item-page .product-content .item-top .top-inner .item-image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.item-page .product-content .buy-btn-content {
+  margin-bottom: 24px;
+}
+
+.item-page .flex-col {
+  width: 100%;
+}
+
+.item-page .flex-col-left {
+  max-width: 520px;
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+  .item-page .flex-col-left .content-illustrations {
+    min-width: 180px;
+    margin-right: 20px;
+  }
+}
+
+.item-page .flex-col .content-body {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 104px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+  img {
+    image-rendering: -webkit-optimize-contrast !important;
+  }
+}
+
+/* Unset for Safari 11+ */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    img {
+      image-rendering: unset !important;
+    }
+  }
 }

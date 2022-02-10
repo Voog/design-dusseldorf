@@ -93,18 +93,18 @@
     });
   };
 
-  if ($('body').hasClass('editmode')) {
-    setTitlebox;
-
-    $(window).resize(debounce(setTitlebox, 100));
-  }
-
   var setTitlebox = function () {
     var $c = $('.site-title:visible');
     if ($c.is(':empty')) {
       $('.site-title-editable').appendTo($c);
     }
   };
+
+  if ($('body').hasClass('editmode')) {
+    setTitlebox;
+
+    $(window).resize(debounce(setTitlebox, 100));
+  }
 
   if ($('body').hasClass('front-page')) {
     // In edit mode maintain column equilibrium while user inputs new data
@@ -315,6 +315,16 @@
   };
 
   // ===========================================================================
+  // Opens product admin view on product image click
+  // ===========================================================================
+
+  var handleProductImageClick = function(product_id) {
+    $('.product-content .product-image').click(function() {
+      window.open('/admin/ecommerce/products/' + product_id, '_blank').focus();
+    });
+  };
+
+  // ===========================================================================
   // Sets functions that will be initiated globally when resizing the browser
   // window.
   // ===========================================================================
@@ -363,7 +373,8 @@
     bindContentItemImgDropAreas: bindContentItemImgDropAreas,
     bindContentItemImageCropToggle: bindContentItemImageCropToggle,
     toggleFlags: toggleFlags,
-    initSettingsEditorBtn: initSettingsEditorBtn
+    initSettingsEditorBtn: initSettingsEditorBtn,
+    handleProductImageClick: handleProductImageClick
   });
 
   // ===========================================================================
