@@ -2986,10 +2986,6 @@ footer .custom-btn {
   font-size: 12px;
 }
 
-.menu-horizontal .menu-separator:first-child {
-  display: none;
-}
-
 .menu-horizontal.menu-breadcrumbs {
   line-height: 16px;
   padding-bottom: 15px;

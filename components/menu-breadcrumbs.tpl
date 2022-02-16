@@ -20,9 +20,9 @@
             {{ listItem.item.name }}
           </{{ breadcrumbTag }}>
         </li>
-        {% if forloop.rindex > 1 %}
+        {% unless forloop.last %}
           <span class="menu-separator">/</span>
-        {% endif %}
+        {% endunless %}
       {% endif -%}
     {% endfor %}
   {%- endif -%}
