@@ -2986,10 +2986,6 @@ footer .custom-btn {
   font-size: 12px;
 }
 
-.menu-horizontal .menu-separator:first-child {
-  display: none;
-}
-
 .menu-horizontal.menu-breadcrumbs {
   line-height: 16px;
   padding-bottom: 15px;
@@ -3778,6 +3774,7 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   position: -webkit-sticky;
   position: sticky;
   top: 104px;
+  z-index: 10601;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
