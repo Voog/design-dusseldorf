@@ -636,6 +636,10 @@ h3,
   text-align: var(--product-title-alignment);
 }
 
+.product-page .dark-background .content-header h1 {
+  color: var(--color-light);
+}
+
 .product-page .formatted .content-product-description {
   color: var(--product-description-color);
   font-size: var(--product-description-size);
@@ -645,6 +649,10 @@ h3,
           text-decoration: var(--product-description-font-text-decoration);
 }
 
+.product-page .dark-background .formatted .content-product-description {
+  color: var(--color-light);
+}
+
 .product-page .product-price {
   color: var(--product-price-color);
   font-size: var(--product-price-size);
@@ -652,6 +660,10 @@ h3,
   font-style: var(--product-price-font-style);
   -webkit-text-decoration: var(--product-price-font-text-decoration);
           text-decoration: var(--product-price-font-text-decoration);
+}
+
+.product-page .dark-background .product-price {
+  color: var(--color-light);
 }
 
 .dark-background .edy-product-widget-grid .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-title,

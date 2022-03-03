@@ -115,7 +115,13 @@
           {% endif %}
         {% endfor %}
       {% else %}
-        {% for imageSize in page.data.content_top_bg.imageSizes %}
+        {% if product_page == true %}
+          {% assign imageSizes = site.data[product_bg_key].imageSizes %}
+        {% else %}
+          {% assign imageSizes = page.data.content_top_bg.imageSizes %}
+        {% endif %}
+
+        {% for imageSize in imageSizes %}
           {% if forloop.first %}
             .content-top {
               background-image: url("{{ imageSize.url }}");
@@ -137,6 +143,10 @@
     {% if post_page %}
       .content-top .background-color {
         background-color: {{ article.data.content_top_bg.color }};
+      }
+    {% elsif product_page %}
+      .content-top .background-color {
+        background-color: {{ site.data[product_bg_key].color }};
       }
     {% else %}
       .content-top .background-color {

@@ -837,6 +837,7 @@ MMCQ = (function() {
 (function ($) {
 
   var articlePage = $('body').hasClass('blog-article-page');
+  var productPage = $('body').hasClass('product-page');
 
   // contentHalf background image and color preview logic function.
   var contentHalfBgPreview = function (data, contentHalf, contentHalfObj) {
@@ -937,6 +938,8 @@ MMCQ = (function() {
     commitData.combinedLightness = contentHalfBgCombinedLightness;
     if (articlePage) {
       Edicy.articles.currentArticle.setData(dataName, commitData);
+    } else if (productPage) {
+      siteData.set(dataName, commitData);
     } else {
       pageData.set(dataName, commitData);
     };

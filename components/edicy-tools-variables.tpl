@@ -8,26 +8,33 @@
   {% endif %}
 
 
-{% if post_page %}
+  {% if post_page %}
 
-{% comment %}Content top. Assign variables based on page type.{% endcomment %}
-{% assign content_top_bg = article.data.content_top_bg %}
-{% assign content_top_bg_image = article.data.content_top_bg.image %}
-{% assign content_top_bg_image_sizes = article.data.content_top_bg.imageSizes %}
-{% assign content_top_bg_color = article.data.content_top_bg.color %}
-{% assign content_top_bg_color_data = article.data.content_top_bg.colorData %}
-{% assign content_top_bg_combined_lightness = content_top_bg.combinedLightness %}
+    {% comment %}Content top. Assign variables based on page type.{% endcomment %}
+    {% assign content_top_bg = article.data.content_top_bg %}
+    {% assign content_top_bg_image = article.data.content_top_bg.image %}
+    {% assign content_top_bg_image_sizes = article.data.content_top_bg.imageSizes %}
+    {% assign content_top_bg_color = article.data.content_top_bg.color %}
+    {% assign content_top_bg_color_data = article.data.content_top_bg.colorData %}
+    {% assign content_top_bg_combined_lightness = content_top_bg.combinedLightness %}
 
-{% else %}
+  {% elsif product_page %}
+    {% assign product_bg_key = template_settings.product.body_bg.key %}
+    {% assign content_top_bg = site.data[product_bg_key] %}
+    {% assign content_top_bg_image = content_top_bg.image %}
+    {% assign content_top_bg_image_sizes = content_top_bg.imageSizes %}
+    {% assign content_top_bg_color = content_top_bg.color %}
+    {% assign content_top_bg_color_data = content_top_bg.colorData %}
+    {% assign content_top_bg_combined_lightness = content_top_bg.combinedLightness %}
+  {% else %}
 
-  {% comment %}Content top. Assign variables based on page type.{% endcomment %}
-  {% assign content_top_bg = page.data.content_top_bg %}
-  {% assign content_top_bg_image = page.data.content_top_bg.image %}
-  {% assign content_top_bg_image_sizes = page.data.content_top_bg.imageSizes %}
-  {% assign content_top_bg_color = page.data.content_top_bg.color %}
-  {% assign content_top_bg_color_data = page.data.content_top_bg.colorData %}
-  {% assign content_top_bg_combined_lightness = content_top_bg.combinedLightness %}
-
+    {% comment %}Content top. Assign variables based on page type.{% endcomment %}
+    {% assign content_top_bg = page.data.content_top_bg %}
+    {% assign content_top_bg_image = page.data.content_top_bg.image %}
+    {% assign content_top_bg_image_sizes = page.data.content_top_bg.imageSizes %}
+    {% assign content_top_bg_color = page.data.content_top_bg.color %}
+    {% assign content_top_bg_color_data = page.data.content_top_bg.colorData %}
+    {% assign content_top_bg_combined_lightness = content_top_bg.combinedLightness %}
   {% endif %}
 
   {% comment %}Content top. Sets the background type.{% endcomment %}
