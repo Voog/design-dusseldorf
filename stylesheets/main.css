@@ -3782,7 +3782,7 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   position: -webkit-sticky;
   position: sticky;
   top: 104px;
-  z-index: 10601;
+  z-index: 2;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
