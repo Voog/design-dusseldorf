@@ -3785,6 +3785,15 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   z-index: 2;
 }
 
+.dark-background .edy-product-widget-filter-sort,
+.dark-background .edy-product-widget-filter-search-input {
+  opacity: .7;
+}
+
+.dark-background .edy-product-widget-filter-label {
+  opacity: .5;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
   img {
     image-rendering: -webkit-optimize-contrast !important;
