@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-{% include "template-variables" %}
+{%- assign product_page = true -%}
+{%- include "template-settings" -%}
+{%- include "template-variables" -%}
 
 {%- if product.image == blank -%}
   {%- assign product_image_state = "without-image" -%}
@@ -9,8 +11,8 @@
 
 <html class="{% if editmode %}editmode{% else %}public{% endif %}" lang="{{ page.language_code }}">
 <head prefix="og: http://ogp.me/ns#">
-  {% include "edicy-tools-variables" %}
-  {% include "html-head" product_page: true %}
+  {% include "edicy-tools-variables" with "product_page" %}
+  {% include "html-head" %}
   {% include "edicy-tools-styles" %}
 </head>
 
@@ -45,6 +47,17 @@
       <div class="content-full content-top cfx js-content-top">
         <div class="background-color"></div>
         <div class="container js-background-type {{ content_top_bg_type }}">
+          {% if editmode %}
+            <button 
+              class="voog-bg-picker-btn js-background-settings" 
+              data-bg-key="{{ product_bg_key }}" 
+              data-bg-image="{{ content_top_bg_image }}" 
+              data-bg-image-sizes="{{ content_top_bg_image_sizes_str | escape }}" 
+              data-bg-color="{{ content_top_bg_color }}" 
+              data-bg-color-data="{{ content_top_bg_color_data_str | escape }}">
+            </button>
+          {% endif %}
+
           <div class="product-page-top"></div>
           <section class="content cfx">
             {% include "menu-breadcrumbs-sd" %}
@@ -57,7 +70,7 @@
                         {%- if product.image != blank -%}
                           <div class="top-inner aspect-ratio-inner">
                             {%- assign image_class = "item-image not-cropped" -%}
-                            {% image product.image target_width: "1280" class: image_class loading: "lazy" %}
+                            {% image product.image target_width: "600" class: image_class loading: "lazy" %}
                           </div>
                         {%- endif -%}
                       </div>

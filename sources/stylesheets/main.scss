@@ -2511,7 +2511,8 @@ table {
   }
 }
 
-.custom-btn {
+.custom-btn,
+.edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widget-item .edy-product-widget-item-details-wrap .edy-product-widget-item-btn-wrap .edy-product-widget-item-btn {
   @include hyphenate(true);
   box-sizing: border-box;
   display: inline-block;
@@ -2542,6 +2543,7 @@ table {
   .light-background & {
     border: 2px solid;
     color: $color-black;
+    background-color: transparent;
 
     &:not(.custom-btn-disabled):hover {
       background: #2b2b2b;
