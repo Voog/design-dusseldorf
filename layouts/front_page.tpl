@@ -12,6 +12,9 @@
   <div class="wrap cfx">
     {% include "langmenu" %}
     {% include "topbar" %}
+
+    {%- assign content_default_title = "content" | lce -%}
+    {%- assign content_default_title_tooltip = "content_tooltip_specific_page" | lce -%}
     <aside class="sidebar">
       {% include "sidebar" %}
     </aside>
@@ -24,7 +27,7 @@
           {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_top_bg_image }}" data-bg-image-sizes="{{ content_top_bg_image_sizes_str | escape }}" data-bg-color="{{ content_top_bg_color }}" data-bg-color-data="{{ content_top_bg_color_data_str | escape }}"></button>{% endif %}
           <div class="inner-padding">
             <div class="align-middle js-background-type {{ content_top_bg_type }}">
-              <div class="content-inner formatted cfx" {{ edy_intro_edit_text }}>{% content %}</div>
+              <div class="content-inner formatted cfx">{% content title=content_default_title title_tooltip=content_default_title_tooltip %}</div>
             </div>
           </div>
         </div>
@@ -38,7 +41,7 @@
           {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_left_bg_image }}" data-bg-image-sizes="{{ content_left_bg_image_sizes_str | escape }}" data-bg-color="{{ content_left_bg_color }}" data-bg-color-data="{{ content_left_bg_color_data_str | escape }}"></button>{% endif %}
           <div class="inner-padding">
             <div class="align-middle js-background-type {{ content_left_bg_type }}">
-              <div class="content-inner formatted cfx"><div class="inner-bottom">{% content name="left" %}</div></div>
+              <div class="content-inner formatted cfx"><div class="inner-bottom">{% content name="left" title=content_default_title title_tooltip=content_default_title_tooltip %}</div></div>
             </div>
           </div>
         </div>
@@ -48,7 +51,7 @@
           {% if editmode %}<button class="voog-bg-picker-btn js-background-settings" data-bg-image="{{ content_right_bg_image }}" data-bg-image-sizes="{{ content_right_bg_image_sizes_str | escape }}" data-bg-color="{{ content_right_bg_color }}" data-bg-color-data="{{ content_right_bg_color_data_str | escape }}"></button>{% endif %}
           <div class="inner-padding">
             <div class="align-middle js-background-type {{ content_right_bg_type }}">
-              <div class="content-inner formatted cfx"><div class="inner-bottom">{% content name="right" %}</div></div>
+              <div class="content-inner formatted cfx"><div class="inner-bottom">{% content name="right" title=content_default_title title_tooltip=content_default_title_tooltip %}</div></div>
             </div>
           </div>
         </div>
@@ -64,11 +67,13 @@
             <div class="align-middle js-background-type {{ content_bottom_bg_type }}">
               <div class="content-inner formatted cfx">
 
+                {%- assign bottom_content_title = "additional_content" | lce -%}
+                {%- assign bottom_content_title_tooltip = "content_tooltip_additional_information" | lce -%}
                 <div class="footer-left">
-                  {% content name="footer" %}
+                  {% content name="footer" title=bottom_content_title title_tooltip=bottom_content_title_tooltip %}
                 </div>
                 <div class="footer-right">
-                  {% content name="footer_title" %}
+                  {% content name="footer_title" title_tooltip=bottom_content_title_tooltip %}
                 </div>
 
               </div>
