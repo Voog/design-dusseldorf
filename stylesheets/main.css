@@ -3736,6 +3736,10 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
   margin-bottom: 12px;
 }
 
+.item-page .product-cross-page-info {
+  margin-bottom: 32px;
+}
+
 .editmode .item-page .product-content .product-image {
   cursor: pointer;
 }
