@@ -61,10 +61,11 @@ module.exports = function(grunt) {
     // When using Dart Sass, synchronous compilation is twice as fast
     // as asynchronous compilation by default, due to the overhead of asynchronous callbacks.
     // To avoid this overhead, fibers package is used
+    // Note that fibers package is not supported on Node >= 16.0.0
     sass: {
       build_main: {
         options: {
-          implementation: require('node-sass'),
+          implementation: require('sass'),
           sourceMap: false,
           fiber: require('fibers'),
           outputStyle: 'expanded'
@@ -81,7 +82,7 @@ module.exports = function(grunt) {
       // Builds custom style components to temporary folder.
       build_custom_styles: {
         options: {
-          implementation: require('node-sass'),
+          implementation: require('sass'),
           sourceMap: false,
           fiber: require('fibers'),
           outputStyle: 'expanded'
