@@ -15,7 +15,7 @@
      "scope": "global",
      "featured": true
   */
-  --color-dark: black;
+  --color-dark: rgb(0, 0, 0);
   /* VoogStyle
      "pathI18n": ["main_styles", "colors"],
      "titleI18n": "secondary_color",
@@ -26,5 +26,5 @@
         "--sidebar-background-color"
      ]
   */
-  --color-light: white;
+  --color-light: rgb(255, 255, 255);
 }
