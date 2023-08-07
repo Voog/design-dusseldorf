@@ -14,6 +14,8 @@
   {% include "edicy-tools-variables" with "product_page" %}
   {% include "html-head" %}
   {% include "edicy-tools-styles" %}
+
+  {% sd_product %}
 </head>
 
 <body class="item-page product-page {% if site.search.enabled %}search-enabled{% endif %}{% if editmode %} editmode{% endif %}">
