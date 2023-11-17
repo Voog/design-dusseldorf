@@ -3473,6 +3473,9 @@ footer .edy-product-widget-list .edy-product-widget-item-wrap .edy-product-widge
 .light-background .formatted .edy-buy-button-container .edy-buy-button:not(.custom-btn-disabled) {
   color: #000;
 }
+.formatted .edy-buy-button-container .edy-buy-button-price-container .edy-buy-button-price-original {
+  opacity: 0.4;
+}
 .formatted .edy-buy-button-variants .form_field {
   padding-top: 0;
   padding-bottom: 0;
@@ -3820,8 +3823,13 @@ body .edy-settings-editor:not(.editor_default) .edy-popover-content .edy-setting
 .item-page .product-price {
   padding-bottom: 24px;
 }
-.item-page .product-price-divider {
-  margin: 0 4px;
+.item-page .product-price .product-price-original {
+  display: inline-block;
+  padding-right: 4px;
+  opacity: 0.4;
+}
+.item-page .product-price .product-price-final {
+  display: inline-block;
 }
 .item-page .content-product-description {
   margin-bottom: 12px;
