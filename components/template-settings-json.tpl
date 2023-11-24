@@ -5,5 +5,5 @@
       "value": {}
     }
   },
-  "version": "dusseldorf-2.3.5"
+  "version": "dusseldorf-2.4.0"
 }
