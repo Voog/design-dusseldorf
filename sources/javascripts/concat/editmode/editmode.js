@@ -315,16 +315,6 @@
   };
 
   // ===========================================================================
-  // Opens product admin view on product image click
-  // ===========================================================================
-
-  var handleProductImageClick = function(product_id) {
-    $('.product-content .product-image').click(function() {
-      window.open('/admin/ecommerce/products/' + product_id, '_blank').focus();
-    });
-  };
-
-  // ===========================================================================
   // Sets functions that will be initiated globally when resizing the browser
   // window.
   // ===========================================================================
@@ -373,8 +363,7 @@
     bindContentItemImgDropAreas: bindContentItemImgDropAreas,
     bindContentItemImageCropToggle: bindContentItemImageCropToggle,
     toggleFlags: toggleFlags,
-    initSettingsEditorBtn: initSettingsEditorBtn,
-    handleProductImageClick: handleProductImageClick
+    initSettingsEditorBtn: initSettingsEditorBtn
   });
 
   // ===========================================================================
